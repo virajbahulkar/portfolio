@@ -1,5 +1,5 @@
 [build]
-  command = "docker build -t portfolio-main-astro . && docker run -p 3000:3000 portfolio-main-astro"
+  command = "npm install --legacy-peer-deps --force && docker build -t portfolio-main-astro . && docker run -p 3000:3000 portfolio-main-astro"
   publish = "build"
 
 [build.environment]
