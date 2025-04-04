@@ -1,3 +1,11 @@
 [build]
-  command = "docker build -t my-astro-app . && docker run --rm -v $(pwd)/dist:/app/dist my-astro-app"
   publish = "dist"
+  command = "docker-compose run --rm astro npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
