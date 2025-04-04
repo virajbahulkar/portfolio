@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="text-center">
         © {new Date().getFullYear()} {AppConfig.author}. All rights reserved.
       </div>
-      <div className="flex space-x-1 text-center">
+      <div className="flex flex-wrap justify-center space-x-1 text-center">
         <span>Crafted with precision using</span>
         <a
           href="https://astro.build"

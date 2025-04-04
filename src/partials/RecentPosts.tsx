@@ -12,7 +12,7 @@ const RecentPosts = (props: IRecentPostsProps) => (
     <SectionHeader
       title="Recent"
       highlightedText="Blogs"
-      link="/projects/"
+      link="/blogs/"
       linkText="View all blogs"
       extraClasses=""
     />
