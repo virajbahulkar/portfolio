@@ -1,11 +1,7 @@
 [build]
-  publish = "dist"
-  command = "docker-compose run --rm astro npm run build"
+  command = "docker-compose run --rm astro npm install --legacy-peer-deps && npm run build"
+  publish = "dist"  # Change this if your build output is in a different folder
 
 [build.environment]
-  NODE_VERSION = "20"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  NODE_VERSION = "20.19.0"
+  NPM_FLAGS = "--legacy-peer-deps"
