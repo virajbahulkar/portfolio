@@ -1,11 +1,10 @@
 ---
 import '@styles/custom.css';
 
-import { Footer } from '@partials/Footer';
+import BreadCrumb from '@components/BreadCrumb';
 import { Navbar } from '@partials/Navbar';
 import { AppConfig } from '@utils/AppConfig';
 import { personSchemaMarkup, websiteSchemaMarkup } from '@utils/schemaMarkup';
-import BreadCrumb from '@components/BreadCrumb';
 
 export interface Props {
   head: {
@@ -103,9 +102,6 @@ const {
 
       <slot />
     </div>
-
-
-
 
     <script>
       const theme_selectors = document.querySelectorAll(

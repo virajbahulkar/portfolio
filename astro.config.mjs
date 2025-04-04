@@ -3,17 +3,22 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
-import * as astroImageTools from  'astro-imagetools';
+import * as astroImageTools from 'astro-imagetools';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://virajbahulkar.com', // Use to generate your sitemap and canonical URLs in your final build.
-  trailingSlash: 'ignore', // Keep trailing slashes on URLs
+  site: 'https://virajbahulkar.com',
+  trailingSlash: 'ignore',
   markdown: {
     shikiConfig: {
-      // Choose from Shiki's built-in themes (or add your own)
-      // https://github.com/shikijs/shiki/blob/main/docs/themes.md
       theme: 'monokai',
+    },
+  },
+  vite: {
+    resolve: {
+      alias: {
+        '@components': '/src/components',
+        '@pages': '/src/pages',
+      },
     },
   },
   integrations: [
@@ -42,11 +47,7 @@ export default defineConfig({
           disallow: ['/cdn-cgi/'],
           crawlDelay: 2,
         },
-        {
-          userAgent: '*',
-          allow: '/',
-          crawlDelay: 10,
-        },
+        { userAgent: '*', allow: '/', crawlDelay: 10 },
       ],
     }),
   ],
