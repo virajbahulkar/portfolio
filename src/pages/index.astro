@@ -1,0 +1,114 @@
+---
+import BackToTop from '@components/BackToTop.astro';
+import { CTA } from '@partials/CTA';
+import { Footer } from '@partials/Footer';
+import { Hero } from '@partials/Hero';
+import { RecentOssProjects } from '@partials/RecentOssProjects';
+import { RecentPosts } from '@partials/RecentPosts';
+import { RecentProjects } from '@partials/RecentProjects';
+import Base from '@templates/Base.astro';
+import { AppConfig } from '@utils/AppConfig';
+import {
+  sortByRunningOrder,
+  sortPostByDate,
+  sortProjectsByDate,
+} from '@utils/Posts';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('post');
+const sortedPosts = sortPostByDate(allPosts);
+const lastThreePosts = sortedPosts.slice(0, 3);
+const allProjects = await getCollection('project');
+const openSourceProjects = sortByRunningOrder(
+  allProjects.filter((project) => project.data.openSource)
+).slice(0, 4);
+const myProjects = sortProjectsByDate(
+  allProjects.filter((project) => !project.data.openSource)
+).slice(0, 3);
+
+const { title, description, ogImage } = AppConfig;
+---
+
+<Base head={{ title, description, ogImage }}>
+  <div class="md:grid md:grid-cols-5 md:grid-rows-[auto,1fr,auto] md:gap-10 md:h-screen">
+    <!-- 1st Column  -->
+    <div class="col-span-3 flex flex-col justify-between h-full">
+      <div>
+        <div class="flex  p-6 items-center justify-center  overflow-auto">
+          {/* Left Upper Quadrant: Hero */}
+          <Hero
+            client:load
+            heading="Hi there, I'm"
+            phrases={[
+              { text: "Viraj Bahulkar", gradient: "from-purple-400 via-pink-500 to-red-500" },
+              { text: "a Passionate Developer", gradient: "from-green-400 via-blue-500 to-purple-500" },
+              { text: "Building Scalable Solutions", gradient: "from-indigo-400 via-purple-500 to-pink-500" },
+              { text: "Turning Ideas into Reality", gradient: "from-red-400 via-pink-500 to-purple-500" },
+            ]}
+            description="Full-Stack Developer with 7+ years of experience in building scalable web applications. Passionate about coding, problem-solving, and creating seamless user experiences. Specialized in ReactJS for dynamic front-end development and NodeJS for secure, optimized back-end solutions. Skilled in integrating front-end frameworks with RESTful APIs, developing microfrontends and microservices, managing databases, and deploying applications to the cloud."
+
+          />
+        </div>
+        <div class="flex  p-6 items-center justify-center  overflow-auto ">
+          {/* Left Upper Quadrant: Hero */}
+          <Hero
+            client:load
+            heading={{text: "My career", class: "text-2xl"}}
+            description="So far, the journey has been about building innovative applications, enhaning web experiences and delivering solutions that make business thrive"
+          />
+        </div>
+        <div class="flex  p-6  overflow-auto ">
+          {/* Left Upper Quadrant: Hero */}
+          <Hero
+            client:load
+            heading={{text: "Things I love to do", class: "text-2xl"}}
+            description={[
+              {text: "Continuously experimenting with new frameworks, tools, and libraries to enhance my skills.", class:""},
+              {text: "Keeping myself updated with industry trends, insights, and expert discussions.", class: ""},
+              {text: "Sharing my learnings, thoughts, and technical insights through writing.", class: ""},
+              {text: "Discovering new places, embracing nature, and drawing inspiration from different experiences.", class: ""},
+            ]}
+          />
+        </div>
+        <div class="flex  p-6  overflow-auto ">
+          {/* Left Upper Quadrant: Hero */}
+          <Hero
+            client:load
+            heading={{text: "My motivation", class: "text-2xl"}}
+            description={[{text: "Every line of code you write is a step closer to turning imagination into reality. Keep building, keep evolving", type: "quote", class: "border-l-4 border-blue-500 pl-4 italic  text-lg my-4"}]}
+          />
+        </div>
+      </div>
+      <!-- This should stick to the bottom -->
+      <div class="flex-col p-6  overflow-auto hidden lg:flex ">
+        <CTA />
+        <Footer />
+      </div>
+
+
+    </div>
+    <!-- 2nd Column  -->
+    <div class="col-span-2">
+      <div class="flex items-center justify-center p-6  bg-regal-blue overflow-auto ">
+        {/* Right Upper Quadrant: Recent Work */}
+        <RecentProjects projectList={myProjects} />
+      </div>
+      <div class="flex items-center justify-center p-6  bg-to-sky-400 overflow-auto ">
+        {/* Left Lower Quadrant: Open Source Contributions */}
+        <RecentOssProjects projectList={openSourceProjects} />
+      </div>
+      <div class="flex items-center justify-center p-6  overflow-auto ">
+        {/* Right Lower Quadrant: Blogs Link */}
+        <RecentPosts postList={lastThreePosts} />
+      </div>
+       <!-- This should stick to the bottom -->
+      <div class="flex-col p-6  overflow-auto sm:flex lg:hidden">
+        <CTA />
+        <Footer />
+      </div>
+    </div>
+
+  </div>
+
+  <BackToTop />
+</Base>

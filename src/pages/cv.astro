@@ -1,0 +1,162 @@
+---
+import SkillItem from '@components/SkillItem';
+import TimeLine from '@components/Timeline';
+import { Footer } from '@partials/Footer';
+import Base from '@templates/Base.astro';
+import { AppConfig } from '@utils/AppConfig';
+import { Section } from 'astro-boilerplate-components';
+
+const titleSuffix = ` - ${AppConfig.site_name}`;
+const title = `Resume${titleSuffix}`;
+const description =
+  'Experienced and passionate developer skilled in full-stack web development. Proficient in ReactJS, NodeJS, Docker, Kubernetes, Azure DevOps, and more. Highly skilled in designing scalable solutions with a focus on clean code and agile practices.';
+const url = `${AppConfig.site_url}/cv/`;
+---
+
+<Base head={{ title, description, url }}>
+  <Section>
+    <div class="mb-12">
+      <h1 class="text-3xl font-extrabold mb-6">Profile</h1>
+      <p class="leading-relaxed text-lg">
+        Experienced in designing and delivering scalable software solutions for global and local clients across various domains. Proficient in ReactJS, NodeJS, Git, SASS, JavaScript, HTML, CSS, Azure DevOps, Docker, Kubernetes, with a focus on clean code and agile practices.
+        Skilled in building high-performance React components using hooks and performance evaluation tools. Strong hands-on experience with Node.js tools like Gulp, Grunt, Webpack, and CLI applications. Proven ability to collaborate with cross-functional teams, solve complex technical issues, and deliver projects within scope and budget.
+      </p>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Life</h2>
+      <div class="space-y-6">
+        <TimeLine title="Born: Aug 1993" subtitle="" >
+          Born and raised in Pune, India, I developed a passion for technology and problem-solving from an early age. Navigating through various challenges, I embraced self-learning and freelancing, building practical skills in web development. This journey of independent learning and hands-on experience laid a strong foundation for my professional growth.
+        </TimeLine>
+
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Education</h2>
+      <div class="space-y-6">
+        <TimeLine title="Bachelor of Technology (BTech) in Computer Science and Engineering" subtitle="2011 to 2017 (Officially completed in 2014, delayed to 2017) - Trained as a freelancer during the gap." />
+        <TimeLine title="12th Grade (Higher Secondary Education)" subtitle="Completed in 2011" />
+        <TimeLine title="10th Grade" subtitle="Completed in 2009" />
+      </div>
+    </div>
+
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">Experience</h2>
+        <div class="space-y-6">
+
+          <TimeLine
+              title="Senior Software Engineer at Cognizant Technology Solutions, India"
+              subtitle="December 2021 – Present"
+            >
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Worked Finance Group's app, streamlining registration/tracking processes for improved efficiency.</li>
+                <li>Collaborated on robust ReactJS solutions, enhancing app response time, TBT, and CLS.</li>
+                <li>Modernized legacy codebases and enhanced efficiency through optimization at both code and architecture levels.</li>
+                <li>Transitioned monolithic services to service-based, modular NodeJS applications, boosting performance and maintainability.</li>
+                <li>Designed and developed modular, reusable RESTful APIs and frontend components.</li>
+                <li>Built single-page applications using ReactJS, NodeJS, version control, and code-base management tools.</li>
+                <li>Ensured 100% on-time delivery and adherence to project lifecycle methodology.</li>
+                <li>Proactively resolved issues, improving team productivity and stakeholder satisfaction.</li>
+              </ul>
+              <p><strong>Technologies:</strong> ReactJS, NodeJS, REST APIs, JavaScript, TypeScript, Git, CI/CD</p>
+            </TimeLine>
+
+            <TimeLine
+              title="Senior Software Engineer at Saeloun Technologies Pvt. Ltd., India"
+              subtitle="April 2021 – December 2021 (8 months)"
+            >
+              <strong>Project #1: ToolJet (An Open Source Low-Code Software for Building Internal Tools)</strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Debugged client codes, reducing issues and improving reliability.</li>
+                <li>Collaborated with experts, enhancing functionality and satisfaction rates.</li>
+                <li>Improved user interfaces using ReactJS and optimized backend with NodeJS, leading to higher functionality and fewer crashes.</li>
+              </ul>
+
+              <strong>Project #2: WanderWhale (Popular Travel Information Portal)</strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Optimized designs using ReactJS and backend performance with NodeJS techniques.</li>
+                <li>Collaborated with teams to resolve issues quickly, ensuring seamless delivery and enhanced user experience.</li>
+              </ul>
+              <p><strong>Technologies:</strong> ReactJS, NodeJS, PostgreSQL, JavaScript, TypeScript, Git, SASS</p>
+            </TimeLine>
+
+            <TimeLine
+              title="Technical Head / Senior Software Engineer / Software Developer at Autoflow Technologies Pvt. Ltd."
+              subtitle="May 2017 – April 2021 (4 years)"
+            >
+              <strong>Project #1: Compass (Agent Portal App) </strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Built an application showing business contributions, enhancing engagement.</li>
+                <li>Transformed data into actionable reports, promoting data-driven decisions.</li>
+                <li>Managed SDLC with NodeJS, ensuring 100% on-time delivery and improved productivity.</li>
+              </ul>
+
+              <strong>Project #2: Digitizer App (No-Code Platform)</strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Developed the Digitizer App using ReactJS, NodeJS & Git.</li>
+                <li>Managed front-end and back-end functionalities, increasing user engagement.</li>
+                <li>Created complex components (Timelines, Dynamic Tables, Complex Forms) to enhance app functionality.</li>
+                <li>Delivered high-quality work achieving client satisfaction.</li>
+              </ul>
+
+              <strong>Project #3: Governance Framework (In-House Project)</strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Built a 360-degree organizational view application, enhancing collaboration and communication.</li>
+                <li>Implemented UI & REST API development using NodeJS for better interface and functionality.</li>
+                <li>Developed drag & drop, tree-level table features using ReactJS & NodeJS, increasing app engagement.</li>
+              </ul>
+
+              <strong>Project #4: Vendor Management System </strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Managed SDLC, ensuring 100% on-time delivery and successful outcomes.</li>
+                <li>Automated vendor registration using ReactJS, NodeJS, Git, HTML, CSS & JavaScript, reducing processing time and increasing accuracy.</li>
+                <li>Established an approval/rejection system, enhancing efficiency and minimizing errors.</li>
+              </ul>
+
+              <strong>Project #5: HR 360 Feedback Portal</strong>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Implemented a digital feedback system using ReactJS, NodeJS, Git, HTML, CSS & JavaScript, replacing paper-based methods.</li>
+                <li>Deployed a new feedback mechanism for quicker feedback processing, improving appraisal efficiency.</li>
+                <li>Set up an admin panel generating chart-based reports, empowering data-driven decisions.</li>
+              </ul>
+              <p><strong>Technologies:</strong> ReactJS, NodeJS, ExpressJS, Docker, MongoDB, PostgreSQL, JavaScript, Git, HTML, CSS</p>
+            </TimeLine>
+            <TimeLine title="Freelancing & Skill Development" subtitle="2014 - 2017">
+              Worked as a freelancer, developing skills in various web technologies, preparing for a professional career in software development.
+            </TimeLine>
+
+        </div>
+      </div>
+
+
+
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <SkillItem title="ReactJS" icon="react-original" />
+        <SkillItem title="NodeJS" icon="nodejs-plain" />
+        <SkillItem title="ExpressJS" icon="express-original" />
+        <SkillItem title="MongoDB" icon="mongodb-plain" />
+        <SkillItem title="PostgreSQL" icon="postgresql-plain" />
+        <SkillItem title="TypeScript" icon="typescript-plain" />
+        <SkillItem title="NextJS" icon="nextjs-plain" />
+        <SkillItem title="Docker" icon="docker-plain" />
+        <SkillItem title="Kubernetes" icon="kubernetes-plain" />
+        <SkillItem title="AWS" icon="amazonwebservices-original" />
+        <SkillItem title="Git" icon="git-original" />
+        <SkillItem title="JavaScript" icon="javascript-plain" />
+        <SkillItem title="HTML" icon="html5-plain" />
+        <SkillItem title="CSS" icon="css3-plain" />
+        <SkillItem title="SASS" icon="sass-original" />
+        <SkillItem title="Azure DevOps" icon="azure-original" />
+        <SkillItem title="Gulp" icon="gulp-plain" />
+        <SkillItem title="Grunt" icon="grunt-plain" />
+        <SkillItem title="Webpack" icon="webpack-plain" />
+      </div>
+    </div>
+  </Section>
+  <Footer />
+</Base>

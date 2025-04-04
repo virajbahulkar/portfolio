@@ -1,0 +1,46 @@
+---
+import { PaginationHeader } from '@components/PaginationHeader';
+import { CTA } from '@partials/CTA';
+import Base from '@templates/Base.astro';
+import { AppConfig } from '@utils/AppConfig';
+import { sortProjectsByDate } from '@utils/Posts';
+import { getCollection } from 'astro:content';
+import { ProjectGallery } from '@components/ProjectGallery';
+import { Footer } from '@partials/Footer';
+
+const allProjects = await getCollection('project');
+const sortedProjects = sortProjectsByDate(allProjects);
+
+const titleSuffix = ` - ${AppConfig.site_name}`;
+const titleBase = `Projects`;
+const title = titleBase + titleSuffix;
+const description =
+  'Explore the portfolio of a passionate Rails and React developer. Discover innovative open source projects, code samples, and contributions to the developer community.';
+const url = `${AppConfig.site_url}/projects/`;
+---
+
+<Base head={{ title, description, url }}>
+  <div class="md:grid md:grid-cols-4 md:gap-10 md:min-h-screen">
+    <!-- Left Sidebar -->
+    <div class="col-span-1 pt-8 flex justify-center items-start">
+      <div class="p-6 bg-white rounded-2xl shadow-xl border border-gray-200 animate-fadeIn w-11/12 max-w-sm">
+        <PaginationHeader
+          title="Professional Web Development Showcase"
+          description="A curated collection of diverse web development projects, presented with a clean, flowing layout to highlight expertise and creativity. This showcase demonstrates skills across various domains, emphasizing attention to detail and innovation."
+          extraClasses={{
+            headerClasses: "text-3xl font-bold mb-4 text-gradient bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent",
+            descriptionClasses: "text-gray-700 mb-4 leading-relaxed"
+          }}
+        />
+      </div>
+    </div>
+
+    <!-- Right Side: Isotope-like Layout -->
+    <div class="col-span-3 overflow-y-auto p-4">
+      <ProjectGallery client:load projectList={sortedProjects} isotopeMode={true} />
+    </div>
+  </div>
+
+  <CTA />
+  <Footer />
+</Base>

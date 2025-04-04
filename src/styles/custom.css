@@ -1,0 +1,109 @@
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.time-line-container>div:last-child .education__time>.education__line {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 14ch; /* Fully reveal the text */
+  }
+  90% {
+    width: 14ch; /* Pause at the end before restarting */
+  }
+  100% {
+    width: 0; /* Reset for the next loop */
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0ea5e9;
+  }
+}
+
+.animate-typing {
+  animation: typing 4s steps(13, end) infinite, blink 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid #0ea5e9;
+}
+
+.circle-animation {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid #4a90e2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes blogtyping {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+}
+
+@keyframes blogblink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.code-text {
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  animation: blogtyping 4s steps(40, end) infinite, blogblink 1s step-end infinite;
+}
+
+.circle-animation::before {
+  content: 'const blogTitle = "The Code Journal";';
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  color: #00ff00;
+  font-size: 1rem;
+  animation: blogtyping 6s steps(40, end) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ff00;
+}

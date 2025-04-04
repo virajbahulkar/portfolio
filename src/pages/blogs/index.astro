@@ -1,0 +1,47 @@
+---
+import { BlogGallery } from '@components/BlogGallery';
+import { PaginationHeader } from '@components/PaginationHeader';
+import { CTA } from '@partials/CTA';
+import Base from '@templates/Base.astro';
+import { AppConfig } from '@utils/AppConfig';
+import { sortPostByDate } from '@utils/Posts';
+import { getCollection } from 'astro:content';
+import { Section } from 'astro-boilerplate-components';
+import { Footer } from '@partials/Footer';
+
+const allPosts = await getCollection('post');
+const sortedPosts = sortPostByDate(allPosts);
+
+const titleSuffix = ` - ${AppConfig.site_name}`;
+const titleBase = `Blogs`;
+const title = titleBase + titleSuffix;
+const description =
+  'Discover engaging articles on web development, including insights on React.js, Node.js, Docker, and modern web technologies. Stay updated with the latest trends and techniques.';
+const url = `${AppConfig.site_url}/blogs/`;
+---
+
+<Base head={{ title, description, url }}>
+  <Section>
+    <PaginationHeader
+      title="The Code Journal: A Developer's Blog"
+      description="Dive into articles crafted for developers and tech enthusiasts alike. From frameworks like React and Node.js to deployment techniques with Docker, find comprehensive guides and unique insights tailored to your learning journey."
+    />
+
+    <div class="flex flex-col items-center mt-8 mb-12 space-y-4">
+      <div class="circle-animation"></div>
+      <p class="text-center text-lg text-gray-700 max-w-xl">
+        Join me as I explore the nuances of full-stack development, share practical tips, and experiment with cutting-edge technologies. Let's build something amazing together!
+      </p>
+    </div>
+
+  </Section>
+
+  <Section >
+    <div class="grid grid-cols-1  gap-6 p-4" >
+      <BlogGallery postList={ sortedPosts } />
+    </div>
+  </Section>
+
+  <CTA />
+  <Footer />
+</Base>
