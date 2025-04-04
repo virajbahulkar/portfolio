@@ -1,3 +1,11 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "docker build -t portfolio-main-astro . && docker run -p 3000:3000 portfolio-main-astro"
+  publish = "build"
+
+[build.environment]
+  NODE_ENV = "production"
+  NODE_OPTIONS = "--unhandled-rejections=warn"
+
+[[services]]
+  internal_port = 3000
+  protocol = "http"
