@@ -1,6 +1,7 @@
 import type { CollectionEntry } from 'astro:content';
-import { ProjectCard } from './ProjectCard';
 import { useState } from 'react';
+
+import { ProjectCard } from './ProjectCard';
 
 interface ProjectGalleryProps {
   projectList: CollectionEntry<'project'>[];
@@ -20,40 +21,59 @@ const gradientBorders = [
 ];
 
 const CURRENT_YEAR = new Date().getFullYear();
-const RECENT_YEARS = [CURRENT_YEAR, CURRENT_YEAR - 1, CURRENT_YEAR - 2, CURRENT_YEAR - 3];
+const RECENT_YEARS = [
+  CURRENT_YEAR,
+  CURRENT_YEAR - 1,
+  CURRENT_YEAR - 2,
+  CURRENT_YEAR - 3,
+];
 
 const getYears = (projectList: CollectionEntry<'project'>[]) => {
-  return Array.from(new Set(projectList.map(project => {
-    const date = new Date(project.data.startDate);
-    if (isNaN(date.getTime())) return null;
-    return date.getFullYear();
-  })))
-  .filter(Boolean)
-  .sort((a, b) => b - a);
+  return Array.from(
+    new Set(
+      projectList.map((project) => {
+        const date = new Date(project.data.startDate);
+        if (isNaN(date.getTime())) return null;
+        return date.getFullYear();
+      })
+    )
+  )
+    .filter(Boolean)
+    .sort((a, b) => b - a);
 };
 
 const getMonths = (projectList: CollectionEntry<'project'>[], year: number) => {
-  return Array.from(new Set(projectList.map(project => {
-    const date = new Date(project.data.startDate);
-    if (isNaN(date.getTime()) || date.getFullYear() !== year) return null;
-    return date.toLocaleString('default', { month: 'long' });
-  })))
-  .filter(Boolean);
+  return Array.from(
+    new Set(
+      projectList.map((project) => {
+        const date = new Date(project.data.startDate);
+        if (isNaN(date.getTime()) || date.getFullYear() !== year) return null;
+        return date.toLocaleString('default', { month: 'long' });
+      })
+    )
+  ).filter(Boolean);
 };
 
-const ProjectGallery = ({ projectList, isotopeMode = false }: ProjectGalleryProps) => {
+const ProjectGallery = ({
+  projectList,
+  isotopeMode = false,
+}: ProjectGalleryProps) => {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
   const years = getYears(projectList);
   const months = selectedYear ? getMonths(projectList, selectedYear) : [];
 
-  const filteredProjects = projectList.filter(project => {
+  const filteredProjects = projectList.filter((project) => {
     const date = new Date(project.data.startDate);
     if (isNaN(date.getTime())) return false;
 
     if (selectedYear && date.getFullYear() !== selectedYear) return false;
-    if (selectedMonth && date.toLocaleString('default', { month: 'long' }) !== selectedMonth) return false;
+    if (
+      selectedMonth &&
+      date.toLocaleString('default', { month: 'long' }) !== selectedMonth
+    )
+      return false;
 
     return true;
   });
@@ -63,28 +83,30 @@ const ProjectGallery = ({ projectList, isotopeMode = false }: ProjectGalleryProp
       {isotopeMode ? (
         <>
           {/* Year Filter Buttons */}
-          <div className="flex flex-wrap gap-1 mb-4">
-            {years.filter(year => !RECENT_YEARS.includes(year)).map(year => (
-              <button
-                key={year}
-                className={`px-2 py-1 text-sm rounded-lg ${selectedYear === year ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-                onClick={() => {
-                  setSelectedYear(year);
-                  setSelectedMonth(null);
-                }}
-              >
-                {year}
-              </button>
-            ))}
+          <div className="mb-4 flex flex-wrap gap-1">
+            {years
+              .filter((year) => !RECENT_YEARS.includes(year))
+              .map((year) => (
+                <button
+                  key={year}
+                  className={`rounded-lg border px-2 py-1 text-sm`}
+                  onClick={() => {
+                    setSelectedYear(year);
+                    setSelectedMonth(null);
+                  }}
+                >
+                  {year}
+                </button>
+              ))}
           </div>
 
           {/* Month Filter Buttons */}
           {selectedYear && (
-            <div className="flex flex-wrap gap-1 mb-4">
-              {months.map(month => (
+            <div className="mb-4 flex flex-wrap gap-1">
+              {months.map((month) => (
                 <button
                   key={month}
-                  className={`px-2 py-1 text-sm rounded-lg ${selectedMonth === month ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                  className={`rounded-lg border px-2 py-1 text-sm`}
                   onClick={() => setSelectedMonth(month)}
                 >
                   {month}
@@ -96,7 +118,7 @@ const ProjectGallery = ({ projectList, isotopeMode = false }: ProjectGalleryProp
           {/* Reset Filter Button (Now Cross Icon) */}
           {(selectedYear || selectedMonth) && (
             <button
-              className="text-red-500 text-xl mb-4"
+              className="mb-4 text-xl text-red-500"
               onClick={() => {
                 setSelectedYear(null);
                 setSelectedMonth(null);
@@ -107,13 +129,13 @@ const ProjectGallery = ({ projectList, isotopeMode = false }: ProjectGalleryProp
           )}
 
           {/* Projects Display */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          <div className="columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3">
             {filteredProjects.map((project, index) => (
               <div
                 key={project.data.link}
-                className={`relative mb-6 p-[2px] rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-[102%]`}
+                className={`hover relative mb-6 overflow-hidden rounded-2xl p-[2px] transition-transform hover:scale-[102%]`}
               >
-                <div className={`bg-white rounded-2xl p-1 bg-gradient-to-r ${gradientBorders[index % gradientBorders.length]}`}>
+                <div className={`rounded-2xl  border   p-1   `}>
                   <ProjectCard project={project} />
                 </div>
               </div>
@@ -125,7 +147,7 @@ const ProjectGallery = ({ projectList, isotopeMode = false }: ProjectGalleryProp
           {filteredProjects.map((project, index) => (
             <div
               key={project.data.link}
-              className="relative mb-6 p-2 rounded-2xl border border-gray-300 transition-transform duration-300 hover:scale-[102%] "
+              className="relative mb-6 rounded-2xl border  p-0 transition-transform duration-300 hover:scale-[102%] "
             >
               <ProjectCard project={project} />
             </div>

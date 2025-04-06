@@ -1,17 +1,17 @@
-import { GradientText } from 'astro-boilerplate-components';
 import { SectionHeader } from './SectionHeader';
 
 const Newsletter = () => (
-  <div className="flex flex-col sm:flex-row items-center justify-between gap-8 mt-12 px-4 py-6 sm:px-8 sm:py-8 bg-white">
+  <div className="mt-12 flex flex-col items-center justify-between gap-8 px-4 py-6 sm:flex-row sm:p-8 ">
     {/* Left Section */}
-    <div className="sm:w-1/2 space-y-2">
+    <div className="space-y-2 sm:w-1/2">
       <SectionHeader
         title=""
         highlightedText="Get Exclusive Updates"
         size="text-2xl font-semibold"
       />
-      <p className="text-sm text-gray-700 leading-relaxed">
-        Get the latest updates on web development, technology trends, and industry news delivered to your inbox. Join our community today!
+      <p className="text-sm leading-relaxed ">
+        Get the latest updates on web development, technology trends, and
+        industry news delivered to your inbox. Join our community today!
       </p>
     </div>
 
@@ -19,18 +19,18 @@ const Newsletter = () => (
     <form
       name="subscribe"
       method="POST"
-      className="flex items-center w-full sm:w-1/2 rounded-full bg-gray-100 px-4 py-2 focus-within:ring-2 focus-within:ring-blue-500 transition-all"
+      className="flex w-full items-center rounded-full bg-gray-100 px-4 py-2 transition-all focus-within:ring-2 focus-within:ring-blue-500 sm:w-1/2"
       data-netlify="true"
     >
       <input
         type="email"
         name="email"
         placeholder="Enter your email"
-        className="flex-grow bg-transparent text-sm focus:outline-none text-gray-800 placeholder-gray-500"
+        className="placeholder: grow bg-transparent text-sm  focus:outline-none"
       />
       <button
         type="submit"
-        className="ml-4 text-sm font-medium text-white bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition-all"
+        className="ml-4 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-blue-700"
       >
         Subscribe
       </button>

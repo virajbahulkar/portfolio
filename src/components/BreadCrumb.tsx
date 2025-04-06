@@ -26,9 +26,9 @@ const BreadCrumb = ({ path }) => {
 
           return (
             <li key={index} className="flex items-center">
-              <span className="mx-2 text-gray-500">/</span>
+              <span className="mx-2 ">/</span>
               {isLast ? (
-                <span className="text-gray-500">{segment}</span>
+                <span className="">{segment}</span>
               ) : (
                 <a href={to} className="text-blue-600 hover:underline">
                   {segment}

@@ -44,7 +44,7 @@ const Navbar = ({ path }: NavbarProps) => {
           <NavMenuItem href="/projects/">Projects</NavMenuItem>
           <NavMenuItem href="/cv/">Resume</NavMenuItem>
           <NavMenuItem href="mailto:hello@virajbahulkar.com">Contact</NavMenuItem>
-          <li className="w-full border-t border-gray-300 pt-2 flex flex-col items-center">
+          <li className="w-full border-t  pt-2 flex flex-col items-center">
             {/* Render DarkModeToggleButton directly expanded here */}
             <div className="flex flex-col items-center">
               <DarkModeToggleButton alwaysExpanded={true} />

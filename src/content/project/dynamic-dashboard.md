@@ -20,7 +20,7 @@ runningOrder: 1
     <li>Export reports and visualize historical trends.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h2 id="-use-cases" class="text-2xl font-semibold  mb-4">💼 Use Cases</h2>
 
@@ -31,7 +31,7 @@ runningOrder: 1
     <li><strong>Features Utilized:</strong> Line charts, bar graphs, heat maps, data tables, and drill-down capabilities for deeper insights.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h3 id="2-️-application-performance-monitoring" class="text-xl font-semibold  p-6 pt-1">2. 🛡️ <strong>Application Performance Monitoring</strong></h3>
   <ul class="list-inside list-none space-y-2  p-6 pt-1">
@@ -40,7 +40,7 @@ runningOrder: 1
     <li><strong>Features Utilized:</strong> Metrics dashboards, alert notifications, anomaly detection, and historical comparisons.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h3 id="3--financial-data-analysis" class="text-xl font-semibold  p-6 pt-1">3. 💰 <strong>Financial Data Analysis</strong></h3>
   <ul class="list-inside list-none space-y-2  p-6 pt-1">
@@ -49,7 +49,7 @@ runningOrder: 1
     <li><strong>Features Utilized:</strong> Candlestick charts, scatter plots, customizable indicators, and automated report generation.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h3 id="4--iot-device-monitoring" class="text-xl font-semibold  p-6 pt-1">4. 🔌 <strong>IoT Device Monitoring</strong></h3>
   <ul class="list-inside list-none space-y-2  p-6 pt-1">
@@ -58,7 +58,7 @@ runningOrder: 1
     <li><strong>Features Utilized:</strong> Live updates, real-time data mapping, geographical visualization, and condition-based alerts.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h3 id="5--custom-reporting-and-visualization" class="text-xl font-semibold  p-6 pt-1">5. 📝 <strong>Custom Reporting and Visualization</strong></h3>
   <ul class="list-inside list-none space-y-2  p-6 pt-1">
@@ -67,7 +67,7 @@ runningOrder: 1
     <li><strong>Features Utilized:</strong> Custom widgets, report generation, user authentication, and collaborative editing.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h2 id="-real-world-applications" class="text-2xl font-semibold  mb-4">🌟 <strong>Real-World Applications</strong></h2>
   <ol class="list-decimal pl-6 space-y-2  p-6 pt-1">
@@ -78,7 +78,7 @@ runningOrder: 1
     <li><strong>Supply Chain Management:</strong> Monitor inventory levels, shipment statuses, and vendor performance globally.</li>
   </ol>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h2 id="-technology-stack" class="text-2xl font-semibold  mb-4">🛠 <strong>Technology Stack</strong></h2>
   <ul class="list-none pl-6 space-y-2  p-6 pt-1">
@@ -90,14 +90,14 @@ runningOrder: 1
     <li><strong>Additional Tools:</strong> Chart.js / Recharts for visualization, Redis for caching, Nginx for load balancing.</li>
   </ul>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h2 id="-why-dynamic-dashboard" class="text-2xl font-semibold  mb-4">🔑 <strong>Why Dynamic Dashboard?</strong></h2>
   <p class="text-lg  p-6 pt-1">
     The Dynamic Dashboard App provides a <strong class="font-semibold text-indigo-600">scalable, flexible, and user-friendly solution</strong> for visualizing complex data. With its <strong class="font-semibold text-indigo-600">modular architecture</strong>, it supports a wide range of use cases, from business analytics to IoT monitoring. Whether deployed on-premises or in the cloud, it provides powerful tools for managing data effectively.
   </p>
 
-  <hr class="border-gray-300 mb-8">
+  <hr class=" mb-8">
 
   <h2 id="-future-enhancements" class="text-2xl font-semibold  mb-4">📌 <strong>Future Enhancements</strong></h2>
   <ul class="list-inside list-none space-y-2  p-6 pt-1">

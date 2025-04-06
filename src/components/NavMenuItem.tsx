@@ -15,7 +15,7 @@ const NavMenuItem = (props: INavMenuItemProps) => {
       href={props.href}
       className={`inline-flex ${
         active ? 'border-indigo-500' : 'border-transparent'
-      } items-center border-b-2  px-1 pt-1 font-medium hover:border-gray-500 hover:text-gray-700`}
+      } items-center border-b-2  px-1 pt-1 font-medium hover:border-gray-500 hover:`}
     >
       {props.children}
     </a>
