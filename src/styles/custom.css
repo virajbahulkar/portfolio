@@ -107,3 +107,15 @@
   white-space: nowrap;
   border-right: 2px solid #00ff00;
 }
+
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::marker {
+  display: none;
+}
