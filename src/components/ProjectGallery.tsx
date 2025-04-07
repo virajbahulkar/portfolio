@@ -89,7 +89,7 @@ const ProjectGallery = ({
               .map((year) => (
                 <button
                   key={year}
-                  className={`rounded-lg border px-2 py-1 text-sm`}
+                  className={`rounded-lg border   border-base-300 px-2 py-1 text-sm`}
                   onClick={() => {
                     setSelectedYear(year);
                     setSelectedMonth(null);
@@ -106,7 +106,7 @@ const ProjectGallery = ({
               {months.map((month) => (
                 <button
                   key={month}
-                  className={`rounded-lg border px-2 py-1 text-sm`}
+                  className={`rounded-lg border   border-base-300 px-2 py-1 text-sm`}
                   onClick={() => setSelectedMonth(month)}
                 >
                   {month}
@@ -133,9 +133,9 @@ const ProjectGallery = ({
             {filteredProjects.map((project, index) => (
               <div
                 key={project.data.link}
-                className={`hover relative mb-6 overflow-hidden rounded-2xl p-[2px] transition-transform hover:scale-[102%]`}
+                className={`hover relative mb-6 overflow-hidden rounded-2xl border border-base-300   p-[2px] transition-transform hover:scale-[102%]`}
               >
-                <div className={`rounded-2xl  border   p-1   `}>
+                <div className={`rounded-2xl    p-1   `}>
                   <ProjectCard project={project} />
                 </div>
               </div>
@@ -143,11 +143,11 @@ const ProjectGallery = ({
           </div>
         </>
       ) : (
-        <div className="space-y-4">
+        <div>
           {filteredProjects.map((project, index) => (
             <div
               key={project.data.link}
-              className="relative mb-6 rounded-2xl border  p-0 transition-transform duration-300 hover:scale-[102%] "
+              className="relative mb-6 rounded-2xl border border-base-300   p-0 transition-transform duration-300  hover:scale-[102%]  "
             >
               <ProjectCard project={project} />
             </div>

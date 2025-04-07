@@ -19,18 +19,19 @@ const Newsletter = () => (
     <form
       name="subscribe"
       method="POST"
-      className="flex w-full items-center rounded-full bg-gray-100 px-4 py-2 transition-all focus-within:ring-2 focus-within:ring-blue-500 sm:w-1/2"
       data-netlify="true"
+      className="flex w-full items-center rounded-full border border-base-300 px-4 py-2 transition-all focus-within:ring-2 focus-within:ring-primary sm:w-1/2"
     >
       <input
         type="email"
         name="email"
         placeholder="Enter your email"
-        className="placeholder: grow bg-transparent text-sm  focus:outline-none"
+        required
+        className="w-full bg-transparent text-sm text-base-content placeholder:text-base-content/60 focus:animate-pulse focus:outline-none"
       />
       <button
         type="submit"
-        className="ml-4 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-blue-700"
+        className="ml-4 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-content transition-all hover:scale-105 hover:bg-primary/80"
       >
         Subscribe
       </button>
