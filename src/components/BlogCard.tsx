@@ -9,7 +9,7 @@ const BlogCard = (props: BlogCardProps) => {
   const { blog } = props;
   return (
     <a className="hover:translate-y-1" href={blog.data.url} target="_blank">
-      <div className="overflow-hidden rounded-md bg-base-100">
+      <div className="overflow-hidden rounded-2xl rounded-md border border-base-300 bg-base-100 ">
         <div className="aspect-h-2 aspect-w-3">
           <img
             className="size-full object-cover object-center"
