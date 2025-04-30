@@ -15,7 +15,9 @@ const BlogGallery = (props: IRecentPostsProps) => {
   return (
     <div className={`md:grid ${columns} w-full md:gap-6`}>
       {props.postList.map((elt) => (
-        <BlogCard key={elt.data.url} blog={elt} />
+        <div className="mb-5 lg:mb-0">
+          <BlogCard key={elt.data.url} blog={elt} />
+        </div>
       ))}
     </div>
   );
