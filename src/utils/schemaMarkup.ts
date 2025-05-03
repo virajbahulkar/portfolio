@@ -38,5 +38,5 @@ export const websiteSchemaMarkup = {
     'https://github.com/virajbahulkar',
     'https://linkedin.com/in/virajbahulkar',
   ],
-  url: 'https://virajbahulkar.com/',
+  url: 'https://virajbahulkar.me/',
 };

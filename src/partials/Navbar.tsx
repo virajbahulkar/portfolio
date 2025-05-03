@@ -44,7 +44,7 @@ const Navbar = ({ path }: NavbarProps) => {
             <NavMenuItem href="/blogs/">Blogs</NavMenuItem>
             <NavMenuItem href="/projects/">Projects</NavMenuItem>
             <NavMenuItem href="/cv/">Resume</NavMenuItem>
-            <NavMenuItem href="mailto:hello@virajbahulkar.com">
+            <NavMenuItem href="mailto:hello@virajbahulkar.me">
               Contact
             </NavMenuItem>
             <DarkModeToggleButton alwaysExpanded={true} />
@@ -79,7 +79,7 @@ const Navbar = ({ path }: NavbarProps) => {
               <NavMenuItem href="/blogs/">Blogs</NavMenuItem>
               <NavMenuItem href="/projects/">Projects</NavMenuItem>
               <NavMenuItem href="/cv/">Resume</NavMenuItem>
-              <NavMenuItem href="mailto:hello@virajbahulkar.com">
+              <NavMenuItem href="mailto:hello@virajbahulkar.me">
                 Contact
               </NavMenuItem>
               <li className="flex w-full justify-center border-t border-base-300 pt-2">

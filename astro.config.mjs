@@ -6,7 +6,7 @@ import robotsTxt from 'astro-robots-txt';
 import * as astroImageTools from 'astro-imagetools';
 
 export default defineConfig({
-  site: 'https://virajbahulkar.com',
+  site: 'https://virajbahulkar.me',
   trailingSlash: 'ignore',
   markdown: {
     shikiConfig: {

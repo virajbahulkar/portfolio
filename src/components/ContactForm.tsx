@@ -7,7 +7,6 @@ const ContactForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
     const form = e.target;
     const data = new FormData(form);
 
@@ -18,9 +17,9 @@ const ContactForm = () => {
       .then(() => {
         setShowToast(true);
         form.reset();
-        setTimeout(() => setShowToast(false), 3000); // Hide toast after 3s
+        setTimeout(() => setShowToast(false), 3000);
       })
-      .catch((error) => alert(error));
+      .catch((err) => console.error('Form submission error:', err));
   };
 
   return (

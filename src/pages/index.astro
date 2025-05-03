@@ -68,7 +68,7 @@ const { title, description, ogImage } = AppConfig;
           <Hero
             client:load
             heading={{ text: 'My career', class: 'text-2xl' }}
-            description="So far, the journey has been about building innovative applications, enhaning web experiences and delivering solutions that make business thrive"
+            description="So far, the journey has been about building innovative applications, enhancing web experiences and delivering solutions that make business thrive"
           />
         </div>
         <div class="flex  overflow-auto  p-6 ">
@@ -113,7 +113,7 @@ const { title, description, ogImage } = AppConfig;
       </div>
       <!-- This should stick to the bottom -->
       <div class="hidden flex-col  overflow-auto p-6 lg:flex ">
-        <CTA />
+        <CTA client:load />
         <Footer />
       </div>
     </div>
@@ -137,7 +137,7 @@ const { title, description, ogImage } = AppConfig;
       </div>
       <!-- This should stick to the bottom -->
       <div class="flex-col overflow-auto  p-6 sm:flex lg:hidden">
-        <CTA />
+        <CTA client:load />
         <Footer />
       </div>
     </div>

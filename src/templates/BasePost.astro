@@ -13,15 +13,12 @@ export interface Props {
 
 const { content } = Astro.props as Props;
 const title = `${content.title}`;
-
 ---
 
-<Base
-  head={{ title, description: content.description, ogType: 'article' }}
->
+<Base head={{ title, description: content.description, ogType: 'article' }}>
   <BlogPost frontmatter={content}>
     <slot />
   </BlogPost>
 
-  <CTA />
+  <CTA client:load />
 </Base>

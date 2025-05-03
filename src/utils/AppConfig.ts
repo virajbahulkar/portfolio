@@ -1,5 +1,5 @@
 export const AppConfig = {
-  site_url: 'https://virajbahulkar.com',
+  site_url: 'https://virajbahulkar.me',
   site_name: 'Viraj Bahulkar',
   title: 'Viraj Bahulkar - Full Stack Web Developer',
   description:
@@ -9,6 +9,6 @@ export const AppConfig = {
   author: 'Viraj Bahulkar',
   locale_region: 'en-us',
   locale: 'en',
-  ogImage: 'https://virajbahulkar.com/profile-pic.png',
+  ogImage: 'https://virajbahulkar.me/profile-pic.png',
   twitter_handle: '',
 };
