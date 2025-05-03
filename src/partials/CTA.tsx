@@ -1,8 +1,5 @@
-import { Newsletter } from '@components/Newsletter';
-import { Section } from 'astro-boilerplate-components';
+import { ContactForm } from '@components/ContactForm';
 
-const CTA = () => (
-  <Newsletter />
-);
+const CTA = () => <ContactForm />;
 
 export { CTA };
