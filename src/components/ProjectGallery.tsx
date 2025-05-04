@@ -84,20 +84,18 @@ const ProjectGallery = ({
         <>
           {/* Year Filter Buttons */}
           <div className="mb-4 flex flex-wrap gap-1">
-            {years
-              .filter((year) => !RECENT_YEARS.includes(year))
-              .map((year) => (
-                <button
-                  key={year}
-                  className={`rounded-lg border   border-base-300 px-2 py-1 text-sm`}
-                  onClick={() => {
-                    setSelectedYear(year);
-                    setSelectedMonth(null);
-                  }}
-                >
-                  {year}
-                </button>
-              ))}
+            {years.map((year) => (
+              <button
+                key={year}
+                className={`rounded-lg border   border-base-300 px-2 py-1 text-sm`}
+                onClick={() => {
+                  setSelectedYear(year);
+                  setSelectedMonth(null);
+                }}
+              >
+                {year}
+              </button>
+            ))}
           </div>
 
           {/* Month Filter Buttons */}

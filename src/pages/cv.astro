@@ -1,5 +1,5 @@
 ---
-import SkillItem from '@components/SkillItem';
+import SkillsGrid from '@components/SkillsGrid';
 import TimeLine from '@components/Timeline';
 import { Footer } from '@partials/Footer';
 import Base from '@templates/Base.astro';
@@ -68,7 +68,7 @@ const url = `${AppConfig.site_url}/cv/`;
         >
           <ul class="list-disc space-y-1 pl-5">
             <li>
-              Worked Finance Group's app, streamlining registration/tracking
+              Worked on Finance Group's app, streamlining registration/tracking
               processes for improved efficiency.
             </li>
             <li>
@@ -90,6 +90,10 @@ const url = `${AppConfig.site_url}/cv/`;
             <li>
               Built single-page applications using ReactJS, NodeJS, version
               control, and code-base management tools.
+            </li>
+            <li>
+              Learned, explored, and implemented DevOps concepts to streamline
+              development workflows and improve deployment efficiency.
             </li>
             <li>
               Ensured 100% on-time delivery and adherence to project lifecycle
@@ -246,27 +250,7 @@ const url = `${AppConfig.site_url}/cv/`;
 
     <div class="mb-12">
       <h2 class="mb-6 text-3xl font-bold">Skills</h2>
-      <div class="grid grid-cols-2 gap-6 md:grid-cols-5">
-        <SkillItem title="ReactJS" icon="react-original" />
-        <SkillItem title="NodeJS" icon="nodejs-plain" />
-        <SkillItem title="ExpressJS" icon="express-original" />
-        <SkillItem title="MongoDB" icon="mongodb-plain" />
-        <SkillItem title="PostgreSQL" icon="postgresql-plain" />
-        <SkillItem title="TypeScript" icon="typescript-plain" />
-        <SkillItem title="NextJS" icon="nextjs-plain" />
-        <SkillItem title="Docker" icon="docker-plain" />
-        <SkillItem title="Kubernetes" icon="kubernetes-plain" />
-        <SkillItem title="AWS" icon="amazonwebservices-original" />
-        <SkillItem title="Git" icon="git-original" />
-        <SkillItem title="JavaScript" icon="javascript-plain" />
-        <SkillItem title="HTML" icon="html5-plain" />
-        <SkillItem title="CSS" icon="css3-plain" />
-        <SkillItem title="SASS" icon="sass-original" />
-        <SkillItem title="Azure DevOps" icon="azure-original" />
-        <SkillItem title="Gulp" icon="gulp-plain" />
-        <SkillItem title="Grunt" icon="grunt-plain" />
-        <SkillItem title="Webpack" icon="webpack-plain" />
-      </div>
+      <SkillsGrid />
     </div>
   </Section>
   <Footer />
