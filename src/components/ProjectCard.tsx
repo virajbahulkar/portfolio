@@ -16,7 +16,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     <div
       key={project.data.link}
       className={`grid ${
-        project.data.imgSrc ? 'md:grid-cols-[120px_1fr]' : 'md:grid-cols-1'
+        project.data.imgSrc ? 'xl:grid-cols-[120px_1fr]' : 'xl:grid-cols-1'
       }
                   items-start gap-6   p-4 transition-all duration-300 `}
     >
