@@ -11,9 +11,12 @@ const ContactForm = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    setLoading(true);
+    setLoading(true); // show loading
 
     try {
+      // Simulate network delay
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       const res = await fetch('/.netlify/functions/sendFormEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -32,7 +35,7 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Submission error:', error);
     } finally {
-      setLoading(false);
+      setLoading(false); // hide loading
     }
   };
 
