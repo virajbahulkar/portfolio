@@ -10,7 +10,7 @@ const SectionHeader = ({
     className={`flex items-center justify-between ${extraClasses} w-full flex-wrap gap-4`}
   >
     {/* Title Section */}
-    <div className="flex w-full items-center gap-3 lg:w-auto">
+    <div className="flex items-center gap-3 lg:w-auto">
       <h2
         className={`${size} dark: relative flex items-center gap-2 font-bold`}
       >
@@ -23,10 +23,10 @@ const SectionHeader = ({
 
     {/* Link Button */}
     {link && (
-      <div className="w-full lg:w-auto">
+      <div className="lg:w-auto">
         <a
           href={link}
-          className="block max-w-xs break-words rounded-full bg-cyan-600 px-4 py-2 text-center text-white shadow-lg transition-transform duration-300 hover:bg-cyan-700 lg:max-w-none"
+          className="block max-w-xs break-words rounded-full bg-cyan-600 px-4 py-2 text-center text-sm text-white shadow-lg transition-transform duration-300 hover:bg-cyan-700 lg:max-w-none"
         >
           {linkText} →
         </a>
