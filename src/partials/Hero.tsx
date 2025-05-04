@@ -10,66 +10,76 @@ interface Heading {
   class?: string;
 }
 
+interface DescriptionItem {
+  type?: string;
+  text: string;
+  class?: string;
+}
+
 interface HeroProps {
   phrases: Phrase[];
   intervaltime?: number;
-  description: any;
+  description: DescriptionItem[] | string;
   heading?: string | Heading;
   children: any;
 }
 
 const Hero: React.FC<HeroProps> = ({
   heading = '',
-  phrases = [],
+  phrases,
   description,
   intervaltime = 5000,
   children,
 }) => {
+  const safePhrases = phrases ?? [];
   const [currentPhrase, setCurrentPhrase] = useState(0);
-  const title = heading?.text ?? heading;
+
+  const title = typeof heading === 'string' ? heading : heading?.text ?? '';
+  const headingClass =
+    typeof heading === 'object' && heading?.class ? heading.class : 'text-3xl';
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentPhrase((prevPhrase) => (prevPhrase + 1) % phrases.length);
-    }, intervaltime); // Change phrase every 5 seconds
+      setCurrentPhrase((prevPhrase) => (prevPhrase + 1) % safePhrases.length);
+    }, intervaltime);
 
     return () => clearInterval(interval);
-  }, [phrases, intervaltime]);
+  }, [safePhrases, intervaltime]);
 
   return (
     <div className="h-full">
-      <h1 className={`${heading?.class ?? 'text-3xl'} font-bold`}>
+      <h1 className={`${headingClass} font-bold`}>
         {title}
-        {title && Array.isArray(phrases) ? (
+        {title && Array.isArray(safePhrases) ? (
           <>
             {' '}
             <span
-              className={`bg-gradient-to-r text-transparent ${phrases[currentPhrase]?.gradient} bg-clip-text`}
+              className={`bg-gradient-to-r text-transparent ${safePhrases[currentPhrase]?.gradient} bg-clip-text`}
             >
-              <span className="">{phrases[currentPhrase]?.text}</span>
+              <span>{safePhrases[currentPhrase]?.text}</span>
             </span>
-            {phrases[currentPhrase]?.text === 'Viraj Bahulkar' ? (
+            {safePhrases[currentPhrase]?.text === 'Viraj Bahulkar' ? (
               <span className="wave">👋</span>
-            ) : (
-              <></>
-            )}
+            ) : null}
           </>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </h1>
       <p className="mt-6 text-xl leading-9">
         {Array.isArray(description) ? (
-          <ul className="list-inside list-disc space-y-2  leading-relaxed marker:text-blue-500">
-            {description.map((desc) => {
+          <ul className="list-inside list-disc space-y-2 leading-relaxed marker:text-blue-500">
+            {description.map((desc, index) => {
               if (desc.type === 'quote') {
                 return (
-                  <li className="list-none">
+                  <li key={index} className="list-none">
                     <blockquote className={desc.class}>{desc.text}</blockquote>
                   </li>
                 );
               }
-              return <li className={desc.class}>{desc.text}</li>;
+              return (
+                <li key={index} className={desc.class}>
+                  {desc.text}
+                </li>
+              );
             })}
           </ul>
         ) : (

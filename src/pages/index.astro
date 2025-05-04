@@ -32,13 +32,13 @@ const { title, description, ogImage } = AppConfig;
 <!-- Base -->
 <Base head={{ title, description, ogImage }}>
   <div
-    class="md:grid md:h-screen md:grid-cols-5 md:grid-rows-[auto,1fr,auto] md:gap-10"
+    class="grid grid-cols-1 gap-10 lg:h-screen lg:grid-cols-5 lg:grid-rows-[auto,1fr,auto]"
   >
-    <!-- 1st Column  -->
-    <div class="col-span-3 flex h-full flex-col justify-between">
+    <!-- Left Column -->
+    <div class="flex flex-col justify-between lg:col-span-3">
       <div>
-        <div class="flex  items-center justify-center overflow-auto  p-6">
-          {/* Left Upper Quadrant: Hero */}
+        <!-- Hero Section -->
+        <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
           <Hero
             client:load
             heading="Hi there, I'm"
@@ -63,80 +63,79 @@ const { title, description, ogImage } = AppConfig;
             description="Full-Stack Developer with 7+ years of experience in building scalable web applications. Passionate about coding, problem-solving, and creating seamless user experiences. Specialized in ReactJS for dynamic front-end development and NodeJS for secure, optimized back-end solutions. Skilled in integrating front-end frameworks with RESTful APIs, developing microfrontends and microservices, managing databases, and deploying applications to the cloud."
           />
         </div>
-        <div class="flex  items-center justify-center overflow-auto  p-6 ">
-          {/* Left Upper Quadrant: Hero */}
+
+        <!-- Career Section -->
+        <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
           <Hero
             client:load
             heading={{ text: 'My career', class: 'text-2xl' }}
-            description="So far, the journey has been about building innovative applications, enhancing web experiences and delivering solutions that make business thrive"
+            description="So far, the journey has been about building innovative applications, enhancing web experiences and delivering solutions that make business thrive."
           />
         </div>
-        <div class="flex  overflow-auto  p-6 ">
-          {/* Left Upper Quadrant: Hero */}
+
+        <!-- Things I love Section -->
+        <div class="flex overflow-auto p-6">
           <Hero
             client:load
             heading={{ text: 'Things I love to do', class: 'text-2xl' }}
             description={[
               {
                 text: 'Continuously experimenting with new frameworks, tools, and libraries to enhance my skills.',
-                class: '',
               },
               {
                 text: 'Keeping myself updated with industry trends, insights, and expert discussions.',
-                class: '',
               },
               {
                 text: 'Sharing my learnings, thoughts, and technical insights through writing.',
-                class: '',
               },
               {
                 text: 'Discovering new places, embracing nature, and drawing inspiration from different experiences.',
-                class: '',
               },
             ]}
           />
         </div>
-        <div class="flex  overflow-auto  p-6 ">
-          {/* Left Upper Quadrant: Hero */}
+
+        <!-- Motivation Section -->
+        <div class="flex overflow-auto p-6">
           <Hero
             client:load
             heading={{ text: 'My motivation', class: 'text-2xl' }}
             description={[
               {
-                text: 'Every line of code you write is a step closer to turning imagination into reality. Keep building, keep evolving',
+                text: 'Every line of code you write is a step closer...',
                 type: 'quote',
-                class: 'border-l-4 border-blue-500 pl-4 italic  text-lg my-4',
+                class: 'border-l-4 border-blue-500 pl-4 italic text-lg my-4',
               },
             ]}
           />
         </div>
       </div>
-      <!-- This should stick to the bottom -->
-      <div class="hidden flex-col  overflow-auto p-6 lg:flex ">
+
+      <!-- CTA and Footer (desktop) -->
+      <div class="hidden flex-col overflow-auto p-6 lg:flex">
         <CTA client:load />
         <Footer />
       </div>
     </div>
-    <!-- 2nd Column  -->
-    <div class="col-span-2">
+
+    <!-- Right Column -->
+    <div class="lg:col-span-2">
       <div
-        class="bg-regal-blue flex items-center justify-center  overflow-auto p-6 "
+        class="bg-regal-blue flex items-center justify-center overflow-auto p-6"
       >
-        {/* Right Upper Quadrant: Recent Work */}
         <RecentProjects projectList={myProjects} />
       </div>
       <div
-        class="bg-to-sky-400 flex items-center justify-center  overflow-auto p-6 "
+        class="bg-to-sky-400 flex items-center justify-center overflow-auto p-6"
       >
-        {/* Left Lower Quadrant: Open Source Contributions */}
         <RecentOssProjects projectList={openSourceProjects} />
       </div>
-      <div class="flex items-center justify-center overflow-auto  p-6 ">
-        {/* Right Lower Quadrant: Blogs Link */}
+      <div class="flex items-center justify-center overflow-auto p-6">
         <RecentPosts postList={lastThreePosts} />
       </div>
-      <!-- This should stick to the bottom -->
-      <div class="flex-col overflow-auto  p-6 sm:flex lg:hidden">
+
+      <!-- CTA and Footer (mobile & tablet) -->
+      <div class="flex flex-col overflow-auto p-6 lg:hidden">
         <CTA client:load />
         <Footer />
       </div>
