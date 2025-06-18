@@ -17,7 +17,7 @@ import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 3);
+const lastThreePosts = sortedPosts.slice(0, 4);
 const allProjects = await getCollection('project');
 const openSourceProjects = sortByRunningOrder(
   allProjects.filter((project) => project.data.openSource)
