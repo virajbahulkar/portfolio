@@ -1,11 +1,11 @@
 ---
 // Imports
-import { CTA } from '@partials/CTA';
 import { Footer } from '@partials/Footer';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
+import CTA from 'sections/CTA.astro';
 
 export interface Props {
   project: CollectionEntry<'project'>;
@@ -69,6 +69,6 @@ const pageUrl = `${AppConfig.site_url}/projects/${project.slug}/`;
     <Content />
   </div>
 
-  <CTA client:load />
+  <CTA />
   <Footer />
 </Base>

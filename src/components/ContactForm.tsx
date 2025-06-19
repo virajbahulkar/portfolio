@@ -40,15 +40,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative mt-12 flex flex-col items-center justify-between gap-8 px-4 py-6 sm:flex-row sm:p-8">
+    <div className="d-flex flex-col">
       {showToast && (
         <div className="absolute right-4 top-4 z-50 rounded bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-opacity duration-300">
           Thank you! Your message has been sent.
         </div>
       )}
-
-      {/* Left */}
-      <div className="space-y-2 sm:w-1/2">
+      {/* Top */}
+      <div className="mb-4 space-y-2 ">
         <SectionHeader
           title=""
           highlightedText="Get in Touch"
@@ -60,11 +59,8 @@ const ContactForm = () => {
         </p>
       </div>
 
-      {/* Right (Form) */}
-      <form
-        onSubmit={handleSubmit}
-        className="flex w-full flex-col gap-4 sm:w-1/2"
-      >
+      {/* Bottom (Form) */}
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4 ">
         <input
           type="text"
           name="name"

@@ -1,0 +1,93 @@
+.socialSection {
+  text-align: left;
+  color: #fff;
+}
+
+.glitchTitle {
+  position: relative;
+  color: #0e0e0e;
+  animation: fadeInUp 1s ease-out;
+}
+
+.glitchTitle::before,
+.glitchTitle::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #00ffe1;
+  animation: glitch 2s infinite;
+  opacity: 0.6;
+}
+
+.glitchTitle::before {
+  top: -2px;
+  animation-delay: 0.2s;
+}
+
+.glitchTitle::after {
+  top: 2px;
+  animation-delay: 0.3s;
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(0 0 90% 0);
+  }
+  25% {
+    clip-path: inset(10% 0 75% 0);
+  }
+  50% {
+    clip-path: inset(30% 0 50% 0);
+  }
+  75% {
+    clip-path: inset(60% 0 20% 0);
+  }
+  100% {
+    clip-path: inset(0 0 90% 0);
+  }
+}
+
+.matrixGrid {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.matrixIcon {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.matrixIcon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px var(--pulse-color);
+}
+
+.matrixIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

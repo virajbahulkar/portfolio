@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import SocialSignalMatrix from './SocialSignalMatrix.tsx';
+
+const socials = await getCollection('social');
+const mapped = socials.map(({ data }) => data);
+---
+
+<SocialSignalMatrix socials={mapped} client:only="react" />

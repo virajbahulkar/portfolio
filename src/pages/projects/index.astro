@@ -1,12 +1,12 @@
 ---
 import { PaginationHeader } from '@components/PaginationHeader';
 import { ProjectGallery } from '@components/ProjectGallery';
-import { CTA } from '@partials/CTA';
 import { Footer } from '@partials/Footer';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortProjectsByDate } from '@utils/Posts';
 import { getCollection } from 'astro:content';
+import CTA from 'sections/CTA.astro';
 
 const allProjects = await getCollection('project');
 const sortedProjects = sortProjectsByDate(allProjects);
@@ -48,6 +48,6 @@ const url = `${AppConfig.site_url}/projects/`;
     </div>
   </div>
 
-  <CTA client:load />
+  <CTA />
   <Footer />
 </Base>

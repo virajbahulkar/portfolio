@@ -22,5 +22,14 @@ export const projectSchema = z.object({
   runningOrder: z.number(),
 });
 
+export const socialIconsSchema = z.object({
+  title: z.string(),
+  url: z.string().url(),
+  icon: z.string(),
+  signal: z.string(),
+  order: z.number(),
+});
+
 export type BlogFrontMatter = z.infer<typeof postSchema>;
 export type ProjectFrontMatter = z.infer<typeof projectSchema>;
+export type SocialIconsFrontMatter = z.infer<typeof socialIconsSchema>;
