@@ -18,6 +18,7 @@ export default defineConfig({
       alias: {
         '@components': '/src/components',
         '@pages': '/src/pages',
+        '@sections': '/src/sections',
       },
     },
   },
