@@ -13,7 +13,7 @@ import {
   sortProjectsByDate,
 } from '@utils/Posts';
 import { getCollection } from 'astro:content';
-import CTA from 'sections/CTA.astro';
+import CTA from '@sections/CTA.astro';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
@@ -137,7 +137,7 @@ const { title, description, ogImage } = AppConfig;
 
       <!-- CTA and Footer (mobile & tablet) -->
       <div class="flex flex-col overflow-auto p-6 lg:hidden">
-        <CTA client:load />
+        <CTA />
         <Footer />
       </div>
     </div>

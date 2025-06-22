@@ -2,7 +2,6 @@
 import { BlogPost } from '@partials/BlogPost';
 import Base from '@templates/Base.astro';
 import type { IFrontmatter } from 'astro-boilerplate-components';
-import CTA from 'sections/CTA.astro';
 
 interface BlogPostFrontmatter extends IFrontmatter {
   url: string;
@@ -19,6 +18,4 @@ const title = `${content.title}`;
   <BlogPost frontmatter={content}>
     <slot />
   </BlogPost>
-
-  <CTA client:load />
 </Base>

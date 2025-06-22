@@ -31,6 +31,7 @@
     "paths": {
       "@pages/*": ["pages/*"],
       "@partials/*": ["partials/*"],
+      "@sections/*": ["sections/*"],
       "@templates/*": ["templates/*"],
       "@images/*": ["images/*"],
       "@utils/*": ["utils/*"],
