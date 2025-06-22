@@ -7,7 +7,7 @@ import { AppConfig } from '@utils/AppConfig';
 import { sortPostByDate } from '@utils/Posts';
 import { getCollection } from 'astro:content';
 import { Section } from 'astro-boilerplate-components';
-import CTA from '@section/CTA.astro';
+import CTA from '@sections/CTA.astro';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
