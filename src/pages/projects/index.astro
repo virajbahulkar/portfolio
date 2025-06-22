@@ -6,7 +6,7 @@ import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortProjectsByDate } from '@utils/Posts';
 import { getCollection } from 'astro:content';
-import Contact from '@sections/contact.astro';
+import CTA from '@sections/CTA.astro'
 
 const allProjects = await getCollection('project');
 const sortedProjects = sortProjectsByDate(allProjects);
@@ -49,7 +49,7 @@ const url = `${AppConfig.site_url}/projects/`;
   </div>
 
   <div class="flex-col lg:grid lg:grid-cols-2 overflow-auto p-6 lg:flex">
-    <Contact />
+    <CTA />
   </div>
   <Footer />
 </Base>
