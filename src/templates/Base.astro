@@ -57,7 +57,6 @@ const {
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
-
     <script
       is:inline
       type="application/ld+json"
@@ -103,6 +102,192 @@ const {
       <slot />
     </div>
 
+    <!-- Custom jsPDF PDF export script -->
+    <script async src="/assets/js/jspdf.umd.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const btn = document.getElementById('download-pdf');
+        if (btn && window.jspdf) {
+          btn.addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
+            const pageHeight = doc.internal.pageSize.getHeight();
+            const marginBottom = 40;
+            function checkPageBreak(y) {
+              if (y > pageHeight - marginBottom) {
+                doc.addPage();
+                return 40; // Reset y to top margin for new page
+              }
+              return y;
+            }
+            let y = 40;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(22);
+            doc.text('Viraj Bahulkar - Resume', 40, y);
+            y += 30; y = checkPageBreak(y);
+            doc.setFontSize(16);
+            doc.text('Profile', 40, y);
+            y += 20; y = checkPageBreak(y);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Senior engineer with proven expertise in designing, architecting, and delivering scalable software solutions for global clients. Adept at leading engineering teams, mentoring developers, and collaborating with stakeholders to drive business outcomes. Proficient in ReactJS, NodeJS, Git, SASS, JavaScript, HTML, CSS, Azure DevOps, Docker, Kubernetes, AWS, and cloud-native development. Experienced in building high-performance React components, optimizing backend services, and implementing CI/CD pipelines. Strong hands-on experience with Node.js tools, cloud infrastructure, and DevOps practices. Committed to engineering excellence, clean code, and agile methodologies.', 40, y, { maxWidth: 500 });
+            y += 60; y = checkPageBreak(y);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            y += 30; y = checkPageBreak(y);
+            y += 30; y = checkPageBreak(y);
+            doc.text('Life', 40, y);
+            y += 20; y = checkPageBreak(y);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Born and raised in Pune, India, I developed a passion for technology and problem-solving from an early age. Navigating through various challenges, I embraced self-learning and freelancing, building practical skills in web development and cloud technologies. This journey of independent learning and hands-on experience laid a strong foundation for my professional growth and leadership in engineering.', 40, y, { maxWidth: 500 });
+            y += 60; y = checkPageBreak(y);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            y += 30; y = checkPageBreak(y);
+            doc.text('Education', 40, y);
+            y += 20; y = checkPageBreak(y);
+            doc.setFontSize(12);
+            doc.text('Bachelor of Science (B.Sc.) in Computer Science', 40, y);
+            y += 16; y = checkPageBreak(y);
+             doc.setFont('helvetica', 'normal');
+            doc.text('2011 to 2017 (Officially completed in 2014, delayed to 2017) - Trained as a freelancer during the gap.', 60, y, { maxWidth: 480 });
+            y += 16; y = checkPageBreak(y);
+            y += 16; y = checkPageBreak(y);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'bold');
+            doc.text('12th Grade (Higher Secondary Education)', 40, y);
+             y += 16; y = checkPageBreak(y);
+              doc.setFont('helvetica', 'normal');
+            doc.text('Completed in 2011', 60, y);
+            y += 16; y = checkPageBreak(y);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Secondary education', 40, y);
+            y += 16; y = checkPageBreak(y);
+             doc.setFont('helvetica', 'normal');
+            doc.text('Completed in 2009', 60, y);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            y += 30; y = checkPageBreak(y);
+            doc.text('Experience', 40, y);
+            // Helper to add wrapped text and handle page breaks
+            function addWrappedText(text, x, y, options = {}) {
+              const lines = doc.splitTextToSize(text, options.maxWidth || 480);
+              for (let i = 0; i < lines.length; i++) {
+                y += (options.lineHeight || 16);
+                y = checkPageBreak(y);
+                doc.text(lines[i], x, y);
+              }
+              return y;
+            }
+
+            // Cognizant
+            doc.setFontSize(13); doc.setFont('helvetica', 'bold');
+            y += 20; y = checkPageBreak(y);
+            doc.text('Senior Software Engineer at Cognizant Technology Solutions, India (Dec 2021 – Present)', 40, y, {maxWidth: 480});
+            doc.setFontSize(12); doc.setFont('helvetica', 'normal');
+            y += 20; y = checkPageBreak(y);
+            y = addWrappedText('- Worked on Finance Group\'s app, streamlining registration/tracking processes for improved efficiency.', 60, y, { maxWidth: 500 });
+            y = addWrappedText('- Architected modular, maintainable codebases and drove adoption of best practices in code reviews, CI/CD pipelines, and cloud deployments (AWS, Azure).', 60, y);
+            y = addWrappedText('- Mentored junior engineers, fostering a culture of continuous learning, technical excellence, and ownership.', 60, y);
+            y = addWrappedText('- Collaborated with product managers and stakeholders to translate business requirements into robust technical solutions, influencing strategic direction.', 60, y);
+            y = addWrappedText('- Implemented advanced monitoring, logging, and observability using cloud tools, reducing downtime and improving system reliability.', 60, y);
+            y = addWrappedText('- Championed DevOps initiatives, automating deployments and optimizing cloud infrastructure for cost and performance.', 60, y);
+            y = addWrappedText('- Modernized legacy codebases, transitioning monolithic services to microservices and serverless architectures.', 60, y);
+            y = addWrappedText('- Ensured 100% on-time delivery and adherence to agile project lifecycle methodology.', 60, y);
+            y = addWrappedText('- Proactively resolved issues, improving team productivity and stakeholder satisfaction.', 60, y);
+            y = addWrappedText('Technologies: ReactJS, NodeJS, REST APIs, JavaScript, TypeScript, AWS, Azure, Docker, Kubernetes, Git, CI/CD, Monitoring', 60, y);
+
+            // Saeloun
+            doc.setFontSize(13); doc.setFont('helvetica', 'bold');
+            y += 32; y = checkPageBreak(y);
+            doc.text('Senior Software Engineer at Saeloun Technologies Pvt. Ltd., India (Apr 2021 – Dec 2021)', 40, y, { maxWidth: 500 });
+            doc.setFontSize(12); doc.setFont('helvetica', 'normal');
+            y += 20; y = checkPageBreak(y);
+            y = addWrappedText('Project #1: ToolJet (Open Source Low-Code Platform)', 60, y);
+            y = addWrappedText('- Debugged client codes, reducing issues and improving reliability for enterprise customers.', 80, y);
+            y = addWrappedText('- Collaborated with experts, enhancing platform functionality and user satisfaction rates.', 80, y);
+            y = addWrappedText('- Improved user interfaces using ReactJS and optimized backend with NodeJS, leading to higher functionality and fewer crashes.', 80, y);
+            y = addWrappedText('- Contributed to cloud deployment strategies and infrastructure automation for open source projects.', 80, y);
+            y = addWrappedText('Project #2: WanderWhale (Travel Information Portal)', 60, y);
+            y = addWrappedText('- Optimized designs using ReactJS and backend performance with NodeJS techniques.', 80, y);
+            y = addWrappedText('- Collaborated with teams to resolve issues quickly, ensuring seamless delivery and enhanced user experience.', 80, y);
+            y = addWrappedText('- Implemented CI/CD pipelines and cloud hosting for improved scalability and reliability.', 80, y);
+            y = addWrappedText('Technologies: ReactJS, NodeJS, PostgreSQL, JavaScript, TypeScript, Git, SASS, AWS, Docker', 80, y);
+
+            // Autoflow
+            doc.setFontSize(13); doc.setFont('helvetica', 'bold');
+            y += 32; y = checkPageBreak(y);
+            doc.text('Technical Head / Senior Software Engineer / Software Developer at Autoflow Technologies Pvt. Ltd. (May 2017 – Apr 2021)', 40, y, {maxWidth: 480});
+            y += 20; y = checkPageBreak(y);
+            doc.setFontSize(12); doc.setFont('helvetica', 'normal');
+            y = addWrappedText('Project #1: Compass (Agent Portal App)', 60, y);
+            y = addWrappedText('- Built and architected applications showing business contributions, enhancing engagement and scalability.', 80, y);
+            y = addWrappedText('- Transformed data into actionable reports, promoting data-driven decisions for leadership.', 80, y);
+            y = addWrappedText('- Managed SDLC with NodeJS, ensuring 100% on-time delivery and improved productivity.', 80, y);
+            y = addWrappedText('Project #2: Digitizer App (No-Code Platform)', 60, y);
+            y = addWrappedText('- Developed the Digitizer App using ReactJS, NodeJS & Git, focusing on modularity and scalability.', 80, y);
+            y = addWrappedText('- Managed front-end and back-end functionalities, increasing user engagement and system robustness.', 80, y);
+            y = addWrappedText('- Created complex components (Timelines, Dynamic Tables, Complex Forms) to enhance app functionality.', 80, y);
+            y = addWrappedText('- Delivered high-quality work achieving client satisfaction and business impact.', 80, y);
+            y = addWrappedText('- Implemented cloud-based storage and serverless functions for improved performance.', 80, y);
+            y = addWrappedText('Project #3: Governance Framework (In-House Project)', 60, y);
+            y = addWrappedText('- Built a 360-degree organizational view application, enhancing collaboration and communication.', 80, y);
+            y = addWrappedText('- Implemented UI & REST API development using NodeJS for better interface and functionality.', 80, y);
+            y = addWrappedText('- Developed drag & drop, tree-level table features using ReactJS & NodeJS, increasing app engagement.', 80, y);
+            y = addWrappedText('Project #4: Vendor Management System', 60, y);
+            y = addWrappedText('- Managed SDLC, ensuring 100% on-time delivery and successful outcomes.', 80, y);
+            y = addWrappedText('- Automated vendor registration using ReactJS, NodeJS, Git, HTML, CSS & JavaScript, reducing processing time and increasing accuracy.', 80, y);
+            y = addWrappedText('- Established an approval/rejection system, enhancing efficiency and minimizing errors.', 80, y);
+            y = addWrappedText('- Architected cloud-based workflows for scalability and security.', 80, y);
+            y = addWrappedText('Project #5: HR 360 Feedback Portal', 60, y);
+            y = addWrappedText('- Implemented a digital feedback system using ReactJS, NodeJS, Git, HTML, CSS & JavaScript, replacing paper-based methods.', 80, y);
+            y = addWrappedText('- Deployed a new feedback mechanism for quicker feedback processing, improving appraisal efficiency.', 80, y);
+            y = addWrappedText('- Set up an admin panel generating chart-based reports, empowering data-driven decisions.', 80, y);
+            y = addWrappedText('- Integrated cloud analytics and reporting for leadership insights.', 80, y);
+            y = addWrappedText('Technologies: ReactJS, NodeJS, ExpressJS, Docker, MongoDB, PostgreSQL, JavaScript, Git, HTML, CSS, AWS, Azure', 80, y);
+
+            // Freelancing
+            doc.setFontSize(13); doc.setFont('helvetica', 'bold');
+            y += 32; y = checkPageBreak(y);
+            doc.text('Freelancing & Skill Development (2014 - 2017)', 40, y);
+            doc.setFontSize(12); doc.setFont('helvetica', 'normal');
+            y = addWrappedText('- Worked as a freelancer, developing skills in various web and cloud technologies, preparing for a professional career in software development and engineering leadership.', 60, y);
+
+            // Skills (dynamic from cv.astro structure)
+            const skills = [
+              { name: 'ReactJS', description: 'Building scalable, high-performance UIs and reusable components.' },
+              { name: 'NodeJS', description: 'Backend development, REST APIs, and server-side architecture.' },
+              { name: 'ExpressJS', description: 'Node.js web framework for RESTful APIs.' },
+              { name: 'TypeScript', description: 'Type-safe JavaScript for robust, maintainable codebases.' },
+              { name: 'HTML/CSS/SASS', description: 'Semantic markup, responsive layouts, and advanced styling.' },
+              { name: 'JavaScript', description: 'Core language for web development and dynamic applications.' },
+              { name: 'PostgreSQL/MongoDB', description: 'Relational and NoSQL database design and optimization.' },
+              { name: 'Docker/Kubernetes', description: 'Containerization, orchestration, and cloud-native deployments.' },
+              { name: 'AWS/Azure', description: 'Cloud infrastructure, DevOps, and scalable solutions.' },
+              { name: 'Git', description: 'Version control, branching strategies, and code collaboration.' },
+              { name: 'CI/CD', description: 'Automated build, test, and deployment pipelines.' },
+              { name: 'DevOps', description: 'Automation, monitoring, and infrastructure as code.' },
+              { name: 'Leadership/Mentoring', description: 'Guiding teams, code reviews, and technical growth.' }
+            ];
+            doc.setFontSize(16); doc.setFont('helvetica', 'bold');
+            y += 40; y = checkPageBreak(y);
+            doc.text('Skills', 40, y);
+            y += 20; y = checkPageBreak(y);
+            doc.setFontSize(12);
+            for (const skill of skills) {
+              doc.setFont('helvetica', 'bold');
+              doc.text(`• ${skill.name}`, 40, y);
+              doc.setFont('helvetica', 'normal');
+              y = addWrappedText(skill.description, 60, y, { maxWidth: 460 });
+              y += 20; y = checkPageBreak(y);
+            }
+            doc.save('Viraj_Bahulkar_CV.pdf');
+          });
+        }
+      });
+    </script>
     <script>
       const theme_selectors = document.querySelectorAll(
         '#theme-selector div[data-theme]'
@@ -152,5 +337,6 @@ const {
 
       gtag('config', 'G-EEN224QZ8C');
     </script>
+    
   </body>
 </html>
