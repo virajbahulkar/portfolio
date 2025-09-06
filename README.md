@@ -3,13 +3,16 @@
 This repository showcases my web development skills and my blogs. 💻✨
 
 
-
 ### 🛠️ Technologies used
 
 - 🔥 Astro with React
 - 🎨 Tailwind CSS with aspect ratio and typography plugin
 - 🎉 TypeScript
 - 🎨 daisyUI
+
+### Performance
+
+<img width="459" height="132" alt="Screenshot 2025-09-06 at 10 26 54 AM" src="https://github.com/user-attachments/assets/43be2549-64b7-4587-8af9-dfc0e54c4321" />
 
 
 ## 📬 Contact Me
