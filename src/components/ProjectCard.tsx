@@ -57,6 +57,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                 isExternalLink ? project.data.link : `/projects/${project.slug}`
               }
               target={isExternalLink ? '_blank' : ''}
+              title={project.data.title}
             >
               <div className="text-lg font-semibold">{project.data.title}</div>
             </a>
@@ -92,6 +93,7 @@ const ProjectCard = (props: ProjectCardProps) => {
             <a
               className="mt-2 text-blue-500 hover:underline focus:outline-none"
               href={`/projects/${project.slug}`}
+              title={`Read more about ${project.data.title}`}
             >
               {'Read More'}
             </a>
