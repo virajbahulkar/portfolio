@@ -16,6 +16,7 @@ const RecentOssProjects = (props: IRecentOssProjectProps) => {
           link="/projects/"
           linkText="View all Contributions"
           extraClasses=""
+          buttonBg="bg-cyan-800 hover:bg-cyan-700"
         />
 
       <div className="mt-6">

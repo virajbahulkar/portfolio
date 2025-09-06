@@ -62,14 +62,22 @@ const ProjectCard = (props: ProjectCardProps) => {
 
             <div className="flex flex-wrap gap-2">
               {categories.map((category: string, index) => {
-                const color =
-                  Object.values(ColorTags)[
-                    Math.floor(Math.random() * Object.values(ColorTags).length)
-                  ];
+                // Accessible color palette
+                const palette = [
+                  { bg: '#1e40af', color: '#fff' }, // blue
+                  { bg: '#047857', color: '#fff' }, // emerald
+                  { bg: '#be185d', color: '#fff' }, // pink
+                  { bg: '#f59e42', color: '#222' }, // orange
+                  { bg: '#7c3aed', color: '#fff' }, // violet
+                  { bg: '#f43f5e', color: '#fff' }, // rose
+                  { bg: '#059669', color: '#fff' }, // green
+                  { bg: '#eab308', color: '#222' }, // yellow
+                ];
+                const color = palette[index % palette.length];
                 return (
-                  <Tags key={index} color={color}>
+                  <span key={index} className="badge" style={{backgroundColor: color.bg, color: color.color}}>
                     {category}
-                  </Tags>
+                  </span>
                 );
               })}
             </div>

@@ -9,21 +9,9 @@ const Footer = () => (
       </div>
       <div className="flex flex-wrap justify-center space-x-1 text-center">
         <span>Crafted with precision using</span>
-        <a
-          href="https://astro.build"
-          className="text-blue-500 hover:underline"
-          target="_blank"
-        >
-          AstroJS 🚀
-        </a>
+    <a href="https://astro.build/" className="text-primary font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-blue-700 px-3 py-0 rounded transition-colors duration-150" target="_blank" rel="noopener noreferrer" aria-label="AstroJS website">AstroJS</a>
         <span>and deployed seamlessly on</span>
-        <a
-          href="https://www.netlify.com/"
-          className="text-blue-500 hover:underline"
-          target="_blank"
-        >
-          Netlify 🌐
-        </a>
+    <a href="https://www.netlify.com/" className="text-primary font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-blue-700 px-3 py-0 rounded transition-colors duration-150" target="_blank" rel="noopener noreferrer" aria-label="Netlify website">Netlify</a>
         .
       </div>
     </div>

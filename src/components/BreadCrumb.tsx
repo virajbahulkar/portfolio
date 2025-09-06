@@ -6,7 +6,7 @@ const BreadCrumb = ({ path }) => {
       <ol className="flex space-x-2">
         {/* Home Icon */}
         <li>
-          <a href="/" className="flex items-center hover:text-blue-500">
+          <a href="/" className="flex items-center hover:text-blue-500" title="Home">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" class="bi bi-house-fill">
               <defs>
                 <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">

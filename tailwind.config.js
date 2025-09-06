@@ -16,8 +16,47 @@ module.exports = {
   ],
 
   daisyui: {
-    themes: true, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: 'dark', // name of one of the included themes for dark mode
-    logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
+    themes: [
+      {
+        light: {
+          ...require('daisyui/src/theming/themes')['[data-theme=light]'],
+          'primary': '#2563eb',
+          'secondary': '#7d308fff',
+          'accent': '#f59e42',
+        },
+        dark: {
+          ...require('daisyui/src/theming/themes')['[data-theme=dark]'],
+          'primary': '#0ea5e9',
+          'secondary': '#7d308fff',
+          'accent': '#f59e42',
+        },
+        cupcake: {
+          ...require('daisyui/src/theming/themes')['[data-theme=cupcake]'],
+          'primary': '#2563eb',
+          'secondary': '#7d308fff',
+          'accent': '#f6c1c1',
+        },
+        synthwave: {
+          ...require('daisyui/src/theming/themes')['[data-theme=synthwave]'],
+          'primary': '#e779c1',
+          'secondary': '#58c7f3',
+          'accent': '#f3cc30',
+        },
+        retro: {
+          ...require('daisyui/src/theming/themes')['[data-theme=retro]'],
+          'primary': '#2563eb',
+          'secondary': '#7d308fff',
+          'accent': '#ebdc99',
+        },
+        cyberpunk: {
+          ...require('daisyui/src/theming/themes')['[data-theme=cyberpunk]'],
+          'primary': '#FF9900',
+          'secondary': '#00FFF7',
+          'accent': '#F000B8',
+        },
+      },
+    ],
+    darkTheme: 'dark',
+    logs: false,
   },
 };
