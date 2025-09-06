@@ -28,6 +28,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               isExternalLink ? project.data.link : `/projects/${project.slug}`
             }
             className="size-full"
+            title={project.data.title}
           >
             <div className="relative size-full">
               {project.data.openSource && (
