@@ -1,290 +1,80 @@
 ---
-import SkillsGrid from '@components/SkillsGrid';
-import TimeLine from '@components/Timeline';
-import { Footer } from '@partials/Footer';
+import { profile, education, experience, skills } from '@content/cvData.js';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
+import { Footer } from '@partials/Footer';
 import { Section } from 'astro-boilerplate-components';
+import TimeLine from '@components/Timeline';
+import SkillsGrid from '@components/SkillsGrid';
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const title = `Resume${titleSuffix}`;
-const description =
-  'Experienced and passionate senior engineer skilled in full-stack web development, cloud architecture, and technical leadership. Proficient in ReactJS, NodeJS, Docker, Kubernetes, Azure DevOps, AWS, and more. Highly skilled in designing scalable solutions, mentoring teams, and driving engineering excellence in top companies.';
+const description = profile.summary;
 const url = `${AppConfig.site_url}/cv/`;
 ---
 
 <Base head={{ title, description, url }}>
   <Section>
-    <div class="flex justify-end mb-4">
-      <button
-        id="download-pdf"
-        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Download PDF
-      </button>
-    </div>
-    <div id="cv-content">
-      <div class="mb-12">
-        <h1 class="mb-6 text-3xl font-extrabold no-break">Profile</h1>
-        <p class="text-lg leading-relaxed">
-          Senior engineer with proven expertise in designing, architecting, and
-          delivering scalable software solutions for global clients. Adept at leading
-          engineering teams, mentoring developers, and collaborating with
-          stakeholders to drive business outcomes. Proficient in ReactJS, NodeJS,
-          Git, SASS, JavaScript, HTML, CSS, Azure DevOps, Docker, Kubernetes, AWS,
-          and cloud-native development. Experienced in building high-performance
-          React components, optimizing backend services, and implementing CI/CD
-          pipelines. Strong hands-on experience with Node.js tools, cloud
-          infrastructure, and DevOps practices. Committed to engineering excellence,
-          clean code, and agile methodologies.
-        </p>
+    <div class="mb-12">
+      <div style="display:flex; align-items:center; justify-content:space-between;">
+        <span class="mb-6 text-3xl font-extrabold no-break">Profile</span>
+        <button id="download-pdf" title="Download CV" style="background:transparent; border:none; padding:6px 10px; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#111" viewBox="0 0 16 16" style="display:block; font-weight:bold;">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" style="stroke:#111; stroke-width:2;"></path>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" style="stroke:#111; stroke-width:2;"></path>
+          </svg>
+        </button>
       </div>
-
-      <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold " >Life</h2>
-        <div class="space-y-6">
-          <TimeLine title="Born: Aug 1993" subtitle="">
-            Born and raised in Pune, India, I developed a passion for technology
-            and problem-solving from an early age. Navigating through various
-            challenges, I embraced self-learning and freelancing, building
-            practical skills in web development and cloud technologies. This journey
-            of independent learning and hands-on experience laid a strong foundation
-            for my professional growth and leadership in engineering.
-          </TimeLine>
+      <div id="cv-content">
+        <div class="mb-12">
+          <p class="text-lg leading-relaxed">{profile.summary}</p>
         </div>
-      </div>
-
-      <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold">Education</h2>
-        <div class="space-y-6">
-          <TimeLine
-            title="Bachelor of Science (B.Sc.) in Computer Science"
-            subtitle="2011 to 2017 (Officially completed in 2014, delayed to 2017) - Trained as a freelancer during the gap."
-          />
-          <TimeLine
-            title="12th Grade (Higher Secondary Education)"
-            subtitle="Completed in 2011"
-          />
-          <TimeLine title="10th Grade" subtitle="Completed in 2009" />
+        <div class="mb-12">
+          <h2 class="mb-6 text-3xl font-bold">Life</h2>
+          <div class="space-y-6">
+            <TimeLine title="Born: Aug 1993" subtitle="">
+              {profile.life}
+            </TimeLine>
+          </div>
         </div>
-      </div>
-
-      <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold ">Experience</h2>
-        <div class="space-y-6">
-          <TimeLine
-            title="Senior Software Engineer at Cognizant Technology Solutions, India"
-            subtitle="December 2021 – Present"
-          >
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Worked on Finance Group's app, streamlining registration/tracking
-                processes for improved efficiency.
-              </li>
-              <li>
-                Architected modular, maintainable codebases and drove adoption of
-                best practices in code reviews, CI/CD pipelines, and cloud
-                deployments (AWS, Azure).
-              </li>
-              <li>
-                Mentored junior engineers, fostering a culture of continuous
-                learning, technical excellence, and ownership.
-              </li>
-              <li>
-                Collaborated with product managers and stakeholders to translate
-                business requirements into robust technical solutions, influencing
-                strategic direction.
-              </li>
-              <li>
-                Implemented advanced monitoring, logging, and observability using
-                cloud tools, reducing downtime and improving system reliability.
-              </li>
-              <li>
-                Championed DevOps initiatives, automating deployments and optimizing
-                cloud infrastructure for cost and performance.
-              </li>
-              <li>
-                Modernized legacy codebases, transitioning monolithic services to
-                microservices and serverless architectures.
-              </li>
-              <li>
-                Ensured 100% on-time delivery and adherence to agile project
-                lifecycle methodology.
-              </li>
-              <li>
-                Proactively resolved issues, improving team productivity and
-                stakeholder satisfaction.
-              </li>
-            </ul>
-            <p>
-              <strong>Technologies:</strong> ReactJS, NodeJS, REST APIs,
-              JavaScript, TypeScript, AWS, Azure, Docker, Kubernetes, Git, CI/CD,
-              Monitoring
-            </p>
-          </TimeLine>
-
-          <TimeLine
-            title="Senior Software Engineer at Saeloun Technologies Pvt. Ltd., India"
-            subtitle="April 2021 – December 2021 (8 months)"
-          >
-            <strong>Project #1: ToolJet (Open Source Low-Code Platform)</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Debugged client codes, reducing issues and improving reliability
-                for enterprise customers.
-              </li>
-              <li>
-                Collaborated with experts, enhancing platform functionality and
-                user satisfaction rates.
-              </li>
-              <li>
-                Improved user interfaces using ReactJS and optimized backend with
-                NodeJS, leading to higher functionality and fewer crashes.
-              </li>
-              <li>
-                Contributed to cloud deployment strategies and infrastructure
-                automation for open source projects.
-              </li>
-            </ul>
-
-            <strong>Project #2: WanderWhale (Travel Information Portal)</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Optimized designs using ReactJS and backend performance with
-                NodeJS techniques.
-              </li>
-              <li>
-                Collaborated with teams to resolve issues quickly, ensuring
-                seamless delivery and enhanced user experience.
-              </li>
-              <li>
-                Implemented CI/CD pipelines and cloud hosting for improved
-                scalability and reliability.
-              </li>
-            </ul>
-            <p>
-              <strong>Technologies:</strong> ReactJS, NodeJS, PostgreSQL,
-              JavaScript, TypeScript, Git, SASS, AWS, Docker
-            </p>
-          </TimeLine>
-
-          <TimeLine
-            title="Technical Head / Senior Software Engineer / Software Developer at Autoflow Technologies Pvt. Ltd."
-            subtitle="May 2017 – April 2021 (4 years)"
-          >
-            <strong>Project #1: Compass (Agent Portal App)</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Built and architected applications showing business contributions,
-                enhancing engagement and scalability.
-              </li>
-              <li>
-                Transformed data into actionable reports, promoting data-driven
-                decisions for leadership.
-              </li>
-              <li>
-                Managed SDLC with NodeJS, ensuring 100% on-time delivery and
-                improved productivity.
-              </li>
-            </ul>
-
-            <strong>Project #2: Digitizer App (No-Code Platform)</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Developed the Digitizer App using ReactJS, NodeJS & Git, focusing
-                on modularity and scalability.
-              </li>
-              <li>
-                Managed front-end and back-end functionalities, increasing user
-                engagement and system robustness.
-              </li>
-              <li>
-                Created complex components (Timelines, Dynamic Tables, Complex
-                Forms) to enhance app functionality.
-              </li>
-              <li>
-                Delivered high-quality work achieving client satisfaction and
-                business impact.
-              </li>
-              <li>
-                Implemented cloud-based storage and serverless functions for
-                improved performance.
-              </li>
-            </ul>
-
-            <strong>Project #3: Governance Framework (In-House Project)</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Built a 360-degree organizational view application, enhancing
-                collaboration and communication.
-              </li>
-              <li>
-                Implemented UI & REST API development using NodeJS for better
-                interface and functionality.
-              </li>
-              <li>
-                Developed drag & drop, tree-level table features using ReactJS &
-                NodeJS, increasing app engagement.
-              </li>
-            </ul>
-
-            <strong>Project #4: Vendor Management System</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Managed SDLC, ensuring 100% on-time delivery and successful
-                outcomes.
-              </li>
-              <li>
-                Automated vendor registration using ReactJS, NodeJS, Git, HTML,
-                CSS & JavaScript, reducing processing time and increasing
-                accuracy.
-              </li>
-              <li>
-                Established an approval/rejection system, enhancing efficiency and
-                minimizing errors.
-              </li>
-              <li>
-                Architected cloud-based workflows for scalability and security.
-              </li>
-            </ul>
-
-            <strong>Project #5: HR 360 Feedback Portal</strong>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>
-                Implemented a digital feedback system using ReactJS, NodeJS, Git,
-                HTML, CSS & JavaScript, replacing paper-based methods.
-              </li>
-              <li>
-                Deployed a new feedback mechanism for quicker feedback processing,
-                improving appraisal efficiency.
-              </li>
-              <li>
-                Set up an admin panel generating chart-based reports, empowering
-                data-driven decisions.
-              </li>
-              <li>
-                Integrated cloud analytics and reporting for leadership insights.
-              </li>
-            </ul>
-            <p>
-              <strong>Technologies:</strong> ReactJS, NodeJS, ExpressJS, Docker,
-              MongoDB, PostgreSQL, JavaScript, Git, HTML, CSS, AWS, Azure
-            </p>
-          </TimeLine>
-          <TimeLine
-            title="Freelancing & Skill Development"
-            subtitle="2014 - 2017"
-          >
-            Worked as a freelancer, developing skills in various web and cloud
-            technologies, preparing for a professional career in software
-            development and engineering leadership.
-          </TimeLine>
+        <div class="mb-12">
+          <h2 class="mb-6 text-3xl font-bold">Education</h2>
+          <div class="space-y-6">
+            {education.map(edu => (
+              <TimeLine title={edu.title} subtitle={edu.subtitle} />
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold">Skills</h2>
-        <SkillsGrid />
+        <div class="mb-12">
+          <h2 class="mb-6 text-3xl font-bold">Experience</h2>
+          <div class="space-y-6">
+            {experience.map(exp => (
+              <TimeLine title={exp.title} subtitle={exp.technologies} start={exp.start} end={exp.end}>
+                {exp.projects && exp.projects.map(proj => (
+                  <div>
+                    <strong>{proj.name}</strong>
+                    <ul class="list-disc space-y-1 pl-5">
+                      {proj.bullets.map(bullet => (
+                        <li>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+                {exp.bullets && (
+                  <ul class="list-disc space-y-1 pl-5">
+                    {exp.bullets.map(bullet => (
+                      <li>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+              </TimeLine>
+            ))}
+          </div>
+        </div>
+        <div class="mb-12">
+          <h2 class="mb-6 text-3xl font-bold">Skills</h2>
+          <SkillsGrid />
+        </div>
       </div>
     </div>
   </Section>

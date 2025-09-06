@@ -19,6 +19,7 @@ export default defineConfig({
         '@components': '/src/components',
         '@pages': '/src/pages',
         '@sections': '/src/sections',
+        '@content': '/src/content',
       },
     },
   },
