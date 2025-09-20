@@ -103,60 +103,7 @@ const {
        <slot />
     </div>
 
-    <!-- Refactored PDF export using generateCvPdf utility (CDN jsPDF) -->
-    <script async src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-    <script type="module" define:vars={{ profile, education, experience, skills }}>
-      function isMobile() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      }
-      async function waitForJsPdf(maxMs = 4000) {
-        const start = performance.now();
-        while (!window.jspdf) {
-          if (performance.now() - start > maxMs) throw new Error('jsPDF load timeout');
-          await new Promise(r => setTimeout(r, 100));
-        }
-        return window.jspdf.jsPDF;
-      }
-      async function ensureUtil() {
-        return import('/src/utils/generateCvPdf');
-      }
-      async function generate() {
-        const btn = document.getElementById('download-pdf');
-        const errorSpan = document.getElementById('pdf-error');
-        try {
-          const jsPDF = await waitForJsPdf();
-          const { generateCvPdf } = await ensureUtil();
-          const doc = generateCvPdf(jsPDF, { profile, education, experience, skills });
-          if (isMobile()) {
-            const blob = doc.output('blob');
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url; a.download = 'Viraj_Bahulkar_CV.pdf';
-            document.body.appendChild(a); a.click();
-            setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 120);
-          } else {
-            doc.save('Viraj_Bahulkar_CV.pdf');
-          }
-        } catch (e) {
-          console.error('PDF generation error', e);
-          if (errorSpan) {
-            errorSpan.textContent = 'PDF generation failed. Please refresh and try again.';
-            errorSpan.style.display = 'inline';
-          }
-        } finally {
-          if (btn) btn.disabled = false;
-        }
-      }
-      document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('download-pdf');
-        if (btn) {
-          btn.disabled = false;
-          btn.addEventListener('click', () => {
-            btn.disabled = true; generate();
-          });
-        }
-      });
-    </script>
+    <!-- PDF script removed; handled by PdfDownloader React component -->
     <script>
       const theme_selectors = document.querySelectorAll(
         '#theme-selector div[data-theme]'

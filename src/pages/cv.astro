@@ -1,6 +1,7 @@
 ---
 import { profile, education, experience, skills } from '@content/cvData';
 import Base from '@templates/Base.astro';
+import PdfDownloader from '@components/PdfDownloader';
 import { AppConfig } from '@utils/AppConfig';
 import { Footer } from '@partials/Footer';
 import { Section } from 'astro-boilerplate-components';
@@ -15,6 +16,7 @@ const url = `${AppConfig.site_url}/cv/`;
 
 <Base head={{ title, description, url }}>
   <Section>
+    <PdfDownloader client:load data={{ profile, education, experience, skills }} />
     <div class="mb-12">
       <div style="display:flex; align-items:center; justify-content:space-between;">
         <span class="mb-6 text-3xl font-extrabold no-break">Profile</span>

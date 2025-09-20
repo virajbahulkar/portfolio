@@ -1,33 +1,36 @@
-version: '3.8'
-
 networks:
   app-network:
     driver: bridge
 
 services:
   astro:
-    build: .
+    build:
+      context: .
+      target: deps
     container_name: astro-app
     ports:
       - "3000:4321"
     volumes:
       - .:/app
       - node_modules_cache:/app/node_modules
+    entrypoint: ["sh", "/app/docker-entrypoint.sh"]
 
     networks:
       - app-network
     command: ["npm", "run", "dev", "--", "--host"]
 
-  nginx:
-    image: nginx:alpine
-    depends_on:
-      - astro
+  prod:
+    build: .
+    container_name: astro-prod
     ports:
-      - "80:80"
-    volumes:
-      - ./dist:/usr/share/nginx/html
+      - "8080:80"
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
 
 volumes:
   node_modules_cache:

@@ -1,32 +1,27 @@
 {
-  "name": "Viraj Bahulkar's Portfolio",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 2
-  },
+  "name": "Viraj Bahulkar Portfolio (Node 18)",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "astro",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "hostRequirements": { "cpus": 2 },
+  "forwardPorts": [4321],
   "portsAttributes": {
-    "3000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
-    }
+    "4321": { "label": "Astro Dev", "onAutoForward": "openBrowser" }
   },
-
-  "forwardPorts": [3000],
-
-  "postCreateCommand": "bun install",
-
-  "waitFor": "postCreateCommand",
-
-  "postAttachCommand": {
-    "Server": "bun dev"
-  },
-
+  "updateContentCommand": "if [ ! -d node_modules ]; then npm ci; fi",
+  "postCreateCommand": "npm run build-types || true",
   "customizations": {
-    "codespaces": {
-      "openFiles": ["src/pages/index.astro"]
-    },
+    "codespaces": { "openFiles": ["src/pages/index.astro"] },
     "vscode": {
-      "extensions": ["astro-build.astro-vscode", "esbenp.prettier-vscode"]
+      "extensions": [
+        "astro-build.astro-vscode",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss"
+      ]
     }
   }
 }
