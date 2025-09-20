@@ -28,7 +28,8 @@ Dev: http://localhost:3000  |  Prod: http://localhost:8080
 
 ### Performance
 
-<img width="459" height="132" alt="Screenshot 2025-09-06 at 10 26 54 AM" src="https://github.com/user-attachments/assets/43be2549-64b7-4587-8af9-dfc0e54c4321" />
+<img width="532" height="152" alt="Screenshot 2025-09-20 at 6 19 29 PM" src="https://github.com/user-attachments/assets/56126391-f210-47a4-b9a9-6ee0152a0a41" />
+
 
 
 ## 📬 Contact Me
