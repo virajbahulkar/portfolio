@@ -1,6 +1,6 @@
 ---
 import '@styles/custom.css';
-import { profile, education, experience, skills } from '@content/cvData.js';
+import { profile, education, experience, skills } from '@content/cvData';
 
 import BreadCrumb from '@components/BreadCrumb';
 import { Navbar } from '@partials/Navbar';
@@ -103,269 +103,56 @@ const {
        <slot />
     </div>
 
-    <!-- Custom jsPDF PDF export script -->
-    <script async src="/assets/js/jspdf.umd.min.js"></script>
-    <script async define:vars={{ profile, education, experience, skills } }>
-    console.log("profile", profile)
-    
-// etc.
-      document.addEventListener('DOMContentLoaded', function () {
+    <!-- Refactored PDF export using generateCvPdf utility (CDN jsPDF) -->
+    <script async src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script type="module" define:vars={{ profile, education, experience, skills }}>
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+      async function waitForJsPdf(maxMs = 4000) {
+        const start = performance.now();
+        while (!window.jspdf) {
+          if (performance.now() - start > maxMs) throw new Error('jsPDF load timeout');
+          await new Promise(r => setTimeout(r, 100));
+        }
+        return window.jspdf.jsPDF;
+      }
+      async function ensureUtil() {
+        return import('/src/utils/generateCvPdf');
+      }
+      async function generate() {
         const btn = document.getElementById('download-pdf');
         const errorSpan = document.getElementById('pdf-error');
-        function isMobile() {
-          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-        function triggerDownload(doc, filename) {
+        try {
+          const jsPDF = await waitForJsPdf();
+          const { generateCvPdf } = await ensureUtil();
+          const doc = generateCvPdf(jsPDF, { profile, education, experience, skills });
           if (isMobile()) {
-            try {
-              const blob = doc.output('blob');
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = url;
-              a.download = filename;
-              document.body.appendChild(a);
-              a.click();
-              setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-              }, 100);
-            } catch (e) {
-              if (errorSpan) {
-                errorSpan.textContent = 'PDF download failed. Please try a desktop browser.';
-                errorSpan.style.display = 'inline';
-              }
-            }
+            const blob = doc.output('blob');
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'Viraj_Bahulkar_CV.pdf';
+            document.body.appendChild(a); a.click();
+            setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 120);
           } else {
-            try {
-              doc.save(filename);
-            } catch (e) {
-              if (errorSpan) {
-                errorSpan.textContent = 'PDF download failed. Please refresh and try again.';
-                errorSpan.style.display = 'inline';
-              }
-            }
+            doc.save('Viraj_Bahulkar_CV.pdf');
           }
+        } catch (e) {
+          console.error('PDF generation error', e);
+          if (errorSpan) {
+            errorSpan.textContent = 'PDF generation failed. Please refresh and try again.';
+            errorSpan.style.display = 'inline';
+          }
+        } finally {
+          if (btn) btn.disabled = false;
         }
-       function enableButton() {
-          btn.disabled = false;
-          btn.style.opacity = '1';
-        }
-        function disableButton() {
-          btn.disabled = true;
-          btn.style.opacity = '0.5';
-        }
-        // Wait for jsPDF to load
-        if (!window.jspdf) {
-          disableButton();
-          let tries = 0;
-          const interval = setInterval(() => {
-            if (window.jspdf) {
-              enableButton();
-              clearInterval(interval);
-            } else if (++tries > 20) {
-              if (errorSpan) {
-                errorSpan.textContent = 'PDF feature failed to load. Please refresh.';
-                errorSpan.style.display = 'inline';
-              }
-              clearInterval(interval);
-            }
-          }, 200);
-        } else {
-          enableButton();
-        }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('download-pdf');
         if (btn) {
-          btn.addEventListener('click', function () {
-            if (!window.jspdf) {
-              if (errorSpan) {
-                errorSpan.textContent = 'PDF feature not loaded. Please refresh.';
-                errorSpan.style.display = 'inline';
-              }
-              return;
-            }
-            
-            try {
-              const { jsPDF } = window.jspdf;
-              const doc = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
-              const pageHeight = doc.internal.pageSize.getHeight();
-              const marginBottom = 40;
-              const lineHeight = 16;
-              function checkPageBreak(y) {
-                if (y > pageHeight - marginBottom) {
-                  doc.addPage();
-                  return 40; // Reset y to top margin for new page
-                }
-                return y;
-              }
-              let y = 40;
-              doc.setFont('helvetica', 'bold');
-              doc.setFontSize(22);
-              doc.text(`${profile?.name || ''} - Resume`, 40, y);
-              y += 30; y = checkPageBreak(y);
-              // Contact info below name
-              doc.setFontSize(11);
-              doc.setFont('helvetica', 'normal');
-              const contactLines = doc.splitTextToSize(`${profile?.contact || ''}`, 500);
-              doc.text(contactLines, 40, y, { maxWidth: 500 });
-              y += contactLines.length * 16; y = checkPageBreak(y);
-              y += 10; y = checkPageBreak(y);
-              doc.setFontSize(16);
-               doc.setFont('helvetica', 'bold');
-              doc.text('Profile', 40, y);
-              y += 20; y = checkPageBreak(y);
-              doc.setFontSize(12);
-              doc.setFont('helvetica', 'normal');
-                doc.text(`${profile?.summary || ''}`, 40, y, { maxWidth: 500 });
-              y += 10; y = checkPageBreak(y);
-              y += 60; y = checkPageBreak(y);
-              doc.setFontSize(16);
-              doc.setFont('helvetica', 'bold');
-              y += 30; y = checkPageBreak(y);
-              y += 30; y = checkPageBreak(y);
-              doc.text('Life', 40, y);
-              y += 20; y = checkPageBreak(y);
-              doc.setFontSize(12);
-              doc.setFont('helvetica', 'normal');
-                doc.text(`${profile?.life || ''}`, 40, y, { maxWidth: 500 });
-              y += 10; y = checkPageBreak(y);
-              y += 60; y = checkPageBreak(y);
-              doc.setFontSize(16);
-              doc.setFont('helvetica', 'bold');
-              y += 20; y = checkPageBreak(y);
-              doc.text('Education', 40, y);
-              y += 20; y = checkPageBreak(y);
-              doc.setFontSize(12);
-              // Education
-              for (let i = 0; i < (education || []).length; i++) {
-                const edu = education[i];
-                doc.setFont('helvetica', 'bold');
-                const eduTitleLines = doc.splitTextToSize(`${edu.title || ''}`, 480);
-                doc.text(eduTitleLines, 40, y);
-                y += eduTitleLines.length * lineHeight; y = checkPageBreak(y);
-                doc.setFont('helvetica', 'normal');
-                const eduSubtitleLines = doc.splitTextToSize(`${edu.subtitle || ''}`, 480);
-                doc.text(eduSubtitleLines, 60, y);
-                y += eduSubtitleLines.length * lineHeight; y = checkPageBreak(y);
-                // If last element, add extra spacing
-                if (i === education.length - 1) {
-                  y += 20; y = checkPageBreak(y);
-                }
-              }
-              doc.setFontSize(16);
-              doc.setFont('helvetica', 'bold');
-             
-              doc.text('Experience', 40, y);
-              // Helper to add wrapped text and handle page breaks
-              function addWrappedText(text, x, y, options = {}) {
-                const lines = doc.splitTextToSize(text, options.maxWidth || 480);
-                for (let i = 0; i < lines.length; i++) {
-                  y += (options.lineHeight || 16);
-                  y = checkPageBreak(y);
-                  doc.text(lines[i], x, y);
-                }
-                return y;
-              }
-
-              // Experience
-              for (let i = 0; i < (experience || []).length; i++) {
-  // Duration helper
-  function getDuration(start, end) {
-    if (!start) return '';
-    const startDate = new Date(start);
-    const endDate = end ? new Date(end) : new Date();
-    let years = endDate.getFullYear() - startDate.getFullYear();
-    let months = endDate.getMonth() - startDate.getMonth();
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-    let result = [];
-    if (years > 0) result.push(`${years} year${years > 1 ? 's' : ''}`);
-    if (months > 0) result.push(`${months} month${months > 1 ? 's' : ''}`);
-    return result.length ? result.join(' ') : 'Less than a month';
-  }
-                const exp = experience[i];
-                doc.setFontSize(13); doc.setFont('helvetica', 'bold');
-                y += 20; y = checkPageBreak(y);
-                let duration = '';
-                let durationText = '';
-                if (exp.start) {
-                  const startDate = new Date(exp.start);
-                  const startText = startDate.toLocaleString('default', { month: 'long', year: 'numeric' });
-                  let endText = 'Present';
-                  if (exp.end) {
-                    const endDate = new Date(exp.end);
-                    endText = endDate.toLocaleString('default', { month: 'long', year: 'numeric' });
-                  }
-                  duration = ` (${startText} – ${endText})`;
-                  durationText = ` (${getDuration(exp.start, exp.end)})`;
-                }
-                const expTitleLines = doc.splitTextToSize(`${exp.title || ''}${duration}${durationText}`, 480);
-                doc.text(expTitleLines, 40, y);
-                y += expTitleLines.length * lineHeight; y = checkPageBreak(y);
-                doc.setFontSize(12); doc.setFont('helvetica', 'normal');
-                y += 20; y = checkPageBreak(y);
-                if (exp.projects) {
-                  for (let j = 0; j < exp.projects.length; j++) {
-                    const proj = exp.projects[j];
-                    doc.setFont('helvetica', 'bold');
-                    const projNameLines = doc.splitTextToSize(`${proj.name || ''}`, 500);
-                    doc.text(projNameLines, 60, y);
-                    y += projNameLines.length * lineHeight; y = checkPageBreak(y);
-                    doc.setFont('helvetica', 'normal');
-                    for (let k = 0; k < proj.bullets.length; k++) {
-                      const bullet = proj.bullets[k];
-                      const bulletLines = doc.splitTextToSize(`- ${bullet}`, 500);
-                      doc.text(bulletLines, 80, y);
-                      y += bulletLines.length * lineHeight; y = checkPageBreak(y);
-                      // If last bullet of last project, add extra spacing
-                     
-                    }
-                  }
-                }
-                if (exp.bullets) {
-                  for (let k = 0; k < exp.bullets.length; k++) {
-                    const bullet = exp.bullets[k];
-                    const bulletLines = doc.splitTextToSize(`- ${bullet}`, 500);
-                    doc.text(bulletLines, 60, y);
-                    y += bulletLines.length * lineHeight; y = checkPageBreak(y);
-                    // If last bullet, add extra spacing
-                    
-                  }
-                }
-                const techLines = doc.splitTextToSize(`Technologies: ${exp.technologies || ''}`, 500);
-                doc.text(techLines, 60, y);
-                y += techLines.length * lineHeight; y = checkPageBreak(y);
-                // If last experience, add extra spacing
-                
-              }
-              doc.setFontSize(16); doc.setFont('helvetica', 'bold');
-              y += 20; y = checkPageBreak(y);
-              doc.text('Skills', 40, y);
-              y += 20; y = checkPageBreak(y);
-              doc.setFontSize(12);
-              // Skills
-              for (let i = 0; i < (skills || []).length; i++) {
-                const skill = skills[i];
-                doc.setFont('helvetica', 'bold');
-                const skillNameLines = doc.splitTextToSize(`• ${skill.name || ''}`, 460);
-                doc.text(skillNameLines, 40, y);
-                y += skillNameLines.length * lineHeight; y = checkPageBreak(y);
-                doc.setFont('helvetica', 'normal');
-                const skillDescLines = doc.splitTextToSize(`${skill.description || ''}`, 460);
-                doc.text(skillDescLines, 60, y);
-                y += skillDescLines.length * lineHeight; y = checkPageBreak(y);
-                // If last skill, add extra spacing
-                if (i === skills.length - 1) {
-                  y += 20; y = checkPageBreak(y);
-                }
-              }
-              doc.save('Viraj_Bahulkar_CV.pdf');
-            } catch (e) {
-              if (errorSpan) {
-                errorSpan.textContent = 'PDF generation failed. Please refresh and try again.';
-                errorSpan.style.display = 'inline';
-              }
-            }
+          btn.disabled = false;
+          btn.addEventListener('click', () => {
+            btn.disabled = true; generate();
           });
         }
       });

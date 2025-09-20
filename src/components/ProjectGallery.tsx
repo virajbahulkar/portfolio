@@ -8,27 +8,9 @@ interface ProjectGalleryProps {
   isotopeMode?: boolean;
 }
 
-const gradientBorders = [
-  'from-[#FFDEE9] to-[#B5FFFC]',
-  'from-[#C6FFDD] to-[#FBD786]',
-  'from-[#FDCB82] to-[#FFAAFC]',
-  'from-[#A1C4FD] to-[#C2E9FB]',
-  'from-[#D4FC79] to-[#96E6A1]',
-  'from-[#84FAB0] to-[#8FD3F4]',
-  'from-[#FF9A8B] to-[#FF6A88]',
-  'from-[#FAACA8] to-[#DDD6F3]',
-  'from-[#FCE38A] to-[#F38181]',
-];
+// Removed unused gradientBorders and RECENT_YEARS constants
 
-const CURRENT_YEAR = new Date().getFullYear();
-const RECENT_YEARS = [
-  CURRENT_YEAR,
-  CURRENT_YEAR - 1,
-  CURRENT_YEAR - 2,
-  CURRENT_YEAR - 3,
-];
-
-const getYears = (projectList: CollectionEntry<'project'>[]) => {
+const getYears = (projectList: CollectionEntry<'project'>[]): number[] => {
   return Array.from(
     new Set(
       projectList.map((project) => {
@@ -38,11 +20,14 @@ const getYears = (projectList: CollectionEntry<'project'>[]) => {
       })
     )
   )
-    .filter(Boolean)
+    .filter((y): y is number => y !== null)
     .sort((a, b) => b - a);
 };
 
-const getMonths = (projectList: CollectionEntry<'project'>[], year: number) => {
+const getMonths = (
+  projectList: CollectionEntry<'project'>[],
+  year: number
+): string[] => {
   return Array.from(
     new Set(
       projectList.map((project) => {
@@ -51,13 +36,19 @@ const getMonths = (projectList: CollectionEntry<'project'>[], year: number) => {
         return date.toLocaleString('default', { month: 'long' });
       })
     )
-  ).filter(Boolean);
+  ).filter((m): m is string => m !== null);
 };
 
-const ProjectGallery = ({
-  projectList,
-  isotopeMode = false,
-}: ProjectGalleryProps) => {
+const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
+  // Distinguish between undefined props (loading/misuse) vs provided empty list (valid empty state)
+  if (!props) {
+    return (
+      <div className="h-full space-y-6">
+        <div className="text-sm italic text-base-content/60">Loading projects...</div>
+      </div>
+    );
+  }
+  const { projectList, isotopeMode = false } = props;
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
@@ -128,7 +119,7 @@ const ProjectGallery = ({
 
           {/* Projects Display */}
           <div className="columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <div
                 key={project.data.link}
                 className={`hover relative mb-6 overflow-hidden rounded-2xl border border-base-300   p-[2px] transition-transform hover:scale-[102%]`}
@@ -142,7 +133,7 @@ const ProjectGallery = ({
         </>
       ) : (
         <div>
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.data.link}
               className="relative mb-6 rounded-2xl border border-base-300   p-0 transition-transform duration-300  hover:scale-[102%]  "

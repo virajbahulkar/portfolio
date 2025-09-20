@@ -9,20 +9,22 @@ const themes = [
   { name: 'Cyberpunk', value: 'cyberpunk' },
 ];
 
-const DarkModeToggleButton = () => {
+interface DarkModeToggleButtonProps { alwaysExpanded?: boolean }
+const DarkModeToggleButton = ({ alwaysExpanded = false }: DarkModeToggleButtonProps) => {
   useEffect(() => {
     const saved = localStorage.getItem('theme');
     if (saved) document.documentElement.setAttribute('data-theme', saved);
   }, []);
 
-  const applyTheme = (theme) => {
+  const applyTheme = (theme: string) => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   };
 
+  const triggerBtnClass = alwaysExpanded ? 'btn btn-sm m-0' : 'btn m-1';
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn m-1">
+      <div tabIndex={0} role="button" className={triggerBtnClass}>
         Theme
         <svg
           className="ml-2 size-4"

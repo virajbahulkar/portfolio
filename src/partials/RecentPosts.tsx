@@ -1,6 +1,5 @@
 import { BlogGallery } from '@components/BlogGallery';
 import type { CollectionEntry } from 'astro:content';
-import { GradientText, Section } from 'astro-boilerplate-components';
 import { SectionHeader } from '@components/SectionHeader';
 
 type IRecentPostsProps = {
@@ -15,7 +14,7 @@ const RecentPosts = (props: IRecentPostsProps) => (
       link="/blogs/"
       linkText="View all blogs"
       extraClasses=""
-      buttonBg="bg-cyan-800 hover:bg-cyan-700"
+    
     />
 
     <div className="mt-6">

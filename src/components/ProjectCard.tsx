@@ -1,6 +1,4 @@
 import type { CollectionEntry } from 'astro:content';
-import { ColorTags, Tags } from 'astro-boilerplate-components';
-import React from 'react';
 
 interface ProjectCardProps {
   project: CollectionEntry<'project'>;
@@ -63,7 +61,7 @@ const ProjectCard = (props: ProjectCardProps) => {
             </a>
 
             <div className="flex flex-wrap gap-2">
-              {categories.map((category: string, index) => {
+              {categories.map((category: string, index: number) => {
                 // Accessible color palette
                 const palette = [
                   { bg: '#1e40af', color: '#fff' }, // blue
@@ -75,7 +73,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                   { bg: '#059669', color: '#fff' }, // green
                   { bg: '#eab308', color: '#222' }, // yellow
                 ];
-                const color = palette[index % palette.length];
+                const color = palette[index % palette.length]!;
                 return (
                   <span key={index} className="badge" style={{backgroundColor: color.bg, color: color.color}}>
                     {category}

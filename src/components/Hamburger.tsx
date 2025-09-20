@@ -1,4 +1,5 @@
-const Hamburger = ({ extraClass }) => (
+interface HamburgerProps { extraClass?: string }
+const Hamburger = ({ extraClass = '' }: HamburgerProps) => (
   <svg
     width="24"
     height="24"

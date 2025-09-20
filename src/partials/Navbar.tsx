@@ -11,7 +11,7 @@ type NavbarProps = {
 };
 
 const Navbar = ({ path }: NavbarProps) => {
-  const detailsRef = useRef<HTMLElement | null>(null);
+  const detailsRef = useRef<HTMLDetailsElement | null>(null);
 
   // Click outside to close the <details>
   useEffect(() => {

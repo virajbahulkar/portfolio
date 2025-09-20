@@ -15,7 +15,6 @@ const RecentProjects = (props: IRecentProjectProps) => {
         link="/projects/"
         linkText="Explore All Projects"
         extraClasses=""
-        buttonBg="bg-cyan-800 hover:bg-cyan-700"
       />
 
       <div className="mt-6">

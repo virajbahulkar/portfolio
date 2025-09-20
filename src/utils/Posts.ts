@@ -14,6 +14,8 @@ export const sortProjectsByDate = (projects: CollectionEntry<'project'>[]) => {
   );
 };
 
-export const sortByRunningOrder = (items: any) => {
+export const sortByRunningOrder = <T extends { data: { runningOrder: number } }>(
+  items: T[]
+) => {
   return items.sort((a, b) => a.data.runningOrder - b.data.runningOrder);
 };

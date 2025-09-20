@@ -1,18 +1,23 @@
-type IPaginationHeaderProps = {
+interface PaginationHeaderExtraClasses {
+  headerClasses?: string;
+  descriptionClasses?: string;
+  wrapperClasses?: string;
+}
+
+interface PaginationHeaderProps {
   title: string;
   description: string;
-  extraClasses: Object;
-};
+  extraClasses?: PaginationHeaderExtraClasses;
+}
 
-const PaginationHeader = (props: IPaginationHeaderProps) => {
-  const { headerClasses, descriptionClasses, wrapperClasses } = props.extraClasses || {}
+const PaginationHeader = ({ title, description, extraClasses }: PaginationHeaderProps) => {
+  const { headerClasses, descriptionClasses, wrapperClasses } = extraClasses || {};
   return (
-    <div className={`${wrapperClasses}`}>
-      <h1 className={`${headerClasses ?? 'text-3xl font-bold'}`}>{props.title}</h1>
-
-      <div className={`mt-3 ${descriptionClasses}`}>{props.description}</div>
+    <div className={wrapperClasses}>
+      <h1 className={headerClasses ?? 'text-3xl font-bold'}>{title}</h1>
+      <div className={`mt-3 ${descriptionClasses ?? ''}`}>{description}</div>
     </div>
-  )
+  );
 };
 
 export { PaginationHeader };

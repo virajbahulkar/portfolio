@@ -1,6 +1,5 @@
 import { ProjectGallery } from '@components/ProjectGallery';
 import type { CollectionEntry } from 'astro:content';
-import { GradientText, Section } from 'astro-boilerplate-components';
 import { SectionHeader } from '@components/SectionHeader';
 
 type IRecentOssProjectProps = {
@@ -16,7 +15,6 @@ const RecentOssProjects = (props: IRecentOssProjectProps) => {
           link="/projects/"
           linkText="View all Contributions"
           extraClasses=""
-          buttonBg="bg-cyan-800 hover:bg-cyan-700"
         />
 
       <div className="mt-6">
