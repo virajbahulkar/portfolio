@@ -76,8 +76,6 @@ function buildBlocks(data: CvData, config: LayoutConfig, doc: JsPDFType, columnW
 
   blocks.push(heading('Profile'));
   blocks.push(paragraph(data.profile.summary, config.fonts.body));
-  blocks.push(heading('Life'));
-  blocks.push(paragraph(data.profile.life, config.fonts.body));
 
   blocks.push(heading('Education'));
   data.education.forEach(e => {
