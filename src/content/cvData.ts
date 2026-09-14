@@ -1,4 +1,4 @@
-export interface Profile { name: string; contact: string; summary: string; life: string; }
+export interface Profile { name: string; contact: string; summary: string; }
 export interface EducationItem { title: string; subtitle: string; }
 export interface Project { name: string; bullets: string[]; }
 export interface ExperienceItem { title: string; start?: string; end?: string; bullets?: string[]; projects?: Project[]; technologies?: string; }
@@ -7,8 +7,7 @@ export interface Skill { title: string; description: string; icon?: string; colo
 export const profile: Profile = {
   name: 'Viraj Bahulkar',
   contact: 'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.com | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
-  summary: 'Software engineer with strong experience in full-stack development, combining React.js for UI and design with backend engineering using Node.js, Express, MongoDB, and SQL. Skilled in building scalable features, delivering seamless user experiences, and collaborating with cross-functional teams. Proficient in developing high-performance React components, designing intuitive interfaces, and integrating RESTful APIs. Experienced in optimizing backend services, implementing CI/CD pipelines, and automating cloud infrastructure with DevOps practices (Docker, Kubernetes, Azure DevOps, AWS). Committed to technical excellence, clean code, and agile methodologies.',
-  life: 'Born and raised in Pune, India, I developed a passion for technology and problem-solving from an early age. Navigating through various challenges, I embraced self-learning and freelancing, building practical skills in web development and cloud technologies. This journey of independent learning and hands-on experience laid a strong foundation for my professional growth and leadership in engineering.'
+  summary: 'Senior Software Engineer with strong full-stack and cloud engineering experience, delivering reliable products from UI to infrastructure. Specialized in React.js and Node.js with hands-on ownership of CI/CD, Kubernetes orchestration, observability, and cloud optimization across AWS and Azure. Proven in scaling systems, improving performance, and enabling teams to ship production changes safely and quickly.'
 };
 
 export const education: EducationItem[] = [

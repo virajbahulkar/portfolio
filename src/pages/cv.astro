@@ -32,14 +32,6 @@ const url = `${AppConfig.site_url}/cv/`;
           <p class="text-lg leading-relaxed">{profile.summary}</p>
         </div>
         <div class="mb-12">
-          <h2 class="mb-6 text-3xl font-bold">Life</h2>
-          <div class="space-y-6">
-            <TimeLine title="Born: Aug 1993" subtitle="">
-              {profile.life}
-            </TimeLine>
-          </div>
-        </div>
-        <div class="mb-12">
           <h2 class="mb-6 text-3xl font-bold">Education</h2>
           <div class="space-y-6">
             {education.map(edu => (
