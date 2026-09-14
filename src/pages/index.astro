@@ -104,41 +104,13 @@ const recruiterCtas = [
   { href: '/cv/', label: 'View resume' },
   { href: 'mailto:hello@virajbahulkar.me', label: 'Contact' },
 ];
-const platformEngineeringHighlights = [
-  {
-    title: 'Career direction',
-    metric: 'Backend • Platform • Cloud',
-    description:
-      'The portfolio is intentionally positioned around software engineering depth plus increasing ownership of production infrastructure.',
-  },
-  {
-    title: 'Open source proof',
-    metric: 'Self-hosted systems',
-    description:
-      'Open-source contributions reinforce work on real code paths, delivery quality, and production-conscious engineering.',
-  },
-  {
-    title: 'Delivery model',
-    metric: 'Code → production',
-    description:
-      'Case studies focus on how applications are built, shipped, monitored, scaled, and kept reliable after release.',
-  },
-  {
-    title: 'Future direction',
-    metric: 'Selective SRE path',
-    description:
-      'The narrative shows credible movement from full-stack delivery toward platform engineering and reliability work.',
-  },
-];
 
 const { title, description, ogImage } = AppConfig;
 ---
 
 <!-- Base -->
 <Base head={{ title, description, ogImage }}>
-  <div
-    class="grid grid-cols-1 gap-10 lg:h-screen lg:grid-cols-5 lg:grid-rows-[auto,1fr,auto]"
-  >
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-5">
     <!-- Left Column -->
     <div class="flex flex-col justify-between lg:col-span-3">
       <div>
@@ -233,12 +205,6 @@ const { title, description, ogImage } = AppConfig;
           </div>
         </section>
       </div>
-
-      <!-- CTA and Footer (desktop) -->
-      <div class="hidden flex-col overflow-auto p-6 lg:flex">
-        <CTA />
-        <Footer />
-      </div>
     </div>
 
     <!-- Right Column -->
@@ -256,48 +222,13 @@ const { title, description, ogImage } = AppConfig;
       <div class="flex items-center justify-center overflow-auto p-6">
         <RecentPosts postList={lastThreePosts} />
       </div>
-
-      <!-- CTA and Footer (mobile & tablet) -->
-      <div class="flex flex-col overflow-auto p-6 lg:hidden">
-        <CTA />
-        <Footer />
-      </div>
     </div>
   </div>
 
-  <section class="px-6 pb-12">
-    <div
-      class="mx-auto max-w-7xl rounded-3xl border border-base-300 p-8 shadow-xl"
-    >
-      <div class="max-w-3xl">
-        <p
-          class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400"
-        >
-          Positioning
-        </p>
-        <h2 class="mt-3 text-3xl font-bold">
-          Engineering credibility beyond application code
-        </h2>
-        <p class="mt-4 text-lg leading-8">
-          The site is deliberately framed around software engineering depth plus
-          growing ownership of backend systems, cloud infrastructure, release
-          automation, and production reliability.
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {platformEngineeringHighlights.map((item) => (
-          <article class="rounded-2xl border border-base-300 bg-base-200/40 p-6">
-            <p class="text-sm uppercase tracking-widest text-cyan-400">
-              {item.title}
-            </p>
-            <p class="mt-3 text-2xl font-bold">{item.metric}</p>
-            <p class="mt-4 leading-7">{item.description}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="p-6">
+    <CTA />
+    <Footer />
+  </div>
 
   <BackToTop />
 </Base>

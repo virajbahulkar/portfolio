@@ -151,13 +151,6 @@ export const experience: ExperienceItem[] = [
 
 export const skills: Skill[] = [
   {
-    title: 'ReactJS',
-    description:
-      'Built SPAs and modular components with hooks and context API.',
-    icon: 'SiReact',
-    color: '#61DAFB',
-  },
-  {
     title: 'NodeJS',
     description: 'Created scalable server-side apps using RESTful APIs.',
     icon: 'SiNodedotjs',
@@ -170,10 +163,10 @@ export const skills: Skill[] = [
     color: '#000000',
   },
   {
-    title: 'MongoDB',
-    description: 'Managed NoSQL data with aggregation and indexing.',
-    icon: 'SiMongodb',
-    color: '#47A248',
+    title: 'TypeScript',
+    description: 'Ensured type safety and scalability in large apps.',
+    icon: 'SiTypescript',
+    color: '#3178C6',
   },
   {
     title: 'PostgreSQL',
@@ -182,16 +175,10 @@ export const skills: Skill[] = [
     color: '#336791',
   },
   {
-    title: 'TypeScript',
-    description: 'Ensured type safety and scalability in large apps.',
-    icon: 'SiTypescript',
-    color: '#3178C6',
-  },
-  {
-    title: 'NextJS',
-    description: 'Built SEO-optimized apps using SSR and file-based routing.',
-    icon: 'SiNextdotjs',
-    color: '#000000',
+    title: 'MongoDB',
+    description: 'Managed NoSQL data with aggregation and indexing.',
+    icon: 'SiMongodb',
+    color: '#47A248',
   },
   {
     title: 'Docker',
@@ -214,10 +201,30 @@ export const skills: Skill[] = [
     color: '#FF9900',
   },
   {
+    title: 'Azure DevOps',
+    description:
+      'Worked with CI/CD pipelines, release controls, and cloud-hosted deployments.',
+    icon: 'VscAzureDevops',
+    color: '#0078D7',
+  },
+  {
     title: 'Git',
     description: 'Handled version control with branching strategies.',
     icon: 'SiGit',
     color: '#F05032',
+  },
+  {
+    title: 'ReactJS',
+    description:
+      'Built SPAs and modular components with hooks and context API.',
+    icon: 'SiReact',
+    color: '#61DAFB',
+  },
+  {
+    title: 'NextJS',
+    description: 'Built SEO-optimized apps using SSR and file-based routing.',
+    icon: 'SiNextdotjs',
+    color: '#000000',
   },
   {
     title: 'JavaScript',
@@ -244,11 +251,10 @@ export const skills: Skill[] = [
     color: '#CC6699',
   },
   {
-    title: 'Azure DevOps',
-    description:
-      'Worked with CI/CD pipelines, release controls, and cloud-hosted deployments.',
-    icon: 'VscAzureDevops',
-    color: '#0078D7',
+    title: 'Webpack',
+    description: 'Configured bundlers for module-based architecture.',
+    icon: 'SiWebpack',
+    color: '#8DD6F9',
   },
   {
     title: 'Gulp',
@@ -261,12 +267,6 @@ export const skills: Skill[] = [
     description: 'Managed legacy JS builds with Grunt workflows.',
     icon: 'SiGrunt',
     color: '#FBA919',
-  },
-  {
-    title: 'Webpack',
-    description: 'Configured bundlers for module-based architecture.',
-    icon: 'SiWebpack',
-    color: '#8DD6F9',
   },
 ];
 
