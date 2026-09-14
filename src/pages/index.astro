@@ -25,6 +25,32 @@ const openSourceProjects = sortByRunningOrder(
 const myProjects = sortProjectsByDate(
   allProjects.filter((project) => !project.data.openSource)
 ).slice(0, 3);
+const platformEngineeringHighlights = [
+  {
+    title: 'Cloud delivery',
+    metric: 'AWS + Azure',
+    description:
+      'Production case studies highlight multi-cloud delivery across regulated and customer-facing systems.',
+  },
+  {
+    title: 'Container orchestration',
+    metric: '5 → 50 replicas',
+    description:
+      'Kubernetes autoscaling, containerized workflows, and production image builds reinforce hands-on platform ownership.',
+  },
+  {
+    title: 'Release discipline',
+    metric: 'CI/CD gates',
+    description:
+      'GitHub Actions, Azure DevOps pipelines, and validation-first delivery emphasize safe and repeatable releases.',
+  },
+  {
+    title: 'Operational outcomes',
+    metric: '99.9% uptime',
+    description:
+      'Observability, performance tuning, and cost optimization are presented as measurable engineering outcomes.',
+  },
+];
 
 const { title, description, ogImage } = AppConfig;
 ---
@@ -161,6 +187,36 @@ const { title, description, ogImage } = AppConfig;
       </div>
     </div>
   </div>
+
+  <section class="px-6 pb-12">
+    <div class="mx-auto max-w-7xl rounded-3xl border border-base-300 p-8 shadow-xl">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+          DevOps / Platform Engineering
+        </p>
+        <h2 class="mt-3 text-3xl font-bold">
+          Evidence of delivery beyond application code
+        </h2>
+        <p class="mt-4 text-lg leading-8">
+          The portfolio is intentionally structured to show engineering evidence
+          across cloud infrastructure, release automation, production
+          reliability, and measurable operational results.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {platformEngineeringHighlights.map((item) => (
+          <article class="rounded-2xl border border-base-300 bg-base-200/40 p-6">
+            <p class="text-sm uppercase tracking-widest text-cyan-400">
+              {item.title}
+            </p>
+            <p class="mt-3 text-2xl font-bold">{item.metric}</p>
+            <p class="mt-4 leading-7">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <BackToTop />
 </Base>
