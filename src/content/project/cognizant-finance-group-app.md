@@ -8,35 +8,57 @@ runningOrder: 1
 ---
 
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
-  <h2 class="text-2xl font-semibold mb-4">🔍 Overview</h2>
-  <p>Led delivery of critical frontend and backend workflows for a finance platform requiring high availability, strict release discipline, and strong compliance support.</p>
+  <h2 class="text-2xl font-semibold mb-4">Problem</h2>
+  <p>
+    The finance platform needed reliable customer-facing workflows, controlled
+    releases, and infrastructure that could scale safely across regulated
+    production environments.
+  </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">🛠 Architecture & DevOps</h2>
-  <ul class="list-disc list-inside my-4 pt-1">
-    <li>Microservices architecture deployed across <strong>AWS and Azure</strong>.</li>
-    <li><strong>Kubernetes orchestration</strong> with auto-scaling from 5 to 50 replicas based on load.</li>
-    <li><strong>Azure DevOps CI/CD</strong> with automated build, test, and deployment gates.</li>
-    <li>Observability with centralized logs, metrics, and alerting for proactive incident handling.</li>
-  </ul>
-
-  <hr class=" mb-8 mt-8 border border-base-300">
-
-  <h2 class="text-2xl font-semibold mb-4">✅ Delivery & Reliability Evidence</h2>
-  <ul class="list-disc list-inside my-4 pt-1">
-    <li>Release workflows enforced clean promotion across environments with automated validation before deployment.</li>
-    <li>Scaling policy supported traffic growth from <strong>5 to 50 replicas</strong> without manual intervention.</li>
-    <li>Centralized telemetry improved detection of regressions and reduced response time during production incidents.</li>
-    <li>Workload tuning and right-sizing directly contributed to <strong>35% infrastructure cost optimization</strong>.</li>
-  </ul>
-
-  <hr class=" mb-8 mt-8 border border-base-300">
-
-  <h2 class="text-2xl font-semibold mb-4">📈 Results</h2>
+  <h2 class="text-2xl font-semibold mb-4">Scale</h2>
   <ul class="list-disc list-inside my-4 pt-1">
     <li><strong>50K daily active users</strong> on production workloads.</li>
-    <li><strong>99.9% uptime</strong> maintained for customer-facing journeys.</li>
-    <li><strong>35% infrastructure cost optimization</strong> via right-sizing and workload tuning.</li>
+    <li><strong>99.9% uptime</strong> maintained for core customer journeys.</li>
+    <li><strong>5 to 50 replicas</strong> during load growth through Kubernetes auto-scaling.</li>
+    <li><strong>35% infrastructure cost optimization</strong> through tuning and right-sizing.</li>
+  </ul>
+
+  <hr class=" mb-8 mt-8 border border-base-300">
+
+  <h2 class="text-2xl font-semibold mb-4">Architecture</h2>
+  <ul class="list-disc list-inside my-4 pt-1">
+    <li>React-based client journeys connected to backend services built with <strong>Node.js</strong>.</li>
+    <li>Microservices ran across <strong>AWS and Azure</strong> environments.</li>
+    <li><strong>Kubernetes</strong> handled orchestration and scaling for production workloads.</li>
+    <li><strong>Azure DevOps CI/CD</strong> enforced automated build, test, and deployment gates.</li>
+  </ul>
+
+  <hr class=" mb-8 mt-8 border border-base-300">
+
+  <h2 class="text-2xl font-semibold mb-4">My ownership</h2>
+  <ul class="list-disc list-inside my-4 pt-1">
+    <li>Delivered critical frontend and backend workflows for finance-domain customer journeys.</li>
+    <li>Worked on release automation, cloud deployment discipline, and safe promotion across environments.</li>
+    <li>Contributed to observability, production troubleshooting, and infrastructure tuning.</li>
+  </ul>
+
+  <hr class=" mb-8 mt-8 border border-base-300">
+
+  <h2 class="text-2xl font-semibold mb-4">Reliability & infrastructure</h2>
+  <ul class="list-disc list-inside my-4 pt-1">
+    <li>Centralized logs, metrics, and alerting improved visibility into production regressions.</li>
+    <li>Auto-scaling policy increased available capacity without manual intervention during demand spikes.</li>
+    <li>CI/CD controls helped reduce release risk for high-availability workflows.</li>
+  </ul>
+
+  <hr class=" mb-8 mt-8 border border-base-300">
+
+  <h2 class="text-2xl font-semibold mb-4">Engineering result</h2>
+  <ul class="list-disc list-inside my-4 pt-1">
+    <li>Maintained a production platform serving <strong>50K daily active users</strong>.</li>
+    <li>Helped sustain <strong>99.9% uptime</strong> for key finance journeys.</li>
+    <li>Supported scale growth from <strong>5 to 50 replicas</strong> and improved cost efficiency by <strong>35%</strong>.</li>
   </ul>
 </div>

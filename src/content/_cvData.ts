@@ -35,7 +35,7 @@ export const profile: Profile = {
   contact:
     'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.me | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
   summary:
-    'Senior Software Engineer with 7+ years of experience delivering production-grade platforms across frontend, backend, and cloud infrastructure. Specialized in React.js and Node.js with hands-on ownership of Docker, Kubernetes, CI/CD, observability, and cloud optimization across AWS and Azure. Proven in scaling systems, improving performance, and helping teams ship reliable production changes safely and quickly.',
+    'Senior Software Engineer with 8+ years of experience delivering production-grade systems across backend services, full-stack applications, and cloud infrastructure. Strong in Node.js and TypeScript with hands-on ownership of Docker, Kubernetes, CI/CD, observability, and cloud optimization across AWS and Azure. Built a foundation in product-facing application development and now apply that depth to platform reliability, production delivery, and engineering scale.',
 };
 
 export const education: EducationItem[] = [

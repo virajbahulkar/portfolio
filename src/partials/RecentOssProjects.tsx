@@ -10,10 +10,10 @@ const RecentOssProjects = (props: IRecentOssProjectProps) => {
   return (
     <div className="h-full">
       <SectionHeader
-          title="Recent"
-          highlightedText="Open Source Contributions"
+          title="Open Source"
+          highlightedText="Proof"
           link="/projects/"
-          linkText="View all Contributions"
+          linkText="View Contributions"
           extraClasses=""
         />
 

@@ -1,11 +1,11 @@
 export const AppConfig = {
   site_url: 'https://virajbahulkar.me',
   site_name: 'Viraj Bahulkar',
-  title: 'Viraj Bahulkar - Senior Software Engineer',
+  title: 'Viraj Bahulkar | Senior Software Engineer - Backend, Platform & Cloud',
   description:
-    'Senior Software Engineer | Cloud Infrastructure, DevOps, React, and Node.js',
+    'Senior Software Engineer with 8+ years building backend, cloud-native, and production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, Docker, CI/CD, and observability.',
   keywords:
-    'viraj, viraj b, viraj bahulkar, Viraj Bahulkar, portfolio, freelancer, banking and fif, india, web developer, nodeJs developer, react developers, javascript, Viraj Bahulkar official website, Full-Stack Development, React.js, Node.js, MySQL, MongoDB, Docker, Kubernetes, CI/CD, Algorithmic Trading, System Design, Microservices, Scalable & Responsive Web Applications, Authentication & Security (JWT, OAuth), Performance Optimization, API Development, Data Structures & Algorithms, WebSockets, GraphQL, RESTful APIs, AWS, Fintech',
+    'Viraj Bahulkar, Senior Software Engineer, Backend Engineer, Platform Engineer, Cloud Engineer, Node.js, TypeScript, Docker, Kubernetes, AWS, Azure, CI/CD, observability, distributed systems, microservices, production systems',
   author: 'Viraj Bahulkar',
   locale_region: 'en-us',
   locale: 'en',

@@ -28,7 +28,7 @@ export const websiteSchemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   description:
-    'Senior software engineer with 7+ years of experience across full-stack delivery, cloud infrastructure, and DevOps.',
+    'Senior software engineer with 8+ years of experience across backend systems, cloud infrastructure, platform engineering, and reliable production delivery.',
   headline: 'Viraj Bahulkar',
   image: `${AppConfig.site_url}/profile-pic.png`,
   name: 'Viraj Bahulkar',

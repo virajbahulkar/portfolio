@@ -9,10 +9,10 @@ type IRecentPostsProps = {
 const RecentPosts = (props: IRecentPostsProps) => (
   <div className="h-full">
     <SectionHeader
-      title="Recent"
-      highlightedText="Blogs"
+      title="Technical"
+      highlightedText="Writing"
       link="/blogs/"
-      linkText="View all blogs"
+      linkText="View all writing"
       extraClasses=""
     
     />

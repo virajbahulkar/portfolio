@@ -16,23 +16,23 @@ const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blogs`;
 const title = titleBase + titleSuffix;
 const description =
-  'Discover engaging articles on web development, including insights on React.js, Node.js, Docker, and modern web technologies. Stay updated with the latest trends and techniques.';
+  'Technical writing on backend systems, cloud-native delivery, observability, performance, and production engineering lessons.';
 const url = `${AppConfig.site_url}/blogs/`;
 ---
 
 <Base head={{ title, description, url }}>
   <Section>
     <PaginationHeader
-      title="The Code Journal: A Developer's Blog"
-      description="Dive into articles crafted for developers and tech enthusiasts alike. From frameworks like React and Node.js to deployment techniques with Docker, find comprehensive guides and unique insights tailored to your learning journey."
+      title="Writing on software, backend, and production systems"
+      description="Articles focused on real engineering work across backend delivery, cloud-native systems, Docker, Kubernetes, observability, and lessons learned from production environments."
     />
 
     <div class="mb-12 mt-8 flex flex-col items-center space-y-4">
       <div class="circle-animation"></div>
       <p class="max-w-xl text-center  text-lg">
-        Join me as I explore the nuances of full-stack development, share
-        practical tips, and experiment with cutting-edge technologies. Let's
-        build something amazing together!
+        I use writing to document engineering tradeoffs, production lessons,
+        and implementation details that sit between application development and
+        reliable infrastructure.
       </p>
     </div>
   </Section>
