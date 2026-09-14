@@ -70,11 +70,11 @@ export const experience: ExperienceItem[] = [
     end: '2021-12-01',
     projects: [
       {
-        name: 'ToolJet (Open Source Low-Code Platform)',
+        name: 'ToolJet (Open Source Contributions)',
         bullets: [
-          'Contributed to a self-hosted open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads.',
+          'Contributed to an open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads.',
           'Optimized visual builder rendering by 35% and reduced backend query latency by 60% across core product workflows.',
-          'Expanded automated test coverage by 65%, improving release confidence and contributor delivery quality for self-hosted deployments.',
+          'Expanded automated test coverage by 65%, improving release confidence and contributor delivery quality.',
         ],
       },
       {

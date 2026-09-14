@@ -1,6 +1,6 @@
 ---
-title: 'ToolJet Open Source Platform'
-description: 'Contributed to ToolJet, a self-hosted open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads, improving builder performance by 35%, backend query latency by 60%, and overall delivery confidence through stronger test coverage.'
+title: 'ToolJet Open Source Contributions'
+description: 'Contributed to ToolJet, an open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads, improving builder performance by 35%, backend query latency by 60%, and delivery confidence through stronger test coverage.'
 link: 'https://github.com/ToolJet/ToolJet/commits?author=virajbahulkar'
 imgSrc: '/assets/images/projects/tooljet.png'
 startDate: 2025-05-09T00:00:00Z
@@ -15,7 +15,7 @@ runningOrder: 1
   <p>
     ToolJet needed faster builder interactions, lower latency in backend query
     execution, and stronger delivery confidence across a widely used
-    self-hosted open-source platform.
+    open-source low-code platform.
   </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -34,7 +34,7 @@ runningOrder: 1
   <ul class="list-disc list-inside my-4 pt-1">
     <li>Worked across a React-based visual builder and backend query execution flow built with <strong>Node.js</strong>.</li>
     <li>Contributed to product paths backed by <strong>PostgreSQL</strong> and production-facing execution logic.</li>
-    <li>Focused on changes that mattered for a <strong>self-hosted open-source platform</strong> used in real deployments.</li>
+    <li>Focused on contribution areas that mattered for a <strong>widely adopted open-source platform</strong> used by engineering teams.</li>
   </ul>
 
   <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
@@ -46,10 +46,8 @@ React visual builder
 Node.js query + execution layer
   ↓
 PostgreSQL and connected data flows
-  ↓
-Self-hosted platform deployments
 
-Pull request → review + tests → merge → release path for self-hosted upgrades</code></pre>
+Pull request → review + tests → merge → upstream product release</code></pre>
   </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -67,7 +65,7 @@ Pull request → review + tests → merge → release path for self-hosted upgra
   <ul class="list-disc list-inside my-4 pt-1">
     <li><strong>65% expansion in test coverage</strong> improved release confidence on critical workflows.</li>
     <li>Collaborated with <strong>50+ active contributors</strong> through reviews, issue triage, and incremental delivery.</li>
-    <li>The work emphasized upgrade safety and reliability for a platform that teams self-host in production.</li>
+    <li>The work emphasized safer releases and contributor confidence through focused fixes and stronger test coverage.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
