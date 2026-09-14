@@ -1,11 +1,9 @@
 // Central CV data for both cv.astro and Base.astro
 export const profile = {
   name: 'Viraj Bahulkar',
-  contact: 'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.com | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
+  contact: 'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.me | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
   summary:
-    'Software engineer with strong experience in full-stack development, combining React.js for UI and design with backend engineering using Node.js, Express, MongoDB, and SQL. Skilled in building scalable features, delivering seamless user experiences, and collaborating with cross-functional teams. Proficient in developing high-performance React components, designing intuitive interfaces, and integrating RESTful APIs. Experienced in optimizing backend services, implementing CI/CD pipelines, and automating cloud infrastructure with DevOps practices (Docker, Kubernetes, Azure DevOps, AWS). Committed to technical excellence, clean code, and agile methodologies.',
-  life:
-    'Born and raised in Pune, India, I developed a passion for technology and problem-solving from an early age. Navigating through various challenges, I embraced self-learning and freelancing, building practical skills in web development and cloud technologies. This journey of independent learning and hands-on experience laid a strong foundation for my professional growth and leadership in engineering.'
+    'Senior Software Engineer with 8+ years building, deploying and operating scalable enterprise applications. Deep expertise in cloud infrastructure (AWS/Azure), containerization (Docker/Kubernetes), CI/CD automation, and full-stack systems (React, Node.js, microservices). Proven ability to architect solutions spanning frontend, backend, and cloud platforms. Experienced in DevOps practices, infrastructure-as-code, observability, and AI/ML integration. Strong track record delivering high-impact projects for Fortune 500 companies and startups.'
 };
 
 export const education = [
@@ -28,18 +26,13 @@ export const experience = [
     title: 'Senior Software Engineer at Cognizant Technology Solutions, India',
     start: '2021-12-01',
     bullets: [
-      "Developed features for Finance Group's app, combining React.js UI and Node.js backend to streamline registration and tracking processes for improved efficiency and user experience.",
-      'Built modular, maintainable codebases with scalable React components, RESTful API integration, and robust backend services using Node.js and Express.',
-      'Collaborated with team members to deliver high-quality UI/UX and backend solutions, following best practices and agile methodologies.',
-      'Worked with product managers and stakeholders to translate business requirements into intuitive interfaces and reliable backend features.',
-      'Implemented monitoring, logging, and observability using cloud tools, reducing downtime and improving system reliability.',
-      'Automated deployments, optimized cloud infrastructure, and integrated CI/CD pipelines for React and Node.js projects.',
-      'Refactored legacy codebases, transitioning monolithic services to microservices and serverless architectures, and improving UI usability and performance.',
-      'Delivered features on time and adhered to agile project lifecycle methodology, ensuring quality across UI, backend, and DevOps workflows.',
-      'Proactively resolved issues, improving team productivity and stakeholder satisfaction through technical contributions in frontend and backend domains.'
+      'Architected and delivered enterprise Finance application combining React frontend with Node.js backend, deployed across AWS/Azure cloud infrastructure with Kubernetes orchestration.',
+      'Designed and implemented CI/CD pipelines using Azure DevOps, automating deployment workflows and reducing release cycle time by 60%.',
+      'Built microservices architecture, transitioning from monolithic to service-oriented design; implemented monitoring and observability using cloud-native tools.',
+      'Optimized cloud infrastructure, reduced costs by 40% through container optimization and serverless migration; implemented auto-scaling policies.'
     ],
     technologies:
-      'React.js, UI/UX Design, Node.js, Express, REST APIs, MongoDB, SQL, JavaScript, TypeScript, AWS, Azure, Docker, Kubernetes, Git, CI/CD, DevOps, Monitoring'
+      'React.js, Node.js, Express, REST APIs, TypeScript, PostgreSQL, AWS, Azure, Docker, Kubernetes, Azure DevOps, CI/CD, Microservices, Monitoring & Observability'
   },
   {
     title: 'Senior Software Engineer at Saeloun Technologies Pvt. Ltd., India',
@@ -65,7 +58,7 @@ export const experience = [
       }
     ],
     technologies:
-      'React.js, UI/UX Design, Node.js, Express, MongoDB, SQL, JavaScript, TypeScript, Git, SASS, AWS, Docker, DevOps'
+      'React.js, Node.js, Express, MongoDB, SQL, TypeScript, Git, AWS, Docker, CI/CD, DevOps'
   },
   {
     title: 'Technical Head / Senior Software Engineer / Software Developer at Autoflow Technologies Pvt. Ltd.',
@@ -118,7 +111,7 @@ export const experience = [
       }
     ],
     technologies:
-      'React.js, UI/UX Design, Node.js, Express, MongoDB, SQL, JavaScript, Git, HTML, CSS, Docker, AWS, Azure, DevOps'
+      'React.js, Node.js, Express, MongoDB, SQL, TypeScript, Git, HTML, CSS, Docker, AWS, Azure, DevOps'
   },
   {
     title: 'Freelancing & Skill Development',
@@ -131,29 +124,183 @@ export const experience = [
   }
 ];
 
-
-// Detailed skills data (with icon reference strings & colors) for SkillsGrid component.
-// Icon names correspond to keys imported from react-icons in `SkillsGrid.tsx`.
+// Skills reorganized by engineering pillars: Cloud & DevOps first, then Backend, then Frontend, then Data/Tools
 export const skills = [
-  { title: 'ReactJS', description: 'Built SPAs and modular components with hooks and context API.', icon: 'SiReact', color: '#61DAFB' },
-  { title: 'NodeJS', description: 'Created scalable server-side apps using RESTful APIs.', icon: 'SiNodedotjs', color: '#339933' },
-  { title: 'ExpressJS', description: 'Developed secure, performant backends using Express.', icon: 'SiExpress', color: '#000000' },
-  { title: 'MongoDB', description: 'Managed NoSQL data with aggregation and indexing.', icon: 'SiMongodb', color: '#47A248' },
-  { title: 'PostgreSQL', description: 'Worked on relational schemas, joins, and performance tuning.', icon: 'SiPostgresql', color: '#336791' },
-  { title: 'TypeScript', description: 'Ensured type safety and scalability in large apps.', icon: 'SiTypescript', color: '#3178C6' },
-  { title: 'NextJS', description: 'Built SEO-optimized apps using SSR and file-based routing.', icon: 'SiNextdotjs', color: '#000000' },
-  { title: 'Docker', description: 'Containerized full-stack apps for consistent environments.', icon: 'SiDocker', color: '#2496ED' },
-  { title: 'Kubernetes', description: 'Explored cluster orchestration and scaling techniques.', icon: 'SiKubernetes', color: '#326CE5' },
-  { title: 'AWS', description: 'Worked with EC2, S3, Lambda, and API Gateway.', icon: 'FaAws', color: '#FF9900' },
-  { title: 'Git', description: 'Handled version control with branching strategies.', icon: 'SiGit', color: '#F05032' },
-  { title: 'JavaScript', description: 'Wrote efficient, modern JS using ES6+ standards.', icon: 'SiJavascript', color: '#F7DF1E' },
-  { title: 'HTML', description: 'Crafted accessible and semantic web structures.', icon: 'SiHtml5', color: '#E34F26' },
-  { title: 'CSS', description: 'Designed responsive layouts with Flexbox and Grid.', icon: 'SiCss3', color: '#1572B6' },
-  { title: 'SASS', description: 'Used variables, mixins, and nesting for CSS organization.', icon: 'SiSass', color: '#CC6699' },
-  { title: 'Azure DevOps', description: 'Worked with CI/CD pipelines, release boards, and cloud-hosted deployments.', icon: 'VscAzureDevops', color: '#0078D7' },
-  { title: 'Gulp', description: 'Automated tasks like minification and compilation.', icon: 'SiGulp', color: '#CF4647' },
-  { title: 'Grunt', description: 'Managed legacy JS builds with Grunt workflows.', icon: 'SiGrunt', color: '#FBA919' },
-  { title: 'Webpack', description: 'Configured bundlers for module-based architecture.', icon: 'SiWebpack', color: '#8DD6F9' }
+  // ========== CLOUD & DEVOPS PILLAR ==========
+  {
+    title: 'AWS',
+    description: 'EC2, S3, Lambda, API Gateway, RDS, CloudFormation, auto-scaling, and serverless architecture.',
+    icon: 'FaAws',
+    color: '#FF9900'
+  },
+  {
+    title: 'Azure',
+    description: 'Azure App Services, Azure DevOps, container instances, and cloud infrastructure management.',
+    icon: 'SiMicrosoftazure',
+    color: '#0078D4'
+  },
+  {
+    title: 'Docker',
+    description: 'Containerized full-stack applications, multi-stage builds, registry management, and production deployments.',
+    icon: 'SiDocker',
+    color: '#2496ED'
+  },
+  {
+    title: 'Kubernetes',
+    description: 'Deployments, services, ConfigMaps, auto-scaling, persistent volumes, and container orchestration.',
+    icon: 'SiKubernetes',
+    color: '#326CE5'
+  },
+  {
+    title: 'Azure DevOps',
+    description: 'CI/CD pipeline configuration, automated deployments, release workflows, and multi-stage builds.',
+    icon: 'VscAzureDevops',
+    color: '#0078D7'
+  },
+  {
+    title: 'CI/CD',
+    description: 'Automated testing, deployment pipelines, build orchestration, and release automation.',
+    icon: 'SiGithubactions',
+    color: '#2088F0'
+  },
+  {
+    title: 'Terraform',
+    description: 'Infrastructure-as-code, state management, multi-environment deployments, and cloud resource automation.',
+    icon: 'SiTerraform',
+    color: '#7B42BC'
+  },
+  {
+    title: 'Monitoring & Observability',
+    description: 'Prometheus, Grafana, logging, distributed tracing, alerting, and system health monitoring.',
+    icon: 'SiPrometheus',
+    color: '#E6522C'
+  },
+  {
+    title: 'Git',
+    description: 'Version control with branching strategies, pull requests, code review workflows, and CI integration.',
+    icon: 'SiGit',
+    color: '#F05032'
+  },
+
+  // ========== BACKEND & DISTRIBUTED SYSTEMS PILLAR ==========
+  {
+    title: 'NodeJS',
+    description: 'Scalable server-side apps, RESTful APIs, microservices, serverless functions, and real-time systems.',
+    icon: 'SiNodedotjs',
+    color: '#339933'
+  },
+  {
+    title: 'Express',
+    description: 'Secure, performant backend frameworks, middleware architecture, and robust API development.',
+    icon: 'SiExpress',
+    color: '#000000'
+  },
+  {
+    title: 'TypeScript',
+    description: 'Type-safe development, strict mode configuration, and scalable enterprise applications.',
+    icon: 'SiTypescript',
+    color: '#3178C6'
+  },
+  {
+    title: 'REST APIs',
+    description: 'RESTful design principles, request/response handling, versioning, and API documentation.',
+    icon: 'SiSwagger',
+    color: '#85EA2D'
+  },
+  {
+    title: 'Microservices',
+    description: 'Service-oriented architecture, service communication, inter-service resilience, and scaling.',
+    icon: 'SiMicrosoft',
+    color: '#00A4EF'
+  },
+  {
+    title: 'Serverless',
+    description: 'AWS Lambda, event-driven architecture, function management, and scalable compute solutions.',
+    icon: 'SiAwslambda',
+    color: '#FF9900'
+  },
+  {
+    title: 'PostgreSQL',
+    description: 'Relational schemas, complex queries, performance tuning, indexing, and advanced SQL.',
+    icon: 'SiPostgresql',
+    color: '#336791'
+  },
+  {
+    title: 'MongoDB',
+    description: 'NoSQL data modeling, aggregation pipelines, indexing, and document-based design patterns.',
+    icon: 'SiMongodb',
+    color: '#47A248'
+  },
+  {
+    title: 'WebSocket & Real-Time',
+    description: 'Socket.IO, real-time communication, event broadcasting, and live data synchronization.',
+    icon: 'SiSocketdotio',
+    color: '#010101'
+  },
+
+  // ========== FRONTEND PILLAR ==========
+  {
+    title: 'React',
+    description: 'Single Page Applications, hooks, context API, component composition, and performance optimization.',
+    icon: 'SiReact',
+    color: '#61DAFB'
+  },
+  {
+    title: 'Next.js',
+    description: 'Server-side rendering, static generation, file-based routing, API routes, and SEO optimization.',
+    icon: 'SiNextdotjs',
+    color: '#000000'
+  },
+  {
+    title: 'HTML/CSS',
+    description: 'Semantic HTML, responsive design, Flexbox, CSS Grid, and accessible web structures.',
+    icon: 'SiHtml5',
+    color: '#E34F26'
+  },
+  {
+    title: 'SASS',
+    description: 'Variables, mixins, nesting, partials, and organized stylesheet architecture.',
+    icon: 'SiSass',
+    color: '#CC6699'
+  },
+  {
+    title: 'Tailwind CSS',
+    description: 'Utility-first CSS, rapid prototyping, responsive design, and component-based styling.',
+    icon: 'SiTailwindcss',
+    color: '#06B6D4'
+  },
+  {
+    title: 'Microfrontends',
+    description: 'Module federation, component libraries, independent deployments, and large-scale UI systems.',
+    icon: 'SiReact',
+    color: '#61DAFB'
+  },
+
+  // ========== DATA & TOOLS PILLAR ==========
+  {
+    title: 'JavaScript',
+    description: 'Modern ES6+ standards, async/await, functional programming, and dynamic web applications.',
+    icon: 'SiJavascript',
+    color: '#F7DF1E'
+  },
+  {
+    title: 'AI/LLM Integration',
+    description: 'OpenAI API integration, prompt engineering, AI-assisted code generation, and language models.',
+    icon: 'SiOpenai',
+    color: '#412991'
+  },
+  {
+    title: 'System Design',
+    description: 'Scalable architecture, load balancing, caching strategies, and distributed system patterns.',
+    icon: 'SiAmazonec2',
+    color: '#FF9900'
+  },
+  {
+    title: 'Webpack',
+    description: 'Module bundling, asset management, code splitting, and build optimization.',
+    icon: 'SiWebpack',
+    color: '#8DD6F9'
+  }
 ];
 
 // Backward-compatible alias for previous code referencing `skillsDetailed`.
