@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { generateCvPdf } from '../utils/generateCvPdf';
 
-interface Profile { name: string; contact: string; summary: string; life: string; }
+interface Profile { name: string; contact: string; summary: string; }
 interface EducationItem { title: string; subtitle: string; }
 interface Project { name: string; bullets: string[]; }
 interface ExperienceItem { title: string; start?: string; end?: string; bullets?: string[]; projects?: Project[]; technologies?: string; }
