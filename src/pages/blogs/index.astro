@@ -2,12 +2,12 @@
 import { BlogGallery } from '@components/BlogGallery';
 import { PaginationHeader } from '@components/PaginationHeader';
 import { Footer } from '@partials/Footer';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortPostByDate } from '@utils/Posts';
+// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
-import { Section } from 'astro-boilerplate-components';
-import CTA from '@sections/CTA.astro';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
@@ -21,7 +21,7 @@ const url = `${AppConfig.site_url}/blogs/`;
 ---
 
 <Base head={{ title, description, url }}>
-  <Section>
+  <section>
     <PaginationHeader
       title="Writing on software, backend, and production systems"
       description="Articles focused on real engineering work across backend delivery, cloud-native systems, Docker, Kubernetes, observability, and lessons learned from production environments."
@@ -30,20 +30,20 @@ const url = `${AppConfig.site_url}/blogs/`;
     <div class="mb-12 mt-8 flex flex-col items-center space-y-4">
       <div class="circle-animation"></div>
       <p class="max-w-xl text-center  text-lg">
-        I use writing to document engineering tradeoffs, production lessons,
-        and implementation details that sit between application development and
+        I use writing to document engineering tradeoffs, production lessons, and
+        implementation details that sit between application development and
         reliable infrastructure.
       </p>
     </div>
-  </Section>
+  </section>
 
-  <Section>
+  <section>
     <div class="grid grid-cols-1  gap-6 p-4">
       <BlogGallery postList={sortedPosts} />
     </div>
-  </Section>
+  </section>
 
-  <div class="flex-col lg:grid lg:grid-cols-2 overflow-auto p-6 lg:flex">
+  <div class="flex flex-col overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
   <Footer />

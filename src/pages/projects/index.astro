@@ -2,11 +2,12 @@
 import { PaginationHeader } from '@components/PaginationHeader';
 import { ProjectGallery } from '@components/ProjectGallery';
 import { Footer } from '@partials/Footer';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortProjectsByDate } from '@utils/Posts';
+// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
-import CTA from '@sections/CTA.astro'
 
 const allProjects = await getCollection('project');
 const sortedProjects = sortProjectsByDate(allProjects);
@@ -35,7 +36,9 @@ const url = `${AppConfig.site_url}/projects/`;
 
 <Base head={{ title, description, url }}>
   <div class="space-y-12 p-4 md:min-h-screen">
-    <div class="mx-auto max-w-5xl rounded-3xl border border-base-300 p-8 shadow-xl">
+    <div
+      class="mx-auto max-w-5xl rounded-3xl border border-base-300 p-8 shadow-xl"
+    >
       <PaginationHeader
         title="Engineering case studies"
         description="Selected work showing how application development, backend systems, cloud infrastructure, CI/CD, observability, and operational reliability come together in production."
@@ -74,7 +77,7 @@ const url = `${AppConfig.site_url}/projects/`;
     </section>
   </div>
 
-  <div class="flex-col lg:grid lg:grid-cols-2 overflow-auto p-6 lg:flex">
+  <div class="flex flex-col overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
   <Footer />

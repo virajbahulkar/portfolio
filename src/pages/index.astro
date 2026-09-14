@@ -5,15 +5,12 @@ import { Hero } from '@partials/Hero';
 import { RecentOssProjects } from '@partials/RecentOssProjects';
 import { RecentPosts } from '@partials/RecentPosts';
 import { RecentProjects } from '@partials/RecentProjects';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
-import {
-  sortByRunningOrder,
-  sortPostByDate,
-  sortProjectsByDate,
-} from '@utils/Posts';
+import { sortByRunningOrder, sortPostByDate } from '@utils/Posts';
+// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
-import CTA from '@sections/CTA.astro';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
@@ -32,7 +29,8 @@ const flagshipProjects = flagshipProjectOrder
   .filter(isProjectEntry);
 const openSourceProjects = sortByRunningOrder(
   allProjects.filter(
-    (project) => project.data.openSource && !flagshipProjectOrder.includes(project.slug)
+    (project) =>
+      project.data.openSource && !flagshipProjectOrder.includes(project.slug)
   )
 ).slice(0, 3);
 const engineeringImpact = [
@@ -144,10 +142,13 @@ const { title, description, ogImage } = AppConfig;
     <!-- Left Column -->
     <div class="flex flex-col justify-between lg:col-span-3">
       <div>
-        <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
+        <div class="flex overflow-auto p-6">
           <Hero
             client:load
-            heading={{ text: 'Senior Software Engineer', class: 'text-4xl lg:text-5xl' }}
+            heading={{
+              text: 'Senior Software Engineer',
+              class: 'text-4xl lg:text-5xl',
+            }}
             phrases={[
               {
                 text: 'Backend • Platform • Cloud',
@@ -157,7 +158,9 @@ const { title, description, ogImage } = AppConfig;
             description="Building and operating production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, CI/CD, and observability. Strong application engineering foundation with increasing ownership of platform reliability and cloud delivery."
           >
             <div class="mt-6 flex flex-wrap gap-3">
-              <span class="rounded-full border border-base-300 px-4 py-2 text-sm font-medium">
+              <span
+                class="rounded-full border border-base-300 px-4 py-2 text-sm font-medium"
+              >
                 8+ years professional experience
               </span>
               {recruiterCtas.map((cta, index) => (
@@ -213,7 +216,9 @@ const { title, description, ogImage } = AppConfig;
               cloud-native delivery, and the platform layers that keep software
               reliable in production.
             </p>
-            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium">
+            <div
+              class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium"
+            >
               {careerEvolution.map((step, index) => (
                 <>
                   <span class="rounded-full border border-base-300 px-4 py-2">
@@ -229,7 +234,6 @@ const { title, description, ogImage } = AppConfig;
         </section>
       </div>
 
-
       <!-- CTA and Footer (desktop) -->
       <div class="hidden flex-col overflow-auto p-6 lg:flex">
         <CTA />
@@ -240,12 +244,12 @@ const { title, description, ogImage } = AppConfig;
     <!-- Right Column -->
     <div class="lg:col-span-2">
       <div
-        class="bg-regal-blue flex items-center justify-center overflow-auto p-6"
+        class="flex items-center justify-center overflow-auto bg-base-200/40 p-6"
       >
         <RecentProjects projectList={flagshipProjects} />
       </div>
       <div
-        class="bg-to-sky-400 flex items-center justify-center overflow-auto p-6"
+        class="flex items-center justify-center overflow-auto bg-base-200/20 p-6"
       >
         <RecentOssProjects projectList={openSourceProjects} />
       </div>
@@ -262,9 +266,13 @@ const { title, description, ogImage } = AppConfig;
   </div>
 
   <section class="px-6 pb-12">
-    <div class="mx-auto max-w-7xl rounded-3xl border border-base-300 p-8 shadow-xl">
+    <div
+      class="mx-auto max-w-7xl rounded-3xl border border-base-300 p-8 shadow-xl"
+    >
       <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400"
+        >
           Positioning
         </p>
         <h2 class="mt-3 text-3xl font-bold">
