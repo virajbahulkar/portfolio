@@ -20,7 +20,7 @@ import {
   SiWebpack,
 } from 'react-icons/si';
 import SkillItem from './SkillItem';
-import { skillsDetailed } from '../content/cvData';
+import { skillsDetailed } from '../content/_cvData';
 
 // Map string icon keys from data to actual imported icon components.
 const iconMap = {
