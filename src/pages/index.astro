@@ -37,74 +37,100 @@ const { title, description, ogImage } = AppConfig;
     <!-- Left Column -->
     <div class="flex flex-col justify-between lg:col-span-3">
       <div>
-        <!-- Hero Section -->
+        <!-- Hero Section - NEW POSITIONING -->
         <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
           <Hero
             client:load
-            heading="Hi there, I'm"
+            heading="Viraj Bahulkar"
             phrases={[
               {
-                text: 'Viraj Bahulkar',
-                gradient: 'from-purple-400 via-pink-500 to-red-500',
-              },
-              {
-                text: 'a Passionate Developer',
-                gradient: 'from-green-400 via-blue-500 to-purple-500',
-              },
-              {
-                text: 'Building Scalable Solutions',
-                gradient: 'from-indigo-400 via-purple-500 to-pink-500',
-              },
-              {
-                text: 'Turning Ideas into Reality',
-                gradient: 'from-red-400 via-pink-500 to-purple-500',
+                text: 'Senior Software Engineer',
+                gradient: 'from-blue-400 via-cyan-500 to-teal-500',
               },
             ]}
-            description="Full-Stack Developer with 7+ years of experience in building scalable web applications. Passionate about coding, problem-solving, and creating seamless user experiences. Specialized in ReactJS for dynamic front-end development and NodeJS for secure, optimized back-end solutions. Skilled in integrating front-end frameworks with RESTful APIs, developing microfrontends and microservices, managing databases, and deploying applications to the cloud."
+            description="8+ years building, deploying and operating scalable enterprise applications across cloud, backend and frontend systems. Expert in AWS/Azure, Docker/Kubernetes, CI/CD automation, Node.js, React and AI/LLM integration."
           />
         </div>
 
-        <!-- Career Section -->
+        <!-- Tech Stack & Capabilities -->
+        <div class="flex overflow-auto p-6">
+          <div class="w-full">
+            <h2 class="text-2xl font-bold mb-4">Core Capabilities</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">☁️</span>
+                <span class="text-sm font-semibold">Cloud & DevOps</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">⚙️</span>
+                <span class="text-sm font-semibold">Backend Systems</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">🎨</span>
+                <span class="text-sm font-semibold">Frontend Engineering</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">🤖</span>
+                <span class="text-sm font-semibold">AI/LLM Integration</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">📊</span>
+                <span class="text-sm font-semibold">System Architecture</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">🔍</span>
+                <span class="text-sm font-semibold">Observability</span>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed">
+              <strong>Key Technologies:</strong> AWS · Azure · Docker · Kubernetes · Azure DevOps · CI/CD · Node.js · React · TypeScript · PostgreSQL · Terraform · Prometheus/Grafana
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="flex overflow-auto p-6">
+          <div class="w-full">
+            <div class="flex flex-wrap gap-3">
+              <a href="/projects" class="inline-block">
+                <button class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-2 px-6 rounded-lg transition-all shadow-lg">
+                  View Engineering Work
+                </button>
+              </a>
+              <a href="/cv" class="inline-block">
+                <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-2 px-6 rounded-lg transition-all shadow-lg">
+                  View Resume
+                </button>
+              </a>
+              <a href="mailto:virajbahulkar@gmail.com" class="inline-block">
+                <button class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-6 rounded-lg transition-all shadow-lg">
+                  Contact Me
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Focus Section -->
         <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
           <Hero
             client:load
-            heading={{ text: 'My career', class: 'text-2xl' }}
-            description="So far, the journey has been about building innovative applications, enhancing web experiences and delivering solutions that make business thrive."
-          />
-        </div>
-
-        <!-- Things I love Section -->
-        <div class="flex overflow-auto p-6">
-          <Hero
-            client:load
-            heading={{ text: 'Things I love to do', class: 'text-2xl' }}
+            heading={{ text: 'Engineering Focus', class: 'text-2xl' }}
             description={[
               {
-                text: 'Continuously experimenting with new frameworks, tools, and libraries to enhance my skills.',
+                text: 'Cloud infrastructure (AWS/Azure) and containerization (Docker/Kubernetes) for scalable, resilient systems',
               },
               {
-                text: 'Keeping myself updated with industry trends, insights, and expert discussions.',
+                text: 'DevOps automation: CI/CD pipelines, Infrastructure-as-Code (Terraform), and deployment strategies',
               },
               {
-                text: 'Sharing my learnings, thoughts, and technical insights through writing.',
+                text: 'Full-stack architecture: React frontends, Node.js/Express backends, microservices and serverless design',
               },
               {
-                text: 'Discovering new places, embracing nature, and drawing inspiration from different experiences.',
+                text: 'Observability and reliability: monitoring, logging, alerting and incident response',
               },
-            ]}
-          />
-        </div>
-
-        <!-- Motivation Section -->
-        <div class="flex overflow-auto p-6">
-          <Hero
-            client:load
-            heading={{ text: 'My motivation', class: 'text-2xl' }}
-            description={[
               {
-                text: 'Every line of code you write is a step closer to turning imagination into reality. Keep building, keep evolving',
-                type: 'quote',
-                class: 'border-l-4 border-blue-500 pl-4 italic text-lg my-4',
+                text: 'AI-powered solutions: LLM integration, prompt engineering, and intelligent systems',
               },
             ]}
           />
