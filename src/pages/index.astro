@@ -8,13 +8,22 @@ import { RecentProjects } from '@partials/RecentProjects';
 import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
-import { sortByRunningOrder, sortPostByDate } from '@utils/Posts';
+import { sortByRunningOrder } from '@utils/Posts';
 // eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('post');
-const sortedPosts = sortPostByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 4);
+const isPostEntry = (
+  post: (typeof allPosts)[number] | undefined
+): post is (typeof allPosts)[number] => Boolean(post);
+const preferredWritingOrder = [
+  'building-realtime-dashboard',
+  'vscode-folder-structure-extension',
+  'wisely-choose-ui-library',
+];
+const lastThreePosts = preferredWritingOrder
+  .map((slug) => allPosts.find((post) => post.slug === slug))
+  .filter(isPostEntry);
 const allProjects = await getCollection('project');
 const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
@@ -50,7 +59,7 @@ const engineeringImpact = [
     title: 'Reliability',
     metric: '99.9% uptime',
     description:
-      'Customer-facing finance journeys were supported with uptime, observability, and release controls.',
+      'Customer-facing finance journeys were supported with centralized logging, monitoring, alerting, and release controls.',
   },
   {
     title: 'Container orchestration',
@@ -80,12 +89,12 @@ const coreEngineeringAreas = [
   {
     title: 'Platform & Cloud',
     description:
-      'AWS, Azure, Docker, Kubernetes, CI/CD, release automation, containerized delivery, and cloud deployment workflows.',
+      'AWS, Azure, Docker, Kubernetes autoscaling, Azure DevOps release gates, containerized delivery, and cloud deployment workflows.',
   },
   {
     title: 'Reliability & Observability',
     description:
-      'Logging, metrics, alerting, uptime, health checks, monitoring, and production troubleshooting to keep systems stable.',
+      'Centralized logging, metrics dashboards, alerting rules, health checks, and production troubleshooting to keep systems stable.',
   },
   {
     title: 'Frontend Foundation',
@@ -127,7 +136,7 @@ const { title, description, ogImage } = AppConfig;
                 gradient: 'from-indigo-400 via-purple-500 to-pink-500',
               },
             ]}
-            description="Building and operating production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, CI/CD, and observability. Strong application engineering foundation with increasing ownership of platform reliability and cloud delivery."
+            description="Building and operating production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, Azure DevOps release controls, centralized logging, and cloud delivery. Strong application engineering foundation with increasing ownership of platform reliability."
           >
             <div class="mt-6 flex flex-wrap gap-3">
               <span

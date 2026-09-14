@@ -1,6 +1,6 @@
 ---
 title: 'Cognizant Finance Group App'
-description: 'Enterprise-scale financial platform serving 50K daily users with 99.9% uptime, built on AWS and Azure microservices with Kubernetes auto-scaling, Azure DevOps CI/CD, centralized observability, and 35% infrastructure cost optimization.'
+description: 'Enterprise-scale financial platform serving 50K daily users with 99.9% uptime, built on AWS and Azure microservices with Kubernetes autoscaling, Azure DevOps release gates, centralized logging and monitoring, and 35% infrastructure cost optimization.'
 startDate: 2026-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, AWS, Azure, Kubernetes, Azure DevOps
@@ -35,22 +35,41 @@ runningOrder: 1
     <li><strong>Azure DevOps CI/CD</strong> enforced automated build, test, and deployment gates.</li>
   </ul>
 
+  <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
+    <h3 class="text-lg font-semibold mb-3">Anonymized architecture view</h3>
+    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>Users
+  ↓
+React customer journeys
+  ↓
+Node.js service layer
+  ↓
+Finance microservices
+  ↙                ↘
+AWS workloads      Azure workloads
+  ↓
+Shared data and enterprise integrations
+
+Git → Azure DevOps pipelines → Build/Test/Validate → Kubernetes environments
+                                     ↓
+                        Centralized logs, metrics, monitoring, alerts</code></pre>
+  </div>
+
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">My ownership</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Delivered critical frontend and backend workflows for finance-domain customer journeys.</li>
-    <li>Worked on release automation, cloud deployment discipline, and safe promotion across environments.</li>
-    <li>Contributed to observability, production troubleshooting, and infrastructure tuning.</li>
+    <li>Implemented finance-domain customer journeys across React interfaces and Node.js service integrations for production-facing workflows.</li>
+    <li>Integrated Azure DevOps build, validation, and deployment gates into release workflows for safer promotion across environments.</li>
+    <li>Supported Kubernetes scaling behavior, production monitoring, and cross-environment troubleshooting across AWS and Azure microservices.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">Reliability & infrastructure</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Centralized logs, metrics, and alerting improved visibility into production regressions.</li>
-    <li>Auto-scaling policy increased available capacity without manual intervention during demand spikes.</li>
-    <li>CI/CD controls helped reduce release risk for high-availability workflows.</li>
+    <li>Centralized application logs, metrics dashboards, and alerting rules improved visibility into production regressions.</li>
+    <li>Kubernetes autoscaling policies expanded workloads from 5 to 50 replicas while health-oriented release checks helped maintain stability during demand spikes.</li>
+    <li>Azure DevOps build, test, deployment, and post-release validation gates reduced rollout risk for high-availability workflows.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

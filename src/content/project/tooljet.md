@@ -37,6 +37,21 @@ runningOrder: 1
     <li>Focused on changes that mattered for a <strong>self-hosted open-source platform</strong> used in real deployments.</li>
   </ul>
 
+  <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
+    <h3 class="text-lg font-semibold mb-3">Anonymized architecture view</h3>
+    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>Internal users / developers
+  ↓
+React visual builder
+  ↓
+Node.js query + execution layer
+  ↓
+PostgreSQL and connected data flows
+  ↓
+Self-hosted platform deployments
+
+Pull request → review + tests → merge → release path for self-hosted upgrades</code></pre>
+  </div>
+
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">My ownership</h2>

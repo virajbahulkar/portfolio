@@ -35,7 +35,7 @@ export const profile: Profile = {
   contact:
     'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.me | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
   summary:
-    'Senior Software Engineer with 8+ years of experience delivering production-grade systems across backend services, full-stack applications, and cloud infrastructure. Strong in Node.js and TypeScript with hands-on ownership of Docker, Kubernetes, CI/CD, observability, and cloud optimization across AWS and Azure. Built a foundation in product-facing application development and now apply that depth to platform reliability, production delivery, and engineering scale.',
+    'Senior Software Engineer with 8+ years of experience delivering production-grade systems across backend services, full-stack applications, and cloud infrastructure. Strong in Node.js and TypeScript with hands-on ownership of Docker, Kubernetes autoscaling, Azure DevOps release controls, centralized logging and monitoring, and cloud optimization across AWS and Azure. Built a foundation in product-facing application development and now apply that depth to platform reliability, production delivery, and engineering scale.',
 };
 
 export const education: EducationItem[] = [
@@ -57,9 +57,9 @@ export const experience: ExperienceItem[] = [
     bullets: [
       'Delivered Finance Group application workflows across React.js frontend, Node.js services, and cloud infrastructure for high-availability customer journeys.',
       'Supported production workloads serving 50K daily active users while maintaining 99.9% uptime for core finance journeys.',
-      'Worked across AWS and Azure microservices with Kubernetes auto-scaling policies that expanded workloads from 5 to 50 replicas under load.',
-      'Integrated Azure DevOps CI/CD gates, automated validation, and release discipline for safer and repeatable deployments.',
-      'Implemented centralized logging, metrics, and alerting, and contributed to infrastructure tuning that helped drive 35% cost optimization.',
+      'Operated AWS and Azure microservices on Kubernetes with autoscaling policies that expanded workloads from 5 to 50 replicas under load.',
+      'Integrated Azure DevOps build, validation, and deployment gates for safer multi-environment promotions and repeatable releases.',
+      'Improved production visibility with centralized logs, metrics dashboards, and alerting while supporting right-sizing efforts that drove 35% cost optimization.',
     ],
     technologies:
       'React.js, Node.js, Express, REST APIs, TypeScript, AWS, Azure, Docker, Kubernetes, Azure DevOps, CI/CD, Observability, MongoDB, SQL',
@@ -73,8 +73,8 @@ export const experience: ExperienceItem[] = [
         name: 'ToolJet (Open Source Low-Code Platform)',
         bullets: [
           'Contributed to a self-hosted open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads.',
-          'Improved visual builder performance by 35% and reduced backend query latency by 60% across core product workflows.',
-          'Expanded automated test coverage by 65%, increasing release confidence and improving contributor delivery quality.',
+          'Optimized visual builder rendering by 35% and reduced backend query latency by 60% across core product workflows.',
+          'Expanded automated test coverage by 65%, improving release confidence and contributor delivery quality for self-hosted deployments.',
         ],
       },
       {

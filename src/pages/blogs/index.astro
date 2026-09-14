@@ -11,6 +11,20 @@ import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
+const isPostEntry = (
+  post: (typeof allPosts)[number] | undefined
+): post is (typeof allPosts)[number] => Boolean(post);
+const featuredWritingOrder = [
+  'building-realtime-dashboard',
+  'vscode-folder-structure-extension',
+  'wisely-choose-ui-library',
+];
+const featuredPosts = featuredWritingOrder
+  .map((slug) => allPosts.find((post) => post.slug === slug))
+  .filter(isPostEntry);
+const remainingPosts = sortedPosts.filter(
+  (post) => !featuredWritingOrder.includes(post.slug)
+);
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blogs`;
@@ -24,22 +38,48 @@ const url = `${AppConfig.site_url}/blogs/`;
   <section>
     <PaginationHeader
       title="Writing on software, backend, and production systems"
-      description="Articles focused on real engineering work across backend delivery, cloud-native systems, Docker, Kubernetes, observability, and lessons learned from production environments."
+      description="Articles focused on real engineering work across backend delivery, cloud-native systems, Docker, Kubernetes, production tradeoffs, and developer tooling."
     />
 
     <div class="mb-12 mt-8 flex flex-col items-center space-y-4">
       <div class="circle-animation"></div>
       <p class="max-w-xl text-center  text-lg">
         I use writing to document engineering tradeoffs, production lessons, and
-        implementation details that sit between application development and
-        reliable infrastructure.
+        implementation details across application delivery, cloud-backed
+        systems, and developer tooling.
       </p>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="rounded-3xl border border-base-300 p-6 shadow-xl">
+      <h2 class="text-2xl font-bold">Featured writing</h2>
+      <p class="mt-3 max-w-3xl leading-7">
+        A curated starting point for production-minded work covering cloud
+        delivery, system behavior, and engineering tradeoffs.
+      </p>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        {featuredPosts.map((post) => (
+          <a
+            href={post.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-2xl border border-base-300 bg-base-100 p-5 transition hover:-translate-y-1"
+          >
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
+              Featured
+            </p>
+            <h3 class="mt-3 text-lg font-semibold">{post.data.title}</h3>
+            <p class="mt-3 text-sm leading-6">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <section>
     <div class="grid grid-cols-1  gap-6 p-4">
-      <BlogGallery postList={sortedPosts} />
+      <BlogGallery postList={remainingPosts} />
     </div>
   </section>
 

@@ -34,6 +34,19 @@ runningOrder: 1
     <li>Pricing, booking, and payment reconciliation were handled as production business flows.</li>
   </ul>
 
+  <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
+    <h3 class="text-lg font-semibold mb-3">Anonymized architecture view</h3>
+    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>Travel users
+  ↓
+React booking interface
+  ↓
+Node.js application services
+  ↙          ↓            ↘
+Search    Pricing/Booking   Payments/Reconciliation
+  ↓            ↓                   ↓
+ElasticSearch  PostgreSQL          Redis + external payment flows</code></pre>
+  </div>
+
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">My ownership</h2>
