@@ -44,7 +44,10 @@ export const education: EducationItem[] = [
     subtitle:
       '2011 to 2017 (Officially completed in 2014, delayed to 2017) - Trained as a freelancer during the gap.',
   },
-  { title: '12th Grade (Higher Secondary Education)', subtitle: 'Completed in 2011' },
+  {
+    title: '12th Grade (Higher Secondary Education)',
+    subtitle: 'Completed in 2011',
+  },
   { title: '10th Grade', subtitle: 'Completed in 2009' },
 ];
 
@@ -53,7 +56,7 @@ export const experience: ExperienceItem[] = [
     title: 'Senior Software Engineer at Cognizant Technology Solutions, India',
     start: '2021-12-01',
     bullets: [
-      "Delivered Finance Group application workflows across React.js frontend, Node.js services, and cloud infrastructure for high-availability customer journeys.",
+      'Delivered Finance Group application workflows across React.js frontend, Node.js services, and cloud infrastructure for high-availability customer journeys.',
       'Supported production workloads serving 50K daily active users while maintaining 99.9% uptime for core finance journeys.',
       'Worked across AWS and Azure microservices with Kubernetes auto-scaling policies that expanded workloads from 5 to 50 replicas under load.',
       'Integrated Azure DevOps CI/CD gates, automated validation, and release discipline for safer and repeatable deployments.',
@@ -88,7 +91,8 @@ export const experience: ExperienceItem[] = [
       'React.js, Node.js, Express, TypeScript, MongoDB, PostgreSQL, AWS, Docker, CI/CD, DevOps, ElasticSearch',
   },
   {
-    title: 'Technical Head / Senior Software Engineer / Software Developer at Autoflow Technologies Pvt. Ltd.',
+    title:
+      'Technical Head / Senior Software Engineer / Software Developer at Autoflow Technologies Pvt. Ltd.',
     start: '2017-05-01',
     end: '2021-04-01',
     projects: [
@@ -140,14 +144,16 @@ export const experience: ExperienceItem[] = [
     bullets: [
       'Worked as a freelancer while strengthening practical skills in web development, cloud technologies, and delivery workflows.',
     ],
-    technologies: 'React.js, Node.js, Express, MongoDB, SQL, HTML, CSS, JavaScript, Git, DevOps',
+    technologies:
+      'React.js, Node.js, Express, MongoDB, SQL, HTML, CSS, JavaScript, Git, DevOps',
   },
 ];
 
 export const skills: Skill[] = [
   {
     title: 'ReactJS',
-    description: 'Built SPAs and modular components with hooks and context API.',
+    description:
+      'Built SPAs and modular components with hooks and context API.',
     icon: 'SiReact',
     color: '#61DAFB',
   },
@@ -195,13 +201,15 @@ export const skills: Skill[] = [
   },
   {
     title: 'Kubernetes',
-    description: 'Worked with orchestration, autoscaling, and reliable rollout patterns.',
+    description:
+      'Worked with orchestration, autoscaling, and reliable rollout patterns.',
     icon: 'SiKubernetes',
     color: '#326CE5',
   },
   {
     title: 'AWS',
-    description: 'Worked with EC2, S3, Lambda, API Gateway, and cloud delivery workflows.',
+    description:
+      'Worked with EC2, S3, Lambda, API Gateway, and cloud delivery workflows.',
     icon: 'FaAws',
     color: '#FF9900',
   },
@@ -237,7 +245,8 @@ export const skills: Skill[] = [
   },
   {
     title: 'Azure DevOps',
-    description: 'Worked with CI/CD pipelines, release controls, and cloud-hosted deployments.',
+    description:
+      'Worked with CI/CD pipelines, release controls, and cloud-hosted deployments.',
     icon: 'VscAzureDevops',
     color: '#0078D7',
   },

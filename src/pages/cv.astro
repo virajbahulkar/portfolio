@@ -1,12 +1,11 @@
 ---
-import { profile, education, experience, skills } from '@content/_cvData';
-import Base from '@templates/Base.astro';
 import PdfDownloader from '@components/PdfDownloader';
-import { AppConfig } from '@utils/AppConfig';
-import { Footer } from '@partials/Footer';
-import { Section } from 'astro-boilerplate-components';
-import TimeLine from '@components/Timeline';
 import SkillsGrid from '@components/SkillsGrid';
+import TimeLine from '@components/Timeline';
+import { education, experience, profile, skills } from '@content/_cvData';
+import { Footer } from '@partials/Footer';
+import Base from '@templates/Base.astro';
+import { AppConfig } from '@utils/AppConfig';
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const title = `Resume${titleSuffix}`;
@@ -15,15 +14,35 @@ const url = `${AppConfig.site_url}/cv/`;
 ---
 
 <Base head={{ title, description, url }}>
-  <Section>
-    <PdfDownloader client:load data={{ profile, education, experience, skills }} />
+  <section>
+    <PdfDownloader client:load data={{ profile, education, experience, skills }}
+    />
     <div class="mb-12">
-      <div style="display:flex; align-items:center; justify-content:space-between;">
-        <span class="mb-6 text-3xl font-extrabold no-break">Profile</span>
-        <button id="download-pdf" title="Download CV" style="background:transparent; border:none; padding:6px 10px; border-radius:6px; display:flex; align-items:center; justify-content:center;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#111" viewBox="0 0 16 16" style="display:block; font-weight:bold;">
-            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" style="stroke:#111; stroke-width:2;"></path>
-            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" style="stroke:#111; stroke-width:2;"></path>
+      <div
+        style="display:flex; align-items:center; justify-content:space-between;"
+      >
+        <span class="mb-6 whitespace-nowrap text-3xl font-extrabold">
+          Profile
+        </span>
+        <button
+          id="download-pdf"
+          title="Download CV"
+          style="background:transparent; border:none; padding:6px 10px; border-radius:6px; display:flex; align-items:center; justify-content:center;"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="#111"
+            viewBox="0 0 16 16"
+            style="display:block; font-weight:bold;"
+          >
+            <path
+              d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+              style="stroke:#111; stroke-width:2;"></path>
+            <path
+              d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
+              style="stroke:#111; stroke-width:2;"></path>
           </svg>
         </button>
       </div>
@@ -34,7 +53,7 @@ const url = `${AppConfig.site_url}/cv/`;
         <div class="mb-12">
           <h2 class="mb-6 text-3xl font-bold">Education</h2>
           <div class="space-y-6">
-            {education.map(edu => (
+            {education.map((edu) => (
               <TimeLine title={edu.title} subtitle={edu.subtitle} />
             ))}
           </div>
@@ -42,21 +61,27 @@ const url = `${AppConfig.site_url}/cv/`;
         <div class="mb-12">
           <h2 class="mb-6 text-3xl font-bold">Experience</h2>
           <div class="space-y-6">
-            {experience.map(exp => (
-              <TimeLine title={exp.title} subtitle={exp.technologies} start={exp.start} end={exp.end}>
-                {exp.projects && exp.projects.map(proj => (
-                  <div>
-                    <strong>{proj.name}</strong>
-                    <ul class="list-disc space-y-1 pl-5">
-                      {proj.bullets.map(bullet => (
-                        <li>{bullet}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+            {experience.map((exp) => (
+              <TimeLine
+                title={exp.title}
+                subtitle={exp.technologies}
+                start={exp.start}
+                end={exp.end}
+              >
+                {exp.projects &&
+                  exp.projects.map((proj) => (
+                    <div>
+                      <strong>{proj.name}</strong>
+                      <ul class="list-disc space-y-1 pl-5">
+                        {proj.bullets.map((bullet) => (
+                          <li>{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 {exp.bullets && (
                   <ul class="list-disc space-y-1 pl-5">
-                    {exp.bullets.map(bullet => (
+                    {exp.bullets.map((bullet) => (
                       <li>{bullet}</li>
                     ))}
                   </ul>
@@ -71,6 +96,6 @@ const url = `${AppConfig.site_url}/cv/`;
         </div>
       </div>
     </div>
-  </Section>
+  </section>
   <Footer />
 </Base>

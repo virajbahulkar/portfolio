@@ -1,5 +1,6 @@
 ---
 import '@styles/custom.css';
+
 import BreadCrumb from '@components/BreadCrumb';
 import { Navbar } from '@partials/Navbar';
 import { AppConfig } from '@utils/AppConfig';
@@ -98,7 +99,7 @@ const {
         <BreadCrumb path={Astro.url.pathname} />
       </div>
 
-       <slot />
+      <slot />
     </div>
 
     <!-- PDF script removed; handled by PdfDownloader React component -->
@@ -151,6 +152,5 @@ const {
 
       gtag('config', 'G-EEN224QZ8C');
     </script>
-    
   </body>
 </html>

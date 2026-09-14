@@ -1,5 +1,4 @@
 import { FaAws } from 'react-icons/fa6';
-import { VscAzureDevops } from 'react-icons/vsc';
 import {
   SiCss3,
   SiDocker,
@@ -19,8 +18,10 @@ import {
   SiTypescript,
   SiWebpack,
 } from 'react-icons/si';
-import SkillItem from './SkillItem';
+import { VscAzureDevops } from 'react-icons/vsc';
+
 import { skillsDetailed } from '../content/_cvData';
+import SkillItem from './SkillItem';
 
 // Map string icon keys from data to actual imported icon components.
 const iconMap = {
