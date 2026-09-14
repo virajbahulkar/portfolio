@@ -1,6 +1,6 @@
 ---
 title: 'Platform Delivery Blueprint (Terraform + AWS + Kubernetes)'
-description: 'Code-first platform proof project that provisions an AWS foundation with Terraform, deploys a Dockerized Node.js API to Kubernetes with health probes and autoscaling, and validates app, manifest, and IaC changes through GitHub Actions.'
+description: 'Code-backed platform blueprint defining an AWS/EKS foundation in Terraform, Kubernetes runtime patterns, and GitHub Actions-based deployment automation.'
 imgSrc: '/assets/images/projects/platform-delivery-blueprint.svg'
 startDate: 2026-09-14T00:00:00Z
 imgAlt: 'Platform delivery blueprint project'
@@ -17,6 +17,25 @@ runningOrder: 0
     This case study is a code-first blueprint built inside the portfolio
     repository and designed to be deployable later with real AWS credentials.
   </p>
+
+  <div class="mt-6 flex flex-wrap gap-3">
+    <a
+      href="https://github.com/virajbahulkar/portfolio/tree/main/platform/aws-platform-showcase"
+      target="_blank"
+      rel="noreferrer"
+      class="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-secondary"
+    >
+      View source on GitHub
+    </a>
+    <a
+      href="https://github.com/virajbahulkar/portfolio/blob/main/.github/workflows/platform-showcase.yml"
+      target="_blank"
+      rel="noreferrer"
+      class="rounded-full border border-base-300 px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+    >
+      View GitHub Actions workflow
+    </a>
+  </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
@@ -40,22 +59,34 @@ runningOrder: 0
 
   <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
     <h3 class="text-lg font-semibold mb-3">Architecture view</h3>
-    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>GitHub push / PR
-  ↓
-GitHub Actions
-  ├─ Node.js tests
-  ├─ Kubernetes manifest render
-      ├─ Terraform fmt + validate
-      └─ OIDC deploy job
-
-    Terraform
-      ↓
-    AWS VPC + subnets + NAT + IAM + EKS + ECR + CloudWatch + ACM + SSM
-      ↓
-    Kubernetes deployment + load balancer service + HPA + PDB
-      ↓
-    Node.js API with health, readiness, metrics, structured logs, DNS, and HTTPS</code></pre>
+    <div class="space-y-3 text-sm leading-6">
+      <div class="rounded-xl border border-base-300 bg-base-100 px-4 py-3 font-mono">
+        GitHub push / pull request
       </div>
+      <div class="pl-4 text-base-content/60">↓</div>
+      <div class="rounded-xl border border-base-300 bg-base-100 px-4 py-3">
+        <p class="font-semibold">GitHub Actions</p>
+        <ul class="mt-2 list-disc list-inside">
+          <li>Node.js tests</li>
+          <li>Kubernetes manifest render</li>
+          <li>Terraform fmt + validate</li>
+          <li>OIDC deploy job</li>
+        </ul>
+      </div>
+      <div class="pl-4 text-base-content/60">↓</div>
+      <div class="rounded-xl border border-base-300 bg-base-100 px-4 py-3 font-mono">
+        AWS VPC + subnets + NAT + IAM + EKS + ECR + CloudWatch + ACM + SSM
+      </div>
+      <div class="pl-4 text-base-content/60">↓</div>
+      <div class="rounded-xl border border-base-300 bg-base-100 px-4 py-3 font-mono">
+        Kubernetes deployment + load balancer service + HPA + PDB
+      </div>
+      <div class="pl-4 text-base-content/60">↓</div>
+      <div class="rounded-xl border border-base-300 bg-base-100 px-4 py-3 font-mono">
+        Node.js API with health, readiness, metrics, structured logs, DNS, and HTTPS
+      </div>
+    </div>
+  </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
