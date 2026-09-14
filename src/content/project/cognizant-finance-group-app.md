@@ -1,6 +1,6 @@
 ---
 title: 'Cognizant Finance Group App'
-description: 'Enterprise-scale financial platform serving 50K daily users with 99.9% uptime, built on microservices across AWS and Azure with Kubernetes auto-scaling and Azure DevOps CI/CD.'
+description: 'Enterprise-scale financial platform serving 50K daily users with 99.9% uptime, built on AWS and Azure microservices with Kubernetes auto-scaling, Azure DevOps CI/CD, centralized observability, and 35% infrastructure cost optimization.'
 startDate: 2026-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, AWS, Azure, Kubernetes, Azure DevOps
@@ -19,6 +19,16 @@ runningOrder: 1
     <li><strong>Kubernetes orchestration</strong> with auto-scaling from 5 to 50 replicas based on load.</li>
     <li><strong>Azure DevOps CI/CD</strong> with automated build, test, and deployment gates.</li>
     <li>Observability with centralized logs, metrics, and alerting for proactive incident handling.</li>
+  </ul>
+
+  <hr class=" mb-8 mt-8 border border-base-300">
+
+  <h2 class="text-2xl font-semibold mb-4">✅ Delivery & Reliability Evidence</h2>
+  <ul class="list-disc list-inside my-4 pt-1">
+    <li>Release workflows enforced clean promotion across environments with automated validation before deployment.</li>
+    <li>Scaling policy supported traffic growth from <strong>5 to 50 replicas</strong> without manual intervention.</li>
+    <li>Centralized telemetry improved detection of regressions and reduced response time during production incidents.</li>
+    <li>Workload tuning and right-sizing directly contributed to <strong>35% infrastructure cost optimization</strong>.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

@@ -60,7 +60,7 @@ const { title, description, ogImage } = AppConfig;
                 gradient: 'from-red-400 via-pink-500 to-purple-500',
               },
             ]}
-            description="Senior Software Engineer with 7+ years of experience delivering production-grade web platforms across frontend, backend, and cloud infrastructure. Strong in React and Node.js, with hands-on DevOps ownership using Docker, Kubernetes, CI/CD, and observability to build scalable and reliable systems."
+             description="Senior Software Engineer with 7+ years of experience delivering production-grade platforms across frontend, backend, and cloud infrastructure. Hands-on with Docker, Kubernetes, CI/CD, observability, and release discipline to ship scalable systems that stay reliable in production."
           />
         </div>
 
@@ -70,6 +70,25 @@ const { title, description, ogImage } = AppConfig;
             client:load
             heading={{ text: 'My career', class: 'text-2xl' }}
             description="So far, the journey has been about building innovative applications, enhancing web experiences and delivering solutions that make business thrive."
+          />
+        </div>
+
+        <!-- Platform & DevOps Evidence -->
+        <div class="flex overflow-auto p-6">
+          <Hero
+            client:load
+            heading={{ text: 'Platform & DevOps evidence', class: 'text-2xl' }}
+            description={[
+              {
+                text: 'Built cloud-aware project case studies covering AWS, Azure, Kubernetes autoscaling, CI/CD gates, and production observability.',
+              },
+              {
+                text: 'Structured this portfolio around reproducible engineering workflows using Docker, Dev Containers, GitHub Actions CI, and production container builds.',
+              },
+              {
+                text: 'Focused on operational outcomes such as uptime, performance, rollout safety, and cost optimization rather than shipping features alone.',
+              },
+            ]}
           />
         </div>
 
