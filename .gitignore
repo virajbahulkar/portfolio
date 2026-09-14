@@ -25,3 +25,9 @@ Thumbs.db
 .yarn/
 # Local Netlify folder
 .netlify
+
+# showcase project build artifacts
+platform/**/node_modules/
+platform/**/.terraform/
+platform/**/*.tfstate
+platform/**/*.tfstate.*

@@ -29,6 +29,7 @@ const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
 ): project is (typeof allProjects)[number] => Boolean(project);
 const flagshipProjectOrder = [
+  'platform-delivery-blueprint',
   'cognizant-finance-group-app',
   'tooljet',
   'wanderwhale-travel-portal',
@@ -89,7 +90,7 @@ const coreEngineeringAreas = [
   {
     title: 'Platform & Cloud',
     description:
-      'AWS, Azure, Docker, Kubernetes autoscaling, Azure DevOps release gates, containerized delivery, and cloud deployment workflows.',
+      'AWS, Azure, Docker, Kubernetes autoscaling, Terraform-based infrastructure, GitHub Actions, and release-gated cloud delivery workflows.',
   },
   {
     title: 'Reliability & Observability',

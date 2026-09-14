@@ -4,9 +4,9 @@ export const AppConfig = {
   title:
     'Viraj Bahulkar | Senior Software Engineer - Backend, Platform & Cloud',
   description:
-    'Senior Software Engineer with 8+ years building backend, cloud-native, and production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, Docker, CI/CD, and observability.',
+    'Senior Software Engineer with 8+ years building backend, cloud-native, and production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, Docker, CI/CD, observability, and hands-on Terraform-based platform delivery.',
   keywords:
-    'Viraj Bahulkar, Senior Software Engineer, Backend Engineer, Platform Engineer, Cloud Engineer, Node.js, TypeScript, Docker, Kubernetes, AWS, Azure, CI/CD, observability, distributed systems, microservices, production systems',
+    'Viraj Bahulkar, Senior Software Engineer, Backend Engineer, Platform Engineer, Cloud Engineer, Node.js, TypeScript, Docker, Kubernetes, Terraform, AWS, Azure, GitHub Actions, CI/CD, observability, distributed systems, microservices, production systems',
   author: 'Viraj Bahulkar',
   locale_region: 'en-us',
   locale: 'en',

@@ -1,0 +1,86 @@
+name: Platform Showcase Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/platform-showcase.yml'
+      - 'platform/aws-platform-showcase/**'
+      - 'src/content/project/platform-delivery-blueprint.md'
+      - 'src/pages/index.astro'
+      - 'src/pages/projects/index.astro'
+      - 'src/utils/AppConfig.ts'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/platform-showcase.yml'
+      - 'platform/aws-platform-showcase/**'
+      - 'src/content/project/platform-delivery-blueprint.md'
+      - 'src/pages/index.astro'
+      - 'src/pages/projects/index.astro'
+      - 'src/utils/AppConfig.ts'
+  workflow_dispatch:
+
+jobs:
+  app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: platform/aws-platform-showcase/app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: platform/aws-platform-showcase/app/package-lock.json
+
+      - name: Install app dependencies
+        run: npm ci
+
+      - name: Run app tests
+        run: npm test
+
+      - name: Build application image
+        run: docker build -t platform-showcase-api .
+
+  kubernetes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install kubectl
+        run: |
+          curl -fsSL https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl -o kubectl
+          chmod +x kubectl
+          sudo mv kubectl /usr/local/bin/kubectl
+
+      - name: Render Kubernetes manifests
+        run: kubectl kustomize platform/aws-platform-showcase/k8s > /tmp/platform-showcase-manifests.yaml
+
+  terraform:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: platform/aws-platform-showcase/terraform
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Check Terraform formatting
+        run: terraform fmt -check -recursive
+
+      - name: Initialize Terraform
+        run: terraform init -backend=false
+
+      - name: Validate Terraform
+        run: terraform validate

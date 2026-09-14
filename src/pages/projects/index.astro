@@ -15,6 +15,7 @@ const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
 ): project is (typeof allProjects)[number] => Boolean(project);
 const flagshipProjectOrder = [
+  'platform-delivery-blueprint',
   'cognizant-finance-group-app',
   'tooljet',
   'wanderwhale-travel-portal',
@@ -30,7 +31,7 @@ const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Engineering`;
 const title = titleBase + titleSuffix;
 const description =
-  'Engineering case studies covering backend systems, cloud infrastructure, Kubernetes, CI/CD, observability, and open-source delivery.';
+  'Engineering case studies covering backend systems, Terraform, cloud infrastructure, Kubernetes, CI/CD, observability, and open-source delivery.';
 const url = `${AppConfig.site_url}/projects/`;
 ---
 
@@ -54,8 +55,9 @@ const url = `${AppConfig.site_url}/projects/`;
       <div class="mb-6 max-w-3xl">
         <h2 class="text-2xl font-bold">Flagship case studies</h2>
         <p class="mt-3 leading-7">
-          These projects best represent backend delivery, cloud infrastructure,
-          Kubernetes, performance, and production ownership.
+          These projects best represent backend delivery, infrastructure as
+          code, cloud infrastructure, Kubernetes, performance, and production
+          ownership.
         </p>
       </div>
       <ProjectGallery client:load projectList={flagshipProjects} />
