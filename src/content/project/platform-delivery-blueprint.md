@@ -22,20 +22,20 @@ runningOrder: 0
 
   <h2 class="text-2xl font-semibold mb-4">What the project includes</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li><strong>Terraform</strong> for AWS networking, IAM, EKS, ECR, CloudWatch logging, and SSM parameter storage.</li>
+    <li><strong>Terraform</strong> for AWS networking, IAM, EKS, ECR, CloudWatch logging, ACM certificate creation, Route53-backed DNS validation, and SSM parameter storage.</li>
     <li>A small <strong>Node.js API</strong> with <code>/healthz</code>, <code>/readyz</code>, and <code>/metrics</code> endpoints.</li>
-    <li><strong>Kubernetes manifests</strong> for deployment, service, ingress, autoscaling, config, and disruption handling.</li>
-    <li><strong>GitHub Actions</strong> to test the app, render Kubernetes manifests, and run Terraform format/validate checks.</li>
+    <li><strong>Kubernetes manifests</strong> for deployment, service, load balancer exposure, autoscaling, config, and disruption handling.</li>
+    <li><strong>GitHub Actions</strong> to validate the app, assume AWS credentials through OIDC, apply infrastructure, and deploy the service.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">Architecture</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>AWS foundation includes a VPC, public/private subnets, NAT, EKS control plane, managed node group, ECR repository, and CloudWatch log group.</li>
+    <li>AWS foundation includes a VPC, public/private subnets, NAT, EKS control plane, managed node group, ECR repository, CloudWatch log group, and ACM certificate flow.</li>
     <li>The application layer is a Dockerized Node.js API designed for health checks, readiness checks, Prometheus-style metrics, and structured stdout logs.</li>
-    <li>Kubernetes deployment patterns include rolling updates, readiness and liveness probes, HPA thresholds, ALB-style ingress annotations, and a PodDisruptionBudget.</li>
-    <li>CI/CD validation is handled in GitHub Actions with separate jobs for the app, manifests, and Terraform.</li>
+    <li>Kubernetes deployment patterns include rolling updates, readiness and liveness probes, NLB service exposure, HPA thresholds, and a PodDisruptionBudget.</li>
+    <li>CI/CD validation and deployment are handled in GitHub Actions with remote Terraform state, OIDC-based AWS access, and Route53 DNS automation.</li>
   </ul>
 
   <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
@@ -45,21 +45,23 @@ runningOrder: 0
 GitHub Actions
   ├─ Node.js tests
   ├─ Kubernetes manifest render
-  └─ Terraform fmt + validate
+      ├─ Terraform fmt + validate
+      └─ OIDC deploy job
 
-Terraform
-  ↓
-AWS VPC + subnets + NAT + IAM + EKS + ECR + CloudWatch + SSM
-  ↓
-Kubernetes deployment + service + ingress + HPA + PDB
-  ↓
-Node.js API with health, readiness, metrics, and structured logs</code></pre>
-  </div>
+    Terraform
+      ↓
+    AWS VPC + subnets + NAT + IAM + EKS + ECR + CloudWatch + ACM + SSM
+      ↓
+    Kubernetes deployment + load balancer service + HPA + PDB
+      ↓
+    Node.js API with health, readiness, metrics, structured logs, DNS, and HTTPS</code></pre>
+      </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">Repository implementation</h2>
   <ul class="list-disc list-inside my-4 pt-1">
+    <li><code>/platform/aws-platform-showcase/bootstrap</code> provisions remote state storage and the GitHub OIDC deployment role.</li>
     <li><code>/platform/aws-platform-showcase/terraform</code> contains the infrastructure code.</li>
     <li><code>/platform/aws-platform-showcase/k8s</code> contains the deployable Kubernetes manifests.</li>
     <li><code>/platform/aws-platform-showcase/app</code> contains the sample service and tests.</li>
@@ -74,7 +76,7 @@ Node.js API with health, readiness, metrics, and structured logs</code></pre>
     <li>Rolling update settings, minimum replica counts, and HPA thresholds are defined in code rather than implied.</li>
     <li>Metrics are exposed in Prometheus format and service/pod annotations support scrape-based monitoring.</li>
     <li>Application configuration is designed to live behind an SSM parameter path instead of hard-coded values.</li>
-    <li>ECR image scanning and CloudWatch log retention are defined in the infrastructure layer.</li>
+    <li>ECR image scanning, ACM certificate issuance, CloudWatch log retention, and OIDC-based deployment access are defined in the infrastructure layer.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

@@ -2,6 +2,12 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
+data "aws_route53_zone" "public" {
+  count        = var.route53_zone_name != "" ? 1 : 0
+  name         = var.route53_zone_name
+  private_zone = false
+}
+
 data "aws_iam_policy_document" "eks_cluster_assume_role" {
   statement {
     actions = ["sts:AssumeRole"]
@@ -255,6 +261,40 @@ resource "aws_ecr_repository" "app" {
   image_scanning_configuration {
     scan_on_push = true
   }
+}
+
+resource "aws_acm_certificate" "platform_api" {
+  count             = var.route53_zone_name != "" ? 1 : 0
+  domain_name       = var.platform_api_host
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_route53_record" "platform_api_validation" {
+  for_each = var.route53_zone_name != "" ? {
+    for option in aws_acm_certificate.platform_api[0].domain_validation_options :
+    option.domain_name => {
+      name   = option.resource_record_name
+      record = option.resource_record_value
+      type   = option.resource_record_type
+    }
+  } : {}
+
+  allow_overwrite = true
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 60
+  type            = each.value.type
+  zone_id         = data.aws_route53_zone.public[0].zone_id
+}
+
+resource "aws_acm_certificate_validation" "platform_api" {
+  count                   = var.route53_zone_name != "" ? 1 : 0
+  certificate_arn         = aws_acm_certificate.platform_api[0].arn
+  validation_record_fqdns = [for record in aws_route53_record.platform_api_validation : record.fqdn]
 }
 
 resource "aws_ssm_parameter" "app_config" {

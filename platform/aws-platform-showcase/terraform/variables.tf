@@ -39,3 +39,15 @@ variable "allowed_cidrs" {
   type        = list(string)
   default     = ["0.0.0.0/0"]
 }
+
+variable "route53_zone_name" {
+  description = "Public Route53 zone used for certificate validation and DNS automation."
+  type        = string
+  default     = ""
+}
+
+variable "platform_api_host" {
+  description = "Public hostname for the platform showcase API."
+  type        = string
+  default     = "api.platform.virajbahulkar.me"
+}
