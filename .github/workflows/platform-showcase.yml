@@ -21,6 +21,9 @@ on:
       - 'src/utils/AppConfig.ts'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   app:
     runs-on: ubuntu-latest
