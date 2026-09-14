@@ -40,9 +40,8 @@ export const profile: Profile = {
 
 export const education: EducationItem[] = [
   {
-    title: 'B. Sc. (Computer Science)',
-    subtitle:
-      '2011 to 2017 (Officially completed in 2014, delayed to 2017) - Trained as a freelancer during the gap.',
+    title: 'Bachelor of Computer Science',
+    subtitle: 'Completed in 2017',
   },
   {
     title: '12th Grade (Higher Secondary Education)',
