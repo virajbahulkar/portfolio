@@ -1,8 +1,8 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-title: 'Building Resilient Infrastructure: A Senior Engineer\'s Guide to Production DevOps'
+title: 'Building Resilient Infrastructure: A Senior Engineer''s Guide to Production DevOps'
 description: 'Lessons learned from scaling cloud infrastructure, managing containerized workloads, and building reliable systems. A practical guide to production DevOps from someone who has debugged 3am outages.'
-pubDate: 2026-09-14
+pubDate: 2026-09-14T00:00:00Z
 url: 'devops-production-lessons'
 imgSrc: '/assets/images/blog/devops-resilience.jpg'
 imgAlt: 'Cloud infrastructure diagram with Kubernetes and monitoring'
