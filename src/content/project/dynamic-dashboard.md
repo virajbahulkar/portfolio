@@ -1,6 +1,7 @@
 ---
-title: 'Dynamic dashboard'
-description: 'Dashboard application for assembling real-time reports from multiple data sources with configurable widgets, role-based access, and cloud-hosted delivery.'
+title: "Dynamic dashboard"
+description: "Dashboard application for assembling real-time reports from multiple data sources with configurable widgets, role-based access, and cloud-hosted delivery."
+impactSnapshot: "Impact: enabled faster business decisions through configurable real-time reporting views."
 startDate: 2024-12-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, MongoDB, AWS

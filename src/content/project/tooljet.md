@@ -1,10 +1,11 @@
 ---
-title: 'ToolJet Open Source Contributions'
-description: 'Contributed to ToolJet, an open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads, improving builder performance by 35%, backend query latency by 60%, and delivery confidence through stronger test coverage.'
-link: 'https://github.com/ToolJet/ToolJet/commits?author=virajbahulkar'
-imgSrc: '/assets/images/projects/tooljet.png'
+title: "ToolJet Open Source Contributions"
+description: "Contributed to ToolJet, an open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads, improving builder performance by 35%, backend query latency by 60%, and delivery confidence through stronger test coverage."
+link: "https://github.com/ToolJet/ToolJet/commits?author=virajbahulkar"
+imgSrc: "/assets/images/projects/tooljet.png"
+impactSnapshot: "Impact: improved builder performance and backend query latency through focused OSS contributions."
 startDate: 2025-05-09T00:00:00Z
-imgAlt: 'ToolJet open-source contributions'
+imgAlt: "ToolJet open-source contributions"
 openSource: true
 category: ReactJS, NodeJS, TypeScript, PostgreSQL, Open Source
 runningOrder: 1

@@ -1,6 +1,7 @@
 ---
-title: 'Compass agent portal app'
-description: 'Insurance agent portal for performance tracking, operational reporting, and business workflow visibility across sales teams.'
+title: "Compass agent portal app"
+description: "Insurance agent portal for performance tracking, operational reporting, and business workflow visibility across sales teams."
+impactSnapshot: "Impact: improved sales-team visibility with operational dashboards and performance tracking."
 startDate: 2020-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, IBM Database, AWS

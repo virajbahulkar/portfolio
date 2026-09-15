@@ -1,9 +1,10 @@
 ---
-title: 'Platform Delivery Blueprint (Terraform + AWS + Kubernetes)'
-description: 'Code-backed platform blueprint defining an AWS/EKS foundation in Terraform, Kubernetes runtime patterns, and GitHub Actions-based deployment automation.'
-imgSrc: '/assets/images/projects/platform-delivery-blueprint.svg'
+title: "Platform Delivery Blueprint (Terraform + AWS + Kubernetes)"
+description: "Code-backed platform blueprint defining an AWS/EKS foundation in Terraform, Kubernetes runtime patterns, and GitHub Actions-based deployment automation."
+imgSrc: "/assets/images/projects/platform-delivery-blueprint.svg"
+impactSnapshot: "Impact: established a code-backed Terraform and Kubernetes platform blueprint for cloud delivery."
 startDate: 2026-09-14T00:00:00Z
-imgAlt: 'Platform delivery blueprint project'
+imgAlt: "Platform delivery blueprint project"
 openSource: false
 category: Terraform, AWS, Kubernetes, GitHub Actions, NodeJS
 runningOrder: 0

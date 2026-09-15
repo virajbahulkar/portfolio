@@ -1,10 +1,17 @@
 ---
 import { BlogPost } from '@partials/BlogPost';
+import StickyConversionCta from '@components/StickyConversionCta.astro';
 import Base from '@templates/Base.astro';
+import { AppConfig } from '@utils/AppConfig';
 import type { IFrontmatter } from 'astro-boilerplate-components';
+import { getCollection } from 'astro:content';
+import { RELATED_BLOG_PROJECTS } from '../content/_curation';
 
 interface BlogPostFrontmatter extends IFrontmatter {
   url: string;
+  updatedDate?: Date;
+  readTime: string;
+  tags: string[];
 }
 export interface Props {
   content: BlogPostFrontmatter;
@@ -12,10 +19,77 @@ export interface Props {
 
 const { content } = Astro.props as Props;
 const title = `${content.title}`;
+const pageUrl = new URL(Astro.url.pathname, AppConfig.site_url).toString();
+const projects = await getCollection('project');
+const postSlug = Astro.url.pathname.split('/').filter(Boolean).at(-1) || '';
+const relatedProjects = projects.filter((project) =>
+  RELATED_BLOG_PROJECTS[postSlug]?.includes(project.slug)
+);
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: content.title,
+  description: content.description,
+  datePublished: content.pubDate,
+  dateModified: content.updatedDate ?? content.pubDate,
+  author: {
+    '@type': 'Person',
+    name: AppConfig.author,
+  },
+  mainEntityOfPage: pageUrl,
+  articleSection: content.tags,
+  url: pageUrl,
+  sameAs: content.url,
+};
 ---
 
-<Base head={{ title, description: content.description, ogType: 'article' }}>
+<Base
+  head={{ title, description: content.description, ogType: 'article', url: pageUrl }}
+>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(blogPostingSchema)}
+  >
+
+  </script>
   <BlogPost frontmatter={content}>
     <slot />
   </BlogPost>
+  <section class="mt-6 rounded-2xl border border-base-300 p-5">
+    <p class="text-sm">
+      Published on {new Date(content.pubDate).toLocaleDateString()} · {content.readTime}
+    </p>
+    <p class="mt-2 text-sm">
+      Original article:{' '}
+      <a
+        href={content.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-cyan-400 hover:underline"
+      >
+        Read on source
+      </a>
+    </p>
+    {relatedProjects.length > 0 && (
+      <div class="mt-4">
+        <p class="text-sm font-semibold">Related case studies</p>
+        <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">
+          {relatedProjects.map((project) => (
+            <li>
+              <a href={`/projects/${project.slug}/`} class="hover:text-cyan-400">
+                {project.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </section>
+  <StickyConversionCta
+    primaryHref="mailto:hello@virajbahulkar.me"
+    primaryLabel="Contact"
+    secondaryHref="/projects/"
+    secondaryLabel="View projects"
+  />
 </Base>

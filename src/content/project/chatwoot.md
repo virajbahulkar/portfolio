@@ -1,10 +1,11 @@
 ---
-title: 'Chatwoot'
-description: 'Open-source contribution proof showing authored Chatwoot bug fixes across contact search, Telegram message handling, and sidebar data presentation.'
-link: 'https://github.com/chatwoot/chatwoot/commits?author=virajbahulkar'
-imgSrc: '/assets/images/projects/chatwoot.png'
+title: "Chatwoot"
+description: "Open-source contribution proof showing authored Chatwoot bug fixes across contact search, Telegram message handling, and sidebar data presentation."
+link: "https://github.com/chatwoot/chatwoot/commits?author=virajbahulkar"
+imgSrc: "/assets/images/projects/chatwoot.png"
+impactSnapshot: "Impact: shipped verifiable open-source fixes that improved reliability in active product flows."
 startDate: 2021-10-25T00:00:00Z
-imgAlt: 'Project Maps'
+imgAlt: "Project Maps"
 openSource: true
 category: Ruby on Rails, VueJS, Typescript, PostgreSQL
 runningOrder: 3

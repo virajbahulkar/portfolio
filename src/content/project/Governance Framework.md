@@ -1,6 +1,7 @@
 ---
-title: 'Deep Governance App'
-description: 'Internal governance platform for managing tasks, collaboration, and planning workflows through configurable views and shared operational data.'
+title: "Deep Governance App"
+description: "Internal governance platform for managing tasks, collaboration, and planning workflows through configurable views and shared operational data."
+impactSnapshot: "Impact: streamlined internal governance workflows with centralized planning visibility."
 startDate: 2018-01-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, SQL Server

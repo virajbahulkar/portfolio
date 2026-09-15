@@ -1,6 +1,8 @@
 ---
 import { PaginationHeader } from '@components/PaginationHeader';
 import { ProjectGallery } from '@components/ProjectGallery';
+import StickyConversionCta from '@components/StickyConversionCta.astro';
+import { FLAGSHIP_PROJECT_SLUGS } from '../../content/_curation';
 import { Footer } from '@partials/Footer';
 import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
@@ -14,17 +16,11 @@ const sortedProjects = sortProjectsByDate(allProjects);
 const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
 ): project is (typeof allProjects)[number] => Boolean(project);
-const flagshipProjectOrder = [
-  'platform-delivery-blueprint',
-  'cognizant-finance-group-app',
-  'tooljet',
-  'wanderwhale-travel-portal',
-];
-const flagshipProjects = flagshipProjectOrder
+const flagshipProjects = FLAGSHIP_PROJECT_SLUGS
   .map((slug) => allProjects.find((project) => project.slug === slug))
   .filter(isProjectEntry);
 const archiveProjects = sortedProjects.filter(
-  (project) => !flagshipProjectOrder.includes(project.slug)
+  (project) => !FLAGSHIP_PROJECT_SLUGS.includes(project.slug)
 );
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
@@ -59,6 +55,9 @@ const url = `${AppConfig.site_url}/projects/`;
           code, cloud infrastructure, Kubernetes, performance, and production
           ownership.
         </p>
+        <p class="mt-2 text-sm text-base-content/70">
+          Flagship ordering favors backend, platform, and cloud-relevant proof first.
+        </p>
       </div>
       <ProjectGallery client:load projectList={flagshipProjects} />
     </section>
@@ -77,10 +76,24 @@ const url = `${AppConfig.site_url}/projects/`;
         isotopeMode={true}
       />
     </section>
+
+    <section class="mx-auto max-w-7xl rounded-2xl border border-base-300 p-6">
+      <h2 class="text-xl font-semibold">Related writing</h2>
+      <p class="mt-2 text-sm leading-6">
+        Read detailed engineering tradeoffs and implementation notes in the
+        <a href="/blogs/" class="text-cyan-400 hover:underline">blogs section</a>.
+      </p>
+    </section>
   </div>
 
   <div class="flex flex-col overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
+  <StickyConversionCta
+    primaryHref="mailto:hello@virajbahulkar.me"
+    primaryLabel="Contact"
+    secondaryHref="/cv/"
+    secondaryLabel="View resume"
+  />
   <Footer />
 </Base>

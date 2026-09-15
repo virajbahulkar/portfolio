@@ -1,12 +1,12 @@
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
 interface ProjectCardProps {
-  project: CollectionEntry<'project'>;
+  project: CollectionEntry<"project">;
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
-  const categories = project.data.category.split(', ');
+  const categories = project.data.category.split(", ");
 
   const isExternalLink = project.data.openSource && project.data.link;
 
@@ -14,7 +14,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     <div
       key={project.data.link}
       className={`grid ${
-        project.data.imgSrc ? 'xl:grid-cols-[120px_1fr]' : 'xl:grid-cols-1'
+        project.data.imgSrc ? "xl:grid-cols-[120px_1fr]" : "xl:grid-cols-1"
       }
                   items-start gap-6   p-4 transition-all duration-300 `}
     >
@@ -54,7 +54,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               href={
                 isExternalLink ? project.data.link : `/projects/${project.slug}`
               }
-              target={isExternalLink ? '_blank' : ''}
+              target={isExternalLink ? "_blank" : ""}
               title={project.data.title}
             >
               <div className="text-lg font-semibold">{project.data.title}</div>
@@ -64,18 +64,22 @@ const ProjectCard = (props: ProjectCardProps) => {
               {categories.map((category: string, index: number) => {
                 // Accessible color palette
                 const palette = [
-                  { bg: '#1e40af', color: '#fff' }, // blue
-                  { bg: '#047857', color: '#fff' }, // emerald
-                  { bg: '#be185d', color: '#fff' }, // pink
-                  { bg: '#f59e42', color: '#222' }, // orange
-                  { bg: '#7c3aed', color: '#fff' }, // violet
-                  { bg: '#f43f5e', color: '#fff' }, // rose
-                  { bg: '#059669', color: '#fff' }, // green
-                  { bg: '#eab308', color: '#222' }, // yellow
+                  { bg: "#1e40af", color: "#fff" }, // blue
+                  { bg: "#047857", color: "#fff" }, // emerald
+                  { bg: "#be185d", color: "#fff" }, // pink
+                  { bg: "#f59e42", color: "#222" }, // orange
+                  { bg: "#7c3aed", color: "#fff" }, // violet
+                  { bg: "#f43f5e", color: "#fff" }, // rose
+                  { bg: "#059669", color: "#fff" }, // green
+                  { bg: "#eab308", color: "#222" }, // yellow
                 ];
                 const color = palette[index % palette.length]!;
                 return (
-                  <span key={index} className="badge" style={{backgroundColor: color.bg, color: color.color}}>
+                  <span
+                    key={index}
+                    className="badge"
+                    style={{ backgroundColor: color.bg, color: color.color }}
+                  >
                     {category}
                   </span>
                 );
@@ -88,12 +92,15 @@ const ProjectCard = (props: ProjectCardProps) => {
             <p className={`line-clamp-3 transition-all duration-300`}>
               {project.data.description}
             </p>
+            <p className="mt-2 text-xs font-semibold text-cyan-500">
+              Impact: {project.data.impactSnapshot}
+            </p>
             <a
               className="mt-2 text-blue-500 hover:underline focus:outline-none"
               href={`/projects/${project.slug}`}
               title={`Read more about ${project.data.title}`}
             >
-              {'Read More'}
+              {"Read More"}
             </a>
           </div>
         </div>

@@ -9,6 +9,11 @@ import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortByRunningOrder } from '@utils/Posts';
+import {
+  FEATURED_BLOG_SLUGS,
+  FLAGSHIP_PROJECT_SLUGS,
+  RELATED_BLOG_PROJECTS,
+} from '../content/_curation';
 // eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
 
@@ -16,31 +21,19 @@ const allPosts = await getCollection('post');
 const isPostEntry = (
   post: (typeof allPosts)[number] | undefined
 ): post is (typeof allPosts)[number] => Boolean(post);
-const preferredWritingOrder = [
-  'building-realtime-dashboard',
-  'vscode-folder-structure-extension',
-  'wisely-choose-ui-library',
-];
-const lastThreePosts = preferredWritingOrder
+const lastThreePosts = FEATURED_BLOG_SLUGS
   .map((slug) => allPosts.find((post) => post.slug === slug))
   .filter(isPostEntry);
 const allProjects = await getCollection('project');
 const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
 ): project is (typeof allProjects)[number] => Boolean(project);
-const flagshipProjectOrder = [
-  'platform-delivery-blueprint',
-  'cognizant-finance-group-app',
-  'tooljet',
-  'wanderwhale-travel-portal',
-];
-const flagshipProjects = flagshipProjectOrder
+const flagshipProjects = FLAGSHIP_PROJECT_SLUGS
   .map((slug) => allProjects.find((project) => project.slug === slug))
   .filter(isProjectEntry);
 const openSourceProjects = sortByRunningOrder(
   allProjects.filter(
-    (project) =>
-      project.data.openSource && !flagshipProjectOrder.includes(project.slug)
+    (project) => project.data.openSource && !FLAGSHIP_PROJECT_SLUGS.includes(project.slug)
   )
 ).slice(0, 3);
 const engineeringImpact = [
@@ -205,7 +198,24 @@ const { title, description, ogImage } = AppConfig;
         <RecentOssProjects projectList={openSourceProjects} />
       </div>
       <div class="flex items-center justify-center overflow-auto p-6">
-        <RecentPosts postList={lastThreePosts} />
+        <div class="space-y-4">
+          <RecentPosts postList={lastThreePosts} />
+          <div class="rounded-2xl border border-base-300 p-4 text-sm">
+            <p class="font-semibold">Related case studies</p>
+            <ul class="mt-2 space-y-2">
+              {lastThreePosts.map((post) => (
+                <li>
+                  <a class="hover:text-cyan-400" href="/projects/">
+                    {post.data.title} →{' '}
+                    {allProjects.find(
+                      (project) => project.slug === RELATED_BLOG_PROJECTS[post.slug]?.[0]
+                    )?.data.title ?? 'View engineering projects'}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

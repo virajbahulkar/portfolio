@@ -1,6 +1,7 @@
 ---
-title: 'HR 360 Portal'
-description: 'Feedback and review platform for collecting structured evaluations, generating reports, and improving visibility into employee performance workflows.'
+title: "HR 360 Portal"
+description: "Feedback and review platform for collecting structured evaluations, generating reports, and improving visibility into employee performance workflows."
+impactSnapshot: "Impact: improved review-cycle transparency through structured feedback and reporting workflows."
 startDate: 2018-01-01T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Reporting

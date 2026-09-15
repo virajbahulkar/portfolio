@@ -1,29 +1,31 @@
 ---
 import { BlogGallery } from '@components/BlogGallery';
 import { PaginationHeader } from '@components/PaginationHeader';
+import StickyConversionCta from '@components/StickyConversionCta.astro';
 import { Footer } from '@partials/Footer';
 import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortPostByDate } from '@utils/Posts';
+import {
+  BLOG_GOVERNANCE_RULE,
+  FEATURED_BLOG_SLUGS,
+  RELATED_BLOG_PROJECTS,
+} from '../../content/_curation';
 // eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('post');
+const allProjects = await getCollection('project');
 const sortedPosts = sortPostByDate(allPosts);
 const isPostEntry = (
   post: (typeof allPosts)[number] | undefined
 ): post is (typeof allPosts)[number] => Boolean(post);
-const featuredWritingOrder = [
-  'building-realtime-dashboard',
-  'vscode-folder-structure-extension',
-  'wisely-choose-ui-library',
-];
-const featuredPosts = featuredWritingOrder
+const featuredPosts = FEATURED_BLOG_SLUGS
   .map((slug) => allPosts.find((post) => post.slug === slug))
   .filter(isPostEntry);
 const remainingPosts = sortedPosts.filter(
-  (post) => !featuredWritingOrder.includes(post.slug)
+  (post) => !FEATURED_BLOG_SLUGS.includes(post.slug)
 );
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
@@ -58,6 +60,7 @@ const url = `${AppConfig.site_url}/blogs/`;
         A curated starting point for production-minded work covering cloud
         delivery, system behavior, and engineering tradeoffs.
       </p>
+      <p class="mt-2 text-sm text-base-content/70">{BLOG_GOVERNANCE_RULE}</p>
       <div class="mt-6 grid gap-4 md:grid-cols-3">
         {featuredPosts.map((post) => (
           <a
@@ -70,7 +73,26 @@ const url = `${AppConfig.site_url}/blogs/`;
               Featured
             </p>
             <h3 class="mt-3 text-lg font-semibold">{post.data.title}</h3>
+            <p class="mt-2 text-xs text-base-content/70">
+              {new Date(post.data.pubDate).toLocaleDateString()} · {post.data.readTime}
+            </p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {post.data.tags.map((tag) => (
+                <span class="badge badge-outline text-xs">{tag}</span>
+              ))}
+            </div>
             <p class="mt-3 text-sm leading-6">{post.data.description}</p>
+            {RELATED_BLOG_PROJECTS[post.slug]?.[0] && (
+              <p class="mt-3 text-xs text-cyan-400">
+                Related case study:{' '}
+                {
+                  allProjects.find(
+                    (project) =>
+                      project.slug === RELATED_BLOG_PROJECTS[post.slug]?.[0]
+                  )?.data.title
+                }
+              </p>
+            )}
           </a>
         ))}
       </div>
@@ -78,13 +100,33 @@ const url = `${AppConfig.site_url}/blogs/`;
   </section>
 
   <section>
+    <div class="mb-4 px-4">
+      <h2 class="text-2xl font-bold">All writing archive</h2>
+      <p class="mt-2 text-sm text-base-content/70">
+        Everything beyond the featured set stays in archive and is reviewed for
+        relevance over time.
+      </p>
+    </div>
     <div class="grid grid-cols-1  gap-6 p-4">
-      <BlogGallery postList={remainingPosts} />
+      {remainingPosts.length > 0 ? (
+        <BlogGallery postList={remainingPosts} />
+      ) : (
+        <p class="rounded-2xl border border-base-300 p-4 text-sm text-base-content/80">
+          No additional archive posts right now. New writing will be added here
+          when it meets the archive criteria.
+        </p>
+      )}
     </div>
   </section>
 
   <div class="flex flex-col overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
+  <StickyConversionCta
+    primaryHref="mailto:hello@virajbahulkar.me"
+    primaryLabel="Contact"
+    secondaryHref="/cv/"
+    secondaryLabel="View resume"
+  />
   <Footer />
 </Base>
