@@ -1,6 +1,7 @@
 ---
-title: 'Digitizer App (no-code platform)'
-description: 'No-code platform for assembling dashboards, forms, and content-driven pages through configurable components and backend integrations.'
+title: "Digitizer App (no-code platform)"
+description: "No-code platform for assembling dashboards, forms, and content-driven pages through configurable components and backend integrations."
+impactSnapshot: "Impact: accelerated internal delivery by enabling no-code dashboard and form assembly."
 startDate: 2019-04-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Kubernetes, AWS

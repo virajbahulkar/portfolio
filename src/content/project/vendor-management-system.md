@@ -1,6 +1,7 @@
 ---
-title: 'Vendor registration company act compliant portal'
-description: 'Vendor onboarding and compliance workflow platform for managing registration, approvals, documentation, and procurement coordination.'
+title: "Vendor registration company act compliant portal"
+description: "Vendor onboarding and compliance workflow platform for managing registration, approvals, documentation, and procurement coordination."
+impactSnapshot: "Impact: improved procurement compliance by centralizing vendor onboarding and approvals."
 startDate: 2017-06-01T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Delivery Automation

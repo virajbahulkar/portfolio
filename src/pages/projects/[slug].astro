@@ -1,11 +1,14 @@
 ---
 // Imports
+import StickyConversionCta from '@components/StickyConversionCta.astro';
 import { Footer } from '@partials/Footer';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import CTA from '@sections/CTA.astro';
+
+import { RELATED_BLOG_PROJECTS } from '../../content/_curation';
 
 export interface Props {
   project: CollectionEntry<'project'>;
@@ -25,9 +28,14 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
+const allPosts = await getCollection('post');
 
-const { title, description, startDate, category, image } = project.data;
+const { title, description, startDate, category, image, impactSnapshot } =
+  project.data;
 const categories = category.split(', ');
+const relatedPosts = allPosts.filter((post) =>
+  RELATED_BLOG_PROJECTS[post.slug]?.includes(project.slug)
+);
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const pageTitle = `${title}${titleSuffix}`;
@@ -44,6 +52,10 @@ const pageUrl = `${AppConfig.site_url}/projects/${project.slug}/`;
         {title}
       </h1>
       <p class=" mb-4">{description}</p>
+      <div class="mb-4 rounded-xl border border-base-300 bg-base-200/40 p-3">
+        <p class="text-sm font-semibold">Impact snapshot</p>
+        <p class="mt-1 text-sm">{impactSnapshot}</p>
+      </div>
       <div class="mb-4 flex items-center space-x-4">
         <span class="text-sm "
           >Published on: {new Date(startDate).toLocaleDateString()}
@@ -67,10 +79,36 @@ const pageUrl = `${AppConfig.site_url}/projects/${project.slug}/`;
 
     <!-- Project Content -->
     <Content />
+
+    {relatedPosts.length > 0 && (
+      <div class="mt-8 rounded-2xl border border-base-300 p-6">
+        <h2 class="text-xl font-semibold">Related writing</h2>
+        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm">
+          {relatedPosts.map((post) => (
+            <li>
+              <a
+                href={post.data.url}
+                target="_blank"
+                rel="noreferrer"
+                class="hover:text-cyan-400"
+              >
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
   </div>
 
-  <div class="flex-col lg:grid lg:grid-cols-2 overflow-auto p-6 lg:flex">
+  <div class="overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
+  <StickyConversionCta
+    primaryHref="mailto:hello@virajbahulkar.me"
+    primaryLabel="Contact"
+    secondaryHref="/cv/"
+    secondaryLabel="View resume"
+  />
   <Footer />
 </Base>

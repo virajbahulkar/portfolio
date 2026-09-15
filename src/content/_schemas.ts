@@ -5,20 +5,25 @@ export const postSchema = z.object({
   title: z.string(),
   description: z.string(),
   pubDate: z.date(),
+  updatedDate: z.date().optional(),
   url: z.string(),
   imgSrc: z.string(),
   imgAlt: z.string(),
+  readTime: z.string(),
+  tags: z.array(z.string()).min(1),
 });
 
 export const projectSchema = z.object({
   title: z.string(),
   description: z.string(),
+  impactSnapshot: z.string(),
   link: z.string().optional(),
   imgSrc: z.string().optional(),
   startDate: z.date(),
   imgAlt: z.string().optional(),
   openSource: z.boolean(),
   category: z.string(),
+  relatedPosts: z.array(z.string()).optional(),
   runningOrder: z.number(),
 });
 

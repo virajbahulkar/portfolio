@@ -75,7 +75,11 @@ const ProjectCard = (props: ProjectCardProps) => {
                 ];
                 const color = palette[index % palette.length]!;
                 return (
-                  <span key={index} className="badge" style={{backgroundColor: color.bg, color: color.color}}>
+                  <span
+                    key={index}
+                    className="badge"
+                    style={{ backgroundColor: color.bg, color: color.color }}
+                  >
                     {category}
                   </span>
                 );
@@ -87,6 +91,9 @@ const ProjectCard = (props: ProjectCardProps) => {
           <div className="mt-3 text-sm ">
             <p className={`line-clamp-3 transition-all duration-300`}>
               {project.data.description}
+            </p>
+            <p className="mt-2 text-xs font-semibold text-cyan-500">
+              Impact: {project.data.impactSnapshot}
             </p>
             <a
               className="mt-2 text-blue-500 hover:underline focus:outline-none"

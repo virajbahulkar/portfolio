@@ -1,9 +1,10 @@
 ---
-title: 'Platform Delivery Blueprint (Terraform + AWS + Kubernetes)'
-description: 'Code-backed platform blueprint defining an AWS/EKS foundation in Terraform, Kubernetes runtime patterns, and GitHub Actions-based deployment automation.'
-imgSrc: '/assets/images/projects/platform-delivery-blueprint.svg'
+title: "Platform Delivery Blueprint (Terraform + AWS + Kubernetes)"
+description: "Code-backed platform blueprint defining an AWS/EKS foundation in Terraform, Kubernetes runtime patterns, and GitHub Actions-based deployment automation."
+imgSrc: "/assets/images/projects/platform-delivery-blueprint.svg"
+impactSnapshot: "Impact: established a code-backed Terraform and Kubernetes platform blueprint for cloud delivery."
 startDate: 2026-09-14T00:00:00Z
-imgAlt: 'Platform delivery blueprint project'
+imgAlt: "Platform delivery blueprint project"
 openSource: false
 category: Terraform, AWS, Kubernetes, GitHub Actions, NodeJS
 runningOrder: 0
@@ -12,10 +13,11 @@ runningOrder: 0
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Why I built it</h2>
   <p>
-    I wanted a concrete infrastructure-as-code proof project that demonstrates
-    end-to-end platform ownership without overstating my professional history.
-    This case study is a code-first blueprint built inside the portfolio
-    repository and designed to be deployable later with real AWS credentials.
+    I built this platform engineering project to implement an end-to-end cloud
+    delivery path using Terraform, AWS, Kubernetes and GitHub Actions. It
+    brings infrastructure provisioning, container orchestration, deployment
+    automation, runtime health checks and operational controls into one
+    code-backed architecture.
   </p>
 
   <div class="mt-6 flex flex-wrap gap-3">
@@ -114,8 +116,8 @@ runningOrder: 0
 
   <h2 class="text-2xl font-semibold mb-4">Engineering result</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Created a truthful, code-backed Terraform and Kubernetes proof project for platform-focused applications.</li>
-    <li>Established a reusable blueprint for future live deployment on AWS without needing to invent past production ownership.</li>
+    <li>Implemented a reusable Terraform and Kubernetes platform blueprint covering infrastructure provisioning, CI/CD automation and runtime reliability patterns.</li>
+    <li>Established a reusable AWS platform architecture that can evolve alongside continued Terraform and cloud engineering work.</li>
     <li>Added demonstrable IaC, release validation, and runtime health patterns directly to the portfolio repository.</li>
   </ul>
 </div>

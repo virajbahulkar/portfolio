@@ -1,6 +1,7 @@
 ---
-title: 'WanderWhale Travel Portal'
-description: 'Full-stack travel platform serving 50K users and $1M+ annual transaction value with ElasticSearch-powered discovery, dynamic pricing, multi-currency bookings, and reliable payment reconciliation.'
+title: "WanderWhale Travel Portal"
+description: "Full-stack travel platform serving 50K users and $1M+ annual transaction value with ElasticSearch-powered discovery, dynamic pricing, multi-currency bookings, and reliable payment reconciliation."
+impactSnapshot: "Impact: supported 50K users and $1M+ transaction volume with reliable booking flows."
 startDate: 2025-11-10T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, ElasticSearch, PostgreSQL, Redis, Payments

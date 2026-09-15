@@ -1,2 +1,4 @@
 node_modules
 dist
+public/assets/js/*.min.js
+netlify/functions/

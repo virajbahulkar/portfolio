@@ -7,9 +7,18 @@ interface BlogCardProps {
 
 const BlogCard = (props: BlogCardProps) => {
   const { blog } = props;
+  const updatedDate = blog.data.updatedDate
+    ? format(new Date(blog.data.updatedDate), 'LLL d, yyyy')
+    : null;
+
   return (
-    <a className="hover:translate-y-1" href={blog.data.url} target="_blank">
-      <div className="overflow-hidden rounded-2xl rounded-md border border-base-300 bg-base-100 ">
+    <a
+      className="hover:translate-y-1"
+      href={blog.data.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="overflow-hidden rounded-2xl border border-base-300 bg-base-100">
         <div className="aspect-h-2 aspect-w-3">
           <img
             className="size-full object-cover object-center"
@@ -22,11 +31,20 @@ const BlogCard = (props: BlogCardProps) => {
         <div className="px-3 pb-6 pt-4 text-center">
           <h2 className="text-xl font-semibold">{blog.data.title}</h2>
 
-          <div className="mt-1 text-xs">
-            {format(new Date(blog.data.pubDate), 'LLL d, yyyy')}
+          <div className="mt-2 text-xs text-base-content/70">
+            <span>{format(new Date(blog.data.pubDate), 'LLL d, yyyy')}</span>
+            <span> · {blog.data.readTime}</span>
+            {updatedDate ? <span> · Updated {updatedDate}</span> : null}
           </div>
 
           <div className="mt-2 text-sm">{blog.data.description}</div>
+          <div className="mt-3 flex flex-wrap justify-center gap-2">
+            {blog.data.tags.map((tag) => (
+              <span key={tag} className="badge badge-outline text-xs">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </a>
