@@ -1,5 +1,6 @@
 ---
 layout: "@templates/BasePost.astro"
+external: true
 title: I Thought UI Libraries Would Save Me Time — They Didn’t
 description: What I learned after months of overriding Chakra, MUI, and others — plus what finally worked
 pubDate: 2025-05-16T00:00:00Z

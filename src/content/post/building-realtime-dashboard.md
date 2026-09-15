@@ -1,5 +1,6 @@
 ---
 layout: "@templates/BasePost.astro"
+external: true
 title: Building real-time dashboard
 description: Building a Scalable Real-Time Dashboard with React, WebSocket, Docker, Kubernetes, and AWS
 pubDate: 2025-04-30T00:00:00Z
