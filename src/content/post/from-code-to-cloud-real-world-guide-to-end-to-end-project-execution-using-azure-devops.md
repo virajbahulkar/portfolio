@@ -1,7 +1,7 @@
 ---
 layout: "@templates/BasePost.astro"
 external: true
-title: From Code to Cloud: A Real-World Guide to End-to-End Project Execution Using Azure DevOps
+title: "From Code to Cloud: A Real-World Guide to End-to-End Project Execution Using Azure DevOps"
 description: An end-to-end walkthrough of taking a Node.js and React application from repository setup through Azure DevOps CI/CD and cloud deployment.
 pubDate: 2025-07-12T00:00:00Z
 updatedDate: 2025-07-12T00:00:00Z
