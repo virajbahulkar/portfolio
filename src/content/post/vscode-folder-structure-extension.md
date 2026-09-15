@@ -1,5 +1,6 @@
 ---
 layout: "@templates/BasePost.astro"
+external: true
 title: Introducing My VS Code Extension:- Folder Structure Creator
 description: Enter Folder Structure Creator, a VS Code extension designed to make folder and file scaffolding effortless.
 pubDate: 2025-06-18T00:00:00Z

@@ -93,7 +93,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               {project.data.description}
             </p>
             <p className="mt-2 text-xs font-semibold text-cyan-500">
-              Impact: {project.data.impactSnapshot}
+              {project.data.impactSnapshot}
             </p>
             <a
               className="mt-2 text-blue-500 hover:underline focus:outline-none"

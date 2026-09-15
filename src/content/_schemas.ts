@@ -2,6 +2,7 @@ import { z } from 'astro:content';
 
 export const postSchema = z.object({
   layout: z.string(),
+  external: z.boolean(),
   title: z.string(),
   description: z.string(),
   pubDate: z.date(),
