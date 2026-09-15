@@ -1,0 +1,7 @@
+aws_region        = "ap-south-1"
+environment       = "shared"
+project           = "platform-showcase"
+github_owner      = "virajbahulkar"
+github_repo       = "portfolio"
+github_environments = ["dev", "prod"]
+route53_zone_name = "virajbahulkar.me"

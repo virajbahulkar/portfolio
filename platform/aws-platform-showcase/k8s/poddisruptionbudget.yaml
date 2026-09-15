@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: platform-showcase-api
+  namespace: platform-showcase
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: platform-showcase-api

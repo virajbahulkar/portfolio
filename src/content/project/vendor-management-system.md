@@ -1,8 +1,25 @@
 ---
 title: 'Vendor registration company act compliant portal'
-description: "The Vendor Portal simplifies the entire lifecycle of vendor management—from onboarding to ongoing compliance checks—ensuring adherence to Company Act regulations. It provides a centralized, user-friendly platform where vendors can submit documentation, track approvals, and engage with procurement teams. Built for scalability and flexibility, the portal enables organizations to enhance vendor relationships while maintaining rigorous compliance standards."
+description: 'Vendor onboarding and compliance workflow platform for managing registration, approvals, documentation, and procurement coordination.'
 startDate: 2017-06-01T00:00:00Z
 openSource: false
-category: ReactJS, NodeJS, Postgres, Kubernetes, AWS
+category: ReactJS, NodeJS, PostgreSQL, Delivery Automation
 runningOrder: 1
 ---
+
+<div class=" shadow-xl rounded-2xl p-6 mb-8 ">
+  <h2 class="text-2xl font-semibold mb-4">Problem</h2>
+  <p>
+    Vendor onboarding involved manual review, compliance-heavy documentation,
+    and approval flows that needed better traceability and consistency.
+  </p>
+
+  <hr class=" mb-8 mt-8 border border-base-300">
+
+  <h2 class="text-2xl font-semibold mb-4">What I built</h2>
+  <ul class="list-disc list-inside my-4 pt-1">
+    <li>Registration and approval workflows built with ReactJS and NodeJS.</li>
+    <li>PostgreSQL-backed data handling for vendor records and review status.</li>
+    <li>Operational automation that reduced manual processing and improved consistency.</li>
+  </ul>
+</div>

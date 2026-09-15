@@ -2,48 +2,88 @@
 import { BlogGallery } from '@components/BlogGallery';
 import { PaginationHeader } from '@components/PaginationHeader';
 import { Footer } from '@partials/Footer';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortPostByDate } from '@utils/Posts';
+// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
-import { Section } from 'astro-boilerplate-components';
-import CTA from '@sections/CTA.astro';
 
 const allPosts = await getCollection('post');
 const sortedPosts = sortPostByDate(allPosts);
+const isPostEntry = (
+  post: (typeof allPosts)[number] | undefined
+): post is (typeof allPosts)[number] => Boolean(post);
+const featuredWritingOrder = [
+  'building-realtime-dashboard',
+  'vscode-folder-structure-extension',
+  'wisely-choose-ui-library',
+];
+const featuredPosts = featuredWritingOrder
+  .map((slug) => allPosts.find((post) => post.slug === slug))
+  .filter(isPostEntry);
+const remainingPosts = sortedPosts.filter(
+  (post) => !featuredWritingOrder.includes(post.slug)
+);
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blogs`;
 const title = titleBase + titleSuffix;
 const description =
-  'Discover engaging articles on web development, including insights on React.js, Node.js, Docker, and modern web technologies. Stay updated with the latest trends and techniques.';
+  'Technical writing on backend systems, cloud-native delivery, observability, performance, and production engineering lessons.';
 const url = `${AppConfig.site_url}/blogs/`;
 ---
 
 <Base head={{ title, description, url }}>
-  <Section>
+  <section>
     <PaginationHeader
-      title="The Code Journal: A Developer's Blog"
-      description="Dive into articles crafted for developers and tech enthusiasts alike. From frameworks like React and Node.js to deployment techniques with Docker, find comprehensive guides and unique insights tailored to your learning journey."
+      title="Writing on software, backend, and production systems"
+      description="Articles focused on real engineering work across backend delivery, cloud-native systems, Docker, Kubernetes, production tradeoffs, and developer tooling."
     />
 
     <div class="mb-12 mt-8 flex flex-col items-center space-y-4">
       <div class="circle-animation"></div>
       <p class="max-w-xl text-center  text-lg">
-        Join me as I explore the nuances of full-stack development, share
-        practical tips, and experiment with cutting-edge technologies. Let's
-        build something amazing together!
+        I use writing to document engineering tradeoffs, production lessons, and
+        implementation details across application delivery, cloud-backed
+        systems, and developer tooling.
       </p>
     </div>
-  </Section>
+  </section>
 
-  <Section>
-    <div class="grid grid-cols-1  gap-6 p-4">
-      <BlogGallery postList={sortedPosts} />
+  <section class="mb-12">
+    <div class="rounded-3xl border border-base-300 p-6 shadow-xl">
+      <h2 class="text-2xl font-bold">Featured writing</h2>
+      <p class="mt-3 max-w-3xl leading-7">
+        A curated starting point for production-minded work covering cloud
+        delivery, system behavior, and engineering tradeoffs.
+      </p>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        {featuredPosts.map((post) => (
+          <a
+            href={post.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-2xl border border-base-300 bg-base-100 p-5 transition hover:-translate-y-1"
+          >
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
+              Featured
+            </p>
+            <h3 class="mt-3 text-lg font-semibold">{post.data.title}</h3>
+            <p class="mt-3 text-sm leading-6">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
     </div>
-  </Section>
+  </section>
 
-  <div class="flex-col lg:grid lg:grid-cols-2 overflow-auto p-6 lg:flex">
+  <section>
+    <div class="grid grid-cols-1  gap-6 p-4">
+      <BlogGallery postList={remainingPosts} />
+    </div>
+  </section>
+
+  <div class="flex flex-col overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
   <Footer />

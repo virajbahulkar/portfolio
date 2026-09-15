@@ -3,7 +3,7 @@
 ![CI](https://github.com/virajbahulkar/portfolio/actions/workflows/ci.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-This repository showcases my web development skills and my blogs. 💻✨
+This repository showcases my software engineering work, infrastructure proof projects, and technical writing. 💻✨
 
 ### Quick Start
 ```bash
@@ -25,6 +25,15 @@ Dev: http://localhost:3000  |  Prod: http://localhost:8080
 - 🎨 Tailwind CSS with aspect ratio and typography plugin
 - 🎉 TypeScript
 - 🎨 daisyUI
+
+### Platform proof project
+
+This repo now includes a code-first AWS platform showcase under `platform/aws-platform-showcase` featuring:
+
+- Terraform for AWS networking, IAM, EKS, ECR, CloudWatch, and SSM configuration paths
+- Kubernetes manifests with probes, HPA, ingress, and disruption budget
+- A small Node.js API with health, readiness, and metrics endpoints
+- A GitHub Actions workflow to validate the app, manifests, and Terraform
 
 ### Performance
 

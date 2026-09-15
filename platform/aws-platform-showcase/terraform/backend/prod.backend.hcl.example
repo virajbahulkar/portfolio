@@ -1,0 +1,5 @@
+bucket         = "platform-showcase-shared-tf-state"
+key            = "prod/platform-showcase.tfstate"
+region         = "ap-south-1"
+dynamodb_table = "platform-showcase-shared-tf-locks"
+encrypt        = true

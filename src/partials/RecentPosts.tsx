@@ -1,6 +1,6 @@
 import { BlogGallery } from '@components/BlogGallery';
-import type { CollectionEntry } from 'astro:content';
 import { SectionHeader } from '@components/SectionHeader';
+import type { CollectionEntry } from 'astro:content';
 
 type IRecentPostsProps = {
   postList: CollectionEntry<'post'>[];
@@ -9,20 +9,17 @@ type IRecentPostsProps = {
 const RecentPosts = (props: IRecentPostsProps) => (
   <div className="h-full">
     <SectionHeader
-      title="Recent"
-      highlightedText="Blogs"
+      title="Technical"
+      highlightedText="Writing"
       link="/blogs/"
-      linkText="View all blogs"
+      linkText="View all writing"
       extraClasses=""
-    
     />
 
     <div className="mt-6">
       <BlogGallery postList={props.postList} />
     </div>
-
   </div>
-
 );
 
 export { RecentPosts };

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-showcase-config
+  namespace: platform-showcase
+data:
+  NODE_ENV: production
+  PORT: "8080"
+  SERVICE_NAME: platform-showcase-api
+  APP_VERSION: "0.1.0"

@@ -13,7 +13,7 @@ export const personSchemaMarkup = {
     'https://github.com/virajbahulkar',
     'https://linkedin.com/in/virajbahulkar',
   ],
-  jobTitle: 'Senior Software Developer',
+  jobTitle: 'Senior Software Engineer',
   worksFor: {
     '@type': 'Organization',
     name: 'Cognizant Technology Solutions Pvt Ltd',
@@ -28,7 +28,7 @@ export const websiteSchemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   description:
-    'Software professional with over 4 years of experience in the IT industry.',
+    'Senior software engineer with 8+ years of experience across backend systems, cloud infrastructure, platform engineering, and reliable production delivery.',
   headline: 'Viraj Bahulkar',
   image: `${AppConfig.site_url}/profile-pic.png`,
   name: 'Viraj Bahulkar',
@@ -38,5 +38,5 @@ export const websiteSchemaMarkup = {
     'https://github.com/virajbahulkar',
     'https://linkedin.com/in/virajbahulkar',
   ],
-  url: 'https://virajbahulkar.me/',
+  url: AppConfig.site_url,
 };

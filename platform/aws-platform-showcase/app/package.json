@@ -1,0 +1,24 @@
+{
+  "name": "aws-platform-showcase-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sample Node.js API for the Terraform and Kubernetes platform showcase.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "terraform",
+    "aws",
+    "kubernetes",
+    "platform"
+  ],
+  "author": "Viraj Bahulkar",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  }
+}

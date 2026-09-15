@@ -5,142 +5,238 @@ import { Hero } from '@partials/Hero';
 import { RecentOssProjects } from '@partials/RecentOssProjects';
 import { RecentPosts } from '@partials/RecentPosts';
 import { RecentProjects } from '@partials/RecentProjects';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
-import {
-  sortByRunningOrder,
-  sortPostByDate,
-  sortProjectsByDate,
-} from '@utils/Posts';
+import { sortByRunningOrder } from '@utils/Posts';
+// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
-import CTA from '@sections/CTA.astro';
 
 const allPosts = await getCollection('post');
-const sortedPosts = sortPostByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 4);
+const isPostEntry = (
+  post: (typeof allPosts)[number] | undefined
+): post is (typeof allPosts)[number] => Boolean(post);
+const preferredWritingOrder = [
+  'building-realtime-dashboard',
+  'vscode-folder-structure-extension',
+  'wisely-choose-ui-library',
+];
+const lastThreePosts = preferredWritingOrder
+  .map((slug) => allPosts.find((post) => post.slug === slug))
+  .filter(isPostEntry);
 const allProjects = await getCollection('project');
+const isProjectEntry = (
+  project: (typeof allProjects)[number] | undefined
+): project is (typeof allProjects)[number] => Boolean(project);
+const flagshipProjectOrder = [
+  'platform-delivery-blueprint',
+  'cognizant-finance-group-app',
+  'tooljet',
+  'wanderwhale-travel-portal',
+];
+const flagshipProjects = flagshipProjectOrder
+  .map((slug) => allProjects.find((project) => project.slug === slug))
+  .filter(isProjectEntry);
 const openSourceProjects = sortByRunningOrder(
-  allProjects.filter((project) => project.data.openSource)
-).slice(0, 4);
-const myProjects = sortProjectsByDate(
-  allProjects.filter((project) => !project.data.openSource)
+  allProjects.filter(
+    (project) =>
+      project.data.openSource && !flagshipProjectOrder.includes(project.slug)
+  )
 ).slice(0, 3);
+const engineeringImpact = [
+  {
+    title: 'Experience',
+    metric: '8+ years',
+    description:
+      'Professional software engineering experience across full-stack delivery, backend systems, and production infrastructure.',
+  },
+  {
+    title: 'Scale',
+    metric: '50K DAU',
+    description:
+      'Finance platform evidence includes production workloads serving 50K daily active users.',
+  },
+  {
+    title: 'Reliability',
+    metric: '99.9% uptime',
+    description:
+      'Customer-facing finance journeys were supported with centralized logging, monitoring, alerting, and release controls.',
+  },
+  {
+    title: 'Container orchestration',
+    metric: '5 → 50 replicas',
+    description:
+      'Kubernetes scaling evidence shows workloads expanding from 5 to 50 replicas under load.',
+  },
+  {
+    title: 'Cost efficiency',
+    metric: '35% optimization',
+    description:
+      'Infrastructure tuning and right-sizing contributed to 35% infrastructure cost optimization.',
+  },
+  {
+    title: 'Performance',
+    metric: '60% latency reduction',
+    description:
+      'ToolJet contributions include a 60% reduction in backend query latency on key workflows.',
+  },
+];
+const coreEngineeringAreas = [
+  {
+    title: 'Backend & Distributed Systems',
+    description:
+      'Node.js, TypeScript, APIs, microservices, SQL and NoSQL data stores, performance tuning, and production-facing application logic.',
+  },
+  {
+    title: 'Platform & Cloud',
+    description:
+      'AWS, Azure, Docker, Kubernetes autoscaling, Terraform-based infrastructure, GitHub Actions, and release-gated cloud delivery workflows.',
+  },
+  {
+    title: 'Reliability & Observability',
+    description:
+      'Centralized logging, metrics dashboards, alerting rules, health checks, and production troubleshooting to keep systems stable.',
+  },
+  {
+    title: 'Frontend Foundation',
+    description:
+      'React and TypeScript remain part of the foundation, but are positioned in service of complete product and platform delivery.',
+  },
+];
+const careerEvolution = [
+  'Full-Stack Engineering',
+  'Backend Engineering',
+  'Cloud-Native Delivery',
+  'Platform Engineering',
+];
+const recruiterCtas = [
+  { href: '/projects/', label: 'View engineering work' },
+  { href: '/cv/', label: 'View resume' },
+  { href: 'mailto:hello@virajbahulkar.me', label: 'Contact' },
+];
 
 const { title, description, ogImage } = AppConfig;
 ---
 
 <!-- Base -->
 <Base head={{ title, description, ogImage }}>
-  <div
-    class="grid grid-cols-1 gap-10 lg:h-screen lg:grid-cols-5 lg:grid-rows-[auto,1fr,auto]"
-  >
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-5">
     <!-- Left Column -->
     <div class="flex flex-col justify-between lg:col-span-3">
       <div>
-        <!-- Hero Section -->
-        <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
+        <div class="flex overflow-auto p-6">
           <Hero
             client:load
-            heading="Hi there, I'm"
+            heading={{
+              text: 'Senior Software Engineer',
+              class: 'text-4xl lg:text-5xl',
+            }}
             phrases={[
               {
-                text: 'Viraj Bahulkar',
-                gradient: 'from-purple-400 via-pink-500 to-red-500',
-              },
-              {
-                text: 'Senior Software Engineer',
-                gradient: 'from-green-400 via-blue-500 to-purple-500',
-              },
-              {
-                text: 'Cloud & DevOps Focused',
+                text: 'Backend • Platform • Cloud',
                 gradient: 'from-indigo-400 via-purple-500 to-pink-500',
               },
-              {
-                text: 'Building Reliable Platforms',
-                gradient: 'from-red-400 via-pink-500 to-purple-500',
-              },
             ]}
-            description="Senior Software Engineer with 7+ years of experience delivering production-grade web platforms across frontend, backend, and cloud infrastructure. Strong in React and Node.js, with hands-on DevOps ownership using Docker, Kubernetes, CI/CD, and observability to build scalable and reliable systems."
-          />
+            description="Building and operating production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, Azure DevOps release controls, centralized logging, and cloud delivery. Strong application engineering foundation with increasing ownership of platform reliability."
+          >
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span
+                class="rounded-full border border-base-300 px-4 py-2 text-sm font-medium"
+              >
+                8+ years professional experience
+              </span>
+              {recruiterCtas.map((cta, index) => (
+                <a
+                  href={cta.href}
+                  class={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                    index === 0
+                      ? 'bg-primary text-white hover:bg-secondary'
+                      : 'border border-base-300 hover:border-primary hover:text-primary'
+                  }`}
+                >
+                  {cta.label}
+                </a>
+              ))}
+            </div>
+          </Hero>
         </div>
 
-        <!-- Career Section -->
-        <div class="lg:items-left lg:justify-left flex overflow-auto p-6">
-          <Hero
-            client:load
-            heading={{ text: 'My career', class: 'text-2xl' }}
-            description="So far, the journey has been about building innovative applications, enhancing web experiences and delivering solutions that make business thrive."
-          />
-        </div>
+        <section class="px-6 pb-6">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {engineeringImpact.map((item) => (
+              <article class="rounded-2xl border border-base-300 p-5 shadow-sm">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
+                  {item.title}
+                </p>
+                <p class="mt-2 text-2xl font-bold">{item.metric}</p>
+                <p class="mt-3 text-sm leading-6">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-        <!-- Things I love Section -->
-        <div class="flex overflow-auto p-6">
-          <Hero
-            client:load
-            heading={{ text: 'Things I love to do', class: 'text-2xl' }}
-            description={[
-              {
-                text: 'Continuously experimenting with new frameworks, tools, and libraries to enhance my skills.',
-              },
-              {
-                text: 'Keeping myself updated with industry trends, insights, and expert discussions.',
-              },
-              {
-                text: 'Sharing my learnings, thoughts, and technical insights through writing.',
-              },
-              {
-                text: 'Discovering new places, embracing nature, and drawing inspiration from different experiences.',
-              },
-            ]}
-          />
-        </div>
+        <section class="px-6 pb-6">
+          <div class="rounded-3xl border border-base-300 p-8 shadow-xl">
+            <h2 class="text-2xl font-bold">Core engineering areas</h2>
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              {coreEngineeringAreas.map((area) => (
+                <article class="rounded-2xl border border-base-300 bg-base-200/40 p-6">
+                  <h3 class="text-lg font-semibold">{area.title}</h3>
+                  <p class="mt-3 leading-7">{area.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <!-- Motivation Section -->
-        <div class="flex overflow-auto p-6">
-          <Hero
-            client:load
-            heading={{ text: 'My motivation', class: 'text-2xl' }}
-            description={[
-              {
-                text: 'Every line of code you write is a step closer to turning imagination into reality. Keep building, keep evolving',
-                type: 'quote',
-                class: 'border-l-4 border-blue-500 pl-4 italic text-lg my-4',
-              },
-            ]}
-          />
-        </div>
-      </div>
-
-
-      <!-- CTA and Footer (desktop) -->
-      <div class="hidden flex-col overflow-auto p-6 lg:flex">
-        <CTA />
-        <Footer />
       </div>
     </div>
 
     <!-- Right Column -->
     <div class="lg:col-span-2">
       <div
-        class="bg-regal-blue flex items-center justify-center overflow-auto p-6"
+        class="flex items-center justify-center overflow-auto bg-base-200/40 p-6"
       >
-        <RecentProjects projectList={myProjects} />
+        <RecentProjects projectList={flagshipProjects} />
       </div>
       <div
-        class="bg-to-sky-400 flex items-center justify-center overflow-auto p-6"
+        class="flex items-center justify-center overflow-auto bg-base-200/20 p-6"
       >
         <RecentOssProjects projectList={openSourceProjects} />
       </div>
       <div class="flex items-center justify-center overflow-auto p-6">
         <RecentPosts postList={lastThreePosts} />
       </div>
+    </div>
+  </div>
 
-      <!-- CTA and Footer (mobile & tablet) -->
-      <div class="flex flex-col overflow-auto p-6 lg:hidden">
-        <CTA />
-        <Footer />
+  <section class="px-6 pb-6">
+    <div class="mx-auto max-w-7xl rounded-3xl border border-base-300 p-8 shadow-xl">
+      <h2 class="text-2xl font-bold">Career evolution</h2>
+      <p class="mt-3 max-w-3xl leading-7">
+        I started by building product-facing applications end to end. That
+        foundation now informs how I think about backend architecture,
+        cloud-native delivery, and the platform layers that keep software
+        reliable in production.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium">
+        {careerEvolution.map((step, index) => (
+          <>
+            <span class="rounded-full border border-base-300 px-4 py-2">
+              {step}
+            </span>
+            {index < careerEvolution.length - 1 && (
+              <span class="text-base-content/50">→</span>
+            )}
+          </>
+        ))}
       </div>
     </div>
+  </section>
+
+  <div class="p-6">
+    <CTA />
+    <Footer />
   </div>
 
   <BackToTop />

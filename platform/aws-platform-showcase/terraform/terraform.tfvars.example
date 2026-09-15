@@ -1,0 +1,7 @@
+aws_region     = "ap-south-1"
+environment    = "dev"
+project        = "platform-showcase"
+vpc_cidr       = "10.42.0.0/16"
+cluster_version = "1.30"
+node_instance_types = ["t3.medium"]
+allowed_cidrs  = ["0.0.0.0/0"]
