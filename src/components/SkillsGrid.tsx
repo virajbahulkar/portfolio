@@ -1,22 +1,17 @@
 import { FaAws } from 'react-icons/fa6';
 import {
-  SiCss3,
   SiDocker,
+  SiElasticsearch,
   SiExpress,
-  SiGit,
-  SiGrunt,
-  SiGulp,
-  SiHtml5,
-  SiJavascript,
+  SiGithubactions,
   SiKubernetes,
   SiMongodb,
-  SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
   SiReact,
-  SiSass,
+  SiRedis,
+  SiTerraform,
   SiTypescript,
-  SiWebpack,
 } from 'react-icons/si';
 import { VscAzureDevops } from 'react-icons/vsc';
 
@@ -31,19 +26,14 @@ const iconMap = {
   SiMongodb,
   SiPostgresql,
   SiTypescript,
-  SiNextdotjs,
   SiDocker,
   SiKubernetes,
   FaAws,
-  SiGit,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiSass,
+  SiRedis,
+  SiElasticsearch,
+  SiTerraform,
   VscAzureDevops,
-  SiGulp,
-  SiGrunt,
-  SiWebpack,
+  SiGithubactions,
 } as const;
 
 type IconKey = keyof typeof iconMap;

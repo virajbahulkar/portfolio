@@ -151,121 +151,93 @@ export const experience: ExperienceItem[] = [
 export const skills: Skill[] = [
   {
     title: 'NodeJS',
-    description: 'Created scalable server-side apps using RESTful APIs.',
+    description: 'Built backend services, APIs, and production-facing application logic.',
     icon: 'SiNodedotjs',
     color: '#339933',
   },
   {
-    title: 'ExpressJS',
-    description: 'Developed secure, performant backends using Express.',
-    icon: 'SiExpress',
-    color: '#000000',
-  },
-  {
     title: 'TypeScript',
-    description: 'Ensured type safety and scalability in large apps.',
+    description: 'Used type-safe patterns across backend systems and full-stack applications.',
     icon: 'SiTypescript',
     color: '#3178C6',
   },
   {
+    title: 'ExpressJS',
+    description: 'Developed API and service layers for scalable Node.js systems.',
+    icon: 'SiExpress',
+    color: '#000000',
+  },
+  {
     title: 'PostgreSQL',
-    description: 'Worked on relational schemas, joins, and performance tuning.',
+    description: 'Worked on relational schemas, joins, and query performance tuning.',
     icon: 'SiPostgresql',
     color: '#336791',
   },
   {
     title: 'MongoDB',
-    description: 'Managed NoSQL data with aggregation and indexing.',
+    description: 'Handled document data models, aggregation flows, and indexing.',
     icon: 'SiMongodb',
     color: '#47A248',
   },
   {
+    title: 'Redis',
+    description: 'Used caching and fast-access data patterns for responsive backend flows.',
+    icon: 'SiRedis',
+    color: '#DC382D',
+  },
+  {
+    title: 'ElasticSearch',
+    description: 'Built search-backed user flows and tuned data retrieval behavior.',
+    icon: 'SiElasticsearch',
+    color: '#005571',
+  },
+  {
     title: 'Docker',
-    description: 'Containerized full-stack apps for consistent environments.',
+    description: 'Containerized services for consistent local, CI, and deployment environments.',
     icon: 'SiDocker',
     color: '#2496ED',
   },
   {
     title: 'Kubernetes',
     description:
-      'Worked with orchestration, autoscaling, and reliable rollout patterns.',
+      'Worked with autoscaling, health checks, rollout patterns, and production orchestration.',
     icon: 'SiKubernetes',
     color: '#326CE5',
   },
   {
+    title: 'Terraform',
+    description:
+      'Built code-backed AWS infrastructure blueprints covering VPC, IAM, EKS, ECR, and deployment foundations.',
+    icon: 'SiTerraform',
+    color: '#844FBA',
+  },
+  {
     title: 'AWS',
     description:
-      'Worked with EC2, S3, Lambda, API Gateway, and cloud delivery workflows.',
+      'Worked across EC2, S3, Lambda, API Gateway, EKS, and cloud delivery workflows.',
     icon: 'FaAws',
     color: '#FF9900',
   },
   {
     title: 'Azure DevOps',
     description:
-      'Worked with CI/CD pipelines, release controls, and cloud-hosted deployments.',
+      'Worked with CI/CD pipelines, release controls, validation gates, and multi-environment promotions.',
     icon: 'VscAzureDevops',
     color: '#0078D7',
   },
   {
-    title: 'Git',
-    description: 'Handled version control with branching strategies.',
-    icon: 'SiGit',
-    color: '#F05032',
+    title: 'GitHub Actions',
+    description:
+      'Automated validation and deployment workflows for application, Kubernetes, and Terraform changes.',
+    icon: 'SiGithubactions',
+    color: '#2088FF',
   },
   {
     title: 'ReactJS',
     description:
-      'Built SPAs and modular components with hooks and context API.',
+      'Built product-facing interfaces as part of broader full-stack and platform delivery work.',
     icon: 'SiReact',
     color: '#61DAFB',
-  },
-  {
-    title: 'NextJS',
-    description: 'Built SEO-optimized apps using SSR and file-based routing.',
-    icon: 'SiNextdotjs',
-    color: '#000000',
-  },
-  {
-    title: 'JavaScript',
-    description: 'Wrote efficient, modern JS using ES6+ standards.',
-    icon: 'SiJavascript',
-    color: '#F7DF1E',
-  },
-  {
-    title: 'HTML',
-    description: 'Crafted accessible and semantic web structures.',
-    icon: 'SiHtml5',
-    color: '#E34F26',
-  },
-  {
-    title: 'CSS',
-    description: 'Designed responsive layouts with Flexbox and Grid.',
-    icon: 'SiCss3',
-    color: '#1572B6',
-  },
-  {
-    title: 'SASS',
-    description: 'Used variables, mixins, and nesting for CSS organization.',
-    icon: 'SiSass',
-    color: '#CC6699',
-  },
-  {
-    title: 'Webpack',
-    description: 'Configured bundlers for module-based architecture.',
-    icon: 'SiWebpack',
-    color: '#8DD6F9',
-  },
-  {
-    title: 'Gulp',
-    description: 'Automated tasks like minification and compilation.',
-    icon: 'SiGulp',
-    color: '#CF4647',
-  },
-  {
-    title: 'Grunt',
-    description: 'Managed legacy JS builds with Grunt workflows.',
-    icon: 'SiGrunt',
-    color: '#FBA919',
   },
 ];
 
