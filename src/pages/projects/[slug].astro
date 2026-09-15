@@ -2,11 +2,12 @@
 // Imports
 import StickyConversionCta from '@components/StickyConversionCta.astro';
 import { Footer } from '@partials/Footer';
+import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import CTA from '@sections/CTA.astro';
+
 import { RELATED_BLOG_PROJECTS } from '../../content/_curation';
 
 export interface Props {
@@ -29,7 +30,8 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 const allPosts = await getCollection('post');
 
-const { title, description, startDate, category, image, impactSnapshot } = project.data;
+const { title, description, startDate, category, image, impactSnapshot } =
+  project.data;
 const categories = category.split(', ');
 const relatedPosts = allPosts.filter((post) =>
   RELATED_BLOG_PROJECTS[post.slug]?.includes(project.slug)
@@ -99,7 +101,7 @@ const pageUrl = `${AppConfig.site_url}/projects/${project.slug}/`;
     )}
   </div>
 
-  <div class="flex-col lg:grid lg:grid-cols-2 overflow-auto p-6 lg:flex">
+  <div class="overflow-auto p-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
   <StickyConversionCta

@@ -1,14 +1,14 @@
-import type { CollectionEntry } from "astro:content";
-import { format } from "date-fns";
+import type { CollectionEntry } from 'astro:content';
+import { format } from 'date-fns';
 
 interface BlogCardProps {
-  blog: CollectionEntry<"post">;
+  blog: CollectionEntry<'post'>;
 }
 
 const BlogCard = (props: BlogCardProps) => {
   const { blog } = props;
   const updatedDate = blog.data.updatedDate
-    ? format(new Date(blog.data.updatedDate), "LLL d, yyyy")
+    ? format(new Date(blog.data.updatedDate), 'LLL d, yyyy')
     : null;
 
   return (
@@ -32,7 +32,7 @@ const BlogCard = (props: BlogCardProps) => {
           <h2 className="text-xl font-semibold">{blog.data.title}</h2>
 
           <div className="mt-2 text-xs text-base-content/70">
-            <span>{format(new Date(blog.data.pubDate), "LLL d, yyyy")}</span>
+            <span>{format(new Date(blog.data.pubDate), 'LLL d, yyyy')}</span>
             <span> · {blog.data.readTime}</span>
             {updatedDate ? <span> · Updated {updatedDate}</span> : null}
           </div>

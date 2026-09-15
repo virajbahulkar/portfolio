@@ -2,7 +2,6 @@
 import { PaginationHeader } from '@components/PaginationHeader';
 import { ProjectGallery } from '@components/ProjectGallery';
 import StickyConversionCta from '@components/StickyConversionCta.astro';
-import { FLAGSHIP_PROJECT_SLUGS } from '../../content/_curation';
 import { Footer } from '@partials/Footer';
 import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
@@ -11,14 +10,16 @@ import { sortProjectsByDate } from '@utils/Posts';
 // eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
 
+import { FLAGSHIP_PROJECT_SLUGS } from '../../content/_curation';
+
 const allProjects = await getCollection('project');
 const sortedProjects = sortProjectsByDate(allProjects);
 const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
 ): project is (typeof allProjects)[number] => Boolean(project);
-const flagshipProjects = FLAGSHIP_PROJECT_SLUGS
-  .map((slug) => allProjects.find((project) => project.slug === slug))
-  .filter(isProjectEntry);
+const flagshipProjects = FLAGSHIP_PROJECT_SLUGS.map((slug) =>
+  allProjects.find((project) => project.slug === slug)
+).filter(isProjectEntry);
 const archiveProjects = sortedProjects.filter(
   (project) => !FLAGSHIP_PROJECT_SLUGS.includes(project.slug)
 );
@@ -56,7 +57,8 @@ const url = `${AppConfig.site_url}/projects/`;
           ownership.
         </p>
         <p class="mt-2 text-sm text-base-content/70">
-          Flagship ordering favors backend, platform, and cloud-relevant proof first.
+          Flagship ordering favors backend, platform, and cloud-relevant proof
+          first.
         </p>
       </div>
       <ProjectGallery client:load projectList={flagshipProjects} />
@@ -81,7 +83,9 @@ const url = `${AppConfig.site_url}/projects/`;
       <h2 class="text-xl font-semibold">Related writing</h2>
       <p class="mt-2 text-sm leading-6">
         Read detailed engineering tradeoffs and implementation notes in the
-        <a href="/blogs/" class="text-cyan-400 hover:underline">blogs section</a>.
+        <a href="/blogs/" class="text-cyan-400 hover:underline"
+          >blogs section
+        </a>.
       </p>
     </section>
   </div>

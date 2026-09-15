@@ -1,10 +1,11 @@
 ---
-import { BlogPost } from '@partials/BlogPost';
 import StickyConversionCta from '@components/StickyConversionCta.astro';
+import { BlogPost } from '@partials/BlogPost';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
-import type { IFrontmatter } from 'astro-boilerplate-components';
 import { getCollection } from 'astro:content';
+import type { IFrontmatter } from 'astro-boilerplate-components';
+
 import { RELATED_BLOG_PROJECTS } from '../content/_curation';
 
 interface BlogPostFrontmatter extends IFrontmatter {
@@ -44,7 +45,12 @@ const blogPostingSchema = {
 ---
 
 <Base
-  head={{ title, description: content.description, ogType: 'article', url: pageUrl }}
+  head={{
+    title,
+    description: content.description,
+    ogType: 'article',
+    url: pageUrl,
+  }}
 >
   <script
     is:inline
@@ -77,7 +83,10 @@ const blogPostingSchema = {
         <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">
           {relatedProjects.map((project) => (
             <li>
-              <a href={`/projects/${project.slug}/`} class="hover:text-cyan-400">
+              <a
+                href={`/projects/${project.slug}/`}
+                class="hover:text-cyan-400"
+              >
                 {project.data.title}
               </a>
             </li>

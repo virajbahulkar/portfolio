@@ -1,10 +1,10 @@
-import rss from "@astrojs/rss";
-import { AppConfig } from "@utils/AppConfig";
-import { sortPostByDate } from "@utils/Posts";
-import { getCollection } from "astro:content";
+import rss from '@astrojs/rss';
+import { AppConfig } from '@utils/AppConfig';
+import { sortPostByDate } from '@utils/Posts';
+import { getCollection } from 'astro:content';
 
 export const get = async () => {
-  const posts = sortPostByDate(await getCollection("post"));
+  const posts = sortPostByDate(await getCollection('post'));
 
   return rss({
     // `<title>` field in output xml
@@ -26,6 +26,10 @@ export const get = async () => {
       customData: `<source url="${post.data.url}">Original article</source>`,
     })),
     // (optional) inject custom xml
-    customData: `<language>en-us</language><managingEditor>${AppConfig.author}</managingEditor><copyright>${new Date().getFullYear()} ${AppConfig.site_name}</copyright>`,
+    customData: `<language>en-us</language><managingEditor>${
+      AppConfig.author
+    }</managingEditor><copyright>${new Date().getFullYear()} ${
+      AppConfig.site_name
+    }</copyright>`,
   });
 };

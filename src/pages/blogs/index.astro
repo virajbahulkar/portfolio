@@ -7,13 +7,14 @@ import CTA from '@sections/CTA.astro';
 import Base from '@templates/Base.astro';
 import { AppConfig } from '@utils/AppConfig';
 import { sortPostByDate } from '@utils/Posts';
+// eslint-disable-next-line import/no-unresolved
+import { getCollection } from 'astro:content';
+
 import {
   BLOG_GOVERNANCE_RULE,
   FEATURED_BLOG_SLUGS,
   RELATED_BLOG_PROJECTS,
 } from '../../content/_curation';
-// eslint-disable-next-line import/no-unresolved
-import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('post');
 const allProjects = await getCollection('project');
@@ -21,9 +22,9 @@ const sortedPosts = sortPostByDate(allPosts);
 const isPostEntry = (
   post: (typeof allPosts)[number] | undefined
 ): post is (typeof allPosts)[number] => Boolean(post);
-const featuredPosts = FEATURED_BLOG_SLUGS
-  .map((slug) => allPosts.find((post) => post.slug === slug))
-  .filter(isPostEntry);
+const featuredPosts = FEATURED_BLOG_SLUGS.map((slug) =>
+  allPosts.find((post) => post.slug === slug)
+).filter(isPostEntry);
 const remainingPosts = sortedPosts.filter(
   (post) => !FEATURED_BLOG_SLUGS.includes(post.slug)
 );
@@ -74,7 +75,8 @@ const url = `${AppConfig.site_url}/blogs/`;
             </p>
             <h3 class="mt-3 text-lg font-semibold">{post.data.title}</h3>
             <p class="mt-2 text-xs text-base-content/70">
-              {new Date(post.data.pubDate).toLocaleDateString()} · {post.data.readTime}
+              {new Date(post.data.pubDate).toLocaleDateString()} ·{' '}
+              {post.data.readTime}
             </p>
             <div class="mt-2 flex flex-wrap gap-2">
               {post.data.tags.map((tag) => (
