@@ -1,7 +1,7 @@
 ---
 title: "Digitizer App (no-code platform)"
 description: "A no-code platform where teams can assemble dashboards, forms and pages from configurable components."
-projectNote: "Professional project at Autoflow Technologies."
+projectNote: "Professional work at Autoflow. Proprietary code, client data and internal infrastructure details are omitted."
 startDate: 2019-04-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Kubernetes, AWS
@@ -18,11 +18,11 @@ runningOrder: 1
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">What I built</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside pl-6 mt-4">
-    <li>Reusable React-based building blocks for dashboards, forms, and content-driven pages.</li>
-    <li>Node.js backend integrations for data handling and configuration-driven workflows.</li>
-    <li>Configurable tables, timelines and forms that could be reused across pages.</li>
+    <li>Built modular React components for dashboards, forms and content-driven pages.</li>
+    <li>Implemented Node.js backend integrations, cloud integrations and workflow automation.</li>
+    <li>Made tables, timelines and complex forms configurable so teams could reuse them across pages instead of rebuilding each interface.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

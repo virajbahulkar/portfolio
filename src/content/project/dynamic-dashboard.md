@@ -1,7 +1,7 @@
 ---
 title: "Dynamic dashboard"
 description: "A dashboard application that combines data from multiple sources into real-time reports with configurable widgets and role-based access."
-projectNote: "React and Node.js application using PostgreSQL, MongoDB and AWS."
+projectNote: "Professional application work. Proprietary code, reporting data and internal infrastructure details are omitted."
 startDate: 2024-12-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, MongoDB, AWS
@@ -17,12 +17,12 @@ runningOrder: 1
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">What I built</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside my-4 space-y-2">
-    <li>Interactive dashboards with configurable charts, tables, and widgets.</li>
-    <li>Role-based access for administrators, developers, and viewers.</li>
-    <li>Backend integrations for APIs, databases, and historical reporting data.</li>
-    <li>Report exports for further analysis.</li>
+    <li>Built interactive dashboards with configurable charts, tables and widgets.</li>
+    <li>Implemented role-based access for administrators, developers and viewers.</li>
+    <li>Integrated APIs, databases and historical reporting data through backend services.</li>
+    <li>Delivered report exports for further analysis.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

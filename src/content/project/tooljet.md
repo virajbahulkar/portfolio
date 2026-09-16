@@ -4,6 +4,12 @@ description: "I contributed React frontend fixes to ToolJet, an open-source low-
 link: "https://github.com/ToolJet/ToolJet/commits?author=virajbahulkar"
 imgSrc: "/assets/images/projects/tooljet.png"
 projectNote: "Open-source contributions through reviewed and merged pull requests in 2021."
+# Earlier metrics retained for owner confirmation, not attributed to the linked fixes:
+# Platform adoption: 10,000+ developers and 500K+ monthly downloads.
+# Contribution claims: 35% builder performance improvement, 60% backend query latency
+# reduction, 65% test coverage expansion and collaboration with 50+ active contributors.
+# Confirm measurement dates, baselines and contribution scope before republication.
+# The linked frontend fixes alone do not establish these platform/backend metrics.
 startDate: 2025-05-09T00:00:00Z
 imgAlt: "ToolJet open-source contributions"
 openSource: true
@@ -35,7 +41,7 @@ runningOrder: 1
   <ul class="list-disc list-inside my-4 pt-1">
     <li>The visual builder uses <strong>React</strong>; this is where the linked contributions were made.</li>
     <li>The wider application includes a <strong>Node.js</strong> backend and <strong>PostgreSQL</strong>.</li>
-    <li>My contributions were frontend changes, not ownership or self-hosting of the platform.</li>
+    <li>I contributed frontend fixes through the upstream review process; the wider architecture describes the platform maintained by the ToolJet team.</li>
   </ul>
 
   <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
@@ -48,7 +54,7 @@ Node.js query + execution layer
   ↓
 PostgreSQL and connected data flows
 
-Pull request → review + tests → merge → upstream product release</code></pre>
+Contribution workflow: pull request → review → merge</code></pre>
   </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -65,7 +71,7 @@ Pull request → review + tests → merge → upstream product release</code></p
   <h2 class="text-2xl font-semibold mb-4">Contribution scope</h2>
   <ul class="list-disc list-inside my-4 pt-1">
     <li>Changes were submitted to the upstream repository for review.</li>
-    <li>The linked fixes concern application behaviour, not measured backend latency or platform-wide performance.</li>
+    <li>My fixes addressed widget search correctness, duplicate table updates, form validation and application launch behaviour.</li>
     <li><a href="https://github.com/ToolJet/ToolJet/pull/261" target="_blank" rel="noreferrer">PR #261</a> also contributed the frontend portion of REST-query datasource-prefix display; backend work was outside that change.</li>
   </ul>
 

@@ -2,7 +2,7 @@
 title: "Platform Delivery Blueprint (Terraform + AWS + Kubernetes)"
 description: "A personal AWS infrastructure blueprint with Terraform, a containerized Node.js API, Kubernetes manifests and a GitHub Actions deployment workflow."
 imgSrc: "/assets/images/projects/platform-delivery-blueprint.svg"
-projectNote: "Personal proof of concept with source code; not a claim of a live production deployment."
+projectNote: "Personal infrastructure project with source code and deployment automation, separate from my professional production work."
 startDate: 2026-09-14T00:00:00Z
 imgAlt: "AWS platform blueprint with Terraform, GitHub Actions and Kubernetes"
 openSource: false
@@ -11,11 +11,12 @@ runningOrder: 0
 ---
 
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
-  <h2 class="text-2xl font-semibold mb-4">Why I built it</h2>
+  <h2 class="text-2xl font-semibold mb-4">Project scope</h2>
   <p>
-    I built this personal project to explore how infrastructure, application
-    deployment and runtime checks fit together. It combines Terraform for AWS,
-    a small Node.js service, Kubernetes manifests and GitHub Actions.
+    I built an end-to-end cloud delivery blueprint combining Terraform for AWS,
+    a containerized Node.js service, Kubernetes manifests and GitHub Actions.
+    It brings infrastructure provisioning, deployment automation and runtime
+    health checks into one personal engineering project.
   </p>
 
   <div class="mt-6 flex flex-wrap gap-3">
@@ -112,10 +113,10 @@ runningOrder: 0
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">What’s available</h2>
+  <h2 class="text-2xl font-semibold mb-4">Deliverables & deployment status</h2>
   <ul class="list-disc list-inside my-4 pt-1">
     <li>Infrastructure definitions, deployment manifests and a sample API with tests are available in this repository.</li>
     <li>The deployment workflow requires an AWS account, environment configuration and an explicit deployment run.</li>
-    <li>The code demonstrates the setup; it does not establish uptime, load capacity or a completed cloud deployment.</li>
+    <li>Live deployment status, uptime and load-test measurements are not reported for this personal project.</li>
   </ul>
 </div>

@@ -4,7 +4,7 @@ export const AppConfig = {
   title:
     'Viraj Bahulkar | Senior Software Engineer | Full-Stack, Backend & Cloud',
   description:
-    'Software engineer with over 8 years of experience building web applications and backend systems with React, Node.js and TypeScript, alongside AWS and Azure deployments.',
+    'Senior Software Engineer with over 8 years of professional experience delivering enterprise applications, Node.js backend services and production infrastructure on AWS and Azure.',
   keywords:
     'Viraj Bahulkar, Senior Software Engineer, Full-Stack Development, Backend Engineering, Cloud, React, Node.js, TypeScript',
   author: 'Viraj Bahulkar',

@@ -1,7 +1,7 @@
 ---
 title: "Dynamo formik"
 description: "A form-generation application that uses configuration to define fields, validation rules and backend integrations."
-projectNote: "Built with React, Formik and Node.js, with MongoDB and PL/SQL integrations."
+projectNote: "Professional application work. Proprietary code, form data and internal integrations are omitted."
 startDate: 2022-05-25T00:00:00Z
 openSource: false
 category: NodeJs, React, MongoDB, PL/Sql, Azure DevOps
@@ -17,11 +17,11 @@ runningOrder: 2
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold  ">What I built</h2>
+  <h2 class="text-2xl font-semibold  ">My contribution</h2>
   <ul class="list-disc list-inside mt-4 pt-2">
-    <li>Configuration-driven form generation using reusable schemas and validation rules.</li>
-    <li>React-based form rendering connected to NodeJS services.</li>
-    <li>Integrations with MongoDB and PL/SQL-backed data handling.</li>
+    <li>Implemented configuration-driven form generation with reusable schemas and validation rules, avoiding a separate implementation for each form.</li>
+    <li>Connected React and Formik rendering to Node.js services while keeping validation and data rules consistent.</li>
+    <li>Integrated MongoDB and PL/SQL-backed data handling into the form workflows.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

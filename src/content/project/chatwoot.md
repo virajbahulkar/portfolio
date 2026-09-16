@@ -14,9 +14,9 @@ runningOrder: 3
 <div class="shadow-xl rounded-2xl p-6 mb-8">
   <h2 class="text-2xl font-semibold mb-4">Contribution summary</h2>
   <p>
-    I contribute to open-source projects when I find issues I can help solve.
-    In Chatwoot, I worked on contact search in Vue and Telegram caption handling
-    in Ruby on Rails.
+    I contributed fixes for contact search in Vue and Telegram caption handling
+    in Ruby on Rails, working within Chatwoot’s existing application flows and
+    upstream review process.
   </p>
 
   <div class="mt-6 flex flex-wrap gap-3">
@@ -82,8 +82,8 @@ runningOrder: 3
 
   <h2 class="text-2xl font-semibold mb-4">Approach</h2>
   <p>
-    These were small changes within existing application flows. For the
-    Telegram fix, the regression test checks that a caption is saved as the
-    message content when there is no text body.
+    I kept the fixes focused on the affected application paths. For the Telegram
+    fix, the regression test checks that a caption is saved as the message
+    content when there is no text body.
   </p>
 </div>

@@ -1,7 +1,7 @@
 ---
 title: "HR 360 Portal"
 description: "An employee feedback portal for collecting evaluations and generating reports for employees, managers and administrators."
-projectNote: "Professional project at Autoflow Technologies."
+projectNote: "Professional work at Autoflow. Proprietary code and employee feedback data are omitted."
 startDate: 2018-01-01T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Reporting
@@ -17,10 +17,10 @@ runningOrder: 1
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">What I built</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Forms for collecting employee and manager feedback.</li>
-    <li>React dashboards and NodeJS services for reporting and administration.</li>
-    <li>Reports that brought evaluation data together for review.</li>
+    <li>Digitized employee and manager feedback collection with structured forms.</li>
+    <li>Built React dashboards and Node.js services for reporting and administration, with PostgreSQL-backed data handling.</li>
+    <li>Automated reports that consolidated evaluation data for employee, manager and administrator review.</li>
   </ul>
 </div>

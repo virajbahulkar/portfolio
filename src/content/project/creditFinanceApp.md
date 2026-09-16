@@ -1,7 +1,7 @@
 ---
 title: "Finance App"
-description: "An application for registering and tracking credit information, bringing financial data together and automating updates."
-projectNote: "React and Node.js application with PostgreSQL and Azure DevOps."
+description: "A professional credit registration and tracking application that consolidates financial data and automates updates for compliance-focused workflows."
+projectNote: "Professional application work. Proprietary code, credit records and internal infrastructure details are omitted."
 startDate: 2022-03-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Azure DevOps
@@ -17,11 +17,11 @@ runningOrder: 1
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4 ">What I built</h2>
+  <h2 class="text-2xl font-semibold mb-4 ">My contribution</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>React and Node.js workflows for registering and tracking credit information.</li>
-    <li>PostgreSQL storage for credit records and tracking data.</li>
-    <li>Automated updates within the credit registration process.</li>
+    <li>Built React and Node.js workflows for registering and tracking credit information from multiple sources.</li>
+    <li>Implemented PostgreSQL-backed data handling for credit records, tracking and auditability.</li>
+    <li>Automated credit registration updates to support timely data changes and compliance-oriented process control.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
