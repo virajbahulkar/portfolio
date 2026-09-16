@@ -47,7 +47,6 @@ runningOrder: 1
 Runtime: Production Kubernetes workloads across AWS and Azure
 Delivery: Azure DevOps build, test, deployment and validation gates
 Operations: Centralized logs, metrics dashboards, monitoring and alerts
-
 Scope summary; proprietary topology and infrastructure access are omitted.</code></pre>
   </div>
 

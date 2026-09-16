@@ -46,7 +46,6 @@ runningOrder: 1
 Services: Node.js pricing, booking and payment reconciliation
 Search: ElasticSearch
 Data: PostgreSQL for transactions; Redis for caching
-
 Scope summary; proprietary integrations and transaction data are omitted.</code></pre>
   </div>
 

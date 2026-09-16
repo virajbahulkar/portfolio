@@ -53,7 +53,6 @@ React visual builder
 Node.js query + execution layer
   ↓
 PostgreSQL and connected data flows
-
 Contribution workflow: pull request → review → merge</code></pre>
   </div>
 
