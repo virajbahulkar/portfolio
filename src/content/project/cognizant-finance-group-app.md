@@ -1,7 +1,7 @@
 ---
 title: "Cognizant Finance Group App"
-description: "Enterprise-scale financial platform serving 50K daily users with 99.9% uptime, built on AWS and Azure microservices with Kubernetes autoscaling, Azure DevOps release gates, centralized logging and monitoring, and 35% infrastructure cost optimization."
-impactSnapshot: "Impact: sustained 50K DAU finance workloads at 99.9% uptime with 35% cost optimization."
+description: "A finance application where I worked on React interfaces, Node.js services and deployments across AWS and Azure."
+projectNote: "Professional work at Cognizant Technology Solutions."
 startDate: 2026-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, AWS, Azure, Kubernetes, Azure DevOps
@@ -11,19 +11,18 @@ runningOrder: 1
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Problem</h2>
   <p>
-    The finance platform needed reliable customer-facing workflows, controlled
-    releases, and infrastructure that could scale safely across regulated
-    production environments.
+    The finance application needed customer-facing features, service integrations
+    and a release process that worked across environments.
   </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Scale</h2>
+  <h2 class="text-2xl font-semibold mb-4">Working environment</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li><strong>50K daily active users</strong> on production workloads.</li>
-    <li><strong>99.9% uptime</strong> maintained for core customer journeys.</li>
-    <li><strong>5 to 50 replicas</strong> during load growth through Kubernetes auto-scaling.</li>
-    <li><strong>35% infrastructure cost optimization</strong> through tuning and right-sizing.</li>
+    <li>Customer-facing finance workflows backed by application services.</li>
+    <li>Separate environments for development, validation and release.</li>
+    <li>Kubernetes workloads with autoscaling policies.</li>
+    <li>Infrastructure tuning and right-sizing work.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -57,28 +56,28 @@ Centralized logs, metrics, monitoring, alerts</code></pre>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">My ownership</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Implemented finance-domain customer journeys across React interfaces and Node.js service integrations for production-facing workflows.</li>
-    <li>Integrated Azure DevOps build, validation, and deployment gates into release workflows for safer promotion across environments.</li>
-    <li>Supported Kubernetes scaling behavior, production monitoring, and cross-environment troubleshooting across AWS and Azure microservices.</li>
+    <li>Built finance features across React interfaces and Node.js service integrations.</li>
+    <li>Integrated Azure DevOps build, validation and deployment gates into the release process.</li>
+    <li>Supported Kubernetes autoscaling, monitoring and troubleshooting across AWS and Azure environments.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
   <h2 class="text-2xl font-semibold mb-4">Reliability & infrastructure</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Centralized application logs, metrics dashboards, and alerting rules improved visibility into production regressions.</li>
-    <li>Kubernetes autoscaling policies expanded workloads from 5 to 50 replicas while health-oriented release checks helped maintain stability during demand spikes.</li>
-    <li>Azure DevOps build, test, deployment, and post-release validation gates reduced rollout risk for high-availability workflows.</li>
+    <li>Used centralized application logs, metrics dashboards and alerts to investigate issues.</li>
+    <li>Worked with Kubernetes autoscaling policies and application health checks.</li>
+    <li>Used build, test, deployment and post-release validation steps in Azure DevOps.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Engineering result</h2>
+  <h2 class="text-2xl font-semibold mb-4">Application support</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Maintained a production platform serving <strong>50K daily active users</strong>.</li>
-    <li>Helped sustain <strong>99.9% uptime</strong> for key finance journeys.</li>
-    <li>Supported scale growth from <strong>5 to 50 replicas</strong> and improved cost efficiency by <strong>35%</strong>.</li>
+    <li>Maintained customer-facing application workflows alongside feature development.</li>
+    <li>Investigated service and deployment issues across environments.</li>
+    <li>Supported infrastructure right-sizing rather than owning the team’s overall cloud costs.</li>
   </ul>
 </div>

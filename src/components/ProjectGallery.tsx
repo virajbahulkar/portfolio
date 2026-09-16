@@ -107,6 +107,7 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
           {/* Reset Filter Button (Now Cross Icon) */}
           {(selectedYear || selectedMonth) && (
             <button
+              aria-label="Clear project filters"
               className="mb-4 text-xl text-red-500"
               onClick={() => {
                 setSelectedYear(null);

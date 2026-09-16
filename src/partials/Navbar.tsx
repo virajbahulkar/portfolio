@@ -42,7 +42,7 @@ const Navbar = ({ path }: NavbarProps) => {
           {/* Desktop Menu */}
           <ul className="hidden items-center gap-6 font-medium lg:flex">
             <NavMenuItem href="/">Home</NavMenuItem>
-            <NavMenuItem href="/projects/">Engineering</NavMenuItem>
+            <NavMenuItem href="/projects/">Projects</NavMenuItem>
             <NavMenuItem href="/blogs/">Writing</NavMenuItem>
             <NavMenuItem href="/cv/">Resume</NavMenuItem>
             <NavMenuItem href="mailto:hello@virajbahulkar.me">
@@ -78,7 +78,7 @@ const Navbar = ({ path }: NavbarProps) => {
             {/* Mobile Menu Items */}
             <ul className="absolute right-0 top-14 z-10 flex w-52 flex-col items-center gap-4 border-t  bg-base-100 p-4 font-medium shadow-md">
               <NavMenuItem href="/">Home</NavMenuItem>
-              <NavMenuItem href="/projects/">Engineering</NavMenuItem>
+              <NavMenuItem href="/projects/">Projects</NavMenuItem>
               <NavMenuItem href="/blogs/">Writing</NavMenuItem>
               <NavMenuItem href="/cv/">Resume</NavMenuItem>
               <NavMenuItem href="mailto:hello@virajbahulkar.me">

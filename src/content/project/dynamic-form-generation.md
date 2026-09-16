@@ -1,7 +1,7 @@
 ---
 title: "Dynamo formik"
-description: "Configuration-driven form platform for generating reusable forms, validation rules, and backend integrations without rebuilding each flow manually."
-impactSnapshot: "Impact: increased delivery speed by generating reusable validated forms from configuration."
+description: "A form-generation application that uses configuration to define fields, validation rules and backend integrations."
+projectNote: "Built with React, Formik and Node.js, with MongoDB and PL/SQL integrations."
 startDate: 2022-05-25T00:00:00Z
 openSource: false
 category: NodeJs, React, MongoDB, PL/Sql, Azure DevOps

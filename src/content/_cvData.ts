@@ -35,7 +35,7 @@ export const profile: Profile = {
   contact:
     'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.me | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
   summary:
-    'Senior Software Engineer with 8+ years of experience delivering production-grade systems across backend services, full-stack applications, and cloud infrastructure. Strong in Node.js and TypeScript with hands-on ownership of Docker, Kubernetes autoscaling, Azure DevOps release controls, centralized logging and monitoring, and cloud optimization across AWS and Azure. Built a foundation in product-facing application development and now apply that depth to platform reliability, production delivery, and engineering scale.',
+    'I’m a Senior Software Engineer with over 8 years of experience in full-stack development, backend engineering and cloud technologies. I work primarily with React, Node.js and JavaScript/TypeScript, building web applications, APIs and database integrations. My experience includes AWS, Azure, Docker, Kubernetes and CI/CD pipelines. I’m interested in backend architecture, cloud engineering, platform engineering and DevOps, alongside my full-stack work.',
 };
 
 export const education: EducationItem[] = [
@@ -55,11 +55,11 @@ export const experience: ExperienceItem[] = [
     title: 'Senior Software Engineer at Cognizant Technology Solutions, India',
     start: '2021-12-01',
     bullets: [
-      'Delivered Finance Group application workflows across React.js frontend, Node.js services, and cloud infrastructure for high-availability customer journeys.',
-      'Supported production workloads serving 50K daily active users while maintaining 99.9% uptime for core finance journeys.',
-      'Operated AWS and Azure microservices on Kubernetes with autoscaling policies that expanded workloads from 5 to 50 replicas under load.',
-      'Integrated Azure DevOps build, validation, and deployment gates for safer multi-environment promotions and repeatable releases.',
-      'Improved production visibility with centralized logs, metrics dashboards, and alerting while supporting right-sizing efforts that drove 35% cost optimization.',
+      'Built Finance Group application features across React interfaces and Node.js services.',
+      'Supported application services and investigated issues in customer-facing finance workflows.',
+      'Worked with Kubernetes workloads and autoscaling across AWS and Azure.',
+      'Integrated Azure DevOps build, validation and deployment gates across environments.',
+      'Worked with centralized logs, metrics dashboards and alerts, and supported infrastructure right-sizing.',
     ],
     technologies:
       'React.js, Node.js, Express, REST APIs, TypeScript, AWS, Azure, Docker, Kubernetes, Azure DevOps, CI/CD, Observability, MongoDB, SQL',
@@ -72,17 +72,17 @@ export const experience: ExperienceItem[] = [
       {
         name: 'ToolJet (Open Source Contributions)',
         bullets: [
-          'Contributed to an open-source low-code platform used by 10,000+ developers with 500K+ monthly downloads.',
-          'Optimized visual builder rendering by 35% and reduced backend query latency by 60% across core product workflows.',
-          'Expanded automated test coverage by 65%, improving release confidence and contributor delivery quality.',
+          'Contributed to ToolJet’s React frontend through reviewed and merged pull requests.',
+          'Fixed widget search and duplicate table-edit updates.',
+          'Added organization-user form validation and corrected application launch behaviour when no deployed version was available.',
         ],
       },
       {
         name: 'WanderWhale (Travel Information Portal)',
         bullets: [
-          'Built travel platform workflows supporting 50K users and $1M+ annual transaction value across discovery, pricing, and booking journeys.',
-          'Delivered ElasticSearch-powered search, multi-currency pricing, and payment reconciliation flows for reliable travel operations.',
-          'Improved mobile performance to 2.1s LCP with Lighthouse 98 while supporting stable full-stack delivery workflows.',
+          'Built travel discovery, pricing and booking workflows.',
+          'Worked on ElasticSearch-powered search, multi-currency pricing and payment reconciliation.',
+          'Worked on application performance and mobile and desktop interfaces.',
         ],
       },
     ],
@@ -98,23 +98,23 @@ export const experience: ExperienceItem[] = [
       {
         name: 'Compass (Agent Portal App)',
         bullets: [
-          'Built and architected agent portal applications with React.js frontends and Node.js/Express backends, improving engagement and business visibility.',
-          'Transformed operational data into reports and dashboards for performance tracking and decision support.',
-          'Managed SDLC and delivery workflows, ensuring consistent releases and improved productivity for full-stack projects.',
+          'Built agent portal applications with React.js frontends and Node.js/Express backends.',
+          'Created reports and dashboards for tracking sales performance and business targets.',
+          'Managed development and release workflows for full-stack projects.',
         ],
       },
       {
         name: 'Digitizer App (No-Code Platform)',
         bullets: [
           'Developed a no-code platform with modular React.js components, Node.js services, and flexible backend integrations.',
-          'Built dynamic tables, timelines, and complex forms that improved configurability, usability, and system robustness.',
-          'Implemented cloud-backed workflows and automation patterns that improved performance and delivery reliability.',
+          'Built configurable tables, timelines and complex forms.',
+          'Implemented cloud integrations and workflow automation.',
         ],
       },
       {
         name: 'Governance Framework (In-House Project)',
         bullets: [
-          'Built a 360-degree organizational view application combining React.js UI, Node.js services, and MongoDB/SQL data management.',
+          'Built an organizational planning application with React.js, Node.js and MongoDB/SQL data management.',
           'Delivered REST APIs, UI/UX improvements, and interactive features such as drag-and-drop and tree-level tables.',
         ],
       },
@@ -122,14 +122,14 @@ export const experience: ExperienceItem[] = [
         name: 'Vendor Management System',
         bullets: [
           'Automated vendor registration and approval workflows with React.js, Node.js/Express, and database integrations.',
-          'Architected cloud-based delivery flows and DevOps pipelines for scalability, security, and operational reliability.',
+          'Worked on cloud deployments and DevOps pipelines for the application.',
         ],
       },
       {
         name: 'HR 360 Feedback Portal',
         bullets: [
           'Digitized employee feedback workflows with React.js dashboards, Node.js services, and reporting automation.',
-          'Built admin reporting and analytics capabilities to support faster processing and leadership insight.',
+          'Built admin reports and dashboards for reviewing feedback.',
         ],
       },
     ],
@@ -141,7 +141,7 @@ export const experience: ExperienceItem[] = [
     start: '2014-01-01',
     end: '2017-05-01',
     bullets: [
-      'Worked as a freelancer while strengthening practical skills in web development, cloud technologies, and delivery workflows.',
+      'Worked on freelance projects while developing my skills in web development, cloud technologies and application delivery.',
     ],
     technologies:
       'React.js, Node.js, Express, MongoDB, SQL, HTML, CSS, JavaScript, Git, DevOps',
@@ -151,19 +151,19 @@ export const experience: ExperienceItem[] = [
 export const skills: Skill[] = [
   {
     title: 'NodeJS',
-    description: 'Built backend services, APIs, and production-facing application logic.',
+    description: 'Built backend services, APIs and application logic.',
     icon: 'SiNodedotjs',
     color: '#339933',
   },
   {
     title: 'TypeScript',
-    description: 'Used type-safe patterns across backend systems and full-stack applications.',
+    description: 'Used TypeScript across backend services and web applications.',
     icon: 'SiTypescript',
     color: '#3178C6',
   },
   {
     title: 'ExpressJS',
-    description: 'Developed API and service layers for scalable Node.js systems.',
+    description: 'Built API routes and service layers for Node.js applications.',
     icon: 'SiExpress',
     color: '#000000',
   },
@@ -181,13 +181,13 @@ export const skills: Skill[] = [
   },
   {
     title: 'Redis',
-    description: 'Used caching and fast-access data patterns for responsive backend flows.',
+    description: 'Used Redis to cache application data.',
     icon: 'SiRedis',
     color: '#DC382D',
   },
   {
     title: 'ElasticSearch',
-    description: 'Built search-backed user flows and tuned data retrieval behavior.',
+    description: 'Built search features and worked on query behaviour.',
     icon: 'SiElasticsearch',
     color: '#005571',
   },
@@ -200,28 +200,28 @@ export const skills: Skill[] = [
   {
     title: 'Kubernetes',
     description:
-      'Worked with autoscaling, health checks, rollout patterns, and production orchestration.',
+      'Worked with autoscaling, health checks and application rollouts.',
     icon: 'SiKubernetes',
     color: '#326CE5',
   },
   {
     title: 'Terraform',
     description:
-      'Built code-backed AWS infrastructure blueprints covering VPC, IAM, EKS, ECR, and deployment foundations.',
+      'Used Terraform in a personal AWS blueprint covering VPC, IAM, EKS and ECR.',
     icon: 'SiTerraform',
     color: '#844FBA',
   },
   {
     title: 'AWS',
     description:
-      'Worked across EC2, S3, Lambda, API Gateway, EKS, and cloud delivery workflows.',
+      'Worked with EC2, S3, Lambda, API Gateway, EKS and application deployments.',
     icon: 'FaAws',
     color: '#FF9900',
   },
   {
     title: 'Azure DevOps',
     description:
-      'Worked with CI/CD pipelines, release controls, validation gates, and multi-environment promotions.',
+      'Worked with CI/CD pipelines, validation gates and releases across environments.',
     icon: 'VscAzureDevops',
     color: '#0078D7',
   },
@@ -235,7 +235,7 @@ export const skills: Skill[] = [
   {
     title: 'ReactJS',
     description:
-      'Built product-facing interfaces as part of broader full-stack and platform delivery work.',
+      'Built application interfaces, reusable components, dashboards and forms.',
     icon: 'SiReact',
     color: '#61DAFB',
   },

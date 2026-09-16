@@ -1,10 +1,10 @@
 ---
 title: "Platform Delivery Blueprint (Terraform + AWS + Kubernetes)"
-description: "Code-backed platform blueprint defining an AWS/EKS foundation in Terraform, Kubernetes runtime patterns, and GitHub Actions-based deployment automation."
+description: "A personal AWS infrastructure blueprint with Terraform, a containerized Node.js API, Kubernetes manifests and a GitHub Actions deployment workflow."
 imgSrc: "/assets/images/projects/platform-delivery-blueprint.svg"
-impactSnapshot: "Impact: established a code-backed Terraform and Kubernetes platform blueprint for cloud delivery."
+projectNote: "Personal proof of concept with source code; not a claim of a live production deployment."
 startDate: 2026-09-14T00:00:00Z
-imgAlt: "Platform delivery blueprint project"
+imgAlt: "AWS platform blueprint with Terraform, GitHub Actions and Kubernetes"
 openSource: false
 category: Terraform, AWS, Kubernetes, GitHub Actions, NodeJS
 runningOrder: 0
@@ -13,11 +13,9 @@ runningOrder: 0
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Why I built it</h2>
   <p>
-    I built this platform engineering project to implement an end-to-end cloud
-    delivery path using Terraform, AWS, Kubernetes and GitHub Actions. It
-    brings infrastructure provisioning, container orchestration, deployment
-    automation, runtime health checks and operational controls into one
-    code-backed architecture.
+    I built this personal project to explore how infrastructure, application
+    deployment and runtime checks fit together. It combines Terraform for AWS,
+    a small Node.js service, Kubernetes manifests and GitHub Actions.
   </p>
 
   <div class="mt-6 flex flex-wrap gap-3">
@@ -103,21 +101,21 @@ runningOrder: 0
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Operational evidence</h2>
+  <h2 class="text-2xl font-semibold mb-4">Runtime configuration</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Readiness, liveness, and startup probes are built into the deployment contract.</li>
-    <li>Rolling update settings, minimum replica counts, and HPA thresholds are defined in code rather than implied.</li>
+    <li>The deployment manifest defines readiness, liveness and startup probes.</li>
+    <li>Rolling update settings, replica limits and HPA thresholds are defined in the manifests.</li>
     <li>Metrics are exposed in Prometheus format and service/pod annotations support scrape-based monitoring.</li>
-    <li>Application configuration is designed to live behind an SSM parameter path instead of hard-coded values.</li>
+    <li>Terraform defines an SSM parameter path for configuration; the sample application reads its settings from environment variables.</li>
     <li>ECR image scanning, ACM certificate issuance, CloudWatch log retention, and OIDC-based deployment access are defined in the infrastructure layer.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Engineering result</h2>
+  <h2 class="text-2xl font-semibold mb-4">What’s available</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Implemented a reusable Terraform and Kubernetes platform blueprint covering infrastructure provisioning, CI/CD automation and runtime reliability patterns.</li>
-    <li>Established a reusable AWS platform architecture that can evolve alongside continued Terraform and cloud engineering work.</li>
-    <li>Added demonstrable IaC, release validation, and runtime health patterns directly to the portfolio repository.</li>
+    <li>Infrastructure definitions, deployment manifests and a sample API with tests are available in this repository.</li>
+    <li>The deployment workflow requires an AWS account, environment configuration and an explicit deployment run.</li>
+    <li>The code demonstrates the setup; it does not establish uptime, load capacity or a completed cloud deployment.</li>
   </ul>
 </div>

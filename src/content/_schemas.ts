@@ -17,7 +17,7 @@ export const postSchema = z.object({
 export const projectSchema = z.object({
   title: z.string(),
   description: z.string(),
-  impactSnapshot: z.string(),
+  projectNote: z.string(),
   link: z.string().optional(),
   imgSrc: z.string().optional(),
   startDate: z.date(),

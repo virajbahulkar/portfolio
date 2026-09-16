@@ -1,7 +1,7 @@
 ---
 title: "WanderWhale Travel Portal"
-description: "Full-stack travel platform serving 50K users and $1M+ annual transaction value with ElasticSearch-powered discovery, dynamic pricing, multi-currency bookings, and reliable payment reconciliation."
-impactSnapshot: "Impact: supported 50K users and $1M+ transaction volume with reliable booking flows."
+description: "A travel portal where I worked on search, pricing, booking and payment reconciliation using React and Node.js."
+projectNote: "Professional project at Saeloun Technologies."
 startDate: 2025-11-10T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, ElasticSearch, PostgreSQL, Redis, Payments
@@ -11,18 +11,17 @@ runningOrder: 1
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Problem</h2>
   <p>
-    The travel platform needed reliable search, pricing, checkout, and
-    reconciliation workflows while supporting user growth and transactional
-    accuracy.
+    The travel portal needed connected search, pricing and checkout workflows,
+    with payment reconciliation after a booking.
   </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Scale</h2>
+  <h2 class="text-2xl font-semibold mb-4">Application features</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li><strong>50K users</strong> supported across travel booking journeys.</li>
-    <li><strong>$1M+ annual transaction value</strong> processed through integrated booking flows.</li>
-    <li><strong>2.1s LCP</strong> and a <strong>Lighthouse score of 98</strong> on mobile-first experiences.</li>
+    <li>Travel search powered by ElasticSearch.</li>
+    <li>Dynamic pricing and multi-currency bookings.</li>
+    <li>Booking interfaces for mobile and desktop users.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -32,7 +31,7 @@ runningOrder: 1
     <li>React frontend connected to <strong>Node.js</strong> application services.</li>
     <li><strong>ElasticSearch</strong> powered search and discovery experiences.</li>
     <li><strong>PostgreSQL</strong> and <strong>Redis</strong> supported transactional and caching workflows.</li>
-    <li>Pricing, booking, and payment reconciliation were handled as production business flows.</li>
+    <li>Application services handled pricing, bookings and payment reconciliation.</li>
   </ul>
 
   <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
@@ -50,19 +49,19 @@ ElasticSearch  PostgreSQL          Redis + external payment flows</code></pre>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">My ownership</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Built and optimized travel booking workflows across discovery, pricing, checkout, and post-payment reconciliation.</li>
-    <li>Improved application performance and user experience across mobile and desktop journeys.</li>
-    <li>Supported backend and delivery work that kept booking and payment flows reliable at scale.</li>
+    <li>Built travel workflows for discovery, pricing, checkout and payment reconciliation.</li>
+    <li>Worked on application performance across mobile and desktop interfaces.</li>
+    <li>Supported backend services and application deployments.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Engineering result</h2>
+  <h2 class="text-2xl font-semibold mb-4">Technical focus</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Supported a travel system used by <strong>50K users</strong>.</li>
-    <li>Handled <strong>$1M+ annual transaction value</strong> through booking and payments.</li>
-    <li>Delivered a <strong>2.1s LCP</strong> and <strong>Lighthouse 98</strong> for mobile-first performance.</li>
+    <li>Connecting search results to pricing and booking data.</li>
+    <li>Handling payment reconciliation alongside booking records.</li>
+    <li>Working with PostgreSQL for transactional data and Redis for caching.</li>
   </ul>
 </div>

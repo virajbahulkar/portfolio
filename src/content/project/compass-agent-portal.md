@@ -1,7 +1,7 @@
 ---
 title: "Compass agent portal app"
-description: "Insurance agent portal for performance tracking, operational reporting, and business workflow visibility across sales teams."
-impactSnapshot: "Impact: improved sales-team visibility with operational dashboards and performance tracking."
+description: "An insurance agent portal for tracking sales performance, business targets and operational reports."
+projectNote: "Professional project at Autoflow Technologies."
 startDate: 2020-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, IBM Database, AWS
@@ -11,8 +11,8 @@ runningOrder: 1
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Problem</h2>
   <p class="mt-2 pt-1">
-    Insurance teams needed better visibility into sales performance, business
-    targets, and day-to-day operational metrics across agent workflows.
+    Insurance teams needed a way to review sales performance, business targets
+    and day-to-day activity across their agents.
   </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -21,7 +21,7 @@ runningOrder: 1
   <ul class="list-disc list-inside pt-1">
     <li>React-based portal workflows for performance monitoring, goal tracking, and reporting.</li>
     <li>Node.js APIs and IBM database integrations for operational data access.</li>
-    <li>Analytics-oriented views that helped agents and business teams monitor progress.</li>
+    <li>Dashboard views for agents and business teams to monitor progress.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
