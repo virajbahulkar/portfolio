@@ -11,6 +11,36 @@ const titleSuffix = ` - ${AppConfig.site_name}`;
 const title = `Resume${titleSuffix}`;
 const description = profile.summary;
 const url = `${AppConfig.site_url}/cv/`;
+const [email, phone, website, linkedin, github] = profile.contact
+  .split('|')
+  .map((item) => item.trim());
+const contactItems = [
+  {
+    label: 'Email',
+    value: email,
+    href: email ? `mailto:${email}` : undefined,
+  },
+  {
+    label: 'Phone',
+    value: phone,
+    href: phone ? `tel:${phone.replace(/\s+/g, '')}` : undefined,
+  },
+  {
+    label: 'Website',
+    value: website,
+    href: website,
+  },
+  {
+    label: 'LinkedIn',
+    value: linkedin?.replace(/^https?:\/\/(www\.)?/i, ''),
+    href: linkedin,
+  },
+  {
+    label: 'GitHub',
+    value: github?.replace(/^https?:\/\/(www\.)?/i, ''),
+    href: github,
+  },
+].filter((item) => item.value);
 ---
 
 <Base head={{ title, description, url }}>
@@ -46,7 +76,29 @@ const url = `${AppConfig.site_url}/cv/`;
             </svg>
           </button>
         </div>
-        <p class="mt-4 break-words leading-relaxed">{profile.contact}</p>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {contactItems.map((item) => (
+            <article class="rounded-xl border border-base-300 bg-base-200/60 px-4 py-3 shadow-sm transition hover:border-primary/60 hover:shadow-md">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-base-content/60">
+                {item.label}
+              </p>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  class="mt-1 block break-words text-sm font-medium text-primary transition hover:text-secondary"
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http')
+                    ? 'noopener noreferrer'
+                    : undefined}
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <p class="mt-1 break-words text-sm font-medium">{item.value}</p>
+              )}
+            </article>
+          ))}
+        </div>
       </header>
       <p id="pdf-error" role="alert" class="text-error"></p>
       <noscript>Enable JavaScript to download the PDF résumé.</noscript>
