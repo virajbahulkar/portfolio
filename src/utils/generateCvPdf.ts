@@ -148,18 +148,8 @@ function buildBlocks(
   });
   blocks.push(paragraph(data.profile.contact, config.fonts.body));
 
-  blocks.push(heading('Profile'));
+  blocks.push(heading('Summary'));
   blocks.push(paragraph(data.profile.summary, config.fonts.body));
-
-  blocks.push(heading('Education'));
-  data.education.forEach((e) => {
-    blocks.push({
-      type: 'edu',
-      lines: wrap(e.title, config.fonts.sub),
-      style: config.fonts.sub,
-    });
-    blocks.push(paragraph(e.subtitle, config.fonts.body));
-  });
 
   blocks.push(heading('Experience'));
   data.experience.forEach((exp) => {
@@ -187,6 +177,16 @@ function buildBlocks(
   blocks.push(heading('Skills'));
   data.skills.forEach((s) => {
     blocks.push(paragraph(`${s.title}: ${s.description}`, config.fonts.body));
+  });
+
+  blocks.push(heading('Education'));
+  data.education.forEach((e) => {
+    blocks.push({
+      type: 'edu',
+      lines: wrap(e.title, config.fonts.sub),
+      style: config.fonts.sub,
+    });
+    blocks.push(paragraph(e.subtitle, config.fonts.body));
   });
   return blocks;
 }
