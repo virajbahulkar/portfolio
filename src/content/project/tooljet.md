@@ -4,12 +4,6 @@ description: "I contributed React frontend fixes to ToolJet, an open-source low-
 link: "https://github.com/ToolJet/ToolJet/commits?author=virajbahulkar"
 imgSrc: "/assets/images/projects/tooljet.png"
 projectNote: "Open-source contributions through reviewed and merged pull requests in 2021."
-# Earlier metrics retained for owner confirmation, not attributed to the linked fixes:
-# Platform adoption: 10,000+ developers and 500K+ monthly downloads.
-# Contribution claims: 35% builder performance improvement, 60% backend query latency
-# reduction, 65% test coverage expansion and collaboration with 50+ active contributors.
-# Confirm measurement dates, baselines and contribution scope before republication.
-# The linked frontend fixes alone do not establish these platform/backend metrics.
 startDate: 2025-05-09T00:00:00Z
 imgAlt: "ToolJet open-source contributions"
 openSource: true
