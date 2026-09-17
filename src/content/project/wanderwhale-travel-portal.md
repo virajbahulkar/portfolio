@@ -1,12 +1,7 @@
 ---
 title: "WanderWhale Travel Portal"
-description: "Professional travel platform work covering production search, multi-currency pricing, booking, payment reconciliation and application performance with React and Node.js."
+description: "Professional Node.js travel services covering search, multi-currency pricing, booking and payment reconciliation with ElasticSearch, PostgreSQL and Redis, alongside React interfaces."
 projectNote: "Professional work at Saeloun. Proprietary code, transaction data and internal infrastructure details are omitted."
-# Metrics retained from earlier portfolio copy for owner confirmation before republication:
-# Platform/business outcomes: 50K users; $1M+ annual transaction value.
-# Performance results: 2.1s LCP; Lighthouse score of 98.
-# Confirm reporting periods, user definition, currency, device/test conditions,
-# individual attribution and permission to disclose; public artifacts are not required.
 startDate: 2025-11-10T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, ElasticSearch, PostgreSQL, Redis, Payments
@@ -23,31 +18,13 @@ runningOrder: 1
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Production workflows</h2>
-  <ul class="list-disc list-inside my-4 pt-1">
-    <li>Travel search powered by ElasticSearch.</li>
-    <li>Dynamic pricing and multi-currency bookings.</li>
-    <li>Booking interfaces for mobile and desktop users.</li>
-  </ul>
-
-  <hr class=" mb-8 mt-8 border border-base-300">
-
   <h2 class="text-2xl font-semibold mb-4">Architecture</h2>
   <ul class="list-disc list-inside my-4 pt-1">
     <li>React frontend connected to <strong>Node.js</strong> application services.</li>
     <li><strong>ElasticSearch</strong> powered search and discovery experiences.</li>
-    <li><strong>PostgreSQL</strong> and <strong>Redis</strong> supported transactional and caching workflows.</li>
+    <li><strong>PostgreSQL</strong> stored transactional data; <strong>Redis</strong> provided application caching.</li>
     <li>Application services handled pricing, bookings and payment reconciliation as production business flows.</li>
   </ul>
-
-  <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
-    <h3 class="text-lg font-semibold mb-3">Application scope</h3>
-    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>Interface: React travel discovery and booking workflows
-Services: Node.js pricing, booking and payment reconciliation
-Search: ElasticSearch
-Data: PostgreSQL for transactions; Redis for caching
-Scope summary; proprietary integrations and transaction data are omitted.</code></pre>
-  </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
@@ -64,6 +41,5 @@ Scope summary; proprietary integrations and transaction data are omitted.</code>
   <ul class="list-disc list-inside my-4 pt-1">
     <li>Connected ElasticSearch discovery to pricing and booking workflows so users could move from search to checkout.</li>
     <li>Handled payment reconciliation alongside booking records to support transactional accuracy.</li>
-    <li>Used PostgreSQL for transactional data and Redis for caching within the application’s data workflows.</li>
   </ul>
 </div>

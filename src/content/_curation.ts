@@ -5,20 +5,12 @@ export const FEATURED_BLOG_SLUGS = [
 ] as const;
 
 export const FLAGSHIP_PROJECT_SLUGS = [
-  'platform-delivery-blueprint',
   'cognizant-finance-group-app',
-  'tooljet',
   'wanderwhale-travel-portal',
+  'platform-delivery-blueprint',
+  'tooljet',
 ] as const;
 
-export const RELATED_BLOG_PROJECTS: Record<string, string[]> = {
-  'my-first-real-ci-cd-journey-on-azure-from-build-to-prod': [
-    'platform-delivery-blueprint',
-  ],
-  'building-realtime-dashboard': [
-    'platform-delivery-blueprint',
-    'cognizant-finance-group-app',
-    'wanderwhale-travel-portal',
-  ],
-  'vscode-folder-structure-extension': ['tooljet'],
-};
+// Add public case-study slugs only when the article's connection is confirmed.
+// Shared technologies alone do not establish a project relationship.
+export const RELATED_BLOG_PROJECTS: Record<string, string[]> = {};
