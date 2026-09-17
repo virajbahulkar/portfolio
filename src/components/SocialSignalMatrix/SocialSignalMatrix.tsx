@@ -21,9 +21,9 @@ const SocialSignalMatrix: React.FC<Props> = ({ socials }) => {
     <section className={styles.socialSection}>
       <h2
         className={`${styles.glitchTitle} text-2xl font-bold `}
-        data-text="🌐 Echoes on the Web"
+        data-text="🌐 Find Me Online"
       >
-        🌐 Echoes on the Web
+        🌐 Find Me Online
       </h2>
 
       <div className={styles.matrixGrid}>

@@ -1,11 +1,11 @@
 ---
 title: "Chatwoot"
-description: "Open-source contribution proof showing authored Chatwoot bug fixes across contact search, Telegram message handling, and sidebar data presentation."
+description: "I contributed fixes for contact search and Telegram caption handling in Chatwoot, an open-source customer support platform."
 link: "https://github.com/chatwoot/chatwoot/commits?author=virajbahulkar"
 imgSrc: "/assets/images/projects/chatwoot.png"
-impactSnapshot: "Impact: shipped verifiable open-source fixes that improved reliability in active product flows."
+projectNote: "Merged fixes in a Ruby on Rails and Vue codebase; a separate sidebar proposal was closed without merging."
 startDate: 2021-10-25T00:00:00Z
-imgAlt: "Project Maps"
+imgAlt: "Chatwoot customer support interface"
 openSource: true
 category: Ruby on Rails, VueJS, Typescript, PostgreSQL
 runningOrder: 3
@@ -14,9 +14,9 @@ runningOrder: 3
 <div class="shadow-xl rounded-2xl p-6 mb-8">
   <h2 class="text-2xl font-semibold mb-4">Contribution summary</h2>
   <p>
-    I used Chatwoot as a focused open-source contribution example because the
-    proof is concrete: authored pull requests, merged fixes, and small but real
-    product bugs resolved in a large Rails + Vue codebase.
+    I contributed fixes for contact search in Vue and Telegram caption handling
+    in Ruby on Rails, working within Chatwoot’s existing application flows and
+    upstream review process.
   </p>
 
   <div class="mt-6 flex flex-wrap gap-3">
@@ -32,19 +32,19 @@ runningOrder: 3
 
   <hr class="mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Contribution evidence</h2>
+  <h2 class="text-2xl font-semibold mb-4">Pull requests</h2>
   <ul class="list-disc list-inside my-4 pt-1 space-y-2">
     <li>
       <strong>Merged PR #3241:</strong>
-      fixed contact search behavior when phone numbers were entered with a country code by normalizing the search input before dispatching the query.
+      fixed contact search with a leading plus sign by removing it before dispatching the query.
     </li>
     <li>
       <strong>Merged PR #3257:</strong>
-      fixed Telegram media message handling so captions render correctly when no plain text body is present, and added a regression test around that path.
+      used the Telegram caption when message text was absent or blank, and added a regression test for a caption without text.
     </li>
     <li>
-      <strong>Authored PR #3237:</strong>
-      proposed a UI/data presentation fix for sidebar team-name casing in API output and related spec coverage.
+      <strong>PR #3237 (closed, not merged):</strong>
+      proposed title-casing sidebar team names in API output and updated a related assertion.
     </li>
   </ul>
 
@@ -74,17 +74,16 @@ runningOrder: 3
       class="rounded-2xl border border-base-300 bg-base-200/40 p-4 transition-colors hover:border-primary"
     >
       <p class="text-sm font-semibold">PR #3237</p>
-      <p class="mt-2 text-sm leading-6">Sidebar team-name casing fix proposal in the Chatwoot API response layer.</p>
+      <p class="mt-2 text-sm leading-6">Sidebar team-name casing proposal, closed without merging.</p>
     </a>
   </div>
 
   <hr class="mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Why it stays on the site</h2>
+  <h2 class="text-2xl font-semibold mb-4">Approach</h2>
   <p>
-    This is not meant to compete with the larger ToolJet case study. It stays as
-    lightweight proof that I can enter an established open-source codebase,
-    isolate product bugs, ship focused fixes, and work within existing review
-    flows.
+    I kept the fixes focused on the affected application paths. For the Telegram
+    fix, the regression test checks that a caption is saved as the message
+    content when there is no text body.
   </p>
 </div>

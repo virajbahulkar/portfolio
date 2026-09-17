@@ -3,7 +3,7 @@
 ![CI](https://github.com/virajbahulkar/portfolio/actions/workflows/ci.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-This repository showcases my software engineering work, infrastructure proof projects, and technical writing. 💻✨
+This portfolio presents my professional enterprise and client engineering experience, open-source contributions, a personal AWS infrastructure blueprint, and technical writing. Professional case studies describe my contributions without publishing proprietary source code, client data or internal infrastructure details.
 
 ### Quick Start
 ```bash
@@ -26,7 +26,7 @@ Dev: http://localhost:3000  |  Prod: http://localhost:8080
 - 🎉 TypeScript
 - 🎨 daisyUI
 
-### Platform proof project
+### Personal AWS infrastructure blueprint
 
 This repo now includes a code-first AWS platform showcase under `platform/aws-platform-showcase` featuring:
 

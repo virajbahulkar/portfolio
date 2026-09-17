@@ -10,10 +10,10 @@ const RecentProjects = (props: IRecentProjectProps) => {
   return (
     <div className="h-full">
       <SectionHeader
-        title="Flagship"
-        highlightedText="Case Studies"
+        title="Selected"
+        highlightedText="Work"
         link="/projects/"
-        linkText="View Engineering Work"
+        linkText="View all projects"
         extraClasses=""
       />
 

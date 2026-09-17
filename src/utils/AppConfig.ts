@@ -2,11 +2,11 @@ export const AppConfig = {
   site_url: 'https://virajbahulkar.me',
   site_name: 'Viraj Bahulkar',
   title:
-    'Viraj Bahulkar | Senior Software Engineer - Backend, Platform & Cloud',
+    'Viraj Bahulkar | Senior Software Engineer | Full-Stack, Backend & Cloud',
   description:
-    'Senior Software Engineer with 8+ years building backend, cloud-native, and production systems across Node.js, TypeScript, AWS/Azure, Kubernetes, Docker, CI/CD, observability, and hands-on Terraform-based platform delivery.',
+    'Senior Software Engineer with over 8 years of professional experience delivering enterprise applications, Node.js backend services and production infrastructure on AWS and Azure.',
   keywords:
-    'Viraj Bahulkar, Senior Software Engineer, Backend Engineer, Platform Engineer, Cloud Engineer, Node.js, TypeScript, Docker, Kubernetes, Terraform, AWS, Azure, GitHub Actions, CI/CD, observability, distributed systems, microservices, production systems',
+    'Viraj Bahulkar, Senior Software Engineer, Full-Stack Development, Backend Engineering, Cloud, React, Node.js, TypeScript',
   author: 'Viraj Bahulkar',
   locale_region: 'en-us',
   locale: 'en',

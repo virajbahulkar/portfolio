@@ -1,7 +1,7 @@
 ---
 title: "Dynamic dashboard"
-description: "Dashboard application for assembling real-time reports from multiple data sources with configurable widgets, role-based access, and cloud-hosted delivery."
-impactSnapshot: "Impact: enabled faster business decisions through configurable real-time reporting views."
+description: "A dashboard application that combines data from multiple sources into real-time reports with configurable widgets and role-based access."
+projectNote: "Professional application work. Proprietary code, reporting data and internal infrastructure details are omitted."
 startDate: 2024-12-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, MongoDB, AWS
@@ -11,19 +11,18 @@ runningOrder: 1
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Problem</h2>
   <p class="text-lg pt-2">
-    Teams needed a configurable reporting surface for combining data from
-    multiple sources, visualizing it in real time, and supporting role-based
-    access to operational information.
+    Teams needed reports that combined multiple data sources, updated in real
+    time and limited access by user role.
   </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">What I built</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside my-4 space-y-2">
-    <li>Interactive dashboards with configurable charts, tables, and widgets.</li>
-    <li>Role-based access for administrators, developers, and viewers.</li>
-    <li>Backend integrations for APIs, databases, and historical reporting data.</li>
-    <li>Exportable reporting flows for downstream analysis.</li>
+    <li>Built interactive dashboards with configurable charts, tables and widgets.</li>
+    <li>Implemented role-based access for administrators, developers and viewers.</li>
+    <li>Integrated APIs, databases and historical reporting data through backend services.</li>
+    <li>Delivered report exports for further analysis.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -31,9 +30,9 @@ runningOrder: 1
   <h2 class="text-2xl font-semibold mb-4">Architecture & delivery</h2>
   <ul class="list-disc list-inside my-4 space-y-2">
     <li>React frontend backed by <strong>Node.js</strong> services.</li>
-    <li><strong>PostgreSQL</strong> and <strong>MongoDB</strong> used for structured and flexible data workflows.</li>
-    <li>AWS-hosted delivery supported deployment and access to dashboard experiences.</li>
-    <li>Reporting-focused architecture prioritized flexibility, reuse, and maintainability.</li>
+    <li><strong>PostgreSQL</strong> and <strong>MongoDB</strong> stored reporting data.</li>
+    <li>The application was hosted on AWS.</li>
+    <li>Reusable widgets let users configure reports rather than build a separate page for each one.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">

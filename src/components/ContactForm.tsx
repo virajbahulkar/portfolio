@@ -50,12 +50,12 @@ const ContactForm = () => {
       <div className="mb-4 space-y-2 ">
         <SectionHeader
           title=""
-          highlightedText="Get in Touch"
+          highlightedText="Let’s Connect"
           size="text-2xl font-semibold"
         />
         <p className="text-sm leading-relaxed">
-          Have a question, idea, or just want to say hello? Reach out and we’ll
-          get back to you as soon as possible!
+          Interested in discussing a role, a project or something technical?
+          Feel free to send me a message. I’ll get back to you when I can.
         </p>
       </div>
 
@@ -64,20 +64,23 @@ const ContactForm = () => {
         <input
           type="text"
           name="name"
-          placeholder="Your name"
+          placeholder="Your Name"
+          aria-label="Your Name"
           required
           className="rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <input
           type="email"
           name="email"
-          placeholder="Your email"
+          placeholder="Your Email"
+          aria-label="Your Email"
           required
           className="rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <textarea
           name="message"
-          placeholder="Your message"
+          placeholder="Message"
+          aria-label="Message"
           rows={4}
           required
           className="rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"

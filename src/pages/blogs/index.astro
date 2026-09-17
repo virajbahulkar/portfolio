@@ -11,7 +11,6 @@ import { sortPostByDate } from '@utils/Posts';
 import { getCollection } from 'astro:content';
 
 import {
-  BLOG_GOVERNANCE_RULE,
   FEATURED_BLOG_SLUGS,
   RELATED_BLOG_PROJECTS,
 } from '../../content/_curation';
@@ -30,38 +29,36 @@ const remainingPosts = sortedPosts.filter(
 );
 
 const titleSuffix = ` - ${AppConfig.site_name}`;
-const titleBase = `Blogs`;
+const titleBase = `Writing & Notes`;
 const title = titleBase + titleSuffix;
 const description =
-  'Technical writing on backend systems, cloud-native delivery, observability, performance, and production engineering lessons.';
+  'Articles and notes on software development, backend engineering, cloud technologies and developer tools.';
 const url = `${AppConfig.site_url}/blogs/`;
 ---
 
 <Base head={{ title, description, url }}>
   <section>
     <PaginationHeader
-      title="Writing on software, backend, and production systems"
-      description="Articles focused on real engineering work across backend delivery, cloud-native systems, Docker, Kubernetes, production tradeoffs, and developer tooling."
+      title="Writing & Notes"
+      description="I write about application delivery, backend engineering and cloud operations, including implementation decisions and lessons from my work."
     />
 
     <div class="mb-12 mt-8 flex flex-col items-center space-y-4">
       <div class="circle-animation"></div>
       <p class="max-w-xl text-center  text-lg">
-        I use writing to document engineering tradeoffs, production lessons, and
-        implementation details across application delivery, cloud-backed
-        systems, and developer tooling.
+        You’ll find articles on software development, backend engineering,
+        cloud technologies and developer tools.
       </p>
     </div>
   </section>
 
   <section class="mb-12">
     <div class="rounded-3xl border border-base-300 p-6 shadow-xl">
-      <h2 class="text-2xl font-bold">Featured writing</h2>
+      <h2 class="text-2xl font-bold">Featured Articles</h2>
       <p class="mt-3 max-w-3xl leading-7">
-        A curated starting point for production-minded work covering cloud
-        delivery, system behavior, and engineering tradeoffs.
+        Articles covering CI/CD, cloud deployment and production-oriented
+        engineering decisions.
       </p>
-      <p class="mt-2 text-sm text-base-content/70">{BLOG_GOVERNANCE_RULE}</p>
       <div class="mt-6 grid gap-4 md:grid-cols-3">
         {featuredPosts.map((post) => (
           <a
@@ -103,10 +100,9 @@ const url = `${AppConfig.site_url}/blogs/`;
 
   <section>
     <div class="mb-4 px-4">
-      <h2 class="text-2xl font-bold">All writing archive</h2>
+      <h2 class="text-2xl font-bold">All Articles</h2>
       <p class="mt-2 text-sm text-base-content/70">
-        Everything beyond the featured set stays in archive and is reviewed for
-        relevance over time.
+        Browse my other articles, tutorials and technical notes.
       </p>
     </div>
     <div class="grid grid-cols-1  gap-6 p-4">
@@ -114,7 +110,7 @@ const url = `${AppConfig.site_url}/blogs/`;
         <BlogGallery postList={remainingPosts} />
       ) : (
         <p class="rounded-2xl border border-base-300 p-4 text-sm text-base-content/80">
-          Archive posts will appear here when available.
+          All articles are currently listed in the featured section above.
         </p>
       )}
     </div>

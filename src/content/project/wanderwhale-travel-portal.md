@@ -1,7 +1,12 @@
 ---
 title: "WanderWhale Travel Portal"
-description: "Full-stack travel platform serving 50K users and $1M+ annual transaction value with ElasticSearch-powered discovery, dynamic pricing, multi-currency bookings, and reliable payment reconciliation."
-impactSnapshot: "Impact: supported 50K users and $1M+ transaction volume with reliable booking flows."
+description: "Professional travel platform work covering production search, multi-currency pricing, booking, payment reconciliation and application performance with React and Node.js."
+projectNote: "Professional work at Saeloun. Proprietary code, transaction data and internal infrastructure details are omitted."
+# Metrics retained from earlier portfolio copy for owner confirmation before republication:
+# Platform/business outcomes: 50K users; $1M+ annual transaction value.
+# Performance results: 2.1s LCP; Lighthouse score of 98.
+# Confirm reporting periods, user definition, currency, device/test conditions,
+# individual attribution and permission to disclose; public artifacts are not required.
 startDate: 2025-11-10T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, ElasticSearch, PostgreSQL, Redis, Payments
@@ -11,18 +16,18 @@ runningOrder: 1
 <div class=" shadow-xl rounded-2xl p-6 mb-8 ">
   <h2 class="text-2xl font-semibold mb-4">Problem</h2>
   <p>
-    The travel platform needed reliable search, pricing, checkout, and
-    reconciliation workflows while supporting user growth and transactional
-    accuracy.
+    The travel platform needed reliable search, pricing and checkout workflows
+    while preserving transactional accuracy through payment reconciliation.
+    I built and optimized these application flows as part of the professional delivery team.
   </p>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Scale</h2>
+  <h2 class="text-2xl font-semibold mb-4">Production workflows</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li><strong>50K users</strong> supported across travel booking journeys.</li>
-    <li><strong>$1M+ annual transaction value</strong> processed through integrated booking flows.</li>
-    <li><strong>2.1s LCP</strong> and a <strong>Lighthouse score of 98</strong> on mobile-first experiences.</li>
+    <li>Travel search powered by ElasticSearch.</li>
+    <li>Dynamic pricing and multi-currency bookings.</li>
+    <li>Booking interfaces for mobile and desktop users.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
@@ -32,37 +37,33 @@ runningOrder: 1
     <li>React frontend connected to <strong>Node.js</strong> application services.</li>
     <li><strong>ElasticSearch</strong> powered search and discovery experiences.</li>
     <li><strong>PostgreSQL</strong> and <strong>Redis</strong> supported transactional and caching workflows.</li>
-    <li>Pricing, booking, and payment reconciliation were handled as production business flows.</li>
+    <li>Application services handled pricing, bookings and payment reconciliation as production business flows.</li>
   </ul>
 
   <div class="my-6 rounded-2xl border border-base-300 bg-base-200/40 p-5">
-    <h3 class="text-lg font-semibold mb-3">Anonymized architecture view</h3>
-    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>Travel users
-  ↓
-React booking interface
-  ↓
-Node.js application services
-  ↙          ↓            ↘
-Search    Pricing/Booking   Payments/Reconciliation
-  ↓            ↓                   ↓
-ElasticSearch  PostgreSQL          Redis + external payment flows</code></pre>
+    <h3 class="text-lg font-semibold mb-3">Application scope</h3>
+    <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6"><code>Interface: React travel discovery and booking workflows
+Services: Node.js pricing, booking and payment reconciliation
+Search: ElasticSearch
+Data: PostgreSQL for transactions; Redis for caching
+Scope summary; proprietary integrations and transaction data are omitted.</code></pre>
   </div>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">My ownership</h2>
+  <h2 class="text-2xl font-semibold mb-4">My contribution</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Built and optimized travel booking workflows across discovery, pricing, checkout, and post-payment reconciliation.</li>
-    <li>Improved application performance and user experience across mobile and desktop journeys.</li>
-    <li>Supported backend and delivery work that kept booking and payment flows reliable at scale.</li>
+    <li>Built and optimized travel workflows for discovery, multi-currency pricing, checkout and payment reconciliation.</li>
+    <li>Improved application performance and usability across mobile and desktop interfaces.</li>
+    <li>Supported production backend services and application deployments as part of the delivery team.</li>
   </ul>
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">Engineering result</h2>
+  <h2 class="text-2xl font-semibold mb-4">Engineering decisions & results</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>Supported a travel system used by <strong>50K users</strong>.</li>
-    <li>Handled <strong>$1M+ annual transaction value</strong> through booking and payments.</li>
-    <li>Delivered a <strong>2.1s LCP</strong> and <strong>Lighthouse 98</strong> for mobile-first performance.</li>
+    <li>Connected ElasticSearch discovery to pricing and booking workflows so users could move from search to checkout.</li>
+    <li>Handled payment reconciliation alongside booking records to support transactional accuracy.</li>
+    <li>Used PostgreSQL for transactional data and Redis for caching within the application’s data workflows.</li>
   </ul>
 </div>
