@@ -87,9 +87,11 @@ const contactItems = [
                   href={item.href}
                   class="mt-1 block break-words text-sm font-medium text-primary transition hover:text-secondary"
                   target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http')
-                    ? 'noopener noreferrer'
-                    : undefined}
+                  rel={
+                    item.href.startsWith('http')
+                      ? 'noopener noreferrer'
+                      : undefined
+                  }
                 >
                   {item.value}
                 </a>
