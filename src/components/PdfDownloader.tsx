@@ -1,11 +1,34 @@
 import { useEffect } from 'react';
+
 import { generateCvPdf } from '../utils/generateCvPdf';
 
-interface Profile { name: string; contact: string; summary: string; }
-interface EducationItem { title: string; subtitle: string; }
-interface Project { name: string; bullets: string[]; }
-interface ExperienceItem { title: string; start?: string; end?: string; bullets?: string[]; projects?: Project[]; technologies?: string; }
-interface Skill { title: string; description: string; icon?: string; color?: string; }
+interface Profile {
+  name: string;
+  contact: string;
+  summary: string;
+}
+interface EducationItem {
+  title: string;
+  subtitle: string;
+}
+interface Project {
+  name: string;
+  bullets: string[];
+}
+interface ExperienceItem {
+  title: string;
+  start?: string;
+  end?: string;
+  bullets?: string[];
+  projects?: Project[];
+  technologies?: string;
+}
+interface Skill {
+  title: string;
+  description: string;
+  icon?: string;
+  color?: string;
+}
 
 interface CvData {
   profile: Profile;
@@ -16,39 +39,35 @@ interface CvData {
 
 export function PdfDownloader({ data }: { data: CvData }) {
   useEffect(() => {
-    const btn = document.getElementById('download-pdf');
-    if (!btn) return;
+    const btn = document.getElementById(
+      'download-pdf'
+    ) as HTMLButtonElement | null;
+    if (!btn) return undefined;
     const errorSpan = document.getElementById('pdf-error');
 
-    const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    btn.disabled = false;
 
     const handler = async () => {
-      (btn as HTMLButtonElement).disabled = true;
+      btn.disabled = true;
+      if (errorSpan) errorSpan.textContent = '';
       try {
         const { jsPDF } = await import('jspdf');
         const doc = generateCvPdf(jsPDF, data);
-        if (isMobile()) {
-          const blob = doc.output('blob');
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url; a.download = 'Viraj_Bahulkar_CV.pdf';
-          document.body.appendChild(a); a.click();
-          setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 120);
-        } else {
-          doc.save('Viraj_Bahulkar_CV.pdf');
-        }
-      } catch (e) {
-        console.error('PDF generation error', e);
+        await doc.save('Viraj_Bahulkar_CV.pdf', { returnPromise: true });
+      } catch {
         if (errorSpan) {
-          errorSpan.textContent = 'PDF generation failed. Please refresh and try again.';
-          (errorSpan as HTMLElement).style.display = 'inline';
+          errorSpan.textContent =
+            'PDF generation failed. Please refresh and try again.';
         }
       } finally {
-        (btn as HTMLButtonElement).disabled = false;
+        btn.disabled = false;
       }
     };
     btn.addEventListener('click', handler);
-    return () => btn.removeEventListener('click', handler);
+    return () => {
+      btn.removeEventListener('click', handler);
+      btn.disabled = true;
+    };
   }, [data]);
 
   return null; // No visible UI, just behavior

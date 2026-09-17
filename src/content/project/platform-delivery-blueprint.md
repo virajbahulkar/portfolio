@@ -40,20 +40,10 @@ runningOrder: 0
 
   <hr class=" mb-8 mt-8 border border-base-300">
 
-  <h2 class="text-2xl font-semibold mb-4">What the project includes</h2>
-  <ul class="list-disc list-inside my-4 pt-1">
-    <li><strong>Terraform</strong> for AWS networking, IAM, EKS, ECR, CloudWatch logging, ACM certificate creation, Route53-backed DNS validation, and SSM parameter storage.</li>
-    <li>A small <strong>Node.js API</strong> with <code>/healthz</code>, <code>/readyz</code>, and <code>/metrics</code> endpoints.</li>
-    <li><strong>Kubernetes manifests</strong> for deployment, service, load balancer exposure, autoscaling, config, and disruption handling.</li>
-    <li><strong>GitHub Actions</strong> to validate the app, assume AWS credentials through OIDC, apply infrastructure, and deploy the service.</li>
-  </ul>
-
-  <hr class=" mb-8 mt-8 border border-base-300">
-
   <h2 class="text-2xl font-semibold mb-4">Architecture</h2>
   <ul class="list-disc list-inside my-4 pt-1">
-    <li>AWS foundation includes a VPC, public/private subnets, NAT, EKS control plane, managed node group, ECR repository, CloudWatch log group, and ACM certificate flow.</li>
-    <li>The application layer is a Dockerized Node.js API designed for health checks, readiness checks, Prometheus-style metrics, and structured stdout logs.</li>
+    <li>The Terraform-managed AWS foundation includes a VPC, public/private subnets, NAT, IAM, EKS control plane, managed node group, ECR repository, CloudWatch log group, and ACM certificate flow.</li>
+    <li>The application layer is a Dockerized Node.js API with <code>/healthz</code>, <code>/readyz</code>, and Prometheus-style <code>/metrics</code> endpoints, plus structured stdout logs.</li>
     <li>Kubernetes deployment patterns include rolling updates, readiness and liveness probes, NLB service exposure, HPA thresholds, and a PodDisruptionBudget.</li>
     <li>CI/CD validation and deployment are handled in GitHub Actions with remote Terraform state, OIDC-based AWS access, and Route53 DNS automation.</li>
   </ul>

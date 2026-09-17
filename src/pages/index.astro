@@ -26,6 +26,13 @@ const lastThreePosts = FEATURED_BLOG_SLUGS.map((slug) =>
   allPosts.find((post) => post.slug === slug)
 ).filter(isPostEntry);
 const allProjects = await getCollection('project');
+const relatedCaseStudies = lastThreePosts.flatMap((post) =>
+  allProjects
+    .filter((project) =>
+      RELATED_BLOG_PROJECTS[post.slug]?.includes(project.slug)
+    )
+    .map((project) => ({ post, project }))
+);
 const isProjectEntry = (
   project: (typeof allProjects)[number] | undefined
 ): project is (typeof allProjects)[number] => Boolean(project);
@@ -201,22 +208,23 @@ const { title, description, ogImage } = AppConfig;
       <div class="flex items-center justify-center overflow-auto p-6">
         <div class="space-y-4">
           <RecentPosts postList={lastThreePosts} />
-          <div class="rounded-2xl border border-base-300 p-4 text-sm">
-            <p class="font-semibold">Related case studies</p>
-            <ul class="mt-2 space-y-2">
-              {lastThreePosts.map((post) => (
-                <li>
-                  <a class="hover:text-cyan-400" href="/projects/">
-                    {post.data.title} →{' '}
-                    {allProjects.find(
-                      (project) =>
-                        project.slug === RELATED_BLOG_PROJECTS[post.slug]?.[0]
-                    )?.data.title ?? 'View engineering projects'}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {relatedCaseStudies.length > 0 && (
+            <div class="rounded-2xl border border-base-300 p-4 text-sm">
+              <p class="font-semibold">Related case studies</p>
+              <ul class="mt-2 space-y-2">
+                {relatedCaseStudies.map(({ post, project }) => (
+                  <li>
+                    <a
+                      class="hover:text-cyan-400"
+                      href={`/projects/${project.slug}/`}
+                    >
+                      {post.data.title} → {project.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -229,11 +237,11 @@ const { title, description, ogImage } = AppConfig;
       <h2 class="text-2xl font-bold">A Little About My Journey</h2>
       <p class="mt-3 max-w-3xl leading-7">
         I started with full-stack development using React and Node.js, building
-        applications for insurance, travel and internal business workflows. After
-        managing development and releases as a Technical Head, I expanded into
-        backend, platform and cloud engineering. Today, my work includes enterprise
-        finance services, AWS and Azure infrastructure, and the monitoring and
-        release controls that support production systems.
+        applications for insurance, travel and internal business workflows.
+        After managing development and releases as a Technical Head, I expanded
+        into backend, platform and cloud engineering. Today, my work includes
+        enterprise finance services, AWS and Azure infrastructure, and the
+        monitoring and release controls that support production systems.
       </p>
       <div class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium">
         {careerEvolution.map((step, index) => (

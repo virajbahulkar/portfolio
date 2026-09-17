@@ -158,25 +158,29 @@ export const skills: Skill[] = [
   },
   {
     title: 'TypeScript',
-    description: 'Used TypeScript across backend services and web applications.',
+    description:
+      'Used TypeScript across backend services and web applications.',
     icon: 'SiTypescript',
     color: '#3178C6',
   },
   {
     title: 'ExpressJS',
-    description: 'Built API routes and service layers for Node.js applications.',
+    description:
+      'Built API routes and service layers for Node.js applications.',
     icon: 'SiExpress',
     color: '#000000',
   },
   {
     title: 'PostgreSQL',
-    description: 'Worked on relational schemas, joins, and query performance tuning.',
+    description:
+      'Worked on relational schemas, joins, and query performance tuning.',
     icon: 'SiPostgresql',
     color: '#336791',
   },
   {
     title: 'MongoDB',
-    description: 'Handled document data models, aggregation flows, and indexing.',
+    description:
+      'Handled document data models, aggregation flows, and indexing.',
     icon: 'SiMongodb',
     color: '#47A248',
   },
@@ -194,7 +198,8 @@ export const skills: Skill[] = [
   },
   {
     title: 'Docker',
-    description: 'Containerized services for consistent local, CI, and deployment environments.',
+    description:
+      'Containerized services for consistent local, CI, and deployment environments.',
     icon: 'SiDocker',
     color: '#2496ED',
   },
