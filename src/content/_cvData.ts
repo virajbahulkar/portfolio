@@ -35,7 +35,7 @@ export const profile: Profile = {
   contact:
     'virajbahulkar@gmail.com | +91-8698127190 | https://virajbahulkar.me | https://linkedin.com/in/virajbahulkar | https://github.com/virajbahulkar',
   summary:
-    'I’m a Senior Software Engineer with over 8 years of professional experience building and operating enterprise and client applications. My work spans React interfaces, Node.js and TypeScript services, database integrations and production infrastructure on AWS and Azure. My responsibilities include application architecture, Kubernetes autoscaling, Azure DevOps release controls, centralized logging, monitoring and production troubleshooting. I have also managed full-stack development and release workflows as a Technical Head.',
+    'Senior Software Engineer focused on backend, platform and cloud engineering, with over 8 years of professional experience. I build Node.js and TypeScript services, integrate databases, and operate production infrastructure on AWS and Azure. My work includes Kubernetes autoscaling, Azure DevOps release controls, centralized logging, monitoring and production troubleshooting. I started in full-stack development with React and Node.js and managed development and releases as a Technical Head before expanding into backend systems and cloud operations.',
 };
 
 export const education: EducationItem[] = [

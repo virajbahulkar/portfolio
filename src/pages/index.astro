@@ -46,12 +46,6 @@ const engineeringImpact = [
       'Delivering enterprise and client applications, backend services and production infrastructure.',
   },
   {
-    title: 'Web applications',
-    metric: 'React',
-    description:
-      'Customer-facing finance and travel workflows, reporting dashboards and internal tools.',
-  },
-  {
     title: 'Backend services',
     metric: 'Node.js',
     description:
@@ -62,6 +56,12 @@ const engineeringImpact = [
     metric: 'AWS & Azure',
     description:
       'Kubernetes autoscaling, release gates, monitoring and production troubleshooting.',
+  },
+  {
+    title: 'Full-stack foundation',
+    metric: 'React & Node.js',
+    description:
+      'Customer-facing finance and travel workflows, reporting dashboards and internal tools.',
   },
   {
     title: 'Open source',
@@ -78,17 +78,12 @@ const engineeringImpact = [
 ];
 const coreEngineeringAreas = [
   {
-    title: 'Full-Stack Development',
-    description:
-      'Building web applications with React, Node.js and TypeScript, from user interfaces to APIs and database integrations.',
-  },
-  {
     title: 'Backend Engineering',
     description:
       'Designing Node.js APIs and microservices, integrating SQL and NoSQL data stores, and improving production service performance.',
   },
   {
-    title: 'Cloud & DevOps',
+    title: 'Platform & Cloud Engineering',
     description:
       'Operating AWS and Azure workloads with Docker, Kubernetes autoscaling and Azure DevOps release controls across environments.',
   },
@@ -97,12 +92,17 @@ const coreEngineeringAreas = [
     description:
       'Investigating production issues with centralized logs, metrics and alerts, and using health checks and post-release validation to support reliable delivery.',
   },
+  {
+    title: 'Full-Stack Development',
+    description:
+      'Building web applications with React, Node.js and TypeScript, from user interfaces to APIs and database integrations.',
+  },
 ];
 const careerEvolution = [
-  'Web applications',
-  'APIs & databases',
-  'Cloud deployments',
-  'Production operations',
+  'React & Node.js full-stack development',
+  'Backend systems',
+  'Platform & cloud engineering',
+  'Production engineering',
 ];
 const recruiterCtas = [
   { href: '/projects/', label: 'View engineering work' },
@@ -128,11 +128,11 @@ const { title, description, ogImage } = AppConfig;
             }}
             phrases={[
               {
-                text: '| Full-Stack, Backend & Cloud',
+                text: '| Backend, Platform & Cloud',
                 gradient: 'from-indigo-400 via-purple-500 to-pink-500',
               },
             ]}
-            description="Hi, I’m Viraj, a Senior Software Engineer with over 8 years of professional experience delivering enterprise and client systems. I build React applications and Node.js services, integrate databases, and operate containerized workloads on AWS and Azure. My work includes application architecture, Kubernetes autoscaling, CI/CD release controls, production monitoring and troubleshooting."
+            description="Hi, I’m Viraj, a Senior Software Engineer building Node.js backend systems, cloud infrastructure and production services on AWS and Azure. With over 8 years of professional experience, I work on APIs, database integrations, Kubernetes workloads, CI/CD release controls and production observability. I bring a full-stack foundation in React and Node.js to backend, platform and cloud engineering."
           >
             <div class="mt-6 flex flex-wrap gap-3">
               <span
@@ -228,11 +228,12 @@ const { title, description, ogImage } = AppConfig;
     >
       <h2 class="text-2xl font-bold">A Little About My Journey</h2>
       <p class="mt-3 max-w-3xl leading-7">
-        My professional work spans enterprise finance, travel, insurance and
-        internal business systems. I’ve architected full-stack applications and
-        managed development and releases as a Technical Head. That application
-        experience informs my work on backend services, cloud infrastructure and
-        the monitoring and release controls that support production systems.
+        I started with full-stack development using React and Node.js, building
+        applications for insurance, travel and internal business workflows. After
+        managing development and releases as a Technical Head, I expanded into
+        backend, platform and cloud engineering. Today, my work includes enterprise
+        finance services, AWS and Azure infrastructure, and the monitoring and
+        release controls that support production systems.
       </p>
       <div class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium">
         {careerEvolution.map((step, index) => (
