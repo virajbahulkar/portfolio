@@ -188,19 +188,46 @@ const { title, description, ogImage } = AppConfig;
             </div>
           </div>
         </section>
+
+        <section class="pb-6">
+          <div class="rounded-3xl border border-base-300 p-5 shadow-xl sm:p-8">
+            <h2 class="text-xl font-bold sm:text-2xl">A Little About My Journey</h2>
+            <p class="mt-3 max-w-3xl leading-7">
+              I started with full-stack development using React and Node.js,
+              building applications for insurance, travel and internal business
+              workflows. After managing development and releases as a Technical
+              Head, I expanded into backend, platform and cloud engineering.
+              Today, my work includes enterprise finance services, AWS and Azure
+              infrastructure, and the monitoring and release controls that
+              support production systems.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium">
+              {careerEvolution.map((step, index) => (
+                <>
+                  <span class="rounded-full border border-base-300 px-4 py-2">
+                    {step}
+                  </span>
+                  {index < careerEvolution.length - 1 && (
+                    <span class="text-base-content/50">·</span>
+                  )}
+                </>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
     <!-- Right Column -->
     <div class="lg:col-span-2">
-      <div class="bg-base-200/40 py-6">
+      <div class="rounded-3xl border border-base-300 bg-base-100 p-5 shadow-xl sm:p-8">
         <RecentProjects projectList={flagshipProjects} />
       </div>
-      <div class="bg-base-200/20 py-6">
+      <div class="mt-6 rounded-3xl border border-base-300 bg-base-100 p-5 shadow-xl sm:p-8">
         <RecentOssProjects projectList={openSourceProjects} />
       </div>
-      <div class="py-6">
-        <div class="space-y-4">
+      <div class="mt-6 rounded-3xl border border-base-300 bg-base-100 p-5 shadow-xl sm:p-8">
+        <div class="space-y-6">
           <RecentPosts postList={lastThreePosts} />
           {relatedCaseStudies.length > 0 && (
             <div class="rounded-2xl border border-base-300 p-4 text-sm">
@@ -223,34 +250,6 @@ const { title, description, ogImage } = AppConfig;
       </div>
     </div>
   </div>
-
-  <section class="pb-6">
-    <div
-      class="mx-auto max-w-7xl rounded-3xl border border-base-300 p-5 shadow-xl sm:p-8"
-    >
-      <h2 class="text-xl font-bold sm:text-2xl">A Little About My Journey</h2>
-      <p class="mt-3 max-w-3xl leading-7">
-        I started with full-stack development using React and Node.js, building
-        applications for insurance, travel and internal business workflows.
-        After managing development and releases as a Technical Head, I expanded
-        into backend, platform and cloud engineering. Today, my work includes
-        enterprise finance services, AWS and Azure infrastructure, and the
-        monitoring and release controls that support production systems.
-      </p>
-      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm font-medium">
-        {careerEvolution.map((step, index) => (
-          <>
-            <span class="rounded-full border border-base-300 px-4 py-2">
-              {step}
-            </span>
-            {index < careerEvolution.length - 1 && (
-              <span class="text-base-content/50">·</span>
-            )}
-          </>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <div class="pt-6">
     <CTA />
