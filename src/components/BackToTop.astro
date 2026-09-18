@@ -2,9 +2,7 @@
   data-testId="back-to-top-button"
   type="button"
   aria-label="back to top button"
-  data-mdb-ripple="true"
-  data-mdb-ripple-color="light"
-  class="focus:ring- fixed bottom-5 right-5 inline-block rounded-full bg-accent p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-accent-focus hover:shadow-lg focus:outline-none"
+  class="fixed bottom-5 right-5 z-40 hidden rounded-full bg-accent p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-accent-focus hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-focus focus:ring-offset-2"
   id="btn-back-to-top"
 >
   <svg
@@ -23,30 +21,19 @@
 </button>
 
 <script>
-  let mybutton = document.getElementById(
-    'btn-back-to-top'
-  ) as HTMLButtonElement;
-  window.onscroll = function (event) {
-    event.preventDefault();
-    scrollFunction();
-  };
+  const button = document.getElementById('btn-back-to-top');
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      mybutton.style.display = 'block';
-    } else {
-      mybutton.style.display = 'none';
-    }
-  }
+  if (button instanceof HTMLButtonElement) {
+    const toggleVisibility = () => {
+      const shouldShow = window.scrollY > 200;
+      button.classList.toggle('hidden', !shouldShow);
+    };
 
-  mybutton.addEventListener('click', backToTop);
+    button.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-  function backToTop(event) {
-    event.preventDefault();
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
   }
 </script>
