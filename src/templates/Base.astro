@@ -1,7 +1,7 @@
 ---
 import '@styles/custom.css';
 
-import BackToTop from '@components/BackToTop.astro';
+import { BackToTop } from '@components/BackToTop';
 import BreadCrumb from '@components/BreadCrumb';
 import { Navbar } from '@partials/Navbar';
 import { AppConfig } from '@utils/AppConfig';
@@ -154,6 +154,6 @@ const {
 
       gtag('config', 'G-EEN224QZ8C');
     </script>
-    <BackToTop />
+    <BackToTop client:load />
   </body>
 </html>
