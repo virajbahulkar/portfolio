@@ -2,6 +2,7 @@ import DarkModeToggleButton from '@components/DarkModeToggleButton';
 import Hamburger from '@components/Hamburger';
 import Logo from '@components/Logo';
 import NavMenuItem from '@components/NavMenuItem';
+import { pageContainerClass } from '@utils/layout';
 import { createContext, useEffect, useRef } from 'react';
 
 export const NavbarContext = createContext('/');
@@ -33,7 +34,9 @@ const Navbar = ({ path }: NavbarProps) => {
   return (
     <NavbarContext.Provider value={path}>
       <nav className="sticky top-0 z-20 w-full border-base-100 shadow-md backdrop-blur-lg">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 p-4 sm:px-6">
+        <div
+          className={`${pageContainerClass} flex items-center justify-between gap-3 py-4`}
+        >
           {/* Logo */}
           <a
             href="/"
