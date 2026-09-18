@@ -2,6 +2,7 @@
 title: "Digitizer App (no-code platform)"
 description: "A no-code platform where teams can assemble dashboards, forms and pages from configurable components."
 projectNote: "Professional work at Autoflow. Proprietary code, client data and internal infrastructure details are omitted."
+hideNoteOnCard: true
 startDate: 2019-04-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Kubernetes, AWS

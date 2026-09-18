@@ -2,6 +2,7 @@
 title: "Cognizant Finance Group App"
 description: "Professional finance engineering across Node.js services, production Kubernetes operations on AWS and Azure, release controls and observability, with React-based customer workflows."
 projectNote: "Professional work at Cognizant. Proprietary code, client data and internal infrastructure details are omitted."
+hideNoteOnCard: true
 startDate: 2026-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, AWS, Azure, Kubernetes, Azure DevOps

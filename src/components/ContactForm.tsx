@@ -17,7 +17,9 @@ const ContactForm = () => {
 
     try {
       // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => {
+        setTimeout(resolve, 2000);
+      });
 
       const res = await fetch('/.netlify/functions/sendFormEmail', {
         method: 'POST',

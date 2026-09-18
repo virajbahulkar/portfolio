@@ -2,6 +2,7 @@
 title: "Dynamo formik"
 description: "A form-generation application that uses configuration to define fields, validation rules and backend integrations."
 projectNote: "Professional application work. Proprietary code, form data and internal integrations are omitted."
+hideNoteOnCard: true
 startDate: 2022-05-25T00:00:00Z
 openSource: false
 category: NodeJs, React, MongoDB, PL/Sql, Azure DevOps

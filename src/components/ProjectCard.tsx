@@ -8,12 +8,7 @@ const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
   const categories = project.data.category.split(', ');
   const note = project.data.projectNote?.trim();
-  const isConfidentialityNote = Boolean(
-    note &&
-      /(proprietary code|internal infrastructure details are omitted|data are omitted)/i.test(
-        note
-      )
-  );
+  const showNoteOnCard = !project.data.hideNoteOnCard;
 
   const isExternalLink = project.data.openSource && project.data.link;
 
@@ -99,7 +94,7 @@ const ProjectCard = (props: ProjectCardProps) => {
             <p className={`line-clamp-3 transition-all duration-300`}>
               {project.data.description}
             </p>
-            {note && !isConfidentialityNote && (
+            {note && showNoteOnCard && (
               <p className="mt-2 text-xs font-semibold text-cyan-500">{note}</p>
             )}
             <a

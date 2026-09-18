@@ -2,6 +2,7 @@
 title: "Vendor registration company act compliant portal"
 description: "A professional vendor onboarding and compliance workflow portal for registration, supporting documents, approvals and procurement coordination."
 projectNote: "Professional work at Autoflow. Proprietary code, vendor records and internal infrastructure details are omitted."
+hideNoteOnCard: true
 startDate: 2017-06-01T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Delivery Automation

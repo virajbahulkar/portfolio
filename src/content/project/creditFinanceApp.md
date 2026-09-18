@@ -2,6 +2,7 @@
 title: "Finance App"
 description: "A professional credit registration and tracking application that consolidates financial data and automates updates for compliance-focused workflows."
 projectNote: "Professional application work. Proprietary code, credit records and internal infrastructure details are omitted."
+hideNoteOnCard: true
 startDate: 2022-03-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, Azure DevOps
