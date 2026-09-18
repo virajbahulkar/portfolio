@@ -18,9 +18,9 @@ export const BackToTop = () => {
 
   return (
     <button
-      data-testId="back-to-top-button"
+      data-testid="back-to-top-button"
       type="button"
-      aria-label="back to top button"
+      aria-label="Back to top"
       className={`fixed bottom-5 right-5 z-40 rounded-full bg-accent p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-accent-focus hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-focus focus:ring-offset-2 ${
         isVisible ? 'inline-block' : 'hidden'
       }`}
