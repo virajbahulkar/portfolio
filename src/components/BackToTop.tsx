@@ -4,16 +4,15 @@ export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const passiveScrollListener: AddEventListenerOptions = { passive: true };
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 200);
     };
 
-    window.addEventListener('scroll', toggleVisibility, passiveScrollListener);
+    window.addEventListener('scroll', toggleVisibility);
     toggleVisibility();
 
     return () => {
-      window.removeEventListener('scroll', toggleVisibility, false);
+      window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
 
