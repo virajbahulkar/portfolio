@@ -7,9 +7,9 @@ type IRecentPostsProps = {
 
 const BlogGallery = (props: IRecentPostsProps) => {
   return (
-    <div className={`w-full grid-cols-2 md:grid md:gap-6`}>
+    <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
       {props.postList.map((elt) => (
-        <div className="mb-5 lg:mb-0">
+        <div className="lg:mb-0">
           <BlogCard key={elt.data.url} blog={elt} />
         </div>
       ))}

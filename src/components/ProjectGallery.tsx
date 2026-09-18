@@ -15,7 +15,7 @@ const getYears = (projectList: CollectionEntry<'project'>[]): number[] => {
     new Set(
       projectList.map((project) => {
         const date = new Date(project.data.startDate);
-        if (isNaN(date.getTime())) return null;
+        if (Number.isNaN(date.getTime())) return null;
         return date.getFullYear();
       })
     )
@@ -32,7 +32,9 @@ const getMonths = (
     new Set(
       projectList.map((project) => {
         const date = new Date(project.data.startDate);
-        if (isNaN(date.getTime()) || date.getFullYear() !== year) return null;
+        if (Number.isNaN(date.getTime()) || date.getFullYear() !== year) {
+          return null;
+        }
         return date.toLocaleString('default', { month: 'long' });
       })
     )
@@ -44,7 +46,9 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
   if (!props) {
     return (
       <div className="h-full space-y-6">
-        <div className="text-sm italic text-base-content/60">Loading projects...</div>
+        <div className="text-sm italic text-base-content/60">
+          Loading projects...
+        </div>
       </div>
     );
   }
@@ -57,7 +61,7 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
 
   const filteredProjects = projectList.filter((project) => {
     const date = new Date(project.data.startDate);
-    if (isNaN(date.getTime())) return false;
+    if (Number.isNaN(date.getTime())) return false;
 
     if (selectedYear && date.getFullYear() !== selectedYear) return false;
     if (
@@ -70,11 +74,11 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
   });
 
   return (
-    <div className="h-full  space-y-6">
+    <div className="size-full space-y-6">
       {isotopeMode ? (
         <>
           {/* Year Filter Buttons */}
-          <div className="mb-4 flex flex-wrap gap-1">
+          <div className="mb-4 flex flex-wrap gap-2">
             {years.map((year) => (
               <button
                 key={year}
@@ -91,7 +95,7 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
 
           {/* Month Filter Buttons */}
           {selectedYear && (
-            <div className="mb-4 flex flex-wrap gap-1">
+            <div className="mb-4 flex flex-wrap gap-2">
               {months.map((month) => (
                 <button
                   key={month}
@@ -119,13 +123,13 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
           )}
 
           {/* Projects Display */}
-          <div className="columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3">
+          <div className="columns-1 gap-6 space-y-6 md:columns-2 xl:columns-3">
             {filteredProjects.map((project) => (
               <div
                 key={project.data.link}
-                className={`hover relative mb-6 overflow-hidden rounded-2xl border border-base-300   p-[2px] transition-transform hover:scale-[102%]`}
+                className="relative mb-6 overflow-hidden rounded-2xl border border-base-300 p-[2px] transition-transform md:hover:scale-[102%]"
               >
-                <div className={`rounded-2xl    p-1   `}>
+                <div className="rounded-2xl p-1">
                   <ProjectCard project={project} />
                 </div>
               </div>
@@ -137,7 +141,7 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
           {filteredProjects.map((project) => (
             <div
               key={project.data.link}
-              className="relative mb-6 rounded-2xl border border-base-300   p-0 transition-transform duration-300  hover:scale-[102%]  "
+              className="relative mb-6 rounded-2xl border border-base-300 p-0 transition-transform duration-300 md:hover:scale-[102%]"
             >
               <ProjectCard project={project} />
             </div>

@@ -5,8 +5,8 @@ const BreadCrumb = ({ path }: BreadCrumbProps) => {
   const pathSegments = path.split('/').filter(Boolean);
 
   return (
-    <nav aria-label="breadcrumb" className="mb-4 text-sm">
-      <ol className="flex space-x-2">
+    <nav aria-label="breadcrumb" className="text-sm">
+      <ol className="flex flex-wrap items-center gap-y-1">
         {/* Home Icon */}
         <li>
           <a
@@ -57,12 +57,15 @@ const BreadCrumb = ({ path }: BreadCrumbProps) => {
           const to = `/${pathSegments.slice(0, index + 1).join('/')}`;
 
           return (
-            <li key={index} className="flex items-center">
+            <li key={index} className="flex min-w-0 items-center break-words">
               <span className="mx-2 ">/</span>
               {isLast ? (
-                <span className="">{segment}</span>
+                <span className="break-words">{segment}</span>
               ) : (
-                <a href={to} className="text-blue-600 hover:underline">
+                <a
+                  href={to}
+                  className="break-words text-blue-600 hover:underline"
+                >
                   {segment}
                 </a>
               )}

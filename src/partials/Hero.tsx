@@ -47,8 +47,10 @@ const Hero: React.FC<HeroProps> = ({
   }, [safePhrases, intervaltime]);
 
   return (
-    <div className="h-full">
-      <h1 className={`${headingClass} font-bold`}>
+    <div className="h-full min-w-0">
+      <h1
+        className={`${headingClass} max-w-full break-words font-bold leading-tight`}
+      >
         {title}
         {title && Array.isArray(safePhrases) ? (
           <>
@@ -64,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({
           </>
         ) : null}
       </h1>
-      <p className="mt-6 text-xl leading-9">
+      <p className="mt-4 max-w-full break-words text-base leading-7 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9">
         {Array.isArray(description) ? (
           <ul className="list-inside list-disc space-y-2 leading-relaxed marker:text-blue-500">
             {description.map((desc, index) => {
