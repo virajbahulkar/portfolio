@@ -33,15 +33,21 @@ const TimeLine = (props: ITimeLineProps) => {
     subtitleText = `${startText} – ${endText} (${getDuration(props.start, props.end)})`;
   }
   return (
-    <div className="flex">
-      <div className="education__time">
+    <div className="flex gap-3 sm:gap-4">
+      <div className="education__time flex shrink-0 flex-col items-center">
         <span className="mt-1 block size-4 rounded-full bg-primary"></span>
         <span className="education__line block h-full w-[2px] translate-x-[7px] bg-primary"></span>
       </div>
-      <div className="px-5 pb-5">
-        <h3 className="mb-1 font-semibold">{props.title}</h3>
-        <span className="text-sm font-light">{subtitleText}</span>
-        <p className="my-2 text-justify">{props.children}</p>
+      <div className="min-w-0 pb-5 pr-0 sm:pr-2">
+        <h3 className="mb-1 break-words font-semibold leading-6">
+          {props.title}
+        </h3>
+        <span className="block break-words text-sm font-light leading-6">
+          {subtitleText}
+        </span>
+        <div className="mt-3 space-y-3 break-words text-sm leading-6">
+          {props.children}
+        </div>
       </div>
     </div>
   );

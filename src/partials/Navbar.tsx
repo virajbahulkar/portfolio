@@ -33,9 +33,12 @@ const Navbar = ({ path }: NavbarProps) => {
   return (
     <NavbarContext.Provider value={path}>
       <nav className="sticky top-0 z-20 w-full border-base-100 shadow-md backdrop-blur-lg">
-        <div className="flex items-center justify-between px-6 py-4 lg:container lg:mx-auto">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 text-xl font-bold">
+          <a
+            href="/"
+            className="flex min-w-0 flex-1 items-center gap-2 text-xl font-bold lg:flex-none"
+          >
             <Logo />
           </a>
 
@@ -52,9 +55,9 @@ const Navbar = ({ path }: NavbarProps) => {
           </ul>
 
           {/* Mobile Dropdown Menu */}
-          <details className="group relative lg:hidden" ref={detailsRef}>
+          <details className="group relative shrink-0 lg:hidden" ref={detailsRef}>
             <summary
-              className="cursor-pointer list-none rounded-md p-2"
+              className="flex size-10 cursor-pointer list-none items-center justify-center rounded-md p-2"
               aria-label="Toggle Menu"
             >
               {/* Toggle icons */}
@@ -76,7 +79,7 @@ const Navbar = ({ path }: NavbarProps) => {
             </summary>
 
             {/* Mobile Menu Items */}
-            <ul className="absolute right-0 top-14 z-10 flex w-52 flex-col items-center gap-4 border-t  bg-base-100 p-4 font-medium shadow-md">
+            <ul className="absolute right-0 top-14 z-10 flex w-[min(13rem,calc(100vw-2rem))] flex-col gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 font-medium shadow-md">
               <NavMenuItem href="/">Home</NavMenuItem>
               <NavMenuItem href="/projects/">Projects</NavMenuItem>
               <NavMenuItem href="/blogs/">Writing</NavMenuItem>

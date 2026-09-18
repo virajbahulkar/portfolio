@@ -47,9 +47,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="d-flex flex-col">
+    <div className="d-flex relative min-w-0 flex-col">
       {showToast && (
-        <div className="absolute right-4 top-4 z-50 rounded bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-opacity duration-300">
+        <div className="absolute inset-x-4 top-4 z-50 rounded bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-opacity duration-300 sm:left-auto sm:right-4 sm:max-w-sm">
           Thank you! Your message has been sent.
         </div>
       )}
@@ -67,14 +67,14 @@ const ContactForm = () => {
       </div>
 
       {/* Bottom (Form) */}
-      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4 ">
+      <form onSubmit={handleSubmit} className="flex w-full min-w-0 flex-col gap-4">
         <input
           type="text"
           name="name"
           placeholder="Your Name"
           aria-label="Your Name"
           required
-          className="rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full min-w-0 rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <input
           type="email"
@@ -82,7 +82,7 @@ const ContactForm = () => {
           placeholder="Your Email"
           aria-label="Your Email"
           required
-          className="rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full min-w-0 rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <textarea
           name="message"
@@ -90,13 +90,13 @@ const ContactForm = () => {
           aria-label="Message"
           rows={4}
           required
-          className="rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full min-w-0 resize-y rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
         ></textarea>
 
         <button
           type="submit"
           disabled={loading}
-          className={`flex items-center justify-center gap-2 self-end rounded-full px-6 py-2 text-sm font-medium transition-all ${
+          className={`flex w-full items-center justify-center gap-2 self-stretch rounded-full px-6 py-2 text-sm font-medium transition-all sm:w-auto sm:self-end ${
             loading
               ? 'cursor-not-allowed bg-primary/50 opacity-70'
               : 'bg-primary hover:scale-105 hover:bg-primary/80'

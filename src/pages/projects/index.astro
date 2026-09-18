@@ -33,9 +33,9 @@ const url = `${AppConfig.site_url}/projects/`;
 ---
 
 <Base head={{ title, description, url }}>
-  <div class="space-y-12 p-4 md:min-h-screen">
+  <div class="space-y-10 py-4 sm:space-y-12 md:min-h-screen">
     <div
-      class="mx-auto max-w-5xl rounded-3xl border border-base-300 p-8 shadow-xl"
+      class="mx-auto max-w-5xl rounded-3xl border border-base-300 p-5 shadow-xl sm:p-8"
     >
       <PaginationHeader
         title="Projects & Engineering Work"
@@ -76,7 +76,7 @@ const url = `${AppConfig.site_url}/projects/`;
       />
     </section>
 
-    <section class="mx-auto max-w-7xl rounded-2xl border border-base-300 p-6">
+    <section class="mx-auto max-w-7xl rounded-2xl border border-base-300 p-5 sm:p-6">
       <h2 class="text-xl font-semibold">Related writing</h2>
       <p class="mt-2 text-sm leading-6">
         Read about implementation choices and lessons learned in my
@@ -87,7 +87,7 @@ const url = `${AppConfig.site_url}/projects/`;
     </section>
   </div>
 
-  <div class="flex flex-col overflow-auto p-6 lg:grid lg:grid-cols-2">
+  <div class="pt-6 lg:grid lg:grid-cols-2">
     <CTA />
   </div>
   <StickyConversionCta

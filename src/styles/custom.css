@@ -119,3 +119,19 @@ details summary::-webkit-details-marker {
 details summary::marker {
   display: none;
 }
+
+.prose :where(a, p, li, h1, h2, h3, h4, blockquote) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose :where(:not(pre) > code) {
+  white-space: break-spaces;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose :where(pre) {
+  max-width: 100%;
+  overflow-x: auto;
+}
