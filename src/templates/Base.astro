@@ -4,6 +4,7 @@ import '@styles/custom.css';
 import BreadCrumb from '@components/BreadCrumb';
 import { Navbar } from '@partials/Navbar';
 import { AppConfig } from '@utils/AppConfig';
+import { pageContainerClass } from '@utils/layout';
 import { personSchemaMarkup, websiteSchemaMarkup } from '@utils/schemaMarkup';
 
 export interface Props {
@@ -94,7 +95,7 @@ const {
   <body class="min-h-screen bg-base-100">
     <Navbar path={Astro.url.pathname} client:load />
 
-    <div class="container mx-auto w-full px-4 pb-6 pt-4 sm:px-6">
+    <div class={`${pageContainerClass} pb-6 pt-4`}>
       <div class="mb-4">
         <BreadCrumb path={Astro.url.pathname} />
       </div>
