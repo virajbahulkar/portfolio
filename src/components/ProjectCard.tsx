@@ -7,6 +7,8 @@ interface ProjectCardProps {
 const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
   const categories = project.data.category.split(', ');
+  const note = project.data.projectNote?.trim();
+  const showNoteOnCard = !project.data.hideNoteOnCard;
 
   const isExternalLink = project.data.openSource && project.data.link;
 
@@ -92,9 +94,9 @@ const ProjectCard = (props: ProjectCardProps) => {
             <p className={`line-clamp-3 transition-all duration-300`}>
               {project.data.description}
             </p>
-            <p className="mt-2 text-xs font-semibold text-cyan-500">
-              {project.data.projectNote}
-            </p>
+            {note && showNoteOnCard && (
+              <p className="mt-2 text-xs font-semibold text-cyan-500">{note}</p>
+            )}
             <a
               className="mt-2 text-blue-500 hover:underline focus:outline-none"
               href={`/projects/${project.slug}`}

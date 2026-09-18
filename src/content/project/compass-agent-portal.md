@@ -2,6 +2,7 @@
 title: "Compass agent portal app"
 description: "An insurance agent portal for tracking sales performance, business targets and operational reports."
 projectNote: "Professional work at Autoflow. Proprietary code, client data and internal infrastructure details are omitted."
+hideNoteOnCard: true
 startDate: 2020-01-15T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, IBM Database, AWS

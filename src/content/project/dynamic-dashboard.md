@@ -2,6 +2,7 @@
 title: "Dynamic dashboard"
 description: "A dashboard application that combines data from multiple sources into real-time reports with configurable widgets and role-based access."
 projectNote: "Professional application work. Proprietary code, reporting data and internal infrastructure details are omitted."
+hideNoteOnCard: true
 startDate: 2024-12-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, PostgreSQL, MongoDB, AWS

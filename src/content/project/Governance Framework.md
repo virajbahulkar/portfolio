@@ -2,6 +2,7 @@
 title: "Deep Governance App"
 description: "An internal application for planning work, tracking tasks and sharing operational data through configurable views."
 projectNote: "Professional in-house work at Autoflow. Proprietary code and internal operational data are omitted."
+hideNoteOnCard: true
 startDate: 2018-01-06T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, SQL Server

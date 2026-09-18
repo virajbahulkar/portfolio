@@ -18,6 +18,7 @@ export const projectSchema = z.object({
   title: z.string(),
   description: z.string(),
   projectNote: z.string(),
+  hideNoteOnCard: z.boolean().optional(),
   link: z.string().optional(),
   imgSrc: z.string().optional(),
   startDate: z.date(),
