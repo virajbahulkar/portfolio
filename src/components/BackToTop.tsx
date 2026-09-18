@@ -21,8 +21,11 @@ export const BackToTop = () => {
       data-testid="back-to-top-button"
       type="button"
       aria-label="Back to top"
-      className={`fixed bottom-5 right-5 z-40 rounded-full bg-accent p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-accent-focus hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-focus focus:ring-offset-2 ${
-        isVisible ? 'inline-block' : 'hidden'
+      aria-hidden={!isVisible}
+      className={`fixed bottom-5 right-5 z-40 inline-flex rounded-full bg-accent p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-accent-focus hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-focus focus:ring-offset-2 ${
+        isVisible
+          ? 'pointer-events-auto opacity-100'
+          : 'pointer-events-none opacity-0'
       }`}
       id="btn-back-to-top"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
