@@ -15,7 +15,7 @@ const getYears = (projectList: CollectionEntry<'project'>[]): number[] => {
     new Set(
       projectList.map((project) => {
         const date = new Date(project.data.startDate);
-        if (isNaN(date.getTime())) return null;
+        if (Number.isNaN(date.getTime())) return null;
         return date.getFullYear();
       })
     )
@@ -32,7 +32,9 @@ const getMonths = (
     new Set(
       projectList.map((project) => {
         const date = new Date(project.data.startDate);
-        if (isNaN(date.getTime()) || date.getFullYear() !== year) return null;
+        if (Number.isNaN(date.getTime()) || date.getFullYear() !== year) {
+          return null;
+        }
         return date.toLocaleString('default', { month: 'long' });
       })
     )
@@ -44,7 +46,9 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
   if (!props) {
     return (
       <div className="h-full space-y-6">
-        <div className="text-sm italic text-base-content/60">Loading projects...</div>
+        <div className="text-sm italic text-base-content/60">
+          Loading projects...
+        </div>
       </div>
     );
   }
@@ -57,7 +61,7 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
 
   const filteredProjects = projectList.filter((project) => {
     const date = new Date(project.data.startDate);
-    if (isNaN(date.getTime())) return false;
+    if (Number.isNaN(date.getTime())) return false;
 
     if (selectedYear && date.getFullYear() !== selectedYear) return false;
     if (
@@ -70,7 +74,7 @@ const ProjectGallery = (props: ProjectGalleryProps | undefined) => {
   });
 
   return (
-    <div className="h-full w-full space-y-6">
+    <div className="size-full space-y-6">
       {isotopeMode ? (
         <>
           {/* Year Filter Buttons */}

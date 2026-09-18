@@ -48,7 +48,9 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div className="h-full min-w-0">
-      <h1 className={`${headingClass} max-w-full break-words font-bold leading-tight`}>
+      <h1
+        className={`${headingClass} max-w-full break-words font-bold leading-tight`}
+      >
         {title}
         {title && Array.isArray(safePhrases) ? (
           <>

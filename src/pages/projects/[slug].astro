@@ -30,8 +30,7 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 const allPosts = await getCollection('post');
 
-const { title, description, startDate, category, projectNote } =
-  project.data;
+const { title, description, startDate, category, projectNote } = project.data;
 const categories = category.split(', ');
 const relatedPosts = allPosts.filter((post) =>
   RELATED_BLOG_PROJECTS[post.slug]?.includes(project.slug)
@@ -56,7 +55,9 @@ const pageUrl = `${AppConfig.site_url}/projects/${project.slug}/`;
         <p class="text-sm font-semibold">Project context</p>
         <p class="mt-1 break-words text-sm leading-6">{projectNote}</p>
       </div>
-      <div class="mb-4 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+      <div
+        class="mb-4 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between"
+      >
         <span class="text-sm "
           >Date: {new Date(startDate).toLocaleDateString()}
         </span>

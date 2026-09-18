@@ -1,11 +1,10 @@
 import React from 'react';
 
-
 type ITimeLineProps = {
   title: string;
   subtitle?: string;
   start?: string; // e.g. '2021-12-01'
-  end?: string;   // e.g. '2022-08-01' or undefined for ongoing
+  end?: string; // e.g. '2022-08-01' or undefined for ongoing
   children?: React.ReactNode;
 };
 
@@ -16,10 +15,10 @@ function getDuration(start?: string, end?: string): string {
   let years = endDate.getFullYear() - startDate.getFullYear();
   let months = endDate.getMonth() - startDate.getMonth();
   if (months < 0) {
-    years--;
+    years -= 1;
     months += 12;
   }
-  let result = [];
+  const result = [];
   if (years > 0) result.push(`${years} year${years > 1 ? 's' : ''}`);
   if (months > 0) result.push(`${months} month${months > 1 ? 's' : ''}`);
   return result.length ? result.join(' ') : 'Less than a month';
@@ -28,9 +27,20 @@ function getDuration(start?: string, end?: string): string {
 const TimeLine = (props: ITimeLineProps) => {
   let subtitleText = props.subtitle || '';
   if (props.start) {
-    const endText = props.end ? new Date(props.end).toLocaleString('default', { month: 'long', year: 'numeric' }) : 'Present';
-    const startText = new Date(props.start).toLocaleString('default', { month: 'long', year: 'numeric' });
-    subtitleText = `${startText} – ${endText} (${getDuration(props.start, props.end)})`;
+    const endText = props.end
+      ? new Date(props.end).toLocaleString('default', {
+          month: 'long',
+          year: 'numeric',
+        })
+      : 'Present';
+    const startText = new Date(props.start).toLocaleString('default', {
+      month: 'long',
+      year: 'numeric',
+    });
+    subtitleText = `${startText} – ${endText} (${getDuration(
+      props.start,
+      props.end
+    )})`;
   }
   return (
     <div className="flex gap-3 sm:gap-4">
