@@ -15,7 +15,7 @@ const SkillItem: React.FC<SkillItemProps> = ({
   color,
 }) => {
   return (
-    <div className="bg-base group relative flex h-full flex-col items-start rounded-2xl border border-base-300 bg-base-100 p-4 text-left shadow-sm transition hover:shadow-md sm:items-center sm:text-center">
+    <div className="group relative flex h-full flex-col items-start rounded-2xl border border-base-300 bg-base-100 p-4 text-left shadow-sm transition hover:shadow-md sm:items-center sm:text-center">
       <Icon color={color} className="text-4xl text-base-content" />
       <h4 className="mt-2 break-words font-semibold text-base-content">
         {title}

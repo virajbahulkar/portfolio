@@ -37,7 +37,6 @@ const ContactForm = () => {
       form.reset();
       setTimeout(() => setShowToast(false), 3000);
     } catch (error) {
-      console.error('Submission error:', error);
       setErrorMessage(
         'Message could not be sent right now. Please try again in a moment.'
       );
@@ -47,7 +46,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="d-flex relative min-w-0 flex-col">
+    <div className="relative flex min-w-0 flex-col">
       {showToast && (
         <div className="absolute inset-x-4 top-4 z-50 rounded bg-green-600 px-4 py-2 text-sm text-white shadow-lg transition-opacity duration-300 sm:left-auto sm:right-4 sm:max-w-sm">
           Thank you! Your message has been sent.

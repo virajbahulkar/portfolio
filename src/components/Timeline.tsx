@@ -45,10 +45,16 @@ const TimeLine = (props: ITimeLineProps) => {
   }
   return (
     <div className="flex gap-3 sm:gap-4">
-      <div className="education__time relative flex w-4 shrink-0 justify-center">
+      <div
+        data-timeline-marker
+        className="relative flex w-4 shrink-0 justify-center"
+      >
         <span className="mt-1 block size-4 rounded-full bg-primary"></span>
         {props.showLine !== false && (
-          <span className="education__line absolute bottom-0 left-1/2 top-5 block w-px -translate-x-1/2 bg-primary"></span>
+          <span
+            data-timeline-line
+            className="absolute bottom-0 left-1/2 top-5 block w-px -translate-x-1/2 bg-primary"
+          ></span>
         )}
       </div>
       <div className="min-w-0 pb-5 pr-0 sm:pr-2">
