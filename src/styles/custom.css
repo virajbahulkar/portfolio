@@ -33,10 +33,6 @@
   }
 }
 
-.time-line-container > div:last-child .education__time > .education__line {
-  display: none;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -168,4 +164,10 @@ details summary::marker {
 .prose :where(pre) {
   max-width: 100%;
   overflow-x: auto;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .skill-description {
+    opacity: 1 !important;
+  }
 }

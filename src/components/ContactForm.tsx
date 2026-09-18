@@ -77,7 +77,7 @@ const ContactForm = () => {
           placeholder="Your Name"
           aria-label="Your Name"
           required
-          className="w-full min-w-0 rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full min-w-0 rounded-md border border-base-300 px-4 py-2 text-base placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm"
         />
         <input
           type="email"
@@ -85,7 +85,7 @@ const ContactForm = () => {
           placeholder="Your Email"
           aria-label="Your Email"
           required
-          className="w-full min-w-0 rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full min-w-0 rounded-md border border-base-300 px-4 py-2 text-base placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm"
         />
         <textarea
           name="message"
@@ -93,7 +93,7 @@ const ContactForm = () => {
           aria-label="Message"
           rows={4}
           required
-          className="w-full min-w-0 resize-y rounded-md border border-base-300 px-4 py-2 text-sm placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full min-w-0 resize-y rounded-md border border-base-300 px-4 py-2 text-base placeholder:text-base-content/60 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm"
         ></textarea>
 
         <button

@@ -6,6 +6,7 @@ type ITimeLineProps = {
   start?: string; // e.g. '2021-12-01'
   end?: string; // e.g. '2022-08-01' or undefined for ongoing
   children?: React.ReactNode;
+  showLine?: boolean;
 };
 
 function getDuration(start?: string, end?: string): string {
@@ -44,9 +45,11 @@ const TimeLine = (props: ITimeLineProps) => {
   }
   return (
     <div className="flex gap-3 sm:gap-4">
-      <div className="education__time flex shrink-0 flex-col items-center">
+      <div className="education__time relative flex w-4 shrink-0 justify-center">
         <span className="mt-1 block size-4 rounded-full bg-primary"></span>
-        <span className="education__line block h-full w-[2px] translate-x-[7px] bg-primary"></span>
+        {props.showLine !== false && (
+          <span className="education__line absolute bottom-0 left-1/2 top-5 block w-px -translate-x-1/2 bg-primary"></span>
+        )}
       </div>
       <div className="min-w-0 pb-5 pr-0 sm:pr-2">
         <h3 className="mb-1 break-words font-semibold leading-6">

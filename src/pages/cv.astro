@@ -120,12 +120,13 @@ const contactItems = [
         <div class="mb-12">
           <h2 class="mb-6 text-2xl font-bold sm:text-3xl">Experience</h2>
           <div class="space-y-6">
-            {experience.map((exp) => (
+            {experience.map((exp, index) => (
               <TimeLine
                 title={exp.title}
                 subtitle={exp.technologies}
                 start={exp.start}
                 end={exp.end}
+                showLine={index < experience.length - 1}
               >
                 {exp.projects &&
                   exp.projects.map((proj) => (
@@ -156,8 +157,12 @@ const contactItems = [
         <div class="mb-12">
           <h2 class="mb-6 text-2xl font-bold sm:text-3xl">Education</h2>
           <div class="space-y-6">
-            {education.map((edu) => (
-              <TimeLine title={edu.title} subtitle={edu.subtitle} />
+            {education.map((edu, index) => (
+              <TimeLine
+                title={edu.title}
+                subtitle={edu.subtitle}
+                showLine={index < education.length - 1}
+              />
             ))}
           </div>
         </div>

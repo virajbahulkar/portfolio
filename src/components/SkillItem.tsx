@@ -20,7 +20,7 @@ const SkillItem: React.FC<SkillItemProps> = ({
       <h4 className="mt-2 break-words font-semibold text-base-content">
         {title}
       </h4>
-      <p className="mt-2 break-words text-sm leading-6 text-base-content opacity-100 transition sm:opacity-0 sm:group-hover:opacity-100">
+      <p className="skill-description mt-2 break-words text-sm leading-6 text-base-content opacity-100 transition lg:opacity-0 lg:group-hover:opacity-100">
         {description}
       </p>
     </div>

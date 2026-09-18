@@ -10,9 +10,17 @@ const { primaryHref, primaryLabel, secondaryHref, secondaryLabel } =
   Astro.props as Props;
 ---
 
-<div aria-hidden="true" class="h-28 sm:h-24"></div>
-<div class="pointer-events-none fixed inset-x-0 bottom-3 z-50 px-4 sm:px-6">
+<div
+  aria-hidden="true"
+  data-sticky-cta-spacer
+  style="height:var(--sticky-cta-offset, 0px)"
+></div>
+<div
+  class="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-4 sm:px-6"
+  style="padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 0.75rem)"
+>
   <div
+    data-sticky-cta
     class="pointer-events-auto mx-auto flex max-w-xl flex-col items-stretch gap-3 rounded-2xl border border-base-300 bg-base-100/95 p-3 shadow-xl backdrop-blur sm:flex-row sm:items-center sm:justify-between"
   >
     <p class="text-xs font-medium leading-5">Interested in working together?</p>
@@ -31,4 +39,26 @@ const { primaryHref, primaryLabel, secondaryHref, secondaryLabel } =
       </a>
     </div>
   </div>
+  <script is:inline>
+    (() => {
+      const updateStickyCtaOffset = () => {
+        const cta = document.querySelector('[data-sticky-cta]');
+        const spacer = document.querySelector('[data-sticky-cta-spacer]');
+        if (!(cta instanceof HTMLElement) || !(spacer instanceof HTMLElement)) {
+          return;
+        }
+
+        const baseGap = 12;
+        const offset = Math.ceil(cta.getBoundingClientRect().height + baseGap);
+        spacer.style.setProperty(
+          'height',
+          `calc(${offset}px + env(safe-area-inset-bottom, 0px))`
+        );
+      };
+
+      updateStickyCtaOffset();
+      window.addEventListener('load', updateStickyCtaOffset, { once: true });
+      window.addEventListener('resize', updateStickyCtaOffset);
+    })();
+  </script>
 </div>
