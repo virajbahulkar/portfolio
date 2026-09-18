@@ -4,6 +4,7 @@ import { SectionHeader } from './SectionHeader';
 
 const ContactForm = () => {
   const [showToast, setShowToast] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -12,6 +13,7 @@ const ContactForm = () => {
     const formData = new FormData(form);
 
     setLoading(true); // show loading
+    setErrorMessage('');
 
     try {
       // Simulate network delay
@@ -34,6 +36,9 @@ const ContactForm = () => {
       setTimeout(() => setShowToast(false), 3000);
     } catch (error) {
       console.error('Submission error:', error);
+      setErrorMessage(
+        'Message could not be sent right now. Please try again in a moment.'
+      );
     } finally {
       setLoading(false); // hide loading
     }
@@ -119,6 +124,11 @@ const ContactForm = () => {
           )}
           {loading ? 'Sending...' : 'Send Message'}
         </button>
+        {errorMessage && (
+          <p className="rounded-md border border-error/40 bg-error/10 px-3 py-2 text-sm text-error">
+            {errorMessage}
+          </p>
+        )}
       </form>
     </div>
   );

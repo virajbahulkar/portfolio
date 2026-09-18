@@ -1,8 +1,8 @@
 ---
 title: "WanderWhale Travel Portal"
 description: "Professional Node.js travel services covering search, multi-currency pricing, booking and payment reconciliation with ElasticSearch, PostgreSQL and Redis, alongside React interfaces."
-projectNote: "Professional work at Saeloun. Proprietary code, transaction data and internal infrastructure details are omitted."
-startDate: 2025-11-10T00:00:00Z
+projectNote: "Professional Saeloun delivery focused on search, multi-currency pricing, booking and payment reconciliation."
+startDate: 2021-04-10T00:00:00Z
 openSource: false
 category: ReactJS, NodeJS, ElasticSearch, PostgreSQL, Redis, Payments
 runningOrder: 1

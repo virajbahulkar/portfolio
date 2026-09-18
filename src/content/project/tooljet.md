@@ -4,7 +4,7 @@ description: "I contributed React frontend fixes to ToolJet, an open-source low-
 link: "https://github.com/ToolJet/ToolJet/commits?author=virajbahulkar"
 imgSrc: "/assets/images/projects/tooljet.png"
 projectNote: "Open-source contributions through reviewed and merged pull requests in 2021."
-startDate: 2025-05-09T00:00:00Z
+startDate: 2021-06-09T00:00:00Z
 imgAlt: "ToolJet open-source contributions"
 openSource: true
 category: ReactJS, NodeJS, TypeScript, PostgreSQL, Open Source
