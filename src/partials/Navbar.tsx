@@ -33,7 +33,7 @@ const Navbar = ({ path }: NavbarProps) => {
   return (
     <NavbarContext.Provider value={path}>
       <nav className="sticky top-0 z-20 w-full border-base-100 shadow-md backdrop-blur-lg">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 p-4 sm:px-6">
+        <div className="container mx-auto flex w-full items-center justify-between gap-3 px-4 py-4 sm:px-6">
           {/* Logo */}
           <a
             href="/"
