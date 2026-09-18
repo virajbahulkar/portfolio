@@ -13,11 +13,7 @@ export const BackToTop = () => {
     toggleVisibility();
 
     return () => {
-      window.removeEventListener(
-        'scroll',
-        toggleVisibility,
-        passiveScrollListener
-      );
+      window.removeEventListener('scroll', toggleVisibility, false);
     };
   }, []);
 
