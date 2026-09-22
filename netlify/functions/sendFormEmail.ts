@@ -7,6 +7,8 @@ type ContactPayload = {
   message?: string;
 };
 
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const response = (statusCode: number, body: Record<string, unknown>) => ({
   statusCode,
   headers: {
@@ -51,10 +53,14 @@ export const handler: Handler = async (event) => {
     return response(400, { error: "Name, email, and message are required" });
   }
 
+  if (!emailPattern.test(email)) {
+    return response(400, { error: "Please provide a valid email address" });
+  }
+
   try {
     const resend = new Resend(resendApiKey);
 
-    const result = await resend.emails.send({
+    const ownerDelivery = await resend.emails.send({
       from: "Contact Form <hello@virajbahulkar.me>",
       to: "hello@virajbahulkar.me",
       subject: `New Contact Form Submission from ${name}`,
@@ -62,7 +68,14 @@ export const handler: Handler = async (event) => {
       reply_to: email,
     });
 
-    await resend.emails.send({
+    if (ownerDelivery.error) {
+      console.error("Primary contact email failed:", ownerDelivery.error);
+      return response(502, {
+        error: "Unable to deliver your message right now. Please try again soon.",
+      });
+    }
+
+    const acknowledgement = await resend.emails.send({
       from: "Viraj Bahulkar <hello@virajbahulkar.me>",
       to: email,
       subject: "Thanks for reaching out!",
@@ -74,7 +87,15 @@ export const handler: Handler = async (event) => {
       `,
     });
 
-    return response(200, { success: true, data: result });
+    if (acknowledgement.error) {
+      console.error("Acknowledgement email failed:", acknowledgement.error);
+    }
+
+    return response(200, {
+      success: true,
+      data: ownerDelivery.data,
+      acknowledgementSent: !acknowledgement.error,
+    });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : "Unknown error";
     console.error("Email sending failed:", error);
