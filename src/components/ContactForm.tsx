@@ -2,6 +2,11 @@ import { useState } from 'react';
 
 import { SectionHeader } from './SectionHeader';
 
+type ContactResponse = {
+  success?: boolean;
+  error?: string;
+};
+
 const ContactForm = () => {
   const [showToast, setShowToast] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -27,9 +32,9 @@ const ContactForm = () => {
         }),
       });
 
-      const payload = (await res.json().catch(() => null)) as
-        | { success?: boolean; error?: string }
-        | null;
+      const payload = (await res
+        .json()
+        .catch(() => null)) as ContactResponse | null;
 
       if (!res.ok || !payload?.success) {
         throw new Error(
