@@ -1,33 +1,71 @@
-import { Handler } from '@netlify/functions';
-import { Resend } from 'resend';
+import type { Handler } from "@netlify/functions";
+import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+type ContactPayload = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
+const response = (statusCode: number, body: Record<string, unknown>) => ({
+  statusCode,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(body),
+});
+
+const parsePayload = (body: string | null): ContactPayload | null => {
+  if (!body) return null;
+
+  try {
+    return JSON.parse(body) as ContactPayload;
+  } catch {
+    return null;
+  }
+};
 
 export const handler: Handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method Not Allowed' }),
-    };
+  if (event.httpMethod !== "POST") {
+    return response(405, { error: "Method Not Allowed" });
+  }
+
+  const resendApiKey = process.env.RESEND_API_KEY;
+
+  if (!resendApiKey) {
+    console.error("Missing RESEND_API_KEY environment variable");
+    return response(500, { error: "Email service is not configured" });
+  }
+
+  const payload = parsePayload(event.body ?? null);
+
+  if (!payload) {
+    return response(400, { error: "Invalid JSON payload" });
+  }
+
+  const name = payload.name?.trim();
+  const email = payload.email?.trim();
+  const message = payload.message?.trim();
+
+  if (!name || !email || !message) {
+    return response(400, { error: "Name, email, and message are required" });
   }
 
   try {
-    const { name, email, message } = JSON.parse(event.body || '{}');
+    const resend = new Resend(resendApiKey);
 
-    // Send to yourself
     const result = await resend.emails.send({
-      from: 'Contact Form <hello@virajbahulkar.me>',
-      to: 'hello@virajbahulkar.me',
+      from: "Contact Form <hello@virajbahulkar.me>",
+      to: "hello@virajbahulkar.me",
       subject: `New Contact Form Submission from ${name}`,
       text: `You have a new message:\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      reply_to: email, // ✅ you can click "Reply" to respond directly
+      reply_to: email,
     });
 
-    // Optional: Auto-reply to the user
     await resend.emails.send({
-      from: 'Viraj Bahulkar <hello@virajbahulkar.me>',
+      from: "Viraj Bahulkar <hello@virajbahulkar.me>",
       to: email,
-      subject: 'Thanks for reaching out!',
+      subject: "Thanks for reaching out!",
       html: `
         <p>Hi ${name},</p>
         <p>Thank you for reaching out to me. I've received your message and will get back to you as soon as possible.</p>
@@ -36,15 +74,10 @@ export const handler: Handler = async (event) => {
       `,
     });
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ success: true, data: result }),
-    };
-  } catch (error: any) {
-    console.error('Email sending failed:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+    return response(200, { success: true, data: result });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Email sending failed:", error);
+    return response(500, { error: message });
   }
 };
