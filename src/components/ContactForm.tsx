@@ -12,15 +12,11 @@ const ContactForm = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    setLoading(true); // show loading
+    setLoading(true);
     setErrorMessage('');
+    setShowToast(false);
 
     try {
-      // Simulate network delay
-      await new Promise((resolve) => {
-        setTimeout(resolve, 2000);
-      });
-
       const res = await fetch('/.netlify/functions/sendFormEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -31,17 +27,28 @@ const ContactForm = () => {
         }),
       });
 
-      if (!res.ok) throw new Error('Failed to send');
+      const payload = (await res.json().catch(() => null)) as
+        | { success?: boolean; error?: string }
+        | null;
+
+      if (!res.ok || !payload?.success) {
+        throw new Error(
+          payload?.error ||
+            'Message could not be sent right now. Please try again in a moment.'
+        );
+      }
 
       setShowToast(true);
       form.reset();
       setTimeout(() => setShowToast(false), 3000);
-    } catch (error) {
+    } catch (error: unknown) {
       setErrorMessage(
-        'Message could not be sent right now. Please try again in a moment.'
+        error instanceof Error
+          ? error.message
+          : 'Message could not be sent right now. Please try again in a moment.'
       );
     } finally {
-      setLoading(false); // hide loading
+      setLoading(false);
     }
   };
 
