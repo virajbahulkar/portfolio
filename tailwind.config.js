@@ -2,7 +2,7 @@
 module.exports = {
   darkMode: 'class',
   content: [
-    './src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}',
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/astro-boilerplate-components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
