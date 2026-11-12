@@ -84,6 +84,13 @@ Starts the `astro` dev service. Visit http://localhost:3000.
 npm run build-types
 ```
 
+### Project Layout Regression Check
+```
+node --test tests/project-styles.test.cjs
+```
+Tailwind scans Markdown content as well as components so project detail cards
+retain their padding and list layout. Keep `md` and `mdx` in the content glob.
+
 ### Add a Dependency
 ```
 npm install <pkg>
